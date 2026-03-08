@@ -81,7 +81,7 @@ function MedalBadge({ rank }: { rank: number }) {
             <span style={{ color: C.bronze }} className="font-bold text-[15px] tabular-nums">{num}</span>
         </div>
     )
-    return <span className="font-medium text-[14px] text-slate-400 tabular-nums pl-8">{num}</span>
+    return <span className="font-medium text-[14px] text-slate-500 tabular-nums pl-8">{num}</span>
 }
 
 // ── Props ──────────────────────────────────────────────────────
@@ -110,7 +110,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             accessorKey: "roll",
             header: () => <Th>Roll No.</Th>,
             cell: ({ row }) => (
-                <span className="font-mono text-[11px] font-medium tracking-wide" style={{ color: C.faint }}>
+                <span className="font-mono text-[11px] font-medium tracking-wide" style={{ color: C.muted }}>
                     {row.getValue("roll")}
                 </span>
             ),
@@ -184,8 +184,8 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                 const cgpa = row.original.cgpa
                 if (cgpa >= 2.0) return (
                     <div className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: C.muted }} />
-                        <span className="text-[12px] font-semibold" style={{ color: C.muted }}>Pass</span>
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: "#16A34A" }} />
+                        <span className="text-[12px] font-semibold" style={{ color: "#15803D" }}>Pass</span>
                     </div>
                 )
                 return (

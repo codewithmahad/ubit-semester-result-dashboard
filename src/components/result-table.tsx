@@ -96,7 +96,7 @@ function MedalBadge({ cumulativeRank, semRank }: { cumulativeRank: number | null
             <span style={{ color: C.bronze }} className="font-bold text-[15px] tabular-nums">{num}</span>
         </div>
     )
-    return <span className="font-medium text-[14px] text-slate-400 tabular-nums pl-8">{num}</span>
+    return <span className="font-medium text-[14px] text-slate-500 tabular-nums pl-8">{num}</span>
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -170,7 +170,7 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                 accessorKey: "roll",
                 header: () => <Th>Roll No.</Th>,
                 cell: ({ row }) => (
-                    <span className="font-mono text-[11px] font-medium tracking-wide" style={{ color: C.faint }}>
+                    <span className="font-mono text-[11px] font-medium tracking-wide" style={{ color: C.muted }}>
                         {row.getValue("roll")}
                     </span>
                 ),
