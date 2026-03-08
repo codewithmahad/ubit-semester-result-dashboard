@@ -1,5 +1,6 @@
 "use client"
 
+import { useCallback, useEffect, useRef, useState } from "react"
 import {
     Sheet,
     SheetContent,
@@ -20,144 +21,312 @@ import {
     Tooltip
 } from "recharts"
 import { useMemo } from "react"
-import { Trophy, CheckCircle2, TrendingUp } from "lucide-react"
+import { CheckCircle2 } from "lucide-react"
 
+// ── Medal SVGs ─────────────────────────────────────────────────
+function CrownIcon({ className }: { className?: string }) {
+    return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2 19h20v2H2v-2zM2 6l5 7 5-9 5 9 5-7v11H2V6z" />
+        </svg>
+    )
+}
+function DiamondIcon({ className }: { className?: string }) {
+    return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
+            <polygon points="12 2 22 9 18 20 6 20 2 9" />
+        </svg>
+    )
+}
+function ShieldIcon({ className }: { className?: string }) {
+    return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+    )
+}
+
+// ── Resizable Panel Hook ───────────────────────────────────────
+function useResizable(initial: number, min: number, max: number) {
+    const [width, setWidth] = useState(initial)
+    const dragging = useRef(false)
+    const startX = useRef(0)
+    const startW = useRef(0)
+
+    const onMouseDown = useCallback((e: React.MouseEvent) => {
+        e.preventDefault()
+        dragging.current = true
+        startX.current = e.clientX
+        startW.current = width
+        document.body.style.userSelect = "none"
+        document.body.style.cursor = "col-resize"
+    }, [width])
+
+    useEffect(() => {
+        const onMove = (e: MouseEvent) => {
+            if (!dragging.current) return
+            const delta = startX.current - e.clientX
+            setWidth(Math.min(max, Math.max(min, startW.current + delta)))
+        }
+        const onUp = () => {
+            dragging.current = false
+            document.body.style.userSelect = ""
+            document.body.style.cursor = ""
+        }
+        window.addEventListener("mousemove", onMove)
+        window.addEventListener("mouseup", onUp)
+        return () => {
+            window.removeEventListener("mousemove", onMove)
+            window.removeEventListener("mouseup", onUp)
+        }
+    }, [min, max])
+
+    return { width, onMouseDown }
+}
+
+// ── Medal config — restrained dark palette ────────────────────
+type MedalRank = 1 | 2 | 3
+
+const MEDAL = {
+    1: {
+        iconBg: "#8A6E14",   // antique gold — dark, muted, premium
+        icon: <CrownIcon className="w-3.5 h-3.5 text-white" />,
+        label: "Gold Medalist",
+        labelColor: "#8A6E14",
+        rankBg: "#8A6E14",
+        rankText: "#fff",
+        sgpaStyle: { background: "#8A6E14", color: "#fff" },
+        cardBg: "#FDFAF3",
+        cardBorder: "#D4B96A",
+        leftAccent: "#8A6E14",
+        subText: "#A08830",
+    },
+    2: {
+        iconBg: "#4B6280",   // gunmetal steel blue-gray
+        icon: <DiamondIcon className="w-3 h-3 text-white" />,
+        label: "Silver Medalist",
+        labelColor: "#4B6280",
+        rankBg: "#4B6280",
+        rankText: "#fff",
+        sgpaStyle: { background: "#4B6280", color: "#fff" },
+        cardBg: "#F6F8FA",
+        cardBorder: "#96ADC4",
+        leftAccent: "#4B6280",
+        subText: "#6A8099",
+    },
+    3: {
+        iconBg: "#6B4B28",   // antique bronze / dark copper
+        icon: <ShieldIcon className="w-3 h-3 text-white" />,
+        label: "Bronze Medalist",
+        labelColor: "#6B4B28",
+        rankBg: "#6B4B28",
+        rankText: "#fff",
+        sgpaStyle: { background: "#6B4B28", color: "#fff" },
+        cardBg: "#FDF8F4",
+        cardBorder: "#C49B74",
+        leftAccent: "#6B4B28",
+        subText: "#906240",
+    },
+}
+
+// ── Props ──────────────────────────────────────────────────────
 interface StudentModalProps {
     student: StudentRanking | null
     courses: Course[]
     open: boolean
     onOpenChange: (open: boolean) => void
+    cumulativeRank?: number | null
 }
 
-export function StudentModal({ student, courses, open, onOpenChange }: StudentModalProps) {
+export function StudentModal({ student, courses, open, onOpenChange, cumulativeRank }: StudentModalProps) {
+    const { width, onMouseDown } = useResizable(440, 360, 720)
 
     const radarData = useMemo(() => {
         if (!student) return []
-        return courses.map(course => {
-            const mark = student.results[course.code]?.marks || 0
-            return {
-                subject: course.code,
-                marks: mark,
-                fullMarks: 100 // assuming 100 is max theory
-            }
-        })
+        return courses.map(course => ({
+            subject: course.code,
+            marks: student.results[course.code]?.marks || 0
+        }))
     }, [student, courses])
 
     if (!student) return null
 
-    // Aesthetics for Modal
-    const isTopRanked = student.rank && student.rank <= 3
-    const badgeColor = student.sgpa >= 3.8 ? "bg-amber-100 text-amber-800 border-amber-300 shadow-sm" :
-        student.sgpa >= 3.0 ? "bg-emerald-100 text-emerald-800 border-emerald-300 shadow-sm" :
-            "bg-slate-100 text-slate-800 border-slate-300"
+    const medalRank = (cumulativeRank === 1 || cumulativeRank === 2 || cumulativeRank === 3)
+        ? cumulativeRank as MedalRank
+        : null
+    const medal = medalRank ? MEDAL[medalRank] : null
+    const passed = student.sgpa >= 2.0
+
+    const sgpaStyle: React.CSSProperties = medal
+        ? medal.sgpaStyle as React.CSSProperties
+        : student.sgpa >= 3.8 ? { background: "#0F172A", color: "#fff" }
+            : student.sgpa >= 2.0 ? { background: "#F1F5F9", color: "#334155", border: "1px solid #CBD5E1" }
+                : { background: "#FFF1F2", color: "#E11D48", border: "1px solid #FECDD3" }
+
+    function gradeColor(grade: string): React.CSSProperties {
+        if (grade === "F") return { background: "#FFF1F2", color: "#E11D48", border: "1px solid #FECDD3" }
+        if (grade.startsWith("A")) return { background: "#F8FAFC", color: "#334155", border: "1px solid #CBD5E1" }
+        if (grade.startsWith("B")) return { background: "#F8FAFC", color: "#475569", border: "1px solid #E2E8F0" }
+        return { background: "#F8FAFC", color: "#64748B", border: "1px solid #E2E8F0" }
+    }
 
     return (
         <Sheet open={open} onOpenChange={onOpenChange}>
-            <SheetContent className="w-full sm:max-w-md overflow-y-auto bg-slate-50/50 backdrop-blur-xl border-l-slate-200">
-                <SheetHeader className="mb-6">
-                    <div className="flex items-start justify-between">
-                        <div>
-                            <SheetTitle className="text-2xl font-extrabold text-slate-900 tracking-tight">{student.name}</SheetTitle>
-                            <SheetDescription className="text-slate-500 font-mono mt-1">
+            <SheetContent
+                style={{ width: `${width}px`, maxWidth: "90vw" }}
+                className="p-0 flex flex-col overflow-hidden bg-white border-l border-zinc-200 shadow-2xl"
+            >
+                {/* Resize Handle */}
+                <div
+                    onMouseDown={onMouseDown}
+                    className="absolute left-0 top-0 h-full w-1.5 cursor-col-resize z-50 group"
+                >
+                    <div className="w-px h-10 bg-zinc-200 group-hover:bg-zinc-400 rounded-full absolute left-0.5 top-1/2 -translate-y-1/2 transition-all duration-200" />
+                </div>
+
+                {/* ── Header ─────────────────────────────────── */}
+                <SheetHeader className="px-6 pt-5 pb-4 border-b border-zinc-100 shrink-0 bg-white">
+                    <div className="flex items-start justify-between gap-4">
+                        <div className="min-w-0 flex-1">
+                            {medal && (
+                                <div className="flex items-center gap-1.5 mb-2">
+                                    <div className="flex items-center justify-center w-4 h-4 rounded" style={{ background: medal.iconBg }}>
+                                        {medal.icon}
+                                    </div>
+                                    <span className={`text-[10px] font-bold uppercase tracking-[0.15em] ${medal.labelColor}`}>
+                                        {medal.label}
+                                    </span>
+                                </div>
+                            )}
+                            <SheetTitle className="text-[17px] font-bold text-zinc-950 tracking-tight leading-snug">
+                                {student.name}
+                            </SheetTitle>
+                            <SheetDescription className="font-mono text-[11px] font-medium text-zinc-400 tracking-wider mt-0.5">
                                 {student.roll}
                             </SheetDescription>
                         </div>
+
                         {student.rank && (
-                            <div className="flex flex-col items-center justify-center w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-200 shrink-0">
-                                <span className="text-[10px] uppercase font-bold text-slate-400 leading-none">Rank</span>
-                                <span className="text-lg font-black text-indigo-600 leading-none mt-1">#{student.rank}</span>
+                            <div
+                                className="flex flex-col items-center justify-center rounded-xl shrink-0 px-3 py-2"
+                                style={medal ? { background: medal.rankBg, border: "none" } : { background: "#F8FAFC", border: "1px solid #E2E8F0" }}
+                            >
+                                <span className="text-[8px] uppercase font-bold tracking-[0.2em] leading-none" style={{ color: medal ? "rgba(255,255,255,0.6)" : "#94A3B8" }}>
+                                    Sem.&nbsp;Rank
+                                </span>
+                                <span className="text-[22px] font-black leading-tight tabular-nums" style={{ color: medal ? medal.rankText : "#0F172A" }}>
+                                    #{student.rank}
+                                </span>
                             </div>
                         )}
                     </div>
                 </SheetHeader>
 
-                <div className="space-y-6">
+                {/* ── Content ────────────────────────────────── */}
+                <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3 styled-scrollbar">
 
-                    {/* Key Metrics */}
+                    {/* SGPA + Marks */}
                     <div className="grid grid-cols-2 gap-3">
-                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
-                            <span className="text-sm font-semibold text-slate-500 mb-1">SGPA</span>
-                            <Badge variant="outline" className={`text-xl px-3 py-1 ${badgeColor}`}>
+                        <div className="rounded-xl border border-zinc-100 bg-zinc-50 p-4 flex flex-col items-center gap-1.5">
+                            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-400">SGPA</span>
+                            <div className={`text-[26px] font-black tabular-nums tracking-tight leading-none px-4 py-1.5 rounded-xl`} style={sgpaStyle}>
                                 {student.sgpa.toFixed(2)}
-                            </Badge>
+                            </div>
                         </div>
-                        <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
-                            <span className="text-sm font-semibold text-slate-500 mb-1">Total Marks</span>
-                            <span className="text-2xl font-black text-slate-800">{student.totalMarks}</span>
+                        <div className="rounded-xl border border-zinc-100 bg-zinc-50 p-4 flex flex-col items-center gap-1.5">
+                            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-400">Marks</span>
+                            <span className="text-[32px] font-black tabular-nums tracking-tight text-zinc-950 leading-none">
+                                {student.totalMarks}
+                            </span>
                         </div>
                     </div>
 
-                    {/* Highlights */}
-                    {isTopRanked && (
-                        <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 flex items-center shadow-sm">
-                            <Trophy className="w-6 h-6 text-amber-500 mr-3 shrink-0" />
-                            <p className="text-sm font-medium text-amber-900 leading-tight">
-                                Outstanding performance! This student ranks in the top 3 of the entire batch.
-                            </p>
+                    {/* Medal card — clean, no color flood */}
+                    {medal && (
+                        <div
+                            className="rounded-xl border p-3.5"
+                            style={{
+                                background: medal.cardBg,
+                                borderColor: medal.cardBorder,
+                                borderLeftColor: medal.leftAccent,
+                                borderLeftWidth: 3,
+                            }}
+                        >
+                            <div className="flex items-center gap-3">
+                                <div className="flex items-center justify-center w-9 h-9 rounded-lg shrink-0" style={{ background: medal.iconBg }}>
+                                    {medal.icon}
+                                </div>
+                                <div>
+                                    <div className="text-[13px] font-bold tracking-tight" style={{ color: medal.labelColor }}>
+                                        #{cumulativeRank} Overall · {medal.label}
+                                    </div>
+                                    <div className="text-[11px] font-medium mt-0.5" style={{ color: medal.subText }}>
+                                        Ranked by cumulative GPA across all semesters
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )}
 
-                    {student.sgpa >= 2.0 && !isTopRanked && (
-                        <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 flex items-center shadow-sm">
-                            <CheckCircle2 className="w-5 h-5 text-emerald-600 mr-3 shrink-0" />
-                            <p className="text-sm font-medium text-emerald-900 leading-tight">
-                                Passed semester successfully in good standing.
-                            </p>
+                    {/* Passed — non-medalist */}
+                    {passed && !medal && (
+                        <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3.5 flex items-center gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-zinc-500 shrink-0" />
+                            <div>
+                                <div className="text-[13px] font-bold text-zinc-800 tracking-tight">Passed</div>
+                                <div className="text-[11px] font-medium text-zinc-400 mt-0.5">Semester completed successfully</div>
+                            </div>
                         </div>
                     )}
 
-                    {/* Radar Chart */}
-                    <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                        <div className="flex items-center gap-2 mb-4">
-                            <TrendingUp className="w-4 h-4 text-indigo-500" />
-                            <h3 className="font-bold text-slate-800 text-sm">Subject Strengths</h3>
+                    {/* Radar */}
+                    <div className="bg-white rounded-xl border border-zinc-100">
+                        <div className="px-4 pt-3.5 pb-1 flex items-center gap-2">
+                            <svg className="w-3 h-3 text-zinc-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                            </svg>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Performance Radar</span>
                         </div>
-                        <div className="h-64 w-full">
+                        <div className="h-52 w-full px-2 pb-2">
                             <ResponsiveContainer width="100%" height="100%">
-                                <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
-                                    <PolarGrid stroke="#e2e8f0" />
-                                    <PolarAngleAxis dataKey="subject" tick={{ fill: '#64748b', fontSize: 11, fontWeight: 600 }} />
+                                <RadarChart cx="50%" cy="50%" outerRadius="68%" data={radarData}>
+                                    <PolarGrid stroke="#f4f4f5" />
+                                    <PolarAngleAxis dataKey="subject" tick={{ fill: '#a1a1aa', fontSize: 10, fontWeight: 600 }} />
                                     <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                                     <Tooltip
-                                        contentStyle={{ borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                                        itemStyle={{ color: '#4f46e5', fontWeight: 600 }}
+                                        contentStyle={{ borderRadius: '8px', border: '1px solid #f4f4f5', backgroundColor: '#fff', fontSize: 12, fontWeight: 700, boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}
+                                        itemStyle={{ color: '#09090b' }}
                                     />
-                                    <Radar
-                                        name="Marks"
-                                        dataKey="marks"
-                                        stroke="#6366f1"
-                                        strokeWidth={2}
-                                        fill="#818cf8"
-                                        fillOpacity={0.4}
-                                    />
+                                    <Radar name="Marks" dataKey="marks" stroke="#18181b" strokeWidth={2} fill="#18181b" fillOpacity={0.06} />
                                 </RadarChart>
                             </ResponsiveContainer>
                         </div>
                     </div>
 
-                    {/* Detailed Course Breakdown */}
-                    <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-                        <div className="px-4 py-3 bg-slate-50 border-b border-slate-200">
-                            <h3 className="font-bold text-slate-800 text-sm">Course Breakdown</h3>
+                    {/* Course breakdown */}
+                    <div className="bg-white rounded-xl border border-zinc-100 overflow-hidden">
+                        <div className="px-4 py-2.5 border-b border-zinc-100">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">Course Breakdown</span>
                         </div>
-                        <div className="divide-y divide-slate-100">
+                        <div className="divide-y divide-zinc-50">
                             {courses.map(course => {
                                 const res = student.results[course.code]
                                 return (
-                                    <div key={course.code} className="flex items-center justify-between p-3 px-4 hover:bg-slate-50/50 transition-colors">
-                                        <div className="flex flex-col">
-                                            <span className="font-semibold text-sm text-slate-900">{course.code}</span>
-                                            <span className="text-xs text-slate-500 truncate max-w-[150px] sm:max-w-[200px]" title={course.name}>{course.name}</span>
+                                    <div key={course.code} className="flex items-center justify-between px-4 py-2.5 hover:bg-zinc-50/60 transition-colors">
+                                        <div className="flex flex-col min-w-0 pr-3">
+                                            <span className="text-[13px] font-semibold text-zinc-900 tracking-tight leading-tight">{course.code}</span>
+                                            <span className="text-[10px] font-medium text-zinc-400 truncate leading-tight mt-0.5">{course.name}</span>
                                         </div>
-                                        <div className="flex items-center gap-3">
-                                            <span className="font-mono font-bold text-slate-700">{res ? res.marks : "-"}</span>
-                                            <Badge variant="outline" className={`w-8 justify-center rounded uppercase text-[10px] tracking-widest ${!res ? 'bg-slate-100 text-slate-400' :
-                                                res.grade.startsWith('A') ? 'bg-indigo-50 text-indigo-700 border-indigo-200' :
-                                                    res.grade.startsWith('B') ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
-                                                        res.grade.startsWith('C') ? 'bg-amber-50 text-amber-700 border-amber-200' :
-                                                            'bg-red-50 text-red-700 border-red-200'
-                                                }`}>
-                                                {res ? res.grade : "-"}
+                                        <div className="flex items-center gap-2.5 shrink-0">
+                                            <span className="text-[15px] font-semibold text-zinc-900 tabular-nums w-8 text-right">
+                                                {res ? res.marks : "–"}
+                                            </span>
+                                            <Badge
+                                                variant="outline"
+                                                className="w-10 h-6 justify-center rounded-lg font-bold text-[10px] tracking-wide"
+                                                style={res ? gradeColor(res.grade) : { background: "#F8FAFC", color: "#94A3B8", border: "1px solid #E2E8F0" }}
+                                            >
+                                                {res ? res.grade : "–"}
                                             </Badge>
                                         </div>
                                     </div>

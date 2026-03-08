@@ -14,12 +14,80 @@ import { SemesterData } from "@/data/semester1"
 import { calculateCGPARankings, CGPARanking } from "@/lib/calculations"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Download, Search, CheckCircle2, ChevronUp, ChevronDown } from "lucide-react"
+import { Download, Search, CheckCircle2, XCircle, ChevronUp, ChevronDown } from "lucide-react"
 
+// ── Same design tokens as result-table ──────────────────────────
+const C = {
+    navy: "#0F172A",
+    navyMid: "#1E293B",
+    ink: "#1E293B",
+    muted: "#64748B",
+    faint: "#94A3B8",
+    line: "#E2E8F0",
+    gold: "#8A6E14",
+    silver: "#4B6280",
+    bronze: "#6B4B28",
+    goldRow: "rgba(138,110,20,0.04)",
+    silverRow: "rgba(75,98,128,0.04)",
+    bronzeRow: "rgba(107,75,40,0.04)",
+}
+
+// ── Same medal SVGs as result-table ────────────────────────────
+function CrownIcon({ className }: { className?: string }) {
+    return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2 19h20v2H2v-2zM2 6l5 7 5-9 5 9 5-7v11H2V6z" />
+        </svg>
+    )
+}
+function DiamondIcon({ className }: { className?: string }) {
+    return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
+            <polygon points="12 2 22 9 18 20 6 20 2 9" />
+        </svg>
+    )
+}
+function ShieldIcon({ className }: { className?: string }) {
+    return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+    )
+}
+
+function MedalBadge({ rank }: { rank: number }) {
+    const num = String(rank).padStart(2, "0")
+    if (rank === 1) return (
+        <div className="flex items-center gap-2">
+            <span style={{ background: C.gold }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
+                <CrownIcon className="w-3.5 h-3.5 text-white" />
+            </span>
+            <span style={{ color: C.gold }} className="font-bold text-[15px] tabular-nums">{num}</span>
+        </div>
+    )
+    if (rank === 2) return (
+        <div className="flex items-center gap-2">
+            <span style={{ background: C.silver }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
+                <DiamondIcon className="w-3 h-3 text-white" />
+            </span>
+            <span style={{ color: C.silver }} className="font-bold text-[15px] tabular-nums">{num}</span>
+        </div>
+    )
+    if (rank === 3) return (
+        <div className="flex items-center gap-2">
+            <span style={{ background: C.bronze }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
+                <ShieldIcon className="w-3 h-3 text-white" />
+            </span>
+            <span style={{ color: C.bronze }} className="font-bold text-[15px] tabular-nums">{num}</span>
+        </div>
+    )
+    return <span className="font-medium text-[14px] text-slate-400 tabular-nums pl-8">{num}</span>
+}
+
+// ── Props ──────────────────────────────────────────────────────
 interface CGPATableProps {
-    sem1Data: SemesterData;
-    sem2Data: SemesterData;
+    sem1Data: SemesterData
+    sem2Data: SemesterData
 }
 
 export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
@@ -28,81 +96,107 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
     const printRef = useRef<HTMLDivElement>(null)
     const [currentDate, setCurrentDate] = useState("")
 
-    useEffect(() => {
-        setCurrentDate(new Date().toLocaleDateString())
-    }, [])
+    useEffect(() => { setCurrentDate(new Date().toLocaleDateString()) }, [])
 
     const rankedStudents = useMemo(() => calculateCGPARankings(sem1Data, sem2Data), [sem1Data, sem2Data])
 
-    const columns = useMemo<ColumnDef<CGPARanking>[]>(() => {
-        return [
-            {
-                accessorKey: "rank",
-                header: "Final Rank",
-                cell: ({ row }) => {
-                    const rank = row.getValue("rank") as number
-                    let color = "bg-slate-100 text-slate-800"
-                    if (rank === 1) color = "bg-amber-100 text-amber-800 font-bold border-amber-300"
-                    else if (rank === 2) color = "bg-slate-200 text-slate-700 font-bold border-slate-400"
-                    else if (rank === 3) color = "bg-orange-100 text-orange-800 font-bold border-orange-300"
-                    return <Badge variant="outline" className={color}>#{rank}</Badge>
-                },
+    const columns = useMemo<ColumnDef<CGPARanking>[]>(() => [
+        {
+            accessorKey: "rank",
+            header: () => <Th>Final Rank</Th>,
+            cell: ({ row }) => <MedalBadge rank={row.getValue("rank") as number} />,
+        },
+        {
+            accessorKey: "roll",
+            header: () => <Th>Roll No.</Th>,
+            cell: ({ row }) => (
+                <span className="font-mono text-[11px] font-medium tracking-wide" style={{ color: C.faint }}>
+                    {row.getValue("roll")}
+                </span>
+            ),
+        },
+        {
+            accessorKey: "name",
+            header: () => <Th>Student Name</Th>,
+            cell: ({ row }) => (
+                <span className="font-semibold text-[13px] tracking-tight" style={{ color: C.ink }}>
+                    {row.getValue("name")}
+                </span>
+            ),
+        },
+        {
+            accessorKey: "sem1SGPA",
+            header: () => <Th>Sem 1 SGPA</Th>,
+            cell: ({ row }) => {
+                const v = row.getValue("sem1SGPA") as number
+                return v === 0
+                    ? <span style={{ color: C.faint }}>–</span>
+                    : <span className="font-semibold text-[13px] tabular-nums" style={{ color: C.ink }}>{v.toFixed(2)}</span>
             },
-            {
-                accessorKey: "roll",
-                header: "Roll Number",
-                cell: ({ row }) => <span className="font-medium text-slate-700">{row.getValue("roll")}</span>,
+        },
+        {
+            accessorKey: "sem2SGPA",
+            header: () => <Th>Sem 2 SGPA</Th>,
+            cell: ({ row }) => {
+                const v = row.getValue("sem2SGPA") as number
+                return v === 0
+                    ? <span style={{ color: C.faint }}>–</span>
+                    : <span className="font-semibold text-[13px] tabular-nums" style={{ color: C.ink }}>{v.toFixed(2)}</span>
             },
-            {
-                accessorKey: "name",
-                header: "Student Name",
-                cell: ({ row }) => <span className="font-semibold text-slate-900">{row.getValue("name")}</span>,
+        },
+        {
+            accessorKey: "totalMarks",
+            header: () => <Th>Grand Total</Th>,
+            cell: ({ row }) => (
+                <span className="font-semibold text-[14px] tabular-nums" style={{ color: C.ink }}>
+                    {row.getValue("totalMarks")}
+                </span>
+            ),
+        },
+        {
+            accessorKey: "cgpa",
+            header: () => <Th>Cumulative GPA</Th>,
+            cell: ({ row }) => {
+                const cgpa = row.getValue("cgpa") as number
+                const rank = row.original.rank || 0
+                const chipStyle =
+                    rank === 1 ? { background: C.gold, color: "#fff" } :
+                        rank === 2 ? { background: C.silver, color: "#fff" } :
+                            rank === 3 ? { background: C.bronze, color: "#fff" } :
+                                cgpa >= 3.8 ? { background: C.navy, color: "#fff" } :
+                                    cgpa >= 2.0 ? { background: "#F1F5F9", color: C.ink, border: "1px solid #CBD5E1" } :
+                                        { background: "#FFF1F2", color: "#E11D48", border: "1px solid #FECDD3" }
+                return (
+                    <span
+                        style={chipStyle}
+                        className="inline-flex items-center justify-center px-2.5 py-1 rounded-lg text-[13px] font-bold tabular-nums"
+                    >
+                        {cgpa.toFixed(2)}
+                    </span>
+                )
             },
-            {
-                accessorKey: "sem1SGPA",
-                header: "Sem 1 SGPA",
-                cell: ({ row }) => {
-                    const sgpa = row.getValue("sem1SGPA") as number
-                    if (sgpa === 0) return <span className="text-gray-400 font-mono text-sm pl-2">-</span>
-                    return <span className="font-medium text-slate-700">{sgpa.toFixed(2)}</span>
-                },
+        },
+        {
+            id: "status",
+            enableSorting: false,
+            header: () => <Th>Status</Th>,
+            cell: ({ row }) => {
+                const cgpa = row.original.cgpa
+                if (cgpa >= 2.0) return (
+                    <div className="flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: C.muted }} />
+                        <span className="text-[12px] font-semibold" style={{ color: C.muted }}>Pass</span>
+                    </div>
+                )
+                return (
+                    <div className="flex items-center gap-1.5">
+                        <XCircle className="w-3.5 h-3.5 shrink-0" style={{ color: C.faint }} />
+                        <span className="text-[12px] font-semibold" style={{ color: C.muted }}>Fail</span>
+                    </div>
+                )
             },
-            {
-                accessorKey: "sem2SGPA",
-                header: "Sem 2 SGPA (Partial)",
-                cell: ({ row }) => {
-                    const sgpa = row.getValue("sem2SGPA") as number
-                    if (sgpa === 0) return <span className="text-gray-400 font-mono text-sm pl-2">-</span>
-                    return <span className="font-medium text-slate-700">{sgpa.toFixed(2)}</span>
-                },
-            },
-            {
-                accessorKey: "totalMarks",
-                header: "Grand Total Marks",
-                cell: ({ row }) => <span className="font-bold text-slate-700">{row.getValue("totalMarks")}</span>
-            },
-            {
-                accessorKey: "cgpa",
-                header: "Cumulative GPA",
-                cell: ({ row }) => {
-                    const cgpa = row.getValue("cgpa") as number
-                    const badgeColor = cgpa >= 3.8 ? "bg-amber-100 text-amber-800 border-amber-300" :
-                        cgpa >= 3.0 ? "bg-emerald-100 text-emerald-800 border-emerald-300" :
-                            cgpa >= 2.0 ? "bg-blue-100 text-blue-800 border-blue-300" : "bg-red-100 text-red-800 border-red-300"
-                    return <Badge variant="outline" className={`shadow-xs font-bold ${badgeColor}`}>{cgpa.toFixed(2)}</Badge>
-                },
-            },
-            {
-                id: "status",
-                header: "Status",
-                cell: ({ row }) => {
-                    const cgpa = row.original.cgpa
-                    if (cgpa >= 2.0) return <span className="flex items-center text-emerald-600 text-sm font-semibold"><CheckCircle2 className="w-4 h-4 mr-1.5" /> Pass</span>
-                    return <span className="text-red-600 text-sm font-semibold">Fail</span>
-                }
-            }
-        ]
-    }, [])
+        },
+    ], [])
 
     const table = useReactTable({
         data: rankedStudents,
@@ -119,73 +213,101 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
     const exportPDF = async () => {
         const element = printRef.current
         if (!element) return
-
         const html2pdf = (await import("html2pdf.js")).default
-
         html2pdf().set({
             margin: 0.3,
-            filename: `UBIT_Cumulative_Result.pdf`,
-            image: { type: 'jpeg', quality: 1.0 },
-            html2canvas: { scale: 3, useCORS: true, letterRendering: true },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+            filename: "UBIT_Cumulative_Result.pdf",
+            image: { type: "jpeg", quality: 1.0 },
+            html2canvas: { scale: 3, useCORS: true },
+            jsPDF: { unit: "in", format: "letter", orientation: "landscape" },
         }).from(element).save()
     }
 
+    // Row background
+    function rowBg(rank: number) {
+        if (rank === 1) return C.goldRow
+        if (rank === 2) return C.silverRow
+        if (rank === 3) return C.bronzeRow
+        return "transparent"
+    }
+
+    // Sticky col px offsets — rank(90) + roll(130) + name(190)
+    function thSticky(id: string): React.CSSProperties {
+        if (id === "rank") return { position: "sticky", left: 0, zIndex: 40, width: 90, minWidth: 90, background: C.navy }
+        if (id === "roll") return { position: "sticky", left: 90, zIndex: 40, width: 130, minWidth: 130, background: C.navy, boxShadow: "1px 0 0 #1E293B" }
+        if (id === "name") return { position: "sticky", left: 220, zIndex: 40, width: 220, minWidth: 220, background: C.navy, boxShadow: "2px 0 0 #1E293B" }
+        return {}
+    }
+    function tdSticky(id: string, bg: string): React.CSSProperties {
+        if (id === "rank") return { position: "sticky", left: 0, zIndex: 20, width: 90, minWidth: 90, background: bg }
+        if (id === "roll") return { position: "sticky", left: 90, zIndex: 20, width: 130, minWidth: 130, background: bg, boxShadow: "1px 0 0 #F1F5F9" }
+        if (id === "name") return { position: "sticky", left: 220, zIndex: 20, width: 220, minWidth: 220, background: bg, boxShadow: "2px 0 0 #F1F5F9" }
+        return {}
+    }
+
     return (
-        <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                <div className="relative w-full sm:max-w-md shrink-0">
-                    <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
-                    <Input
-                        placeholder="Search for student name or roll number..."
-                        value={globalFilter}
-                        onChange={(e) => setGlobalFilter(e.target.value)}
-                        className="pl-9 bg-slate-50 border-slate-200 focus-visible:ring-indigo-500 rounded-lg"
-                    />
+        <div className="space-y-3">
+            {/* Controls — sticky below the tab bar */}
+            <div className="sticky bg-white/95 backdrop-blur-sm py-2" style={{ top: 52, zIndex: 35 }}>
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div className="relative w-full sm:max-w-xs">
+                        <Search className="absolute left-3 top-2.5 h-3.5 w-3.5" style={{ color: C.faint }} />
+                        <Input
+                            placeholder="Search name or roll number..."
+                            value={globalFilter}
+                            onChange={e => setGlobalFilter(e.target.value)}
+                            className="pl-9 h-9 bg-white border-slate-200 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-slate-400 rounded-lg text-[13px] font-medium text-slate-700"
+                        />
+                    </div>
+                    <Button
+                        onClick={exportPDF}
+                        className="w-full sm:w-auto h-9 font-semibold text-[13px] px-5 rounded-lg tracking-tight transition-all"
+                        style={{ background: C.navy, color: "#fff" }}
+                    >
+                        <Download className="w-3.5 h-3.5 mr-2" /> Download PDF
+                    </Button>
                 </div>
-                <Button onClick={exportPDF} className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition-all">
-                    <Download className="w-4 h-4 mr-2" /> Download Cumulative PDF
-                </Button>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden" ref={printRef}>
+            {/* Table card */}
+            <div
+                ref={printRef}
+                className="rounded-xl overflow-hidden shadow-sm"
+                style={{ border: "1px solid #E2E8F0" }}
+            >
 
-                {/* PDF Header - Visible purely for PDF export and clean display */}
-                <div className="p-8 text-center border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white">
-                    <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">{sem1Data.university}</h1>
-                    <h2 className="text-xl font-bold text-indigo-700 mt-2">Cumulative Final Result</h2>
-                    <div className="inline-flex items-center justify-center mt-3 px-3 py-1 bg-slate-100 rounded-full border border-slate-200">
-                        <span className="text-sm font-semibold text-slate-600">Batch {sem1Data.batch}</span>
-                    </div>
-                </div>
-
-                <div className="overflow-x-auto relative max-h-[700px] styled-scrollbar">
+                <div style={{ overflowX: "auto", overflowY: "clip" }}>
                     <table className="w-full text-sm text-left align-middle border-separate border-spacing-0">
-                        <thead className="bg-slate-50 text-slate-600 font-semibold sticky top-0 z-30 shadow-sm shadow-slate-200/50">
-                            {table.getHeaderGroups().map(headerGroup => (
-                                <tr key={headerGroup.id}>
-                                    {headerGroup.headers.map(header => {
-                                        const isRank = header.id === "rank";
-                                        const isName = header.id === "name";
-                                        const stickyClasses = isRank ? "sticky left-0 z-40 bg-slate-50 w-[90px] min-w-[90px] shadow-[1px_0_0_0_#e2e8f0]" :
-                                            isName ? "sticky left-[90px] z-40 bg-slate-50 w-[220px] min-w-[220px] shadow-[1px_0_0_0_#e2e8f0]" : "bg-slate-50";
+
+                        {/* Dark navy sticky header */}
+                        <thead style={{ position: "sticky", top: 0, zIndex: 20 }}>
+                            {table.getHeaderGroups().map(hg => (
+                                <tr key={hg.id} style={{ background: C.navy }}>
+                                    {hg.headers.map(h => {
+                                        const sortable = h.column.getCanSort()
                                         return (
                                             <th
-                                                key={header.id}
-                                                className={`px-5 py-4 cursor-pointer hover:bg-slate-100 transition-colors select-none group border-b border-slate-200 ${stickyClasses}`}
-                                                onClick={header.column.getToggleSortingHandler()}
+                                                key={h.id}
+                                                style={{
+                                                    ...thSticky(h.id),
+                                                    borderBottom: `1px solid ${C.navyMid}`,
+                                                    padding: "10px 16px",
+                                                    userSelect: "none",
+                                                    cursor: sortable ? "pointer" : "default",
+                                                    background: thSticky(h.id).background || C.navy,
+                                                    whiteSpace: "nowrap",
+                                                }}
+                                                onClick={sortable ? h.column.getToggleSortingHandler() : undefined}
                                             >
-                                                <div className="flex items-center gap-1 whitespace-nowrap">
-                                                    {flexRender(header.column.columnDef.header, header.getContext())}
-                                                    <span className={`inline-flex flex-col transition-opacity ${header.column.getIsSorted() ? "opacity-100" : "opacity-0 group-hover:opacity-50"}`}>
-                                                        {header.column.getIsSorted() === "asc" ? (
-                                                            <ChevronUp className="w-4 h-4 text-indigo-600" />
-                                                        ) : header.column.getIsSorted() === "desc" ? (
-                                                            <ChevronDown className="w-4 h-4 text-indigo-600" />
-                                                        ) : (
-                                                            <div className="w-4 h-4" />
-                                                        )}
-                                                    </span>
+                                                <div className="flex items-center gap-1">
+                                                    {flexRender(h.column.columnDef.header, h.getContext())}
+                                                    {sortable && (
+                                                        <span style={{ opacity: h.column.getIsSorted() ? 1 : 0.25, transition: "opacity 0.15s" }}>
+                                                            {h.column.getIsSorted() === "asc"
+                                                                ? <ChevronUp className="w-3 h-3 text-slate-400" />
+                                                                : <ChevronDown className="w-3 h-3 text-slate-400" />}
+                                                        </span>
+                                                    )}
                                                 </div>
                                             </th>
                                         )
@@ -193,48 +315,41 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                 </tr>
                             ))}
                         </thead>
-                        <tbody className="divide-slate-100/80">
+
+                        <tbody style={{ background: "#fff" }}>
                             {table.getRowModel().rows.length ? (
                                 table.getRowModel().rows.map(row => {
-                                    const rank = row.original.rank || 0;
-                                    const rowBg = rank === 1 ? "bg-amber-50 hover:bg-amber-100/60" :
-                                        rank === 2 ? "bg-slate-100 hover:bg-slate-200/60" :
-                                            rank === 3 ? "bg-orange-50 hover:bg-orange-100/60" : "bg-white hover:bg-slate-50";
-
-                                    const stickyBg = rank === 1 ? "bg-amber-50" :
-                                        rank === 2 ? "bg-slate-100" :
-                                            rank === 3 ? "bg-orange-50" : "bg-white";
-
-                                    const stickyHoverBg = rank === 1 ? "group-hover/row:bg-[#fef3c7]" :
-                                        rank === 2 ? "group-hover/row:bg-[#e2e8f0]" :
-                                            rank === 3 ? "group-hover/row:bg-[#ffedd5]" : "group-hover/row:bg-slate-50";
-
+                                    const rank = row.original.rank || 0
+                                    const bg = rowBg(rank) === "transparent" ? "#fff" : rowBg(rank)
                                     return (
                                         <tr
                                             key={row.id}
-                                            className={`transition-colors group/row ${rowBg}`}
+                                            style={{ background: bg }}
+                                            className="group/row transition-colors hover:bg-slate-50"
                                         >
-                                            {row.getVisibleCells().map(cell => {
-                                                const isRank = cell.column.id === "rank";
-                                                const isName = cell.column.id === "name";
-                                                const stickyClasses = isRank ? `sticky left-0 z-20 w-[90px] min-w-[90px] ${stickyBg} ${stickyHoverBg} border-b border-slate-200/60 shadow-[1px_0_0_0_#f1f5f9] transition-colors` :
-                                                    isName ? `sticky left-[90px] z-20 w-[220px] min-w-[220px] ${stickyBg} ${stickyHoverBg} border-b border-slate-200/60 shadow-[1px_0_0_0_#f1f5f9] transition-colors` : "border-b border-slate-100";
-                                                return (
-                                                    <td key={cell.id} className={`px-5 py-3.5 whitespace-nowrap ${stickyClasses}`}>
-                                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                                    </td>
-                                                )
-                                            })}
+                                            {row.getVisibleCells().map(cell => (
+                                                <td
+                                                    key={cell.id}
+                                                    style={{
+                                                        ...tdSticky(cell.column.id, bg),
+                                                        padding: "12px 16px",
+                                                        borderBottom: "1px solid #F1F5F9",
+                                                        whiteSpace: "nowrap",
+                                                    }}
+                                                >
+                                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                </td>
+                                            ))}
                                         </tr>
                                     )
                                 })
                             ) : (
                                 <tr>
-                                    <td colSpan={columns.length} className="px-5 py-12 text-center border-b border-slate-100">
-                                        <div className="flex flex-col items-center justify-center text-slate-500">
-                                            <Search className="h-8 w-8 text-slate-300 mb-3" />
-                                            <p className="text-base font-medium text-slate-900">No students found</p>
-                                            <p className="text-sm mt-1">We couldn&apos;t find anyone matching your search.</p>
+                                    <td colSpan={columns.length} style={{ padding: "56px 0", textAlign: "center", borderBottom: "1px solid #F1F5F9" }}>
+                                        <div className="flex flex-col items-center" style={{ color: C.faint }}>
+                                            <Search className="h-6 w-6 mb-2 opacity-30" />
+                                            <p className="text-[13px] font-semibold" style={{ color: C.ink }}>No students found</p>
+                                            <p className="text-[11px] mt-0.5">Try adjusting your search.</p>
                                         </div>
                                     </td>
                                 </tr>
@@ -243,11 +358,34 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                     </table>
                 </div>
 
-                {/* Footer info for PDF context */}
-                <div className="p-4 bg-slate-50 border-t border-slate-200 text-xs text-slate-500 font-medium text-center">
-                    Generated automatically by University Cumulative Result Dashboard{currentDate ? ` - ${currentDate}` : ""}
+                {/* Footer — legend + date */}
+                <div style={{ background: "#F8FAFC", borderTop: "1px solid #E2E8F0", padding: "8px 20px", fontSize: 11, color: C.faint, letterSpacing: "0.06em", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                        {[
+                            { label: "Gold", color: C.gold, icon: <CrownIcon className="w-2.5 h-2.5" /> },
+                            { label: "Silver", color: C.silver, icon: <DiamondIcon className="w-2.5 h-2.5" /> },
+                            { label: "Bronze", color: C.bronze, icon: <ShieldIcon className="w-2.5 h-2.5" /> },
+                        ].map(m => (
+                            <div key={m.label} style={{ display: "flex", alignItems: "center", gap: 5 }}>
+                                <span style={{ background: m.color, color: "#fff", borderRadius: 4, padding: "2px 4px", display: "flex" }}>{m.icon}</span>
+                                <span style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: C.faint }}>{m.label}</span>
+                            </div>
+                        ))}
+                        <span style={{ color: "#CBD5E1", fontSize: 10 }}>— Cumulative GPA rank</span>
+                    </div>
+                    <span>{sem1Data.university} · {currentDate || "—"}</span>
                 </div>
             </div>
+
+
         </div>
+    )
+}
+
+function Th({ children }: { children: React.ReactNode }) {
+    return (
+        <span style={{ color: "#F1F5F9", fontSize: 10, fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.12em" }}>
+            {children}
+        </span>
     )
 }

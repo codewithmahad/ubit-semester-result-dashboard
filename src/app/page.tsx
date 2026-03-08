@@ -1,41 +1,45 @@
 import { DashboardTabs } from "@/components/dashboard-tabs"
-import { GraduationCap } from "lucide-react"
+import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-100 py-12 px-4 sm:px-6 lg:px-8 font-sans selection:bg-indigo-100 selection:text-indigo-900">
-      <div className="w-full xl:max-w-[95%] 2xl:max-w-[1920px] mx-auto space-y-8">
+    <main className="min-h-screen bg-white font-sans selection:bg-zinc-900 selection:text-white">
 
-        <header className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-indigo-100 bg-white mb-8">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(#4f46e5 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-600 mix-blend-multiply" />
-
-          <svg className="absolute top-0 right-0 h-full w-2/3 pointer-events-none opacity-20" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon fill="currentColor" className="text-white" points="50,0 100,0 100,100 20,100" />
-            <polygon fill="currentColor" className="text-indigo-300" points="70,0 100,0 100,100 40,100" />
-          </svg>
-
-          <div className="relative p-8 md:p-12 lg:p-16 flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="max-w-2xl text-left">
-              <div className="inline-flex items-center justify-center space-x-2 text-indigo-100 font-semibold mb-4 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-                <GraduationCap className="w-5 h-5" />
-                <span className="uppercase tracking-widest text-xs">Department of Computer Science (UBIT)</span>
+      {/* Compact Hero Header */}
+      <header className="relative w-full border-b border-zinc-100 bg-white">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: "radial-gradient(#000 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
+          <div className="max-w-[1800px] mx-auto px-6 sm:px-10 py-8 flex items-center gap-6 relative z-10">
+            <div className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full ring-1 ring-zinc-200 bg-white shadow-md overflow-hidden flex items-center justify-center">
+              <Image
+                src="/ubit-logo.jpg"
+                alt="UBIT"
+                width={80}
+                height={80}
+                className="object-contain mix-blend-multiply p-1"
+                priority
+              />
+            </div>
+            <div className="flex flex-col justify-center min-w-0">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">DCS · UBIT · University of Karachi</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight drop-shadow-md leading-tight">
-                Academic Result <span className="text-indigo-200">Dashboard</span>
+              <h1 className="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tighter leading-tight">
+                Semester Result Dashboard
               </h1>
-              <p className="text-indigo-100 mt-4 text-base sm:text-lg max-w-xl leading-relaxed opacity-90">
-                Real-time tracking of semester GPAs, batch rankings, and comprehensive performance metrics. Export high-quality result sheets instantly.
+              <p className="text-sm font-medium text-zinc-400 mt-0.5 tracking-tight">
+                BSSE Batch 2025 — Evening Program
               </p>
             </div>
           </div>
-        </header>
+        </div>
+      </header>
 
-        <section>
-          <DashboardTabs />
-        </section>
-
+      {/* Main Content - no padding / max-w constraints so table fills the full viewport */}
+      <div className="max-w-[1800px] mx-auto px-2 sm:px-3 pt-3 pb-4">
+        <DashboardTabs />
       </div>
+
     </main>
   )
 }
