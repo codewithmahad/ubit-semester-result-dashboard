@@ -86,7 +86,10 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                 header: "Cumulative GPA",
                 cell: ({ row }) => {
                     const cgpa = row.getValue("cgpa") as number
-                    return <Badge variant={cgpa >= 2.0 ? "default" : "destructive"} className="shadow-xs">{cgpa.toFixed(2)}</Badge>
+                    const badgeColor = cgpa >= 3.8 ? "bg-amber-100 text-amber-800 border-amber-300" :
+                        cgpa >= 3.0 ? "bg-emerald-100 text-emerald-800 border-emerald-300" :
+                            cgpa >= 2.0 ? "bg-blue-100 text-blue-800 border-blue-300" : "bg-red-100 text-red-800 border-red-300"
+                    return <Badge variant="outline" className={`shadow-xs font-bold ${badgeColor}`}>{cgpa.toFixed(2)}</Badge>
                 },
             },
             {
@@ -156,57 +159,78 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                     </div>
                 </div>
 
-                <div className="overflow-x-auto">
-                    <table className="w-full text-sm text-left align-middle">
-                        <thead className="bg-slate-50 text-slate-600 font-semibold border-b border-slate-200">
+                <div className="overflow-x-auto relative max-h-[700px] styled-scrollbar">
+                    <table className="w-full text-sm text-left align-middle border-separate border-spacing-0">
+                        <thead className="bg-slate-50 text-slate-600 font-semibold sticky top-0 z-30 shadow-sm shadow-slate-200/50">
                             {table.getHeaderGroups().map(headerGroup => (
                                 <tr key={headerGroup.id}>
-                                    {headerGroup.headers.map(header => (
-                                        <th
-                                            key={header.id}
-                                            className="px-5 py-4 cursor-pointer hover:bg-slate-100 transition-colors select-none group"
-                                            onClick={header.column.getToggleSortingHandler()}
-                                        >
-                                            <div className="flex items-center gap-1 whitespace-nowrap">
-                                                {flexRender(header.column.columnDef.header, header.getContext())}
-                                                <span className={`inline-flex flex-col transition-opacity ${header.column.getIsSorted() ? "opacity-100" : "opacity-0 group-hover:opacity-50"}`}>
-                                                    {header.column.getIsSorted() === "asc" ? (
-                                                        <ChevronUp className="w-4 h-4 text-indigo-600" />
-                                                    ) : header.column.getIsSorted() === "desc" ? (
-                                                        <ChevronDown className="w-4 h-4 text-indigo-600" />
-                                                    ) : (
-                                                        <div className="w-4 h-4" />
-                                                    )}
-                                                </span>
-                                            </div>
-                                        </th>
-                                    ))}
+                                    {headerGroup.headers.map(header => {
+                                        const isRank = header.id === "rank";
+                                        const isName = header.id === "name";
+                                        const stickyClasses = isRank ? "sticky left-0 z-40 bg-slate-50 w-[90px] min-w-[90px] shadow-[1px_0_0_0_#e2e8f0]" :
+                                            isName ? "sticky left-[90px] z-40 bg-slate-50 w-[220px] min-w-[220px] shadow-[1px_0_0_0_#e2e8f0]" : "bg-slate-50";
+                                        return (
+                                            <th
+                                                key={header.id}
+                                                className={`px-5 py-4 cursor-pointer hover:bg-slate-100 transition-colors select-none group border-b border-slate-200 ${stickyClasses}`}
+                                                onClick={header.column.getToggleSortingHandler()}
+                                            >
+                                                <div className="flex items-center gap-1 whitespace-nowrap">
+                                                    {flexRender(header.column.columnDef.header, header.getContext())}
+                                                    <span className={`inline-flex flex-col transition-opacity ${header.column.getIsSorted() ? "opacity-100" : "opacity-0 group-hover:opacity-50"}`}>
+                                                        {header.column.getIsSorted() === "asc" ? (
+                                                            <ChevronUp className="w-4 h-4 text-indigo-600" />
+                                                        ) : header.column.getIsSorted() === "desc" ? (
+                                                            <ChevronDown className="w-4 h-4 text-indigo-600" />
+                                                        ) : (
+                                                            <div className="w-4 h-4" />
+                                                        )}
+                                                    </span>
+                                                </div>
+                                            </th>
+                                        )
+                                    })}
                                 </tr>
                             ))}
                         </thead>
-                        <tbody className="divide-y divide-slate-100">
+                        <tbody className="divide-slate-100/80">
                             {table.getRowModel().rows.length ? (
                                 table.getRowModel().rows.map(row => {
                                     const rank = row.original.rank || 0;
+                                    const rowBg = rank === 1 ? "bg-amber-50 hover:bg-amber-100/60" :
+                                        rank === 2 ? "bg-slate-100 hover:bg-slate-200/60" :
+                                            rank === 3 ? "bg-orange-50 hover:bg-orange-100/60" : "bg-white hover:bg-slate-50";
+
+                                    const stickyBg = rank === 1 ? "bg-amber-50" :
+                                        rank === 2 ? "bg-slate-100" :
+                                            rank === 3 ? "bg-orange-50" : "bg-white";
+
+                                    const stickyHoverBg = rank === 1 ? "group-hover/row:bg-[#fef3c7]" :
+                                        rank === 2 ? "group-hover/row:bg-[#e2e8f0]" :
+                                            rank === 3 ? "group-hover/row:bg-[#ffedd5]" : "group-hover/row:bg-slate-50";
+
                                     return (
                                         <tr
                                             key={row.id}
-                                            className={`transition-colors hover:bg-slate-50/80 ${rank === 1 ? "bg-amber-50/40 hover:bg-amber-50/60" :
-                                                rank === 2 ? "bg-slate-50/80" :
-                                                    rank === 3 ? "bg-orange-50/30" : ""
-                                                }`}
+                                            className={`transition-colors group/row ${rowBg}`}
                                         >
-                                            {row.getVisibleCells().map(cell => (
-                                                <td key={cell.id} className="px-5 py-3.5 whitespace-nowrap">
-                                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                                </td>
-                                            ))}
+                                            {row.getVisibleCells().map(cell => {
+                                                const isRank = cell.column.id === "rank";
+                                                const isName = cell.column.id === "name";
+                                                const stickyClasses = isRank ? `sticky left-0 z-20 w-[90px] min-w-[90px] ${stickyBg} ${stickyHoverBg} border-b border-slate-200/60 shadow-[1px_0_0_0_#f1f5f9] transition-colors` :
+                                                    isName ? `sticky left-[90px] z-20 w-[220px] min-w-[220px] ${stickyBg} ${stickyHoverBg} border-b border-slate-200/60 shadow-[1px_0_0_0_#f1f5f9] transition-colors` : "border-b border-slate-100";
+                                                return (
+                                                    <td key={cell.id} className={`px-5 py-3.5 whitespace-nowrap ${stickyClasses}`}>
+                                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                    </td>
+                                                )
+                                            })}
                                         </tr>
                                     )
                                 })
                             ) : (
                                 <tr>
-                                    <td colSpan={columns.length} className="px-5 py-12 text-center">
+                                    <td colSpan={columns.length} className="px-5 py-12 text-center border-b border-slate-100">
                                         <div className="flex flex-col items-center justify-center text-slate-500">
                                             <Search className="h-8 w-8 text-slate-300 mb-3" />
                                             <p className="text-base font-medium text-slate-900">No students found</p>

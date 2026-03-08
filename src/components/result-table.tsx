@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Download, Search, CheckCircle2, ChevronUp, ChevronDown } from "lucide-react"
+import { StudentModal } from "@/components/student-modal"
 
 interface ResultTableProps {
     data: SemesterData
@@ -26,6 +27,7 @@ export function ResultTable({ data }: ResultTableProps) {
     const [globalFilter, setGlobalFilter] = useState("")
     const printRef = useRef<HTMLDivElement>(null)
     const [currentDate, setCurrentDate] = useState("")
+    const [selectedStudent, setSelectedStudent] = useState<StudentRanking | null>(null)
 
     useEffect(() => {
         setCurrentDate(new Date().toLocaleDateString())
@@ -66,10 +68,14 @@ export function ResultTable({ data }: ResultTableProps) {
             cell: ({ getValue }) => {
                 const res = getValue() as { marks: number; grade: string } | undefined
                 if (!res) return <span className="text-gray-400 font-mono text-sm pl-2">-</span>
+                const fillPercent = Math.min(100, Math.max(0, res.marks));
                 return (
-                    <div className="flex flex-col items-center justify-center">
-                        <span className="font-bold text-slate-900">{res.marks}</span>
-                        <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 uppercase tracking-widest mt-1">
+                    <div className="relative flex flex-col items-center justify-center py-1.5 overflow-hidden rounded-md group-hover/row:bg-white/50 transition-colors">
+                        <div className="absolute left-0 bottom-0 h-1 bg-indigo-100 rounded-full w-full opacity-60 overflow-hidden">
+                            <div className="h-full bg-indigo-500 rounded-full transition-all duration-1000 ease-out" style={{ width: `${fillPercent}%` }}></div>
+                        </div>
+                        <span className="font-bold text-slate-900 z-10">{res.marks}</span>
+                        <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-slate-100/80 text-slate-600 uppercase tracking-widest mt-0.5 z-10">
                             {res.grade}
                         </span>
                     </div>
@@ -93,7 +99,10 @@ export function ResultTable({ data }: ResultTableProps) {
                 header: "SGPA",
                 cell: ({ row }) => {
                     const sgpa = row.getValue("sgpa") as number
-                    return <Badge variant={sgpa >= 2.0 ? "default" : "destructive"} className="shadow-xs">{sgpa.toFixed(2)}</Badge>
+                    const badgeColor = sgpa >= 3.8 ? "bg-amber-100 text-amber-800 border-amber-300" :
+                        sgpa >= 3.0 ? "bg-emerald-100 text-emerald-800 border-emerald-300" :
+                            sgpa >= 2.0 ? "bg-blue-100 text-blue-800 border-blue-300" : "bg-red-100 text-red-800 border-red-300"
+                    return <Badge variant="outline" className={`shadow-xs font-bold ${badgeColor}`}>{sgpa.toFixed(2)}</Badge>
                 },
             },
             {
@@ -165,57 +174,79 @@ export function ResultTable({ data }: ResultTableProps) {
                     </div>
                 </div>
 
-                <div className="overflow-x-auto">
-                    <table className="w-full text-sm text-left align-middle">
-                        <thead className="bg-slate-50 text-slate-600 font-semibold border-b border-slate-200">
+                <div className="overflow-x-auto relative max-h-[700px] styled-scrollbar">
+                    <table className="w-full text-sm text-left align-middle border-separate border-spacing-0">
+                        <thead className="bg-slate-50 text-slate-600 font-semibold sticky top-0 z-30 shadow-sm shadow-slate-200/50">
                             {table.getHeaderGroups().map(headerGroup => (
                                 <tr key={headerGroup.id}>
-                                    {headerGroup.headers.map(header => (
-                                        <th
-                                            key={header.id}
-                                            className="px-5 py-4 cursor-pointer hover:bg-slate-100 transition-colors select-none group"
-                                            onClick={header.column.getToggleSortingHandler()}
-                                        >
-                                            <div className="flex items-center gap-1 whitespace-nowrap">
-                                                {flexRender(header.column.columnDef.header, header.getContext())}
-                                                <span className={`inline-flex flex-col transition-opacity ${header.column.getIsSorted() ? "opacity-100" : "opacity-0 group-hover:opacity-50"}`}>
-                                                    {header.column.getIsSorted() === "asc" ? (
-                                                        <ChevronUp className="w-4 h-4 text-indigo-600" />
-                                                    ) : header.column.getIsSorted() === "desc" ? (
-                                                        <ChevronDown className="w-4 h-4 text-indigo-600" />
-                                                    ) : (
-                                                        <div className="w-4 h-4" />
-                                                    )}
-                                                </span>
-                                            </div>
-                                        </th>
-                                    ))}
+                                    {headerGroup.headers.map(header => {
+                                        const isRank = header.id === "rank";
+                                        const isName = header.id === "name";
+                                        const stickyClasses = isRank ? "sticky left-0 z-40 bg-slate-50 w-[90px] min-w-[90px] shadow-[1px_0_0_0_#e2e8f0]" :
+                                            isName ? "sticky left-[90px] z-40 bg-slate-50 w-[220px] min-w-[220px] shadow-[1px_0_0_0_#e2e8f0]" : "bg-slate-50";
+                                        return (
+                                            <th
+                                                key={header.id}
+                                                className={`px-5 py-4 cursor-pointer hover:bg-slate-100 transition-colors select-none group border-b border-slate-200 ${stickyClasses}`}
+                                                onClick={header.column.getToggleSortingHandler()}
+                                            >
+                                                <div className="flex items-center gap-1 whitespace-nowrap">
+                                                    {flexRender(header.column.columnDef.header, header.getContext())}
+                                                    <span className={`inline-flex flex-col transition-opacity ${header.column.getIsSorted() ? "opacity-100" : "opacity-0 group-hover:opacity-50"}`}>
+                                                        {header.column.getIsSorted() === "asc" ? (
+                                                            <ChevronUp className="w-4 h-4 text-indigo-600" />
+                                                        ) : header.column.getIsSorted() === "desc" ? (
+                                                            <ChevronDown className="w-4 h-4 text-indigo-600" />
+                                                        ) : (
+                                                            <div className="w-4 h-4" />
+                                                        )}
+                                                    </span>
+                                                </div>
+                                            </th>
+                                        )
+                                    })}
                                 </tr>
                             ))}
                         </thead>
-                        <tbody className="divide-y divide-slate-100">
+                        <tbody className="divide-slate-100/80">
                             {table.getRowModel().rows.length ? (
                                 table.getRowModel().rows.map(row => {
                                     const rank = row.original.rank || 0;
+                                    const rowBg = rank === 1 ? "bg-amber-50 hover:bg-amber-100/60" :
+                                        rank === 2 ? "bg-slate-100 hover:bg-slate-200/60" :
+                                            rank === 3 ? "bg-orange-50 hover:bg-orange-100/60" : "bg-white hover:bg-slate-50";
+
+                                    const stickyBg = rank === 1 ? "bg-amber-50" :
+                                        rank === 2 ? "bg-slate-100" :
+                                            rank === 3 ? "bg-orange-50" : "bg-white";
+
+                                    const stickyHoverBg = rank === 1 ? "group-hover/row:bg-[#fef3c7]" :
+                                        rank === 2 ? "group-hover/row:bg-[#e2e8f0]" :
+                                            rank === 3 ? "group-hover/row:bg-[#ffedd5]" : "group-hover/row:bg-slate-50";
+
                                     return (
                                         <tr
                                             key={row.id}
-                                            className={`transition-colors hover:bg-slate-50/80 ${rank === 1 ? "bg-amber-50/40 hover:bg-amber-50/60" :
-                                                rank === 2 ? "bg-slate-50/80" :
-                                                    rank === 3 ? "bg-orange-50/30" : ""
-                                                }`}
+                                            onClick={() => setSelectedStudent(row.original)}
+                                            className={`transition-colors cursor-pointer group/row ${rowBg}`}
                                         >
-                                            {row.getVisibleCells().map(cell => (
-                                                <td key={cell.id} className="px-5 py-3.5 whitespace-nowrap">
-                                                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                                </td>
-                                            ))}
+                                            {row.getVisibleCells().map(cell => {
+                                                const isRank = cell.column.id === "rank";
+                                                const isName = cell.column.id === "name";
+                                                const stickyClasses = isRank ? `sticky left-0 z-20 w-[90px] min-w-[90px] ${stickyBg} ${stickyHoverBg} border-b border-slate-200/60 shadow-[1px_0_0_0_#f1f5f9] transition-colors` :
+                                                    isName ? `sticky left-[90px] z-20 w-[220px] min-w-[220px] ${stickyBg} ${stickyHoverBg} border-b border-slate-200/60 shadow-[1px_0_0_0_#f1f5f9] transition-colors` : "border-b border-slate-100";
+                                                return (
+                                                    <td key={cell.id} className={`px-5 py-3.5 whitespace-nowrap ${stickyClasses}`}>
+                                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                    </td>
+                                                )
+                                            })}
                                         </tr>
                                     )
                                 })
                             ) : (
                                 <tr>
-                                    <td colSpan={columns.length} className="px-5 py-12 text-center">
+                                    <td colSpan={columns.length} className="px-5 py-12 text-center border-b border-slate-100">
                                         <div className="flex flex-col items-center justify-center text-slate-500">
                                             <Search className="h-8 w-8 text-slate-300 mb-3" />
                                             <p className="text-base font-medium text-slate-900">No students found</p>
@@ -233,6 +264,12 @@ export function ResultTable({ data }: ResultTableProps) {
                     Generated automatically by University Semester Result Dashboard{currentDate ? ` - ${currentDate}` : ""}
                 </div>
             </div>
+            <StudentModal
+                student={selectedStudent}
+                courses={data.courses}
+                open={!!selectedStudent}
+                onOpenChange={(open) => !open && setSelectedStudent(null)}
+            />
         </div>
     )
 }
