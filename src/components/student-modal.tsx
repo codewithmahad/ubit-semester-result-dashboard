@@ -185,7 +185,7 @@ export function StudentModal({ student, courses, open, onOpenChange, cumulativeR
                 </div>
 
                 {/* ── Header ─────────────────────────────────── */}
-                <SheetHeader className="px-6 pt-5 pb-4 border-b border-zinc-100 shrink-0 bg-white">
+                <SheetHeader className="px-6 pt-6 pb-4 pr-12 border-b border-zinc-100 shrink-0 bg-white">
                     <div className="flex items-start justify-between gap-4">
                         <div className="min-w-0 flex-1">
                             {medal && (

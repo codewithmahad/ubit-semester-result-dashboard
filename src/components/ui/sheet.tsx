@@ -64,12 +64,12 @@ function SheetContent({
             data-slot="sheet-close"
             render={
               <button
-                className="absolute top-2 right-2 z-50 flex items-center justify-center w-8 h-8 rounded-lg"
+                className="absolute top-0 right-0 z-[100] flex items-center justify-center w-10 h-10 rounded-bl-lg hover:bg-zinc-800 transition-colors"
                 style={{ background: "#09090B", color: "#fff", border: "none", cursor: "pointer" }}
               />
             }
           >
-            <XIcon className="w-4 h-4" strokeWidth={2.5} />
+            <XIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" strokeWidth={2.5} />
             <span className="sr-only">Close</span>
           </SheetPrimitive.Close>
         )}
