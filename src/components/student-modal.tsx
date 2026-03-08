@@ -173,20 +173,20 @@ export function StudentModal({ student, courses, open, onOpenChange, cumulativeR
     return (
         <Sheet open={open} onOpenChange={onOpenChange}>
             <SheetContent
-                style={{ width: `${width}px`, maxWidth: "90vw" }}
-                className="p-0 flex flex-col overflow-hidden bg-white border-l border-zinc-200 shadow-2xl"
+                style={{ width: "100%", maxWidth: `${width}px` }}
+                className="p-0 flex flex-col overflow-hidden bg-white sm:border-l border-zinc-200 shadow-2xl"
             >
-                {/* Resize Handle */}
+                {/* Resize Handle - hidden on mobile */}
                 <div
                     onMouseDown={onMouseDown}
-                    className="absolute left-0 top-0 h-full w-1.5 cursor-col-resize z-50 group"
+                    className="absolute left-0 top-0 h-full w-1.5 cursor-col-resize z-50 group hidden sm:block"
                 >
                     <div className="w-px h-10 bg-zinc-200 group-hover:bg-zinc-400 rounded-full absolute left-0.5 top-1/2 -translate-y-1/2 transition-all duration-200" />
                 </div>
 
                 {/* ── Header ─────────────────────────────────── */}
-                <SheetHeader className="px-6 pt-6 pb-4 pr-12 border-b border-zinc-100 shrink-0 bg-white">
-                    <div className="flex items-start justify-between gap-4">
+                <SheetHeader className="px-4 sm:px-6 pt-5 sm:pt-6 pb-4 sm:pr-12 pr-10 border-b border-zinc-100 shrink-0 bg-white text-left">
+                    <div className="flex items-start justify-between gap-3 sm:gap-4">
                         <div className="min-w-0 flex-1">
                             {medal && (
                                 <div className="flex items-center gap-1.5 mb-2">
@@ -208,13 +208,13 @@ export function StudentModal({ student, courses, open, onOpenChange, cumulativeR
 
                         {student.rank && (
                             <div
-                                className="flex flex-col items-center justify-center rounded-xl shrink-0 px-3 py-2"
+                                className="flex flex-col items-center justify-center rounded-xl shrink-0 px-2 sm:px-3 py-1.5 sm:py-2"
                                 style={medal ? { background: medal.rankBg, border: "none" } : { background: "#F8FAFC", border: "1px solid #E2E8F0" }}
                             >
-                                <span className="text-[8px] uppercase font-bold tracking-[0.2em] leading-none" style={{ color: medal ? "rgba(255,255,255,0.6)" : "#94A3B8" }}>
+                                <span className="text-[7px] sm:text-[8px] uppercase font-bold tracking-[0.2em] leading-none" style={{ color: medal ? "rgba(255,255,255,0.6)" : "#94A3B8" }}>
                                     Sem.&nbsp;Rank
                                 </span>
-                                <span className="text-[22px] font-black leading-tight tabular-nums" style={{ color: medal ? medal.rankText : "#0F172A" }}>
+                                <span className="text-[18px] sm:text-[22px] font-black leading-tight tabular-nums" style={{ color: medal ? medal.rankText : "#0F172A" }}>
                                     #{student.rank}
                                 </span>
                             </div>
@@ -223,7 +223,7 @@ export function StudentModal({ student, courses, open, onOpenChange, cumulativeR
                 </SheetHeader>
 
                 {/* ── Content ────────────────────────────────── */}
-                <div className="flex-1 overflow-y-auto px-5 py-4 space-y-3 styled-scrollbar">
+                <div className="flex-1 overflow-y-auto px-4 sm:px-5 py-4 space-y-3 styled-scrollbar">
 
                     {/* SGPA + Marks */}
                     <div className="grid grid-cols-2 gap-3">

@@ -19,12 +19,12 @@ export default function Home() {
           </svg>
 
           {/* Content */}
-          <div className="relative z-10 flex items-center justify-between px-8 sm:px-12 py-10 gap-6">
-            <div className="flex flex-col gap-4 max-w-xl">
+          <div className="relative z-10 flex items-center justify-between px-5 sm:px-12 py-8 sm:py-10 gap-6">
+            <div className="flex flex-col gap-3 sm:gap-4 max-w-xl">
               {/* Badge */}
               <div className="flex items-center gap-2 w-fit">
                 <div
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.18em]"
+                  className="flex items-center gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em]"
                   style={{ background: "rgba(255,255,255,0.10)", color: "rgba(255,255,255,0.65)", border: "1px solid rgba(255,255,255,0.15)" }}
                 >
                   <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" /></svg>

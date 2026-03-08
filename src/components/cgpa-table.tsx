@@ -233,17 +233,29 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
         return "transparent"
     }
 
-    // Sticky col px offsets — rank(90) + roll(130) + name(190)
-    function thSticky(id: string): React.CSSProperties {
-        if (id === "rank") return { position: "sticky", left: 0, zIndex: 40, width: 90, minWidth: 90, background: C.navy }
-        if (id === "roll") return { position: "sticky", left: 90, zIndex: 40, width: 130, minWidth: 130, background: C.navy, boxShadow: "1px 0 0 #1E293B" }
-        if (id === "name") return { position: "sticky", left: 220, zIndex: 40, width: 220, minWidth: 220, background: C.navy, boxShadow: "2px 0 0 #1E293B" }
+    // Sticky col px offsets — rank(90) + roll(130) + name(220)
+    function thStickyClass(id: string) {
+        if (id === "rank") return "max-sm:static sticky left-0 z-40"
+        if (id === "roll") return "max-sm:static max-sm:shadow-none sticky left-[90px] z-40 shadow-[1px_0_0_#1E293B]"
+        if (id === "name") return "max-sm:static max-sm:shadow-none sticky left-[220px] z-40 shadow-[2px_0_0_#1E293B]"
+        return ""
+    }
+    function tdStickyClass(id: string) {
+        if (id === "rank") return "max-sm:static sticky left-0 z-20"
+        if (id === "roll") return "max-sm:static max-sm:shadow-none sticky left-[90px] z-20 shadow-[1px_0_0_#F1F5F9]"
+        if (id === "name") return "max-sm:static max-sm:shadow-none sticky left-[220px] z-20 shadow-[2px_0_0_#F1F5F9]"
+        return ""
+    }
+    function thStickyStyle(id: string): React.CSSProperties {
+        if (id === "rank") return { width: 90, minWidth: 90, background: C.navy }
+        if (id === "roll") return { width: 130, minWidth: 130, background: C.navy }
+        if (id === "name") return { width: 220, minWidth: 220, background: C.navy }
         return {}
     }
-    function tdSticky(id: string, bg: string): React.CSSProperties {
-        if (id === "rank") return { position: "sticky", left: 0, zIndex: 20, width: 90, minWidth: 90, background: bg }
-        if (id === "roll") return { position: "sticky", left: 90, zIndex: 20, width: 130, minWidth: 130, background: bg, boxShadow: "1px 0 0 #F1F5F9" }
-        if (id === "name") return { position: "sticky", left: 220, zIndex: 20, width: 220, minWidth: 220, background: bg, boxShadow: "2px 0 0 #F1F5F9" }
+    function tdStickyStyle(id: string, bg: string): React.CSSProperties {
+        if (id === "rank") return { width: 90, minWidth: 90, background: bg }
+        if (id === "roll") return { width: 130, minWidth: 130, background: bg }
+        if (id === "name") return { width: 220, minWidth: 220, background: bg }
         return {}
     }
 
@@ -290,13 +302,14 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                         return (
                                             <th
                                                 key={h.id}
+                                                className={thStickyClass(h.id)}
                                                 style={{
-                                                    ...thSticky(h.id),
+                                                    ...thStickyStyle(h.id),
                                                     borderBottom: `1px solid ${C.navyMid}`,
                                                     padding: "10px 16px",
                                                     userSelect: "none",
                                                     cursor: sortable ? "pointer" : "default",
-                                                    background: thSticky(h.id).background || C.navy,
+                                                    background: thStickyStyle(h.id).background || C.navy,
                                                     whiteSpace: "nowrap",
                                                 }}
                                                 onClick={sortable ? h.column.getToggleSortingHandler() : undefined}
@@ -339,8 +352,9 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                             {row.getVisibleCells().map(cell => (
                                                 <td
                                                     key={cell.id}
+                                                    className={tdStickyClass(cell.column.id)}
                                                     style={{
-                                                        ...tdSticky(cell.column.id, bg),
+                                                        ...tdStickyStyle(cell.column.id, bg),
                                                         padding: "12px 16px",
                                                         borderBottom: "1px solid #F1F5F9",
                                                         whiteSpace: "nowrap",
