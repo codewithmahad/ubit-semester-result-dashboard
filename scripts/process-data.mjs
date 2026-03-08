@@ -24,6 +24,8 @@ const studentsMap = new Map();
 const mergeData = (data, subjectCode) => {
     for (const entry of JSON.parse(data)) {
         const roll = entry.seat_no;
+        if (!roll || !String(roll).toUpperCase().startsWith("EB252")) continue;
+
         if (!studentsMap.has(roll)) {
             studentsMap.set(roll, { name: entry.student_name, roll, results: {} });
         }

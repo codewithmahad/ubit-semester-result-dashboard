@@ -53,7 +53,7 @@ const studentsMap = new Map();
 const mergeData = (data, subjectCode) => {
     for (const entry of data) {
         const roll = entry["Seat No"];
-        if (!roll) continue;
+        if (!roll || !String(roll).toUpperCase().startsWith("EB252")) continue;
 
         if (!studentsMap.has(roll)) {
             studentsMap.set(roll, { name: entry["Student Name"], roll, results: {} });

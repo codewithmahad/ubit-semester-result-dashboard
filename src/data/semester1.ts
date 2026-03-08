@@ -2484,28 +2484,6 @@ export const semester1: SemesterData = {
         "grade": "B+"
       }
     }
-  },
-  {
-    "name": "MUHAMMAD SALEEM",
-    "roll": "EB24210106082",
-    "results": {
-      "SE-361": {
-        "marks": 78,
-        "gradePoint": 3.3,
-        "grade": "B+"
-      }
-    }
-  },
-  {
-    "name": "MUHAMMAD HASHIR SHAIKH",
-    "roll": "EB24210106071",
-    "results": {
-      "SE-361": {
-        "marks": 78,
-        "gradePoint": 3.3,
-        "grade": "B+"
-      }
-    }
   }
 ]
 };

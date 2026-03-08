@@ -1376,28 +1376,6 @@ export const semester2: SemesterData = {
     }
   },
   {
-    "name": "ZAIN UL ABIDEEN",
-    "roll": "EB24210106135",
-    "results": {
-      "SE": {
-        "marks": 77,
-        "gradePoint": 3.3,
-        "grade": "B+"
-      }
-    }
-  },
-  {
-    "name": "ABDULLAH MEHBOOB",
-    "roll": "EB24210106011",
-    "results": {
-      "SE": {
-        "marks": 79,
-        "gradePoint": 3.3,
-        "grade": "B+"
-      }
-    }
-  },
-  {
     "name": "AMMAR ALI",
     "roll": "EB25210106014",
     "results": {}
