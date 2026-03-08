@@ -1,36 +1,186 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UBIT Semester Result Dashboard
 
-## Getting Started
+A modern web dashboard for visualizing semester results and GPA rankings for students at the **Department of Computer Science (UBIT), University of Karachi**.
 
-First, run the development server:
+This project solves a practical problem faced by UBIT students: semester results are released **course by course at different times**, making it difficult to track overall GPA and ranking during the semester.
+The dashboard generates a structured result sheet with **automatic SGPA calculation, dynamic ranking, and PDF export**, allowing results to be shared easily with students.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The system is intentionally designed as a **frontend-only static application** so it can be deployed quickly on **Vercel** without any backend or database.
+
+---
+
+## Live Demo
+
+<https://ubit-results.vercel.app>
+
+---
+
+## Features
+
+* Automatic **SGPA calculation** based on course credit hours
+* Dynamic **student ranking system**
+* Support for **partial results** (when only some courses are released)
+* Clean and responsive **result dashboard**
+* **Search and sort** students
+* **PDF export** that preserves the visual layout of the result sheet
+* Data-driven architecture using a structured data file
+* Fully static and deployable on **Vercel**
+
+---
+
+## Technology Stack
+
+**Framework**
+
+* Next.js (App Router)
+* React
+* TypeScript
+
+**UI**
+
+* TailwindCSS
+* shadcn/ui
+* Component-based architecture
+
+**Utilities**
+
+* GPA calculation engine
+* Ranking algorithm
+* PDF export system (html2pdf.js)
+
+---
+
+## Project Architecture
+
+The project is intentionally structured to keep **data, logic, and UI separated**.
+
+```
+src/
+├── app/
+├── components/
+├── data/
+├── lib/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Key responsibilities**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* `src/data/`
+  Contains structured semester data including courses, credit hours, and student results.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* `src/lib/`
+  Contains reusable logic such as SGPA calculation, CGPA calculation, and ranking algorithms.
 
-## Learn More
+* `src/components/`
+  Reusable UI components such as the result table, tabs, and layout elements.
 
-To learn more about Next.js, take a look at the following resources:
+* `src/app/`
+  Next.js application routes and page structure.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Data Structure
 
-## Deploy on Vercel
+All semester information is defined inside a data file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Example:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```ts
+export const semester = {
+  name: "BSSE Semester I",
+  batch: "2025",
+
+  courses: [
+    { code: "SE-351", creditHours: 4 },
+    { code: "SE-353", creditHours: 3 },
+    { code: "SE-355", creditHours: 3 }
+  ],
+
+  students: [
+    {
+      name: "Student Name",
+      roll: "EB25210106113",
+      results: {
+        "SE-351": { marks: 97, gradePoint: 4.0, grade: "A+" },
+        "SE-353": { marks: 86, gradePoint: 4.0, grade: "A" }
+      }
+    }
+  ]
+}
+```
+
+The system automatically:
+
+* calculates SGPA
+* calculates Final Cumulative GPA (CGPA)
+* generates rankings
+* renders the result dashboard
+
+---
+
+## SGPA Calculation
+
+SGPA is calculated using the standard weighted GPA formula based on official UBIT grading rules.
+
+```
+SGPA = Σ(gradePoint × creditHours) / Σ(creditHours)
+```
+
+Important rules:
+
+* Only courses with available results are included
+* Supports partial result releases
+* SGPA values are rounded to two decimal places
+
+---
+
+## Ranking System
+
+Student ranking is determined using the following rules:
+
+1. Higher SGPA (or CGPA) ranks higher
+2. If SGPA/CGPA is equal, higher total marks ranks higher
+3. If still tied, alphabetical order is used
+
+The ranking updates automatically whenever the dataset changes.
+
+---
+
+## Deployment
+
+This project is designed to be deployed as a **static application**.
+
+Deployment platform:
+
+**Vercel**
+
+Typical workflow:
+
+1. Push repository to GitHub
+2. Import the repository into Vercel
+3. Deploy
+
+No backend configuration is required.
+
+---
+
+## Use Case
+
+This dashboard is intended for **UBIT students** to easily track semester results and GPA standings while results are being released.
+
+It also provides a convenient way to generate **clean result sheets that can be shared with students**.
+
+---
+
+## Future Improvements
+
+Possible future extensions include:
+
+* Additional Multi-semester result pages
+* Automated data import and scraping utilities
+* Batch comparison analytics
+
+---
+
+## License
+
+This project is intended for educational and community use within UBIT.
