@@ -250,8 +250,8 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                     )
                     return (
                         <div className="flex items-center gap-1.5">
-                            <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: C.muted }} />
-                            <span className="text-[12px] font-semibold" style={{ color: C.muted }}>Pass</span>
+                            <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: "#16A34A" }} />
+                            <span className="text-[12px] font-semibold" style={{ color: "#15803D" }}>Pass</span>
                         </div>
                     )
                 },
