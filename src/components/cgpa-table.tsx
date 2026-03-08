@@ -11,10 +11,11 @@ import {
     ColumnDef,
 } from "@tanstack/react-table"
 import { SemesterData } from "@/data/semester1"
-import { calculateCGPARankings, CGPARanking } from "@/lib/calculations"
+import { calculateCGPARankings, calculateRankings, CGPARanking } from "@/lib/calculations"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Download, Search, CheckCircle2, XCircle, ChevronUp, ChevronDown } from "lucide-react"
+import { StudentModal } from "@/components/student-modal"
 
 // ── Same design tokens as result-table ──────────────────────────
 const C = {
@@ -95,6 +96,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
     const [globalFilter, setGlobalFilter] = useState("")
     const printRef = useRef<HTMLDivElement>(null)
     const [currentDate, setCurrentDate] = useState("")
+    const [selectedStudent, setSelectedStudent] = useState<any>(null)
 
     useEffect(() => { setCurrentDate(new Date().toLocaleDateString()) }, [])
 
@@ -324,7 +326,14 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                     return (
                                         <tr
                                             key={row.id}
-                                            style={{ background: bg }}
+                                            onClick={() => {
+                                                const studentRaw = sem1Data.students.find(s => s.roll === row.original.roll)
+                                                if (studentRaw) {
+                                                    const s1RankItem = calculateRankings(sem1Data.courses, sem1Data.students).find(s => s.roll === row.original.roll)
+                                                    setSelectedStudent(s1RankItem || null)
+                                                }
+                                            }}
+                                            style={{ background: bg, cursor: "pointer" }}
                                             className="group/row transition-colors hover:bg-slate-50"
                                         >
                                             {row.getVisibleCells().map(cell => (
@@ -377,7 +386,13 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                 </div>
             </div>
 
-
+            <StudentModal
+                student={selectedStudent}
+                courses={sem1Data.courses}
+                open={!!selectedStudent}
+                onOpenChange={(o) => { if (!o) setSelectedStudent(null) }}
+                cumulativeRank={selectedStudent ? rankedStudents.find(r => r.roll === selectedStudent.roll)?.rank || null : null}
+            />
         </div>
     )
 }
