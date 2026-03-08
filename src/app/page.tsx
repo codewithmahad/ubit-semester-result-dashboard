@@ -1,5 +1,4 @@
-import { semester } from "@/data/semester1"
-import { ResultTable } from "@/components/result-table"
+import { DashboardTabs } from "@/components/dashboard-tabs"
 import { GraduationCap } from "lucide-react"
 
 export default function Home() {
@@ -21,7 +20,7 @@ export default function Home() {
         </header>
 
         <section>
-          <ResultTable data={semester} />
+          <DashboardTabs />
         </section>
 
       </div>

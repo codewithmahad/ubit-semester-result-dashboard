@@ -11,17 +11,18 @@ import {
     ColumnDef,
 } from "@tanstack/react-table"
 import { SemesterData } from "@/data/semester1"
-import { calculateRankings, StudentRanking } from "@/lib/calculations"
+import { calculateCGPARankings, CGPARanking } from "@/lib/calculations"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Download, Search, CheckCircle2, ChevronUp, ChevronDown } from "lucide-react"
 
-interface ResultTableProps {
-    data: SemesterData
+interface CGPATableProps {
+    sem1Data: SemesterData;
+    sem2Data: SemesterData;
 }
 
-export function ResultTable({ data }: ResultTableProps) {
+export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
     const [sorting, setSorting] = useState<SortingState>([{ id: "rank", desc: false }])
     const [globalFilter, setGlobalFilter] = useState("")
     const printRef = useRef<HTMLDivElement>(null)
@@ -31,13 +32,13 @@ export function ResultTable({ data }: ResultTableProps) {
         setCurrentDate(new Date().toLocaleDateString())
     }, [])
 
-    const rankedStudents = useMemo(() => calculateRankings(data.courses, data.students), [data])
+    const rankedStudents = useMemo(() => calculateCGPARankings(sem1Data, sem2Data), [sem1Data, sem2Data])
 
-    const columns = useMemo<ColumnDef<StudentRanking>[]>(() => {
-        const baseCols: ColumnDef<StudentRanking>[] = [
+    const columns = useMemo<ColumnDef<CGPARanking>[]>(() => {
+        return [
             {
                 accessorKey: "rank",
-                header: "Rank",
+                header: "Final Rank",
                 cell: ({ row }) => {
                     const rank = row.getValue("rank") as number
                     let color = "bg-slate-100 text-slate-800"
@@ -57,58 +58,48 @@ export function ResultTable({ data }: ResultTableProps) {
                 header: "Student Name",
                 cell: ({ row }) => <span className="font-semibold text-slate-900">{row.getValue("name")}</span>,
             },
-        ]
-
-        const courseCols = data.courses.map((course): ColumnDef<StudentRanking> => ({
-            id: course.code,
-            header: course.code,
-            accessorFn: (row) => row.results[course.code],
-            cell: ({ getValue }) => {
-                const res = getValue() as { marks: number; grade: string } | undefined
-                if (!res) return <span className="text-gray-400 font-mono text-sm pl-2">-</span>
-                return (
-                    <div className="flex flex-col items-center justify-center">
-                        <span className="font-bold text-slate-900">{res.marks}</span>
-                        <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 uppercase tracking-widest mt-1">
-                            {res.grade}
-                        </span>
-                    </div>
-                )
+            {
+                accessorKey: "sem1SGPA",
+                header: "Sem 1 SGPA",
+                cell: ({ row }) => {
+                    const sgpa = row.getValue("sem1SGPA") as number
+                    if (sgpa === 0) return <span className="text-gray-400 font-mono text-sm pl-2">-</span>
+                    return <span className="font-medium text-slate-700">{sgpa.toFixed(2)}</span>
+                },
             },
-            sortingFn: (rowA, rowB, columnId) => {
-                const a = rowA.original.results[columnId]?.marks || 0
-                const b = rowB.original.results[columnId]?.marks || 0
-                return a - b
-            }
-        }))
-
-        const endCols: ColumnDef<StudentRanking>[] = [
+            {
+                accessorKey: "sem2SGPA",
+                header: "Sem 2 SGPA (Partial)",
+                cell: ({ row }) => {
+                    const sgpa = row.getValue("sem2SGPA") as number
+                    if (sgpa === 0) return <span className="text-gray-400 font-mono text-sm pl-2">-</span>
+                    return <span className="font-medium text-slate-700">{sgpa.toFixed(2)}</span>
+                },
+            },
             {
                 accessorKey: "totalMarks",
-                header: "Total",
+                header: "Grand Total Marks",
                 cell: ({ row }) => <span className="font-bold text-slate-700">{row.getValue("totalMarks")}</span>
             },
             {
-                accessorKey: "sgpa",
-                header: "SGPA",
+                accessorKey: "cgpa",
+                header: "Cumulative GPA",
                 cell: ({ row }) => {
-                    const sgpa = row.getValue("sgpa") as number
-                    return <Badge variant={sgpa >= 2.0 ? "default" : "destructive"} className="shadow-xs">{sgpa.toFixed(2)}</Badge>
+                    const cgpa = row.getValue("cgpa") as number
+                    return <Badge variant={cgpa >= 2.0 ? "default" : "destructive"} className="shadow-xs">{cgpa.toFixed(2)}</Badge>
                 },
             },
             {
                 id: "status",
                 header: "Status",
                 cell: ({ row }) => {
-                    const sgpa = row.original.sgpa
-                    if (sgpa >= 2.0) return <span className="flex items-center text-emerald-600 text-sm font-semibold"><CheckCircle2 className="w-4 h-4 mr-1.5" /> Pass</span>
+                    const cgpa = row.original.cgpa
+                    if (cgpa >= 2.0) return <span className="flex items-center text-emerald-600 text-sm font-semibold"><CheckCircle2 className="w-4 h-4 mr-1.5" /> Pass</span>
                     return <span className="text-red-600 text-sm font-semibold">Fail</span>
                 }
             }
         ]
-
-        return [...baseCols, ...courseCols, ...endCols]
-    }, [data.courses])
+    }, [])
 
     const table = useReactTable({
         data: rankedStudents,
@@ -130,7 +121,7 @@ export function ResultTable({ data }: ResultTableProps) {
 
         html2pdf().set({
             margin: 0.3,
-            filename: `${data.batch.replace(/[^a-zA-Z0-9]/g, "_")}_Result.pdf`,
+            filename: `UBIT_Cumulative_Result.pdf`,
             image: { type: 'jpeg', quality: 1.0 },
             html2canvas: { scale: 3, useCORS: true, letterRendering: true },
             jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
@@ -150,7 +141,7 @@ export function ResultTable({ data }: ResultTableProps) {
                     />
                 </div>
                 <Button onClick={exportPDF} className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm transition-all">
-                    <Download className="w-4 h-4 mr-2" /> Download Result PDF
+                    <Download className="w-4 h-4 mr-2" /> Download Cumulative PDF
                 </Button>
             </div>
 
@@ -158,10 +149,10 @@ export function ResultTable({ data }: ResultTableProps) {
 
                 {/* PDF Header - Visible purely for PDF export and clean display */}
                 <div className="p-8 text-center border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white">
-                    <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">{data.university}</h1>
-                    <h2 className="text-xl font-bold text-indigo-700 mt-2">{data.name}</h2>
+                    <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">{sem1Data.university}</h1>
+                    <h2 className="text-xl font-bold text-indigo-700 mt-2">Cumulative Final Result</h2>
                     <div className="inline-flex items-center justify-center mt-3 px-3 py-1 bg-slate-100 rounded-full border border-slate-200">
-                        <span className="text-sm font-semibold text-slate-600">Batch {data.batch}</span>
+                        <span className="text-sm font-semibold text-slate-600">Batch {sem1Data.batch}</span>
                     </div>
                 </div>
 
@@ -230,7 +221,7 @@ export function ResultTable({ data }: ResultTableProps) {
 
                 {/* Footer info for PDF context */}
                 <div className="p-4 bg-slate-50 border-t border-slate-200 text-xs text-slate-500 font-medium text-center">
-                    Generated automatically by University Semester Result Dashboard{currentDate ? ` - ${currentDate}` : ""}
+                    Generated automatically by University Cumulative Result Dashboard{currentDate ? ` - ${currentDate}` : ""}
                 </div>
             </div>
         </div>

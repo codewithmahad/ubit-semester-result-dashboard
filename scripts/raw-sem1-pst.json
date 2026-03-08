@@ -1,0 +1,422 @@
+[
+    {
+        "S.#": 1,
+        "Seat No": "EB25210106004",
+        "Student Name": "ABDUL RAFAY",
+        "Theory Marks": 83
+    },
+    {
+        "S.#": 2,
+        "Seat No": "EB25210106007",
+        "Student Name": "ABDUL REHMAN ANWER",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 3,
+        "Seat No": "EB25210106009",
+        "Student Name": "ADEEL ALI",
+        "Theory Marks": 65
+    },
+    {
+        "S.#": 4,
+        "Seat No": "EB25210106010",
+        "Student Name": "AHMED HUSSAIN BUTT",
+        "Theory Marks": 89
+    },
+    {
+        "S.#": 5,
+        "Seat No": "EB25210106011",
+        "Student Name": "AHSAN ALI SHAIKH",
+        "Theory Marks": 78
+    },
+    {
+        "S.#": 6,
+        "Seat No": "EB25210106012",
+        "Student Name": "ALEEZA PERVEN",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 7,
+        "Seat No": "EB25210106013",
+        "Student Name": "ALI AHMED KHAN",
+        "Theory Marks": 89
+    },
+    {
+        "S.#": 8,
+        "Seat No": "EB25210106014",
+        "Student Name": "AMMAR ALI",
+        "Theory Marks": 80
+    },
+    {
+        "S.#": 9,
+        "Seat No": "EB25210106017",
+        "Student Name": "ANAS AHMED KHAN",
+        "Theory Marks": 78
+    },
+    {
+        "S.#": 10,
+        "Seat No": "EB25210106018",
+        "Student Name": "ANUS",
+        "Theory Marks": 83
+    },
+    {
+        "S.#": 11,
+        "Seat No": "EB25210106019",
+        "Student Name": "ASAD AFTAB AHMED",
+        "Theory Marks": 65
+    },
+    {
+        "S.#": 12,
+        "Seat No": "EB25210106020",
+        "Student Name": "ASAD NOOR",
+        "Theory Marks": 80
+    },
+    {
+        "S.#": 13,
+        "Seat No": "EB25210106021",
+        "Student Name": "ASIF ASAD",
+        "Theory Marks": 65
+    },
+    {
+        "S.#": 14,
+        "Seat No": "EB25210106023",
+        "Student Name": "AYESHA IZZAT",
+        "Theory Marks": 89
+    },
+    {
+        "S.#": 15,
+        "Seat No": "EB25210106024",
+        "Student Name": "AYESHA MOIN",
+        "Theory Marks": 85
+    },
+    {
+        "S.#": 16,
+        "Seat No": "EB25210106025",
+        "Student Name": "BAZIL AHMED",
+        "Theory Marks": 78
+    },
+    {
+        "S.#": 17,
+        "Seat No": "EB25210106026",
+        "Student Name": "FAHAD SHAIKH",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 18,
+        "Seat No": "EB25210106028",
+        "Student Name": "FIRZA TAHIR",
+        "Theory Marks": 88
+    },
+    {
+        "S.#": 19,
+        "Seat No": "EB25210106038",
+        "Student Name": "HUZAIFA BIN ANWAR",
+        "Theory Marks": 84
+    },
+    {
+        "S.#": 20,
+        "Seat No": "EB25210106039",
+        "Student Name": "KAZIM HUSSAIN",
+        "Theory Marks": 80
+    },
+    {
+        "S.#": 21,
+        "Seat No": "EB25210106042",
+        "Student Name": "LAVIZAH ZEESHAN",
+        "Theory Marks": 88
+    },
+    {
+        "S.#": 22,
+        "Seat No": "EB25210106043",
+        "Student Name": "MAAZ AHMED KHAN",
+        "Theory Marks": 85
+    },
+    {
+        "S.#": 23,
+        "Seat No": "EB25210106044",
+        "Student Name": "MAAZ BIN AAMIR",
+        "Theory Marks": 65
+    },
+    {
+        "S.#": 24,
+        "Seat No": "EB25210106045",
+        "Student Name": "MAHAM ATIF",
+        "Theory Marks": 89
+    },
+    {
+        "S.#": 25,
+        "Seat No": "EB25210106046",
+        "Student Name": "MALIK ABDUL MANNAN",
+        "Theory Marks": 86
+    },
+    {
+        "S.#": 26,
+        "Seat No": "EB25210106047",
+        "Student Name": "MASAB SUHAIB",
+        "Theory Marks": 80
+    },
+    {
+        "S.#": 27,
+        "Seat No": "EB25210106049",
+        "Student Name": "MIRZA MUZAMMIL ULLAH BAIG",
+        "Theory Marks": 55
+    },
+    {
+        "S.#": 28,
+        "Seat No": "EB25210106051",
+        "Student Name": "MUHAMMAD AAYAN",
+        "Theory Marks": 78
+    },
+    {
+        "S.#": 29,
+        "Seat No": "EB25210106052",
+        "Student Name": "MUHAMMAD ABDULLAH BASHIR",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 30,
+        "Seat No": "EB25210106054",
+        "Student Name": "MUHAMMAD ALI",
+        "Theory Marks": 78
+    },
+    {
+        "S.#": 31,
+        "Seat No": "EB25210106055",
+        "Student Name": "MUHAMMAD ALI MUNIR",
+        "Theory Marks": 65
+    },
+    {
+        "S.#": 32,
+        "Seat No": "EB25210106056",
+        "Student Name": "MUHAMMAD ALI RAZA",
+        "Theory Marks": 88
+    },
+    {
+        "S.#": 33,
+        "Seat No": "EB25210106065",
+        "Student Name": "MUHAMMAD FAQIH UL HASNAIN",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 34,
+        "Seat No": "EB25210106066",
+        "Student Name": "MUHAMMAD FARJAD",
+        "Theory Marks": 28
+    },
+    {
+        "S.#": 35,
+        "Seat No": "EB25210106071",
+        "Student Name": "MUHAMMAD MAHAD",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 36,
+        "Seat No": "EB25210106077",
+        "Student Name": "MUHAMMAD RAZA",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 37,
+        "Seat No": "EB25210106078",
+        "Student Name": "MUHAMMAD SAAD ANSARI",
+        "Theory Marks": 86
+    },
+    {
+        "S.#": 38,
+        "Seat No": "EB25210106082",
+        "Student Name": "MUHAMMAD SAEED",
+        "Theory Marks": 85
+    },
+    {
+        "S.#": 39,
+        "Seat No": "EB25210106083",
+        "Student Name": "MUHAMMAD SAFI ULLAH",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 40,
+        "Seat No": "EB25210106084",
+        "Student Name": "MUHAMMAD SAMEER UDDIN",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 41,
+        "Seat No": "EB25210106086",
+        "Student Name": "MUHAMMAD SHARIQ",
+        "Theory Marks": 86
+    },
+    {
+        "S.#": 42,
+        "Seat No": "EB25210106087",
+        "Student Name": "MUHAMMAD SHAYAN",
+        "Theory Marks": 87
+    },
+    {
+        "S.#": 43,
+        "Seat No": "EB25210106088",
+        "Student Name": "MUHAMMAD SOHAIB",
+        "Theory Marks": 78
+    },
+    {
+        "S.#": 44,
+        "Seat No": "EB25210106089",
+        "Student Name": "MUHAMMAD SUFYAN",
+        "Theory Marks": 65
+    },
+    {
+        "S.#": 45,
+        "Seat No": "EB25210106091",
+        "Student Name": "MUHAMMAD UMAR SHAFIQE",
+        "Theory Marks": 73
+    },
+    {
+        "S.#": 46,
+        "Seat No": "EB25210106094",
+        "Student Name": "MUHAMMAD USMAN ASAD",
+        "Theory Marks": 65
+    },
+    {
+        "S.#": 47,
+        "Seat No": "EB25210106096",
+        "Student Name": "MUHAMMAD UZAIR",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 48,
+        "Seat No": "EB25210106097",
+        "Student Name": "MUHAMMAD WASIQ",
+        "Theory Marks": 86
+    },
+    {
+        "S.#": 49,
+        "Seat No": "EB25210106098",
+        "Student Name": "MUHAMMAD YASEEN ARIF",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 50,
+        "Seat No": "EB25210106100",
+        "Student Name": "MUNAWER HUSSAIN",
+        "Theory Marks": 85
+    },
+    {
+        "S.#": 51,
+        "Seat No": "EB25210106101",
+        "Student Name": "MUZAMMIL KALIM",
+        "Theory Marks": 78
+    },
+    {
+        "S.#": 52,
+        "Seat No": "EB25210106104",
+        "Student Name": "RAFIA ATHAR",
+        "Theory Marks": 87
+    },
+    {
+        "S.#": 53,
+        "Seat No": "EB25210106105",
+        "Student Name": "SAAD AHMED",
+        "Theory Marks": 80
+    },
+    {
+        "S.#": 54,
+        "Seat No": "EB25210106109",
+        "Student Name": "SANILAH AHMED",
+        "Theory Marks": 89
+    },
+    {
+        "S.#": 55,
+        "Seat No": "EB25210106113",
+        "Student Name": "SHAIKH MAHAD UD DIN",
+        "Theory Marks": 90
+    },
+    {
+        "S.#": 56,
+        "Seat No": "EB25210106115",
+        "Student Name": "SYED ALI ZAIB BUKHARI",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 57,
+        "Seat No": "EB25210106119",
+        "Student Name": "SYED HASHIR IMAM",
+        "Theory Marks": 85
+    },
+    {
+        "S.#": 58,
+        "Seat No": "EB25210106122",
+        "Student Name": "SYED MEHDI HASSAN RIZVI",
+        "Theory Marks": 89
+    },
+    {
+        "S.#": 59,
+        "Seat No": "EB25210106125",
+        "Student Name": "SYED MUHAMMAD TAHA HASSAN SHAH",
+        "Theory Marks": 83
+    },
+    {
+        "S.#": 60,
+        "Seat No": "EB25210106126",
+        "Student Name": "SYED MUHAMMAD USMAN GHANI",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 61,
+        "Seat No": "EB25210106127",
+        "Student Name": "SYED SAIM HUSSAIN",
+        "Theory Marks": 75
+    },
+    {
+        "S.#": 62,
+        "Seat No": "EB25210106129",
+        "Student Name": "SYEDA HOORIYA KASHIF",
+        "Theory Marks": 80
+    },
+    {
+        "S.#": 63,
+        "Seat No": "EB25210106131",
+        "Student Name": "TAHA ALI",
+        "Theory Marks": 89
+    },
+    {
+        "S.#": 64,
+        "Seat No": "EB25210106132",
+        "Student Name": "TAHREEM RANA",
+        "Theory Marks": 84
+    },
+    {
+        "S.#": 65,
+        "Seat No": "EB25210106134",
+        "Student Name": "UZAIR MUKHTAR",
+        "Theory Marks": 76
+    },
+    {
+        "S.#": 66,
+        "Seat No": "EB25210106136",
+        "Student Name": "WANIA",
+        "Theory Marks": 85
+    },
+    {
+        "S.#": 67,
+        "Seat No": "EB25210106137",
+        "Student Name": "WAREESHA BEGUM",
+        "Theory Marks": 89
+    },
+    {
+        "S.#": 68,
+        "Seat No": "EB25210106138",
+        "Student Name": "WASIF KHAN",
+        "Theory Marks": 65
+    },
+    {
+        "S.#": 69,
+        "Seat No": "EB24210106082",
+        "Student Name": "MUHAMMAD SALEEM",
+        "Theory Marks": 78
+    },
+    {
+        "S.#": 70,
+        "Seat No": "EB24210106071",
+        "Student Name": "MUHAMMAD HASHIR SHAIKH",
+        "Theory Marks": 78
+    }
+]
