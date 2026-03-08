@@ -310,8 +310,8 @@ export const semester1: SemesterData = {
       },
       "SE-355": {
         "marks": 57,
-        "gradePoint": 1.7,
-        "grade": "C-"
+        "gradePoint": 1.3,
+        "grade": "D+"
       },
       "SE-353": {
         "marks": 77,
@@ -968,8 +968,8 @@ export const semester1: SemesterData = {
       },
       "SE-351": {
         "marks": 53,
-        "gradePoint": 1.3,
-        "grade": "D+"
+        "gradePoint": 1,
+        "grade": "D"
       }
     }
   },
@@ -1138,8 +1138,8 @@ export const semester1: SemesterData = {
       },
       "SE-355": {
         "marks": 53,
-        "gradePoint": 1.3,
-        "grade": "D+"
+        "gradePoint": 1,
+        "grade": "D"
       },
       "SE-353": {
         "marks": 76,
@@ -1796,8 +1796,8 @@ export const semester1: SemesterData = {
       },
       "SE-351": {
         "marks": 57,
-        "gradePoint": 1.7,
-        "grade": "C-"
+        "gradePoint": 1.3,
+        "grade": "D+"
       }
     }
   },
@@ -1822,8 +1822,8 @@ export const semester1: SemesterData = {
       },
       "SE-355": {
         "marks": 60,
-        "gradePoint": 2,
-        "grade": "C"
+        "gradePoint": 1.7,
+        "grade": "C-"
       },
       "SE-353": {
         "marks": 79,
@@ -2074,8 +2074,8 @@ export const semester1: SemesterData = {
       },
       "SE-355": {
         "marks": 60,
-        "gradePoint": 2,
-        "grade": "C"
+        "gradePoint": 1.7,
+        "grade": "C-"
       },
       "SE-353": {
         "marks": 70,
@@ -2182,8 +2182,8 @@ export const semester1: SemesterData = {
       },
       "SE-355": {
         "marks": 60,
-        "gradePoint": 2,
-        "grade": "C"
+        "gradePoint": 1.7,
+        "grade": "C-"
       },
       "SE-353": {
         "marks": 50,
@@ -2218,8 +2218,8 @@ export const semester1: SemesterData = {
       },
       "SE-355": {
         "marks": 60,
-        "gradePoint": 2,
-        "grade": "C"
+        "gradePoint": 1.7,
+        "grade": "C-"
       },
       "SE-353": {
         "marks": 70,

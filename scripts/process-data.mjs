@@ -12,9 +12,9 @@ const processGrades = (marks) => {
     if (marks >= 71) return { grade: "B", gradePoint: 3.0 };
     if (marks >= 68) return { grade: "B-", gradePoint: 2.7 };
     if (marks >= 64) return { grade: "C+", gradePoint: 2.3 };
-    if (marks >= 60) return { grade: "C", gradePoint: 2.0 };
-    if (marks >= 57) return { grade: "C-", gradePoint: 1.7 };
-    if (marks >= 53) return { grade: "D+", gradePoint: 1.3 };
+    if (marks >= 61) return { grade: "C", gradePoint: 2.0 };
+    if (marks >= 58) return { grade: "C-", gradePoint: 1.7 };
+    if (marks >= 54) return { grade: "D+", gradePoint: 1.3 };
     if (marks >= 50) return { grade: "D", gradePoint: 1.0 };
     return { grade: "F", gradePoint: 0.0 };
 };

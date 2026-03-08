@@ -121,7 +121,7 @@ export const semester2: SemesterData = {
     "results": {
       "SE": {
         "marks": 60,
-        "gradePoint": 2,
+        "gradePoint": 1.7,
         "grade": "C-"
       },
       "MV Calc": {
@@ -478,7 +478,7 @@ export const semester2: SemesterData = {
     "results": {
       "SE": {
         "marks": 53,
-        "gradePoint": 1.3,
+        "gradePoint": 1,
         "grade": "D+"
       },
       "MV Calc": {
@@ -583,7 +583,7 @@ export const semester2: SemesterData = {
     "results": {
       "SE": {
         "marks": 53,
-        "gradePoint": 1.3,
+        "gradePoint": 1,
         "grade": "D+"
       },
       "MV Calc": {
@@ -1034,7 +1034,7 @@ export const semester2: SemesterData = {
       },
       "Stats": {
         "marks": 53,
-        "gradePoint": 1.3,
+        "gradePoint": 1,
         "grade": "D+"
       }
     }
@@ -1297,7 +1297,7 @@ export const semester2: SemesterData = {
     "results": {
       "SE": {
         "marks": 60,
-        "gradePoint": 2,
+        "gradePoint": 1.7,
         "grade": "C-"
       },
       "MV Calc": {
