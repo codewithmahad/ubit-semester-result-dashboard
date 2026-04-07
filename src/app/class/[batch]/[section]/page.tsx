@@ -23,22 +23,22 @@ export default async function ClassLeaderboardPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       <Nav />
 
       {/* Page header */}
-      <header className="bg-white border-b border-gray-200 px-6 py-8 sm:px-10">
+      <header className="bg-white border-b-2 border-gray-200 px-6 py-8 sm:px-10 border-t-4 border-blue-800">
         <div className="mx-auto max-w-[1800px]">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="mb-1 text-[11px] font-bold uppercase tracking-widest text-gray-500">
                 BSSE · Batch {p.batch} · {p.section} Program
               </p>
-              <h1 className="text-2xl font-black tracking-tight text-gray-900 sm:text-3xl">
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight uppercase tracking-wider mt-2 mb-2">
                 Class Leaderboard
               </h1>
-              <p className="mt-1 text-sm text-gray-500">
-                Official UBIT Academic Results
+              <p className="mt-1 text-sm text-gray-700 font-medium max-w-2xl">
+                Official repository of academic performance and class standings.
               </p>
             </div>
           </div>
@@ -46,8 +46,8 @@ export default async function ClassLeaderboardPage({ params }: Props) {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 w-full max-w-[1800px] mx-auto px-4 py-8 sm:px-6">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-2 sm:p-4">
+      <main className="flex-1 w-full max-w-[1800px] mx-auto px-0 sm:px-6 py-6 sm:py-8">
+        <div className="bg-white border-t border-b sm:border border-gray-300 px-4 sm:px-6 py-2 pb-6 max-h-[calc(100vh-10rem)]">
           <DashboardTabs />
         </div>
       </main>
