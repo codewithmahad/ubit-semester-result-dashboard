@@ -26,7 +26,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* ── Header ─────────────────────────────────────────────────── */}
-      <nav className="border-b-2 border-gray-200 px-6 sm:px-10 py-4 flex items-center justify-between bg-white">
+      <nav className="sticky top-0 z-50 border-b-2 border-gray-200 px-6 sm:px-10 py-4 flex items-center justify-between bg-white">
         <div className="flex items-center gap-3 sm:gap-4">
           <Image 
             src="/uok-logo.png" 
