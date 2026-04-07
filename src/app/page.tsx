@@ -24,41 +24,39 @@ export default function LandingPage() {
   const topStudents = students.slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[#fafafa]">
+    <main className="min-h-screen bg-white">
       {/* ── Header ─────────────────────────────────────────────────── */}
-      <nav className="border-b border-gray-200 px-6 sm:px-10 py-5 flex items-center justify-between bg-white shadow-sm">
-        <div className="flex items-center gap-2 sm:gap-3">
+      <nav className="border-b-2 border-gray-200 px-6 sm:px-10 py-4 flex items-center justify-between bg-white">
+        <div className="flex items-center gap-3 sm:gap-4">
           <Image 
             src="/uok-logo.png" 
             alt="University of Karachi" 
-            width={36} 
-            height={36} 
-            className="object-contain sm:w-10 sm:h-10"
+            width={48} 
+            height={48} 
+            className="object-contain"
           />
           <div className="flex flex-col">
-            <span className="font-extrabold text-gray-900 tracking-tight leading-none text-sm sm:text-base">
+            <span className="font-bold text-gray-900 uppercase tracking-widest text-[13px] sm:text-[15px] leading-tight">
               University of Karachi
             </span>
-            <span className="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-0.5 sm:mt-1">
-              Dept. of Computer Science
+            <span className="text-[10px] sm:text-xs font-semibold text-gray-500 uppercase tracking-widest mt-0.5">
+              Department of Computer Science
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-4 sm:gap-6">
           <Link
             href="/calculator"
-            className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-gray-600 hover:text-gray-900 transition-colors bg-gray-100 sm:bg-transparent px-3 py-1.5 sm:p-0 rounded-full sm:rounded-none"
+            className="text-[11px] sm:text-sm font-semibold text-gray-600 hover:text-blue-800 transition-colors uppercase tracking-wider"
           >
-            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             <span className="hidden sm:inline">GPA Calculator</span>
             <span className="inline sm:hidden">Calc</span>
           </Link>
           <Link
             href="/class/2025/evening"
-            className="flex items-center gap-1.5 rounded-full bg-blue-600 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold text-white shadow-sm transition-all hover:bg-blue-700 hover:shadow"
+            className="text-[11px] sm:text-sm font-semibold text-gray-600 hover:text-blue-800 transition-colors uppercase tracking-wider"
           >
-            <Trophy className="h-3.5 w-3.5" />
-            <span className="hidden sm:inline">Class Leaderboard</span>
+            <span className="hidden sm:inline">Leaderboard</span>
             <span className="inline sm:hidden">Board</span>
           </Link>
         </div>
@@ -70,38 +68,40 @@ export default function LandingPage() {
       </div>
 
       {/* ── Main Hero Section ──────────────────────────────────────── */}
-      <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-20 text-center overflow-hidden z-10">
+      <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-20 text-center z-10">
 
         {/* Content */}
-        <div className="relative z-20 w-full max-w-3xl">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 mb-4 sm:mb-6 drop-shadow-sm leading-tight">
+        <div className="relative z-20 w-full max-w-4xl mx-auto border-t-4 border-blue-800 bg-white/80 backdrop-blur-sm shadow-xl p-8 sm:p-12 mt-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight uppercase tracking-wider">
             Academic Results Portal
           </h1>
 
-          <p className="text-sm sm:text-lg text-gray-600 mb-8 sm:mb-10 leading-relaxed font-medium px-2">
-            Search for any student, view their comprehensive transcript, and explore the complete 
-            BSSE Batch 2025 (Evening) academic standings.
+          <p className="text-sm sm:text-base text-gray-700 mb-8 sm:mb-12 leading-relaxed font-medium max-w-2xl mx-auto">
+            Official repository for student transcripts and performance metrics. 
+            Search records or explore the complete BSSE Batch 2025 (Evening) standings.
           </p>
 
           {/* Giant Search Bar */}
-          <div className="relative z-50 w-full max-w-2xl mx-auto mb-10 sm:mb-16 shadow-xl rounded-full">
+          <div className="relative z-50 w-full max-w-2xl mx-auto mb-6">
             <SearchOmnibar students={searchData} />
           </div>
         </div>
 
         {/* Global Stats Strip */}
-        <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto w-full px-2 sm:px-4">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-2 sm:px-4 mt-12 border-t-2 border-b-2 border-gray-100 py-8 bg-white">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 divide-x divide-gray-200">
           {[
             { label: "Total Students", value: stats.total },
             { label: "Passing Students", value: stats.passing },
             { label: "Overall Pass Rate", value: `${stats.passRate}%` },
             { label: "Average Class CGPA", value: stats.avgCGPA.toFixed(2) },
           ].map((stat) => (
-            <div key={stat.label} className="bg-white rounded-xl shadow-sm border border-gray-200/60 p-4 sm:p-6 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-0.5">
-              <span className="text-2xl sm:text-3xl font-black text-gray-900 mb-1 sm:mb-2 tabular-nums">{stat.value}</span>
-              <span className="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-widest">{stat.label}</span>
+            <div key={stat.label} className="flex flex-col justify-center items-center text-center px-4">
+              <span className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-2 tabular-nums tracking-tight">{stat.value}</span>
+              <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-widest">{stat.label}</span>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
@@ -111,12 +111,12 @@ export default function LandingPage() {
           <div className="mx-auto max-w-6xl">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
               <div>
-                <h2 className="text-3xl font-black text-gray-900 tracking-tight">Highest Achievers</h2>
-                <p className="text-gray-500 mt-2 font-medium">Top 3 students ranked by Cumulative GPA across all semesters</p>
+                <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-widest">Highest Achievers</h2>
+                <p className="text-gray-500 mt-2 font-medium">Top 3 students ranked by Cumulative GPA</p>
               </div>
               <Link
                 href="/class/2025/evening"
-                className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-full"
+                className="inline-flex items-center gap-2 text-sm font-bold text-blue-800 hover:text-white transition-colors bg-white hover:bg-blue-800 px-6 py-3 border-2 border-blue-800 uppercase tracking-wider"
               >
                 View Full Leaderboard <ArrowRight className="h-4 w-4" />
               </Link>
@@ -125,9 +125,9 @@ export default function LandingPage() {
             <div className="grid gap-6 lg:grid-cols-3">
               {topStudents.map((student, i) => {
                 const medals = [
-                  { color: "text-amber-500", bg: "bg-amber-50 border-amber-200 shadow-amber-100/50", label: "Rank 1 — Gold" },
-                  { color: "text-gray-500", bg: "bg-gray-50 border-gray-200 shadow-gray-100/50", label: "Rank 2 — Silver" },
-                  { color: "text-orange-600", bg: "bg-orange-50 border-orange-200 shadow-orange-100/50", label: "Rank 3 — Bronze" },
+                  { color: "text-amber-700 bg-amber-50 border-amber-200", label: "Rank I" },
+                  { color: "text-gray-700 bg-gray-50 border-gray-300", label: "Rank II" },
+                  { color: "text-orange-800 bg-orange-50 border-orange-200", label: "Rank III" },
                 ];
                 const m = medals[i];
                 
@@ -135,10 +135,10 @@ export default function LandingPage() {
                   <Link
                     key={student.rollNo}
                     href={`/student/${student.rollNo}`}
-                    className={`group relative rounded-2xl border p-8 transition-all hover:shadow-xl hover:-translate-y-1 ${m.bg} shadow-md`}
+                    className="group relative border border-gray-300 p-8 transition-all hover:border-blue-500 bg-white shadow-sm hover:shadow-md"
                   >
                     <div className="flex justify-between items-start mb-6">
-                      <div className={`px-3 py-1 rounded-full bg-white border font-bold text-[10px] uppercase tracking-widest shadow-sm ${m.color}`}>
+                      <div className={`px-3 py-1 border font-bold text-xs uppercase tracking-widest ${m.color}`}>
                         {m.label}
                       </div>
                       <div className="h-10 w-10 rounded-full bg-white shadow-sm flex items-center justify-center font-bold text-gray-900 border border-gray-100">
@@ -153,13 +153,13 @@ export default function LandingPage() {
                        <span className="font-mono text-xs text-gray-500">{student.rollNo}</span>
                     </div>
                     
-                    <div className="mt-6 sm:mt-8 flex items-end justify-between border-t border-black/5 pt-4 sm:pt-6">
+                    <div className="mt-6 sm:mt-8 flex items-end justify-between border-t border-gray-200 pt-4 sm:pt-6">
                       <div>
-                        <div className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight tabular-nums">{student.cgpa.toFixed(2)}</div>
+                        <div className="text-3xl sm:text-4xl font-bold text-gray-900 tabular-nums">{student.cgpa.toFixed(2)}</div>
                         <div className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-1">Cumulative GPA</div>
                       </div>
-                      <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors border border-gray-100">
-                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+                      <div className="flex items-center justify-center text-blue-800 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ArrowRight className="h-6 w-6" />
                       </div>
                     </div>
                   </Link>
