@@ -62,16 +62,16 @@ export default function LandingPage() {
         </div>
       </nav>
 
+      {/* ── Fixed Background Watermark ─────────────────────────────── */}
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none z-0">
+        <Image src="/uok-logo.png" alt="" width={600} height={600} className="object-contain" />
+      </div>
+
       {/* ── Main Hero Section ──────────────────────────────────────── */}
-      <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-20 text-center overflow-hidden">
-        
-        {/* Subtle background crest */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none">
-          <Image src="/uok-logo.png" alt="" width={600} height={600} className="object-contain" />
-        </div>
+      <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-20 text-center overflow-hidden z-10">
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-3xl">
+        <div className="relative z-20 w-full max-w-3xl">
           <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-gray-900 mb-6 drop-shadow-sm">
             Academic Results Portal
           </h1>
@@ -82,7 +82,7 @@ export default function LandingPage() {
           </p>
 
           {/* Giant Search Bar */}
-          <div className="w-full max-w-2xl mx-auto mb-16 shadow-xl rounded-full">
+          <div className="relative z-50 w-full max-w-2xl mx-auto mb-16 shadow-xl rounded-full">
             <SearchOmnibar students={searchData} />
           </div>
         </div>
