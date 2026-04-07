@@ -103,69 +103,73 @@ export default function CalculatorPage() {
           
           {/* Main Form */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-            {/* Table Header */}
-            <div className="bg-gray-50 border-b border-gray-200 grid grid-cols-[1fr_80px_100px_80px_80px] gap-4 px-6 py-3">
-              {["Course Name", "Credits", "Marks", "Grade", "GP"].map((label) => (
-                <span key={label} className="text-xs font-bold text-gray-500 uppercase tracking-wider text-center first:text-left">
-                  {label}
-                </span>
-              ))}
-            </div>
+            <div className="overflow-x-auto styled-scrollbar">
+              <div className="min-w-[500px]">
+                {/* Table Header */}
+                <div className="bg-gray-50 border-b border-gray-200 grid grid-cols-[1fr_70px_90px_60px_60px] gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3">
+                  {["Course Name", "Credits", "Marks", "Grade", "GP"].map((label) => (
+                    <span key={label} className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider text-center first:text-left">
+                      {label}
+                    </span>
+                  ))}
+                </div>
 
-            {/* Rows */}
-            <div className="divide-y divide-gray-100">
-              {rows.map((row, i) => {
-                const { grade, gp } = getGradeInfo(row.marks);
-                return (
-                  <div key={row.id} className="group grid grid-cols-[1fr_80px_100px_80px_80px] gap-4 px-6 py-4 items-center hover:bg-gray-50 transition-colors">
-                    
-                    <input
-                      type="text"
-                      className="w-full bg-white border border-gray-300 rounded-md px-3 py-1.5 text-sm font-medium text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm"
-                      placeholder={`Course ${i + 1}`}
-                      value={row.subject}
-                      onChange={(e) => updateRow(row.id, { subject: e.target.value })}
-                    />
+                {/* Rows */}
+                <div className="divide-y divide-gray-100">
+                  {rows.map((row, i) => {
+                    const { grade, gp } = getGradeInfo(row.marks);
+                    return (
+                      <div key={row.id} className="group grid grid-cols-[1fr_70px_90px_60px_60px] gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 items-center hover:bg-gray-50 transition-colors">
+                        
+                        <input
+                          type="text"
+                          className="w-full bg-white border border-gray-300 rounded-md px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm"
+                          placeholder={`Course ${i + 1}`}
+                          value={row.subject}
+                          onChange={(e) => updateRow(row.id, { subject: e.target.value })}
+                        />
 
-                    <select
-                      className="w-full bg-white border border-gray-300 rounded-md px-2 py-1.5 text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all shadow-sm cursor-pointer"
-                      value={row.credits}
-                      onChange={(e) => updateRow(row.id, { credits: Number(e.target.value) })}
-                    >
-                      {[1, 2, 3, 4].map(cr => <option key={cr} value={cr}>{cr}</option>)}
-                    </select>
-
-                    <input
-                      type="number"
-                      min={0}
-                      max={100}
-                      className="w-full bg-white border border-gray-300 rounded-md px-3 py-1.5 text-sm font-bold tabular-nums text-center text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all shadow-sm"
-                      value={row.marks}
-                      onChange={(e) => updateRow(row.id, { marks: Math.max(0, Math.min(100, Number(e.target.value))) })}
-                    />
-
-                    <div className="flex justify-center">
-                      <span className={`inline-flex items-center justify-center h-7 w-10 rounded border text-xs font-bold ${gradeColor(grade)}`}>
-                        {grade}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-bold tabular-nums text-gray-600">{gp.toFixed(1)}</span>
-                      {rows.length > 1 && (
-                        <button
-                          onClick={() => removeRow(row.id)}
-                          className="opacity-0 group-hover:opacity-100 hover:bg-red-50 text-gray-400 hover:text-red-600 p-1.5 rounded transition-all focus:opacity-100"
-                          title="Remove row"
+                        <select
+                          className="w-full bg-white border border-gray-300 rounded-md px-1 sm:px-2 py-1.5 text-xs sm:text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all shadow-sm cursor-pointer"
+                          value={row.credits}
+                          onChange={(e) => updateRow(row.id, { credits: Number(e.target.value) })}
                         >
-                          <Trash2 className="h-4 w-4" />
-                        </button>
-                      )}
-                    </div>
+                          {[1, 2, 3, 4].map(cr => <option key={cr} value={cr}>{cr}</option>)}
+                        </select>
 
-                  </div>
-                );
-              })}
+                        <input
+                          type="number"
+                          min={0}
+                          max={100}
+                          className="w-full bg-white border border-gray-300 rounded-md px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-bold tabular-nums text-center text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all shadow-sm"
+                          value={row.marks}
+                          onChange={(e) => updateRow(row.id, { marks: Math.max(0, Math.min(100, Number(e.target.value))) })}
+                        />
+
+                        <div className="flex justify-center">
+                          <span className={`inline-flex items-center justify-center h-6 w-8 sm:h-7 sm:w-10 rounded border text-[10px] sm:text-xs font-bold ${gradeColor(grade)}`}>
+                            {grade}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs sm:text-sm font-bold tabular-nums text-gray-600">{gp.toFixed(1)}</span>
+                          {rows.length > 1 && (
+                            <button
+                              onClick={() => removeRow(row.id)}
+                              className="lg:opacity-0 group-hover:opacity-100 hover:bg-red-50 text-gray-400 hover:text-red-600 p-1 sm:p-1.5 rounded transition-all focus:opacity-100"
+                              title="Remove row"
+                            >
+                              <Trash2 className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                            </button>
+                          )}
+                        </div>
+
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
 
             {/* Actions */}

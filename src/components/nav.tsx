@@ -17,31 +17,31 @@ export function Nav() {
               className="object-contain"
             />
           </div>
-          <div className="flex flex-col">
-            <span className="text-[13px] font-bold tracking-tight text-gray-900 leading-none group-hover:text-blue-700 transition-colors">
+          <div className="flex flex-col justify-center">
+            <span className="text-[12px] sm:text-[13px] font-bold tracking-tight text-gray-900 leading-none group-hover:text-blue-700 transition-colors">
               University of Karachi
             </span>
-            <span className="text-[10px] font-medium text-gray-500 uppercase tracking-widest mt-0.5">
+            <span className="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-0.5">
               Results Portal
             </span>
           </div>
         </Link>
 
-        {/* Nav links */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <Link
             href="/class/2025/evening"
-            className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
+            className="flex items-center gap-1 sm:gap-1.5 rounded-lg px-2 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
           >
-            <LayoutList className="h-3.5 w-3.5" />
-            Leaderboard
+            <LayoutList className="h-3.5 w-3.5 hidden sm:block" />
+            <span className="sm:hidden">Board</span>
+            <span className="hidden sm:inline">Leaderboard</span>
           </Link>
           <Link
             href="/calculator"
-            className="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
+            className="flex items-center gap-1 sm:gap-1.5 rounded-lg px-2 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
           >
-            <Calculator className="h-3.5 w-3.5" />
-            Calculator
+            <Calculator className="h-3.5 w-3.5 hidden sm:block" />
+            Calc<span className="hidden sm:inline">ulator</span>
           </Link>
         </div>
       </div>

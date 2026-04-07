@@ -27,37 +27,39 @@ export default function LandingPage() {
     <main className="min-h-screen bg-[#fafafa]">
       {/* ── Header ─────────────────────────────────────────────────── */}
       <nav className="border-b border-gray-200 px-6 sm:px-10 py-5 flex items-center justify-between bg-white shadow-sm">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Image 
             src="/uok-logo.png" 
             alt="University of Karachi" 
-            width={40} 
-            height={40} 
-            className="object-contain"
+            width={36} 
+            height={36} 
+            className="object-contain sm:w-10 sm:h-10"
           />
           <div className="flex flex-col">
-            <span className="font-extrabold text-gray-900 tracking-tight leading-none text-base">
+            <span className="font-extrabold text-gray-900 tracking-tight leading-none text-sm sm:text-base">
               University of Karachi
             </span>
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">
-              Department of Computer Science
+            <span className="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-0.5 sm:mt-1">
+              Dept. of Computer Science
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <Link
             href="/calculator"
-            className="flex items-center gap-1.5 text-xs font-bold text-gray-600 hover:text-gray-900 transition-colors"
+            className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-gray-600 hover:text-gray-900 transition-colors bg-gray-100 sm:bg-transparent px-3 py-1.5 sm:p-0 rounded-full sm:rounded-none"
           >
-            <Calculator className="h-4 w-4" />
+            <Calculator className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             <span className="hidden sm:inline">GPA Calculator</span>
+            <span className="inline sm:hidden">Calc</span>
           </Link>
           <Link
             href="/class/2025/evening"
-            className="flex items-center gap-1.5 rounded-full bg-blue-600 px-4 py-2 text-xs font-bold text-white shadow-sm transition-all hover:bg-blue-700 hover:shadow"
+            className="flex items-center gap-1.5 rounded-full bg-blue-600 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold text-white shadow-sm transition-all hover:bg-blue-700 hover:shadow"
           >
             <Trophy className="h-3.5 w-3.5" />
-            Class Leaderboard
+            <span className="hidden sm:inline">Class Leaderboard</span>
+            <span className="inline sm:hidden">Board</span>
           </Link>
         </div>
       </nav>
@@ -72,32 +74,32 @@ export default function LandingPage() {
 
         {/* Content */}
         <div className="relative z-20 w-full max-w-3xl">
-          <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-gray-900 mb-6 drop-shadow-sm">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 mb-4 sm:mb-6 drop-shadow-sm leading-tight">
             Academic Results Portal
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-600 mb-10 leading-relaxed font-medium">
+          <p className="text-sm sm:text-lg text-gray-600 mb-8 sm:mb-10 leading-relaxed font-medium px-2">
             Search for any student, view their comprehensive transcript, and explore the complete 
             BSSE Batch 2025 (Evening) academic standings.
           </p>
 
           {/* Giant Search Bar */}
-          <div className="relative z-50 w-full max-w-2xl mx-auto mb-16 shadow-xl rounded-full">
+          <div className="relative z-50 w-full max-w-2xl mx-auto mb-10 sm:mb-16 shadow-xl rounded-full">
             <SearchOmnibar students={searchData} />
           </div>
         </div>
 
         {/* Global Stats Strip */}
-        <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto w-full px-4">
+        <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto w-full px-2 sm:px-4">
           {[
             { label: "Total Students", value: stats.total },
             { label: "Passing Students", value: stats.passing },
             { label: "Overall Pass Rate", value: `${stats.passRate}%` },
             { label: "Average Class CGPA", value: stats.avgCGPA.toFixed(2) },
           ].map((stat) => (
-            <div key={stat.label} className="bg-white rounded-xl shadow-sm border border-gray-200/60 p-6 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-0.5">
-              <span className="text-3xl font-black text-gray-900 mb-2 tabular-nums">{stat.value}</span>
-              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{stat.label}</span>
+            <div key={stat.label} className="bg-white rounded-xl shadow-sm border border-gray-200/60 p-4 sm:p-6 flex flex-col justify-center items-center text-center transition-transform hover:-translate-y-0.5">
+              <span className="text-2xl sm:text-3xl font-black text-gray-900 mb-1 sm:mb-2 tabular-nums">{stat.value}</span>
+              <span className="text-[9px] sm:text-[10px] font-bold text-gray-500 uppercase tracking-widest">{stat.label}</span>
             </div>
           ))}
         </div>
@@ -151,13 +153,13 @@ export default function LandingPage() {
                        <span className="font-mono text-xs text-gray-500">{student.rollNo}</span>
                     </div>
                     
-                    <div className="mt-8 flex items-end justify-between border-t border-black/5 pt-6">
+                    <div className="mt-6 sm:mt-8 flex items-end justify-between border-t border-black/5 pt-4 sm:pt-6">
                       <div>
-                        <div className="text-4xl font-black text-gray-900 tracking-tight tabular-nums">{student.cgpa.toFixed(2)}</div>
-                        <div className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-1">Cumulative GPA</div>
+                        <div className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight tabular-nums">{student.cgpa.toFixed(2)}</div>
+                        <div className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mt-1">Cumulative GPA</div>
                       </div>
-                      <div className="h-10 w-10 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors border border-gray-100">
-                        <ArrowRight className="h-5 w-5" />
+                      <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors border border-gray-100">
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
                       </div>
                     </div>
                   </Link>

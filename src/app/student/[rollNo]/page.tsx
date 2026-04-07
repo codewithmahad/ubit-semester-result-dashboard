@@ -49,24 +49,24 @@ export default async function StudentPage({ params }: Props) {
         </Link>
 
         {/* ── Student Information Card ─────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden print-card mb-8">
-          <div className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-start justify-between gap-6 relative">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden print-card mb-6 sm:mb-8">
+          <div className="p-4 sm:p-6 lg:p-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-6 relative">
             
             {/* Identity Info */}
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="bg-blue-50 text-blue-700 border border-blue-200 px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wide">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                <span className="bg-blue-50 text-blue-700 border border-blue-200 px-2 sm:px-2.5 py-0.5 rounded text-[10px] sm:text-[11px] font-bold uppercase tracking-wide">
                   BSSE
                 </span>
-                <span className="text-sm font-medium text-gray-500">
+                <span className="text-xs sm:text-sm font-medium text-gray-500">
                   Batch {student.batch} · {student.shift}
                 </span>
               </div>
               
-              <h1 className="text-3xl font-bold text-gray-900 tracking-tight leading-none mb-2">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight leading-none mb-1 sm:mb-2 break-words">
                 {student.name}
               </h1>
-              <p className="font-mono text-lg text-gray-500">{student.rollNo}</p>
+              <p className="font-mono text-base sm:text-lg text-gray-500">{student.rollNo}</p>
             </div>
 
             {/* Quick Actions / Print */}
@@ -93,27 +93,27 @@ export default async function StudentPage({ params }: Props) {
           </div>
 
           {/* Academic Summary Strip */}
-          <div className="bg-gray-50 border-t border-gray-200 px-6 sm:px-8 py-5 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="bg-gray-50 border-t border-gray-200 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div>
-              <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Cumulative GPA</p>
-              <p className="text-3xl font-bold text-gray-900 tabular-nums">{student.cgpa.toFixed(2)}</p>
+              <p className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Cumulative GPA</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900 tabular-nums">{student.cgpa.toFixed(2)}</p>
             </div>
             <div>
-              <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Class Rank</p>
+              <p className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Class Rank</p>
               <div className="flex items-center gap-2">
-                <p className="text-3xl font-bold text-gray-900 tabular-nums">#{student.cgpaRank ?? "—"}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900 tabular-nums">#{student.cgpaRank ?? "—"}</p>
                 {student.cgpaRank && student.cgpaRank <= 3 && (
-                  <Award className="h-5 w-5 text-yellow-500" />
+                  <Award className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-500" />
                 )}
               </div>
             </div>
             <div>
-              <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Credits Earned</p>
-              <p className="text-3xl font-bold text-gray-900 tabular-nums">{student.totalCredits}</p>
+              <p className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Credits Earned</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900 tabular-nums">{student.totalCredits}</p>
             </div>
             <div>
-              <p className="text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Total Marks</p>
-              <p className="text-3xl font-bold text-gray-900 tabular-nums">{student.totalMarks}</p>
+              <p className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Total Marks</p>
+              <p className="text-2xl sm:text-3xl font-bold text-gray-900 tabular-nums">{student.totalMarks}</p>
             </div>
           </div>
         </div>

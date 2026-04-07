@@ -101,14 +101,14 @@ export function SearchOmnibar({ students }: SearchOmnibarProps) {
     <div ref={containerRef} className="relative w-full mx-auto">
       {/* Input */}
       <div
-        className={`flex items-center gap-3 rounded-full border px-5 py-3.5 bg-white transition-shadow duration-200 ${
+        className={`flex items-center gap-2 sm:gap-3 rounded-full border px-4 sm:px-5 py-3 sm:py-3.5 bg-white transition-shadow duration-200 ${
           focused
             ? "border-blue-500 shadow-[0_0_0_4px_rgba(59,130,246,0.15)] outline-none"
             : "border-gray-300 shadow-sm hover:shadow-md"
         }`}
       >
         <Search
-          className={`h-5 w-5 shrink-0 transition-colors ${focused ? "text-blue-500" : "text-gray-400"}`}
+          className={`h-4 w-4 sm:h-5 sm:w-5 shrink-0 transition-colors ${focused ? "text-blue-500" : "text-gray-400"}`}
         />
         <input
           ref={inputRef}
@@ -117,7 +117,7 @@ export function SearchOmnibar({ students }: SearchOmnibarProps) {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setFocused(true)}
           placeholder="Search by name or roll number…"
-          className="flex-1 bg-transparent text-[15px] text-gray-900 placeholder:text-gray-400 outline-none"
+          className="flex-1 bg-transparent text-base sm:text-[15px] text-gray-900 placeholder:text-gray-400 outline-none w-full min-w-0"
           autoComplete="off"
           spellCheck={false}
         />
