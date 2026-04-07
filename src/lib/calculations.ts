@@ -1,5 +1,27 @@
 import { Course, Student, Result, SemesterData } from "@/data/semester1";
 
+// ─── UBIT Official Grading Scale ──────────────────────────────────────────────
+// Source: Department of Computer Science, University of Karachi (UBIT)
+export interface GradeInfo {
+    grade: string;
+    gradePoint: number;
+}
+
+export function getGradeInfo(marks: number): GradeInfo {
+    if (marks >= 90) return { grade: "A+", gradePoint: 4.0 };
+    if (marks >= 85) return { grade: "A",  gradePoint: 4.0 };
+    if (marks >= 80) return { grade: "A-", gradePoint: 3.8 };
+    if (marks >= 75) return { grade: "B+", gradePoint: 3.4 };
+    if (marks >= 71) return { grade: "B",  gradePoint: 3.0 };
+    if (marks >= 68) return { grade: "B-", gradePoint: 2.8 };
+    if (marks >= 64) return { grade: "C+", gradePoint: 2.4 };
+    if (marks >= 61) return { grade: "C",  gradePoint: 2.0 };
+    if (marks >= 57) return { grade: "C-", gradePoint: 1.8 };
+    if (marks >= 53) return { grade: "D+", gradePoint: 1.4 };
+    if (marks >= 50) return { grade: "D",  gradePoint: 1.0 };
+    return                 { grade: "F",  gradePoint: 0.0 };
+}
+
 export interface StudentRanking extends Student {
     sgpa: number;
     totalMarks: number;
