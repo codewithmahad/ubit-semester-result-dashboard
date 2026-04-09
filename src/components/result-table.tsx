@@ -168,19 +168,10 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
             },
             {
                 accessorKey: "roll",
-                header: () => <Th>Roll No.</Th>,
+                header: () => <Th>Seat No.</Th>,
                 cell: ({ row }) => (
-                    <span className="font-mono text-[11px] font-medium tracking-wide" style={{ color: C.muted }}>
+                    <span className="font-mono text-[13px] font-bold tracking-wide" style={{ color: C.ink }}>
                         {row.getValue("roll")}
-                    </span>
-                ),
-            },
-            {
-                accessorKey: "name",
-                header: () => <Th>Student Name</Th>,
-                cell: ({ row }) => (
-                    <span className="font-semibold text-[13px] tracking-tight" style={{ color: C.ink }}>
-                        {row.getValue("name")}
                     </span>
                 ),
             },
@@ -285,29 +276,25 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
         }).from(element).save()
     }
 
-    // Sticky offsets: rank(90) | roll(130) | name(190)
+    // Sticky offsets: rank(90) | roll(150)
     function thStickyClass(id: string) {
-        if (id === "rank") return "max-sm:static sticky left-0 z-40"
-        if (id === "roll") return "max-sm:static max-sm:shadow-none sticky left-[90px] z-40 shadow-[1px_0_0_#1E293B]"
-        if (id === "name") return "max-sm:static max-sm:shadow-none sticky left-[220px] z-40 shadow-[2px_0_0_#1E293B]"
+        if (id === "rank") return "max-sm:static sticky left-0 z-40 shadow-[1px_0_0_#1E293B]"
+        if (id === "roll") return "max-sm:static max-sm:shadow-none sticky left-[90px] z-40 shadow-[2px_0_0_#1E293B]"
         return ""
     }
     function tdStickyClass(id: string) {
-        if (id === "rank") return "max-sm:static sticky left-0 z-20"
-        if (id === "roll") return "max-sm:static max-sm:shadow-none sticky left-[90px] z-20 shadow-[1px_0_0_#F1F5F9]"
-        if (id === "name") return "max-sm:static max-sm:shadow-none sticky left-[220px] z-20 shadow-[2px_0_0_#F1F5F9]"
+        if (id === "rank") return "max-sm:static sticky left-0 z-20 shadow-[1px_0_0_#F1F5F9]"
+        if (id === "roll") return "max-sm:static max-sm:shadow-none sticky left-[90px] z-20 shadow-[2px_0_0_#F1F5F9]"
         return ""
     }
     function thStickyStyle(id: string): React.CSSProperties {
         if (id === "rank") return { width: 90, minWidth: 90, background: C.navy }
-        if (id === "roll") return { width: 130, minWidth: 130, background: C.navy }
-        if (id === "name") return { width: 190, minWidth: 190, background: C.navy }
+        if (id === "roll") return { width: 150, minWidth: 150, background: C.navy }
         return {}
     }
     function tdStickyStyle(id: string, bg: string): React.CSSProperties {
         if (id === "rank") return { width: 90, minWidth: 90, background: bg || "#fff" }
-        if (id === "roll") return { width: 130, minWidth: 130, background: bg || "#fff" }
-        if (id === "name") return { width: 190, minWidth: 190, background: bg || "#fff" }
+        if (id === "roll") return { width: 150, minWidth: 150, background: bg || "#fff" }
         return {}
     }
 
@@ -319,7 +306,7 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                     <div className="relative w-full sm:max-w-xs">
                         <Search className="absolute left-3 top-2.5 h-3.5 w-3.5" style={{ color: C.faint }} />
                         <Input
-                            placeholder="Search name or roll number..."
+                            placeholder="Search seat number..."
                             value={globalFilter}
                             onChange={e => setGlobalFilter(e.target.value)}
                             className="pl-9 h-9 bg-white border-slate-200 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-slate-400 rounded-lg text-[13px] font-medium text-slate-700"
@@ -371,7 +358,7 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                                                 }}
                                                 onClick={sortable ? h.column.getToggleSortingHandler() : undefined}
                                             >
-                                                <div className="flex items-center gap-1">
+                                                <div className={`flex items-center ${["rank", "roll", "name"].includes(h.id) ? "justify-start" : "justify-center"} gap-1 w-full`}>
                                                     {flexRender(h.column.columnDef.header, h.getContext())}
                                                     {sortable && (
                                                         <span style={{ opacity: h.column.getIsSorted() ? 1 : 0.25, transition: "opacity 0.15s" }}>

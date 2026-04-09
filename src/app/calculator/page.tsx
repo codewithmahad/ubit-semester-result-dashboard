@@ -77,60 +77,62 @@ export default function CalculatorPage() {
   }, [rows]);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-[#f5f7f8] flex flex-col">
       <Nav />
 
-      <main className="flex-1 w-full max-w-6xl mx-auto px-4 py-8 sm:px-6">
+      <main className="flex-1 w-full max-w-[1400px] mx-auto px-4 py-8 sm:py-12 sm:px-8">
         
         {/* Header */}
         <div className="mb-8">
-          <div className="flex items-center gap-2 mb-2">
-            <Calculator className="h-5 w-5 text-blue-600" />
-            <span className="text-sm font-bold text-gray-500 uppercase tracking-widest">
-              Tools
+          <div className="flex items-center gap-2 mb-3">
+            <span className="bg-[#8F141B] text-white px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-sm">
+              Academic Tool
             </span>
           </div>
-          <h1 className="text-3xl font-black tracking-tight text-gray-900">
-            GPA Calculator
-          </h1>
-          <p className="mt-2 text-base text-gray-500 max-w-2xl">
+          <div className="flex items-center gap-3 mb-2">
+            <Calculator className="h-7 w-7 text-[#0056D2]" />
+            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1f2432]">
+              GPA Calculator
+            </h1>
+          </div>
+          <p className="mt-2 text-base text-gray-500 max-w-2xl font-medium leading-relaxed">
             Estimate your SGPA by entering expected marks. Uses the official UBIT grading scale 
             to automatically determine your grade points.
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1fr_320px] items-start">
+        <div className="grid gap-8 lg:grid-cols-[1fr_340px] items-start">
           
           {/* Main Form */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#e2e6ea] overflow-hidden">
             <div className="overflow-x-auto styled-scrollbar">
               <div className="min-w-[500px]">
                 {/* Table Header */}
-                <div className="bg-gray-50 border-b border-gray-200 grid grid-cols-[1fr_70px_90px_60px_60px] gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3">
+                <div className="bg-[#fcfdfd] border-b border-[#e2e6ea] grid grid-cols-[1fr_80px_90px_60px_60px] gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4">
                   {["Course Name", "Credits", "Marks", "Grade", "GP"].map((label) => (
-                    <span key={label} className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wider text-center first:text-left">
+                    <span key={label} className="text-[11px] font-bold text-[#8F141B] uppercase tracking-wider text-center first:text-left">
                       {label}
                     </span>
                   ))}
                 </div>
 
                 {/* Rows */}
-                <div className="divide-y divide-gray-100">
+                <div className="divide-y divide-[#e2e6ea]">
                   {rows.map((row, i) => {
                     const { grade, gp } = getGradeInfo(row.marks);
                     return (
-                      <div key={row.id} className="group grid grid-cols-[1fr_70px_90px_60px_60px] gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 items-center hover:bg-gray-50 transition-colors">
+                      <div key={row.id} className="group grid grid-cols-[1fr_80px_90px_60px_60px] gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 items-center hover:bg-gray-50/50 transition-colors">
                         
                         <input
                           type="text"
-                          className="w-full bg-white border border-gray-300 rounded-md px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-medium text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm"
+                          className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-[14px] font-medium text-[#1f2432] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0056D2] focus:border-[#0056D2] transition-all shadow-sm"
                           placeholder={`Course ${i + 1}`}
                           value={row.subject}
                           onChange={(e) => updateRow(row.id, { subject: e.target.value })}
                         />
 
                         <select
-                          className="w-full bg-white border border-gray-300 rounded-md px-1 sm:px-2 py-1.5 text-xs sm:text-sm font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all shadow-sm cursor-pointer"
+                          className="w-full bg-white border border-gray-300 rounded-md px-2 py-2 text-[14px] font-semibold text-[#1f2432] focus:outline-none focus:ring-2 focus:ring-[#0056D2] transition-all shadow-sm cursor-pointer"
                           value={row.credits}
                           onChange={(e) => updateRow(row.id, { credits: Number(e.target.value) })}
                         >
@@ -141,26 +143,26 @@ export default function CalculatorPage() {
                           type="number"
                           min={0}
                           max={100}
-                          className="w-full bg-white border border-gray-300 rounded-md px-2 sm:px-3 py-1.5 text-xs sm:text-sm font-bold tabular-nums text-center text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all shadow-sm"
+                          className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-[14px] font-bold tabular-nums text-center text-[#1f2432] focus:outline-none focus:ring-2 focus:ring-[#0056D2] transition-all shadow-sm"
                           value={row.marks}
                           onChange={(e) => updateRow(row.id, { marks: Math.max(0, Math.min(100, Number(e.target.value))) })}
                         />
 
                         <div className="flex justify-center">
-                          <span className={`inline-flex items-center justify-center h-6 w-8 sm:h-7 sm:w-10 rounded border text-[10px] sm:text-xs font-bold ${gradeColor(grade)}`}>
+                          <span className={`inline-flex items-center justify-center h-8 w-10 sm:h-9 sm:w-12 rounded border text-[13px] font-bold ${gradeColor(grade)}`}>
                             {grade}
                           </span>
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <span className="text-xs sm:text-sm font-bold tabular-nums text-gray-600">{gp.toFixed(1)}</span>
+                          <span className="text-[15px] font-bold tabular-nums text-gray-700">{gp.toFixed(1)}</span>
                           {rows.length > 1 && (
                             <button
                               onClick={() => removeRow(row.id)}
-                              className="lg:opacity-0 group-hover:opacity-100 hover:bg-red-50 text-gray-400 hover:text-red-600 p-1 sm:p-1.5 rounded transition-all focus:opacity-100"
+                              className="md:opacity-0 group-hover:opacity-100 hover:bg-red-50 text-gray-400 hover:text-red-700 p-2 rounded transition-all focus:opacity-100"
                               title="Remove row"
                             >
-                              <Trash2 className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                              <Trash2 className="h-4 w-4" />
                             </button>
                           )}
                         </div>
@@ -173,17 +175,17 @@ export default function CalculatorPage() {
             </div>
 
             {/* Actions */}
-            <div className="bg-gray-50 border-t border-gray-200 p-4 flex justify-between items-center">
+            <div className="bg-[#fcfdfd] border-t border-[#e2e6ea] p-4 sm:p-6 flex justify-between items-center">
               <button
                 onClick={addRow}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-200 transition-colors shadow-sm"
+                className="flex items-center gap-2 px-5 py-2.5 text-[14px] font-bold text-white bg-[#0056D2] border border-[#0056D2] rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
               >
                 <Plus className="h-4 w-4" /> Add Course
               </button>
 
               <button
                 onClick={reset}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 text-[14px] font-semibold text-gray-500 hover:text-gray-900 transition-colors"
               >
                 <RotateCcw className="h-4 w-4" /> Reset
               </button>
@@ -194,30 +196,31 @@ export default function CalculatorPage() {
           <div className="space-y-6">
             
             {/* Projected Score Card */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 text-center">
-              <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Projected SGPA</p>
-              <div className="text-6xl font-black rounded-lg text-gray-900 mb-2">
+            <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#e2e6ea] p-8 text-center relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#8F141B] to-[#0056D2]"></div>
+              <p className="text-[12px] font-bold text-[#8F141B] uppercase tracking-widest mb-3">Projected SGPA</p>
+              <div className="text-[72px] leading-none font-black text-[#1f2432] mb-3 tabular-nums">
                 {sgpa.toFixed(2)}
               </div>
-              <div className="flex justify-between items-center text-sm font-medium text-gray-500 px-2 mt-4 pt-4 border-t border-gray-100">
-                <span>{totalCredits} Credits</span>
-                <span>{totalQP.toFixed(1)} QPs</span>
+              <div className="flex justify-between items-center text-[14px] font-semibold text-gray-500 px-4 mt-6 pt-6 border-t border-[#e2e6ea]">
+                <span><strong className="text-[#1f2432]">{totalCredits}</strong> Credits</span>
+                <span><strong className="text-[#1f2432]">{totalQP.toFixed(1)}</strong> QPs</span>
               </div>
             </div>
 
             {/* Reference Table */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-              <div className="bg-gray-50 border-b border-gray-200 p-4">
-                <p className="text-xs font-bold text-gray-900 uppercase">UBIT Grading Scale</p>
+            <div className="bg-white rounded-xl shadow-sm border border-[#e2e6ea] overflow-hidden">
+              <div className="bg-[#fcfdfd] border-b border-[#e2e6ea] p-4 text-center">
+                <p className="text-[12px] font-bold text-[#1f2432] uppercase tracking-wider">Official UBIT Grading Scale</p>
               </div>
-              <div className="divide-y divide-gray-100 text-sm">
+              <div className="divide-y divide-[#e2e6ea] text-sm">
                 {GRADE_SCALE.map(g => (
-                  <div key={g.grade} className="flex justify-between items-center p-3 px-4 hover:bg-gray-50">
-                    <div className="flex items-center gap-3">
-                      <span className={`inline-flex items-center justify-center w-8 h-6 rounded border text-[11px] font-bold ${gradeColor(g.grade)}`}>{g.grade}</span>
-                      <span className="text-gray-500 font-medium">{g.min} – {g.max}</span>
+                  <div key={g.grade} className="flex justify-between items-center p-3 px-5 hover:bg-gray-50/50">
+                    <div className="flex items-center gap-4">
+                      <span className={`inline-flex items-center justify-center w-10 h-7 rounded border text-[12px] font-bold ${gradeColor(g.grade)}`}>{g.grade}</span>
+                      <span className="text-gray-500 font-medium tabular-nums">{g.min} <span className="text-gray-300 mx-1">–</span> {g.max}</span>
                     </div>
-                    <span className="font-bold text-gray-900 tabular-nums">{g.gp.toFixed(1)}</span>
+                    <span className="font-extrabold text-[#1f2432] tabular-nums">{g.gp.toFixed(1)}</span>
                   </div>
                 ))}
               </div>

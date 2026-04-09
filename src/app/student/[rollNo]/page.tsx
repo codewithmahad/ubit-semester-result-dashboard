@@ -27,7 +27,7 @@ export default async function StudentPage({ params }: Props) {
   const overallPass = student.cgpa >= 2.0;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#f5f7f8]">
       <Nav />
 
       {/* Print header — only visible when printing */}
@@ -41,32 +41,32 @@ export default async function StudentPage({ params }: Props) {
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
         {/* Breadcrumb / Back button */}
         <Link
-          href="/class/2025/evening"
-          className="no-print mb-8 inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
+          href="/"
+          className="no-print mb-8 inline-flex items-center gap-2 text-sm font-bold text-[#8F141B] hover:text-[#0056D2] transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Class Leaderboard
+          Return to Home Dashboard
         </Link>
 
         {/* ── Student Information Card ─────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden print-card mb-6 sm:mb-8">
-          <div className="p-4 sm:p-6 lg:p-8 flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-6 relative">
+        <div className="bg-white rounded-xl shadow-md border border-[#e2e6ea] overflow-hidden print-card mb-6 sm:mb-8">
+          <div className="p-5 sm:p-8 lg:p-10 flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-6 relative">
             
             {/* Identity Info */}
             <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                <span className="bg-blue-50 text-blue-700 border border-blue-200 px-2 sm:px-2.5 py-0.5 rounded text-[10px] sm:text-[11px] font-bold uppercase tracking-wide">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="bg-[#8F141B] text-white px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest shadow-sm">
                   BSSE
                 </span>
-                <span className="text-xs sm:text-sm font-medium text-gray-500">
-                  Batch {student.batch} · {student.shift}
+                <span className="text-sm font-semibold text-[#1f2432]">
+                  Batch {student.batch} • {student.shift}
                 </span>
               </div>
               
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 tracking-tight leading-none mb-1 sm:mb-2 break-words">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1f2432] tracking-tight leading-none mb-2 break-words">
                 {student.name}
               </h1>
-              <p className="font-mono text-base sm:text-lg text-gray-500">{student.rollNo}</p>
+              <p className="font-medium text-base sm:text-lg text-[#0056D2] tracking-wide">{student.rollNo}</p>
             </div>
 
             {/* Quick Actions / Print */}
@@ -74,9 +74,9 @@ export default async function StudentPage({ params }: Props) {
               <button
                 onClick={undefined}
                 id="print-transcript"
-                className="flex items-center gap-2 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2.5 rounded-lg text-sm font-semibold shadow-sm transition-all focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="flex items-center gap-2 bg-white border-2 border-[#0056D2] text-[#0056D2] hover:bg-[#0056D2] hover:text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm transition-all focus:ring-2 focus:ring-[#0056D2] focus:outline-none"
               >
-                <Printer className="h-4 w-4 text-gray-500" />
+                <Printer className="h-4 w-4" />
                 Print Transcript
               </button>
               <script
@@ -93,27 +93,27 @@ export default async function StudentPage({ params }: Props) {
           </div>
 
           {/* Academic Summary Strip */}
-          <div className="bg-gray-50 border-t border-gray-200 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="bg-[#fcfdfd] border-t border-[#e2e6ea] px-5 sm:px-8 lg:px-10 py-6 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div>
-              <p className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Cumulative GPA</p>
-              <p className="text-2xl sm:text-3xl font-bold text-gray-900 tabular-nums">{student.cgpa.toFixed(2)}</p>
+              <p className="text-[11px] font-bold text-[#8F141B] uppercase tracking-widest mb-1">Cumulative GPA</p>
+              <p className="text-3xl sm:text-4xl font-extrabold text-[#1f2432] tabular-nums">{student.cgpa.toFixed(2)}</p>
             </div>
             <div>
-              <p className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Class Rank</p>
+              <p className="text-[11px] font-bold text-[#8F141B] uppercase tracking-widest mb-1">Class Rank</p>
               <div className="flex items-center gap-2">
-                <p className="text-2xl sm:text-3xl font-bold text-gray-900 tabular-nums">#{student.cgpaRank ?? "—"}</p>
+                <p className="text-3xl sm:text-4xl font-extrabold text-[#1f2432] tabular-nums">#{student.cgpaRank ?? "—"}</p>
                 {student.cgpaRank && student.cgpaRank <= 3 && (
-                  <Award className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-500" />
+                  <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[#0056D2]" />
                 )}
               </div>
             </div>
             <div>
-              <p className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Credits Earned</p>
-              <p className="text-2xl sm:text-3xl font-bold text-gray-900 tabular-nums">{student.totalCredits}</p>
+              <p className="text-[11px] font-bold text-[#8F141B] uppercase tracking-widest mb-1">Credits Earned</p>
+              <p className="text-3xl sm:text-4xl font-extrabold text-[#1f2432] tabular-nums">{student.totalCredits}</p>
             </div>
             <div>
-              <p className="text-[10px] sm:text-[11px] font-bold text-gray-500 uppercase tracking-widest mb-1">Total Marks</p>
-              <p className="text-2xl sm:text-3xl font-bold text-gray-900 tabular-nums">{student.totalMarks}</p>
+              <p className="text-[11px] font-bold text-[#8F141B] uppercase tracking-widest mb-1">Total Marks</p>
+              <p className="text-3xl sm:text-4xl font-extrabold text-[#1f2432] tabular-nums">{student.totalMarks}</p>
             </div>
           </div>
         </div>
@@ -142,9 +142,9 @@ export default async function StudentPage({ params }: Props) {
         </div>
 
         {/* ── Semester Records ─────────────────────────────────── */}
-        <div className="flex items-center gap-2 mb-4">
-          <BookOpen className="h-5 w-5 text-gray-400" />
-          <h2 className="text-lg font-bold text-gray-900">Academic History</h2>
+        <div className="flex items-center gap-2 mb-5">
+          <BookOpen className="h-5 w-5 text-[#8F141B]" />
+          <h2 className="text-[20px] font-bold text-[#1f2432]">Academic History</h2>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
