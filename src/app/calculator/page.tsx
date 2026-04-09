@@ -83,8 +83,8 @@ export default function CalculatorPage() {
       <main className="flex-1 w-full max-w-[1400px] mx-auto px-4 py-8 sm:py-12 sm:px-8">
         
         {/* Header */}
-        <div className="mb-10 max-w-2xl">
-          <h1 className="text-[36px] sm:text-[42px] font-black text-[#1f2432] tracking-tight leading-tight mb-4">
+        <div className="mb-8 max-w-2xl">
+          <h1 className="text-[32px] sm:text-[42px] font-black text-[#1f2432] tracking-tight leading-tight mb-4">
             Semester GPA Calculator
           </h1>
           <p className="text-[15px] sm:text-[16px] text-gray-500 font-medium leading-relaxed">
@@ -97,9 +97,9 @@ export default function CalculatorPage() {
           {/* Main Form */}
           <div className="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-[#e2e6ea] overflow-hidden">
             <div className="overflow-x-auto styled-scrollbar">
-              <div className="min-w-[500px]">
-                {/* Table Header */}
-                <div className="bg-[#1f2432] grid grid-cols-[1fr_80px_90px_60px_60px] gap-3 sm:gap-4 px-4 sm:px-6 py-4 rounded-t-xl">
+              <div className="w-full">
+                {/* Desktop Table Header */}
+                <div className="hidden md:grid bg-[#1f2432] grid-cols-[1fr_80px_90px_60px_60px] gap-4 px-6 py-4 rounded-t-xl">
                   {["Course Name", "Credits", "Marks", "Grade", "GP"].map((label) => (
                     <span key={label} className="text-[11px] font-black text-white uppercase tracking-widest text-center first:text-left">
                       {label}
@@ -107,55 +107,85 @@ export default function CalculatorPage() {
                   ))}
                 </div>
 
-                {/* Rows */}
-                <div className="divide-y divide-[#e2e6ea]">
+                {/* Rows container */}
+                <div className="flex flex-col md:divide-y md:divide-[#e2e6ea]">
                   {rows.map((row, i) => {
                     const { grade, gp } = getGradeInfo(row.marks);
                     return (
-                      <div key={row.id} className="group grid grid-cols-[1fr_80px_90px_60px_60px] gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 items-center hover:bg-gray-50/50 transition-colors">
+                      <div key={row.id} className="relative group flex flex-col md:grid md:grid-cols-[1fr_80px_90px_60px_60px] gap-4 p-4 md:px-6 md:py-4 items-center bg-white md:bg-transparent border-b border-gray-100 md:border-none last:border-b-0 hover:bg-gray-50/50 transition-colors">
                         
-                        <input
-                          type="text"
-                          className="w-full bg-transparent border-b border-gray-200 px-1 py-2 text-[15px] font-semibold text-[#1f2432] placeholder:text-gray-400 focus:outline-none focus:border-[#0056D2] transition-colors rounded-none"
-                          placeholder={`Course ${i + 1}`}
-                          value={row.subject}
-                          onChange={(e) => updateRow(row.id, { subject: e.target.value })}
-                        />
-
-                        <select
-                          className="w-full bg-gray-50 border border-gray-200 rounded-md px-2 py-2 text-[14px] font-bold text-[#1f2432] focus:outline-none focus:border-[#0056D2] transition-colors cursor-pointer"
-                          value={row.credits}
-                          onChange={(e) => updateRow(row.id, { credits: Number(e.target.value) })}
-                        >
-                          {[1, 2, 3, 4].map(cr => <option key={cr} value={cr}>{cr}</option>)}
-                        </select>
-
-                        <input
-                          type="number"
-                          min={0}
-                          max={100}
-                          className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-[15px] font-black tabular-nums text-center text-[#1f2432] focus:outline-none focus:border-[#0056D2] focus:ring-1 focus:ring-[#0056D2] transition-all shadow-sm"
-                          value={row.marks}
-                          onChange={(e) => updateRow(row.id, { marks: Math.max(0, Math.min(100, Number(e.target.value))) })}
-                        />
-
-                        <div className="flex justify-center">
-                          <span className={`inline-flex items-center justify-center h-8 w-10 sm:h-9 sm:w-12 rounded border text-[13px] font-bold ${gradeColor(grade)}`}>
-                            {grade}
-                          </span>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                          <span className="text-[15px] font-bold tabular-nums text-gray-700">{gp.toFixed(1)}</span>
-                          {rows.length > 1 && (
+                        {/* Mobile 'Course X' Header & Delete */}
+                        <div className="flex md:hidden w-full justify-between items-center mb-1">
+                           <span className="text-[12px] font-black text-gray-400 uppercase tracking-widest">Course {i + 1}</span>
+                           {rows.length > 1 && (
                             <button
                               onClick={() => removeRow(row.id)}
-                              className="md:opacity-0 group-hover:opacity-100 hover:bg-red-50 text-gray-400 hover:text-red-700 p-2 rounded transition-all focus:opacity-100"
-                              title="Remove row"
+                              className="text-gray-400 hover:text-red-600 transition-colors bg-gray-50 hover:bg-red-50 p-1.5 rounded-md"
                             >
                               <Trash2 className="h-4 w-4" />
                             </button>
-                          )}
+                           )}
+                        </div>
+
+                        {/* Subject */}
+                        <div className="w-full">
+                          <input
+                            type="text"
+                            className="w-full bg-transparent border border-gray-200 md:border-t-0 md:border-l-0 md:border-r-0 md:border-b md:rounded-none rounded-lg px-3 md:px-1 py-2.5 md:py-2 text-[15px] font-semibold text-[#1f2432] placeholder:text-gray-400 focus:outline-none focus:border-[#0056D2] transition-colors"
+                            placeholder={`Course name (Optional)`}
+                            value={row.subject}
+                            onChange={(e) => updateRow(row.id, { subject: e.target.value })}
+                          />
+                        </div>
+
+                        {/* Credits & Marks Container for mobile */}
+                        <div className="w-full flex md:contents gap-4">
+                          <div className="flex-1 md:w-full flex flex-col md:block gap-1.5">
+                            <label className="text-[10px] font-black text-gray-500 uppercase md:hidden tracking-wider">Credits</label>
+                            <select
+                              className="w-full bg-gray-50 md:bg-gray-50 border border-gray-200 rounded-lg px-3 md:px-2 py-2.5 md:py-2 text-[15px] md:text-[14px] font-bold text-[#1f2432] focus:outline-none focus:border-[#0056D2] transition-colors cursor-pointer"
+                              value={row.credits}
+                              onChange={(e) => updateRow(row.id, { credits: Number(e.target.value) })}
+                            >
+                              {[1, 2, 3, 4].map(cr => <option key={cr} value={cr}>{cr}</option>)}
+                            </select>
+                          </div>
+
+                          <div className="flex-1 md:w-full flex flex-col md:block gap-1.5">
+                            <label className="text-[10px] font-black text-gray-500 uppercase md:hidden tracking-wider">Marks (0-100)</label>
+                            <input
+                              type="number"
+                              min={0}
+                              max={100}
+                              className="w-full bg-white border border-gray-300 rounded-lg px-3 py-2.5 md:py-2 text-[15px] md:text-[15px] font-black tabular-nums text-center text-[#1f2432] focus:outline-none focus:border-[#0056D2] focus:ring-1 focus:ring-[#0056D2] transition-all shadow-sm"
+                              value={row.marks}
+                              onChange={(e) => updateRow(row.id, { marks: Math.max(0, Math.min(100, Number(e.target.value))) })}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Results (Grade & GP) & Desktop Delete */}
+                        <div className="w-full flex md:contents justify-between items-center mt-2 md:mt-0 p-3 md:p-0 bg-gray-50 md:bg-transparent rounded-lg md:rounded-none">
+                          <div className="flex items-center gap-2 md:justify-center">
+                            <label className="text-[11px] font-bold text-gray-500 md:hidden uppercase mr-2">Grade</label>
+                            <span className={`inline-flex items-center justify-center h-8 w-10 sm:h-9 sm:w-12 rounded border text-[13px] font-bold ${gradeColor(grade)}`}>
+                              {grade}
+                            </span>
+                          </div>
+
+                          <div className="flex items-center gap-2 md:justify-between w-auto md:w-full">
+                            <label className="text-[11px] font-bold text-gray-500 md:hidden uppercase">GP</label>
+                            <span className="text-[16px] md:text-[15px] font-black tabular-nums text-gray-800">{gp.toFixed(1)}</span>
+                            {rows.length > 1 && (
+                              <button
+                                onClick={() => removeRow(row.id)}
+                                className="hidden md:block md:opacity-0 group-hover:opacity-100 hover:bg-red-50 text-gray-400 hover:text-red-700 p-2 rounded transition-all focus:opacity-100"
+                                title="Remove row"
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </button>
+                            )}
+                          </div>
                         </div>
 
                       </div>
