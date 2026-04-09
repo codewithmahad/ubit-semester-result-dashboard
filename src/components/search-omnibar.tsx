@@ -56,7 +56,7 @@ export function SearchOmnibar({ students }: SearchOmnibarProps) {
               s.name.toLowerCase().includes(query.toLowerCase()) ||
               s.rollNo.toLowerCase().includes(query.toLowerCase())
           )
-          .slice(0, 8)
+          .slice(0, 50)
       : [];
 
   const showDropdown = focused && query.trim().length > 0;
@@ -99,13 +99,13 @@ export function SearchOmnibar({ students }: SearchOmnibarProps) {
 
   return (
     <div ref={containerRef} className="relative w-full mx-auto">
-      {/* Input */}
+      {/* Input container */}
       <div
-        className={`flex items-center gap-2 sm:gap-3 rounded-full border px-4 sm:px-5 py-3 sm:py-3.5 bg-white transition-shadow duration-200 ${
-          focused
-            ? "border-blue-500 shadow-[0_0_0_4px_rgba(59,130,246,0.15)] outline-none"
-            : "border-gray-300 shadow-sm hover:shadow-md"
-        }`}
+        className={`flex items-center gap-2 sm:gap-3 border px-4 sm:px-5 py-3 sm:py-3.5 bg-white transition-shadow duration-200 ${
+          showDropdown 
+            ? "border-b-0 rounded-t-2xl border-gray-300 shadow-xl" 
+            : "rounded-full border-gray-300 shadow-sm hover:shadow-md"
+        } ${focused && !showDropdown ? "border-blue-500 shadow-[0_0_0_4px_rgba(59,130,246,0.15)] outline-none ring-0" : ""}`}
       >
         <Search
           className={`h-4 w-4 sm:h-5 sm:w-5 shrink-0 transition-colors ${focused ? "text-blue-500" : "text-gray-400"}`}
@@ -141,14 +141,15 @@ export function SearchOmnibar({ students }: SearchOmnibarProps) {
 
       {/* Dropdown */}
       {showDropdown && (
-        <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xl">
+        <div className="absolute left-0 right-0 top-[100%] z-50 rounded-b-2xl border border-t-0 border-gray-300 bg-white shadow-xl overflow-hidden flex flex-col">
           {results.length > 0 ? (
-            <div className="py-2">
+            <div className="flex flex-col flex-1 min-h-0">
               <div className="px-4 py-2 bg-gray-50/80 border-b border-gray-100">
                 <span className="text-[10px] font-bold uppercase tracking-widest text-gray-500">
                   Search Results
                 </span>
               </div>
+              <div className="max-h-[350px] overflow-y-auto styled-scrollbar pt-1">
               {results.map((s) => (
                 <button
                   key={s.rollNo}
@@ -177,6 +178,7 @@ export function SearchOmnibar({ students }: SearchOmnibarProps) {
                   </div>
                 </button>
               ))}
+              </div>
               <div className="border-t border-gray-100 p-2">
                 <button
                   onClick={() => router.push("/class/2025/evening")}

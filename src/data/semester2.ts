@@ -5,6 +5,7 @@ export const semester2: SemesterData = {
     batch: "2025 (Evening Program)",
     university: "UBIT - University of Karachi",
     courses: [
+        { code: "OOPs", name: "Object Oriented Concepts & Pro", creditHours: 4 },
         { code: "SE", name: "Software Engineering", creditHours: 3 },
         { code: "MV Calc", name: "Multivariable Calculus", creditHours: 3 },
         { code: "Stats", name: "Probability & Statistics", creditHours: 3 }
@@ -28,6 +29,11 @@ export const semester2: SemesterData = {
         "marks": 36,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 61,
+        "gradePoint": 2.0,
+        "grade": "C"
       }
     }
   },
@@ -49,6 +55,11 @@ export const semester2: SemesterData = {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
+      },
+      "OOPs": {
+        "marks": 80,
+        "gradePoint": 3.8,
+        "grade": "A-"
       }
     }
   },
@@ -70,6 +81,11 @@ export const semester2: SemesterData = {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -91,6 +107,11 @@ export const semester2: SemesterData = {
         "marks": 45,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 58,
+        "gradePoint": 1.8,
+        "grade": "C-"
       }
     }
   },
@@ -112,6 +133,11 @@ export const semester2: SemesterData = {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
+      },
+      "OOPs": {
+        "marks": 50,
+        "gradePoint": 1.0,
+        "grade": "D"
       }
     }
   },
@@ -133,6 +159,11 @@ export const semester2: SemesterData = {
         "marks": 31,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 50,
+        "gradePoint": 1.0,
+        "grade": "D"
       }
     }
   },
@@ -154,6 +185,11 @@ export const semester2: SemesterData = {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
+      },
+      "OOPs": {
+        "marks": 68,
+        "gradePoint": 2.8,
+        "grade": "B-"
       }
     }
   },
@@ -175,6 +211,11 @@ export const semester2: SemesterData = {
         "marks": 45,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 68,
+        "gradePoint": 2.8,
+        "grade": "B-"
       }
     }
   },
@@ -196,6 +237,11 @@ export const semester2: SemesterData = {
         "marks": 76,
         "gradePoint": 3.4,
         "grade": "B+"
+      },
+      "OOPs": {
+        "marks": 81,
+        "gradePoint": 3.8,
+        "grade": "A-"
       }
     }
   },
@@ -215,6 +261,11 @@ export const semester2: SemesterData = {
       },
       "Stats": {
         "marks": 77,
+        "gradePoint": 3.4,
+        "grade": "B+"
+      },
+      "OOPs": {
+        "marks": 76,
         "gradePoint": 3.4,
         "grade": "B+"
       }
@@ -238,6 +289,11 @@ export const semester2: SemesterData = {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
+      },
+      "OOPs": {
+        "marks": 81,
+        "gradePoint": 3.8,
+        "grade": "A-"
       }
     }
   },
@@ -259,6 +315,11 @@ export const semester2: SemesterData = {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
+      },
+      "OOPs": {
+        "marks": 55,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -280,6 +341,11 @@ export const semester2: SemesterData = {
         "marks": 91,
         "gradePoint": 4.0,
         "grade": "A+"
+      },
+      "OOPs": {
+        "marks": 75,
+        "gradePoint": 3.4,
+        "grade": "B+"
       }
     }
   },
@@ -301,6 +367,11 @@ export const semester2: SemesterData = {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
+      },
+      "OOPs": {
+        "marks": 68,
+        "gradePoint": 2.8,
+        "grade": "B-"
       }
     }
   },
@@ -322,6 +393,11 @@ export const semester2: SemesterData = {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
+      },
+      "OOPs": {
+        "marks": 55,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -343,6 +419,11 @@ export const semester2: SemesterData = {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
+      },
+      "OOPs": {
+        "marks": 50,
+        "gradePoint": 1.0,
+        "grade": "D"
       }
     }
   },
@@ -361,6 +442,11 @@ export const semester2: SemesterData = {
         "grade": "A+"
       },
       "Stats": {
+        "marks": 75,
+        "gradePoint": 3.4,
+        "grade": "B+"
+      },
+      "OOPs": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
@@ -385,6 +471,11 @@ export const semester2: SemesterData = {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -406,6 +497,11 @@ export const semester2: SemesterData = {
         "marks": 38,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 75,
+        "gradePoint": 3.4,
+        "grade": "B+"
       }
     }
   },
@@ -427,6 +523,11 @@ export const semester2: SemesterData = {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
+      },
+      "OOPs": {
+        "marks": 75,
+        "gradePoint": 3.4,
+        "grade": "B+"
       }
     }
   },
@@ -448,6 +549,11 @@ export const semester2: SemesterData = {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
+      },
+      "OOPs": {
+        "marks": 88,
+        "gradePoint": 4.0,
+        "grade": "A"
       }
     }
   },
@@ -469,6 +575,11 @@ export const semester2: SemesterData = {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
+      },
+      "OOPs": {
+        "marks": 56,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -490,6 +601,11 @@ export const semester2: SemesterData = {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
+      },
+      "OOPs": {
+        "marks": 62,
+        "gradePoint": 2.0,
+        "grade": "C"
       }
     }
   },
@@ -511,6 +627,11 @@ export const semester2: SemesterData = {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
+      },
+      "OOPs": {
+        "marks": 55,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -532,6 +653,11 @@ export const semester2: SemesterData = {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -553,6 +679,11 @@ export const semester2: SemesterData = {
         "marks": 23,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 55,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -574,6 +705,11 @@ export const semester2: SemesterData = {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
+      },
+      "OOPs": {
+        "marks": 36,
+        "gradePoint": 0.0,
+        "grade": "-"
       }
     }
   },
@@ -595,6 +731,11 @@ export const semester2: SemesterData = {
         "marks": 43,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 58,
+        "gradePoint": 1.8,
+        "grade": "C-"
       }
     }
   },
@@ -616,6 +757,11 @@ export const semester2: SemesterData = {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
+      },
+      "OOPs": {
+        "marks": 68,
+        "gradePoint": 2.8,
+        "grade": "B-"
       }
     }
   },
@@ -637,6 +783,11 @@ export const semester2: SemesterData = {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
+      },
+      "OOPs": {
+        "marks": 64,
+        "gradePoint": 2.4,
+        "grade": "C+"
       }
     }
   },
@@ -656,6 +807,11 @@ export const semester2: SemesterData = {
       },
       "Stats": {
         "marks": 66,
+        "gradePoint": 2.4,
+        "grade": "C+"
+      },
+      "OOPs": {
+        "marks": 65,
         "gradePoint": 2.4,
         "grade": "C+"
       }
@@ -679,6 +835,11 @@ export const semester2: SemesterData = {
         "marks": 10,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 55,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -700,6 +861,11 @@ export const semester2: SemesterData = {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
+      },
+      "OOPs": {
+        "marks": 56,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -721,6 +887,11 @@ export const semester2: SemesterData = {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -742,6 +913,11 @@ export const semester2: SemesterData = {
         "marks": 37,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 56,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -763,6 +939,11 @@ export const semester2: SemesterData = {
         "marks": 37,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 65,
+        "gradePoint": 2.4,
+        "grade": "C+"
       }
     }
   },
@@ -784,6 +965,11 @@ export const semester2: SemesterData = {
         "marks": 16,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 65,
+        "gradePoint": 2.4,
+        "grade": "C+"
       }
     }
   },
@@ -805,6 +991,11 @@ export const semester2: SemesterData = {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
+      },
+      "OOPs": {
+        "marks": 61,
+        "gradePoint": 2.0,
+        "grade": "C"
       }
     }
   },
@@ -824,6 +1015,11 @@ export const semester2: SemesterData = {
       },
       "Stats": {
         "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
+      },
+      "OOPs": {
+        "marks": 72,
         "gradePoint": 3.0,
         "grade": "B"
       }
@@ -847,6 +1043,11 @@ export const semester2: SemesterData = {
         "marks": 44,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 55,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -868,6 +1069,11 @@ export const semester2: SemesterData = {
         "marks": 41,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 50,
+        "gradePoint": 1.0,
+        "grade": "D"
       }
     }
   },
@@ -889,6 +1095,11 @@ export const semester2: SemesterData = {
         "marks": 62,
         "gradePoint": 2.0,
         "grade": "C"
+      },
+      "OOPs": {
+        "marks": 50,
+        "gradePoint": 1.0,
+        "grade": "D"
       }
     }
   },
@@ -910,6 +1121,11 @@ export const semester2: SemesterData = {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
+      },
+      "OOPs": {
+        "marks": 60,
+        "gradePoint": 1.8,
+        "grade": "C-"
       }
     }
   },
@@ -931,6 +1147,11 @@ export const semester2: SemesterData = {
         "marks": 78,
         "gradePoint": 3.4,
         "grade": "B+"
+      },
+      "OOPs": {
+        "marks": 89,
+        "gradePoint": 4.0,
+        "grade": "A"
       }
     }
   },
@@ -950,6 +1171,11 @@ export const semester2: SemesterData = {
       },
       "Stats": {
         "marks": 75,
+        "gradePoint": 3.4,
+        "grade": "B+"
+      },
+      "OOPs": {
+        "marks": 78,
         "gradePoint": 3.4,
         "grade": "B+"
       }
@@ -973,6 +1199,11 @@ export const semester2: SemesterData = {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
+      },
+      "OOPs": {
+        "marks": 62,
+        "gradePoint": 2.0,
+        "grade": "C"
       }
     }
   },
@@ -994,6 +1225,11 @@ export const semester2: SemesterData = {
         "marks": 56,
         "gradePoint": 1.4,
         "grade": "D+"
+      },
+      "OOPs": {
+        "marks": 52,
+        "gradePoint": 1.0,
+        "grade": "D"
       }
     }
   },
@@ -1015,6 +1251,11 @@ export const semester2: SemesterData = {
         "marks": 33,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 58,
+        "gradePoint": 1.8,
+        "grade": "C-"
       }
     }
   },
@@ -1036,6 +1277,11 @@ export const semester2: SemesterData = {
         "marks": 53,
         "gradePoint": 1.4,
         "grade": "D+"
+      },
+      "OOPs": {
+        "marks": 85,
+        "gradePoint": 4.0,
+        "grade": "A"
       }
     }
   },
@@ -1057,6 +1303,11 @@ export const semester2: SemesterData = {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
+      },
+      "OOPs": {
+        "marks": 58,
+        "gradePoint": 1.8,
+        "grade": "C-"
       }
     }
   },
@@ -1078,6 +1329,11 @@ export const semester2: SemesterData = {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -1096,6 +1352,11 @@ export const semester2: SemesterData = {
         "grade": "A+"
       },
       "Stats": {
+        "marks": 85,
+        "gradePoint": 4.0,
+        "grade": "A"
+      },
+      "OOPs": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
@@ -1120,6 +1381,11 @@ export const semester2: SemesterData = {
         "marks": 18,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 64,
+        "gradePoint": 2.4,
+        "grade": "C+"
       }
     }
   },
@@ -1139,6 +1405,11 @@ export const semester2: SemesterData = {
       },
       "Stats": {
         "marks": 59,
+        "gradePoint": 1.8,
+        "grade": "C-"
+      },
+      "OOPs": {
+        "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
       }
@@ -1162,6 +1433,11 @@ export const semester2: SemesterData = {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
+      },
+      "OOPs": {
+        "marks": 72,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -1183,6 +1459,11 @@ export const semester2: SemesterData = {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -1204,6 +1485,11 @@ export const semester2: SemesterData = {
         "marks": 21,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 54,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -1225,6 +1511,11 @@ export const semester2: SemesterData = {
         "marks": 36,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 50,
+        "gradePoint": 1.0,
+        "grade": "D"
       }
     }
   },
@@ -1246,6 +1537,11 @@ export const semester2: SemesterData = {
         "marks": 36,
         "gradePoint": 0.0,
         "grade": "F"
+      },
+      "OOPs": {
+        "marks": 54,
+        "gradePoint": 1.4,
+        "grade": "D+"
       }
     }
   },
@@ -1267,6 +1563,11 @@ export const semester2: SemesterData = {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -1288,6 +1589,11 @@ export const semester2: SemesterData = {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -1306,6 +1612,11 @@ export const semester2: SemesterData = {
         "grade": "C"
       },
       "Stats": {
+        "marks": 56,
+        "gradePoint": 1.4,
+        "grade": "D+"
+      },
+      "OOPs": {
         "marks": 56,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -1330,6 +1641,11 @@ export const semester2: SemesterData = {
         "marks": 66,
         "gradePoint": 2.4,
         "grade": "C+"
+      },
+      "OOPs": {
+        "marks": 71,
+        "gradePoint": 3.0,
+        "grade": "B"
       }
     }
   },
@@ -1351,6 +1667,11 @@ export const semester2: SemesterData = {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
+      },
+      "OOPs": {
+        "marks": 65,
+        "gradePoint": 2.4,
+        "grade": "C+"
       }
     }
   },
@@ -1372,6 +1693,11 @@ export const semester2: SemesterData = {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
+      },
+      "OOPs": {
+        "marks": 61,
+        "gradePoint": 2.0,
+        "grade": "C"
       }
     }
   },
