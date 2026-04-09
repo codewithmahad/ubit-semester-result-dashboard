@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Bell, User } from "lucide-react";
+import { Search, Bell, User, Menu, X } from "lucide-react";
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
 export function Nav() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showNotifications, setShowNotifications] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
@@ -110,14 +111,47 @@ export function Nav() {
                 </div>
               )}
             </div>
-            
-            <div className="h-8 w-8 rounded-full border border-gray-300 bg-gray-50 text-gray-400 flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
+            {/* User Icon - hidden on mobile, placed in menu later */}
+            <div className="hidden sm:flex h-8 w-8 rounded-full border border-gray-300 bg-gray-50 text-gray-400 items-center justify-center cursor-pointer hover:bg-gray-100 transition">
               <User className="w-4 h-4" />
             </div>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="sm:hidden -mr-2 p-2 text-gray-600 hover:text-[#0056D2]"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
-        
       </div>
+
+      {/* Mobile Nav Menu */}
+      {mobileMenuOpen && (
+        <div className="absolute top-[72px] left-0 w-full bg-white border-b border-[#e2e6ea] shadow-lg flex flex-col sm:hidden z-40">
+          <Link
+            href="/leaderboards"
+            onClick={() => setMobileMenuOpen(false)}
+            className="px-6 py-4 border-b border-gray-100 text-[15px] font-semibold text-[#1f2432] hover:bg-gray-50 flex items-center justify-between"
+          >
+            Leaderboards
+          </Link>
+          <Link
+            href="/calculator"
+            onClick={() => setMobileMenuOpen(false)}
+            className="px-6 py-4 border-b border-gray-100 text-[15px] font-semibold text-[#1f2432] hover:bg-gray-50 flex items-center justify-between"
+          >
+            GPA Calculator
+          </Link>
+          <div className="px-6 py-4 flex items-center gap-3 text-[15px] font-semibold text-[#1f2432] hover:bg-gray-50 cursor-pointer">
+            <div className="h-8 w-8 rounded-full border border-gray-300 bg-gray-50 text-gray-400 flex items-center justify-center">
+              <User className="w-4 h-4" />
+            </div>
+            Sign In (Guest)
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
