@@ -102,22 +102,32 @@ export function Nav() {
                 <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white" />
               </button>
 
-              {/* Notification Panel — desktop dropdown, mobile constrained */}
+              {/* Notification Panel */}
               {showNotifications && (
                 <>
-                  {/* Mobile backdrop */}
-                  <div className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40" onClick={() => setShowNotifications(false)} />
+                  {/* Backdrop */}
+                  <div
+                    className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+                    onClick={() => setShowNotifications(false)}
+                  />
 
-                  <div className="absolute right-0 mt-2 z-50
-                    w-[90vw] max-w-[360px] md:w-80
-                    bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden
-                    md:right-0 right-[-8px]">
+                  {/* Mobile: fixed & centered; Desktop: absolute from bell icon */}
+                  <div className="
+                    fixed left-1/2 -translate-x-1/2 w-[calc(100vw-32px)] max-w-[360px]
+                    md:absolute md:fixed-[unset] md:left-auto md:translate-x-0 md:right-0 md:w-80
+                    top-[68px] md:top-auto md:mt-2
+                    bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden z-50">
                     <div className="px-4 py-3 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
                       <span className="font-bold text-[13px] text-[#1f2432]">Notifications</span>
-                      <span className="text-[11px] text-[#0056D2] font-semibold cursor-pointer hover:underline">Mark all read</span>
+                      <button
+                        onClick={() => setShowNotifications(false)}
+                        className="text-[11px] text-[#0056D2] font-semibold hover:underline cursor-pointer"
+                      >
+                        Mark all read
+                      </button>
                     </div>
 
-                    <div className="p-4 hover:bg-gray-50 transition-colors border-b border-gray-50 cursor-pointer active:bg-gray-100">
+                    <div className="p-4 hover:bg-gray-50 transition-colors border-b border-gray-100 cursor-pointer active:bg-gray-100">
                       <div className="flex gap-3">
                         <div className="w-2 h-2 bg-blue-500 rounded-full mt-1.5 shrink-0" />
                         <div>
@@ -164,19 +174,22 @@ export function Nav() {
           <div className="md:hidden fixed top-[60px] left-0 right-0 bg-white border-b border-gray-200 shadow-xl z-50 flex flex-col">
 
             {/* Mobile search */}
-            <div className="p-4 border-b border-gray-100">
-              <form onSubmit={handleSearch} className="flex gap-2">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search seat number..."
-                  className="flex-1 h-11 px-4 rounded-xl border border-gray-200 text-[14px] text-base outline-none focus:border-[#0056D2] transition-colors bg-gray-50"
-                />
+            <div className="p-3 border-b border-gray-100">
+              <form onSubmit={handleSearch} className="flex items-center gap-2 w-full overflow-hidden">
+                <div className="relative flex-1 min-w-0">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search seat number..."
+                    className="w-full h-11 pl-9 pr-3 rounded-xl border border-gray-200 text-base outline-none focus:border-[#0056D2] transition-colors bg-gray-50"
+                  />
+                </div>
                 <button
                   type="submit"
-                  disabled={isPending}
-                  className="h-11 w-11 flex items-center justify-center bg-[#0056D2] rounded-xl text-white shrink-0 disabled:opacity-60"
+                  disabled={isPending || searchQuery.trim().length === 0}
+                  className="h-11 w-11 flex items-center justify-center bg-[#0056D2] rounded-xl text-white shrink-0 disabled:opacity-40 disabled:bg-gray-300 transition-colors"
                 >
                   <Search className="w-4 h-4" />
                 </button>
