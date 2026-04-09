@@ -1,0 +1,32 @@
+"use client";
+
+import { useState } from "react";
+import { X } from "lucide-react";
+
+export function NotificationBanner() {
+  const [visible, setVisible] = useState(true);
+
+  if (!visible) return null;
+
+  return (
+    <div className="w-full bg-[#001c47] border-b border-[#00255d]">
+      <div className="max-w-[1800px] mx-auto px-4 sm:px-8 py-2.5 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <div className="bg-white/10 w-[22px] h-[22px] rounded-full flex items-center justify-center shrink-0">
+            <span className="font-bold text-[11px] text-white">i</span>
+          </div>
+          <p className="text-[#b1c0e0] text-[13px] sm:text-[14px]">
+            <strong className="text-white mr-1">New Results:</strong>
+            Semester II "OOPs" results are out. <span className="text-white font-medium cursor-pointer hover:underline mx-1">Check CGPA</span>
+          </p>
+        </div>
+        <button 
+          onClick={() => setVisible(false)}
+          className="text-[#a4b1cd] hover:text-white transition-colors p-1 rounded-md hover:bg-white/10"
+        >
+          <X className="w-[18px] h-[18px]" />
+        </button>
+      </div>
+    </div>
+  );
+}

@@ -14,14 +14,14 @@ export function SearchOmnibar() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (query.trim().length === 0) return;
-    
+
     // Convert to upper case and trim for standard roll number format
     const seatNo = query.trim().toUpperCase();
-    
+
     setQuery("");
     inputRef.current?.blur();
     setFocused(false);
-    
+
     startTransition(() => {
       router.push(`/student/${seatNo}`);
     });
@@ -29,34 +29,43 @@ export function SearchOmnibar() {
 
   return (
     <form onSubmit={handleSubmit} className="relative w-full mx-auto">
-      {/* Input container */}
-      <div
-        className={`flex items-center gap-2 sm:gap-3 border px-4 sm:px-5 py-3 sm:py-3.5 bg-white transition-shadow duration-200 rounded-full border-gray-300 shadow-sm hover:shadow-md ${
-          focused ? "border-blue-500 shadow-[0_0_0_4px_rgba(59,130,246,0.15)] outline-none ring-0" : ""
-        }`}
-      >
-        <Search
-          className={`h-4 w-4 sm:h-5 sm:w-5 shrink-0 transition-colors ${focused ? "text-blue-500" : "text-gray-400"}`}
-        />
-        <input
-          ref={inputRef}
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
-          placeholder="Enter your Seat No. (e.g. EB25210106004)..."
-          className="flex-1 bg-transparent text-base sm:text-[15px] text-gray-900 placeholder:text-gray-400 outline-none w-full min-w-0"
-          autoComplete="off"
-          spellCheck={false}
-        />
-        <button
-          type="submit"
-          disabled={query.trim().length === 0 || isPending}
-          className="hidden sm:flex items-center gap-1 rounded-full bg-[#0056D2] px-4 py-1.5 text-[13px] font-bold text-white hover:bg-blue-700 disabled:opacity-50 transition-colors"
+      {/* Outer Shell / Cushion */}
+      <div className="p-2 sm:p-2.5 rounded-[36px] border border-gray-200/80 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_8px_40px_rgba(0,0,0,0.06)] hover:border-gray-300 w-full">
+        
+        {/* Inner Search Field */}
+        <div
+          className={`flex items-center w-full rounded-[28px] transition-all duration-300 relative ${
+            focused 
+              ? "bg-white shadow-[0_0_0_2px_#0056D2] ring-4 ring-[#0056D2]/10" 
+              : "bg-[#f0f3f7] hover:bg-[#e9edf2] border border-transparent"
+          }`}
         >
-          {isPending ? "Searching..." : "Search Result"}
-        </button>
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            placeholder="Enter your Seat No. (e.g. EB25210106004)..."
+            className="flex-1 w-full bg-transparent pl-7 sm:pl-8 pr-4 py-4 sm:py-5 text-[15px] sm:text-[17px] font-semibold text-[#1f2432] placeholder:text-gray-400 outline-none"
+            autoComplete="off"
+            spellCheck={false}
+          />
+          
+          {/* Aesthetic Icon Button */}
+          <button
+            type="submit"
+            disabled={query.trim().length === 0 || isPending}
+            className={`flex items-center justify-center w-[46px] h-[46px] sm:w-[54px] sm:h-[54px] mr-2 rounded-[20px] transition-all duration-300 shrink-0 ${
+              query.trim().length > 0 
+                ? "bg-[#1f2432] text-white shadow-[0_4px_12px_rgba(31,36,50,0.2)] hover:bg-[#0056D2] hover:scale-[1.02] active:scale-95" 
+                : "bg-gray-200/80 text-gray-400 pointer-events-none"
+            }`}
+          >
+            <Search className={`w-5 h-5 sm:w-[22px] sm:h-[22px] ${isPending ? "animate-pulse" : ""}`} />
+          </button>
+        </div>
       </div>
     </form>
   );
