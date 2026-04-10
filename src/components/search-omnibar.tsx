@@ -16,12 +16,13 @@ export function SearchOmnibar() {
     if (query.trim().length === 0) return;
 
     const seatNo = query.trim().toUpperCase();
+    const sanitizedSeat = encodeURIComponent(seatNo.replace(/[^a-zA-Z0-9-]/g, ''));
     setQuery("");
     inputRef.current?.blur();
     setFocused(false);
 
     startTransition(() => {
-      router.push(`/student/${seatNo}`);
+      router.push(`/student/${sanitizedSeat}`);
     });
   }
 

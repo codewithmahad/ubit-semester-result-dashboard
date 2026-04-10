@@ -3,9 +3,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ResultTable } from "@/components/result-table"
 import { CGPATable } from "@/components/cgpa-table"
+import type { RawSemesterData } from "@/types"
 
-import { semester1 } from "@/data/semester1"
-import { semester2 } from "@/data/semester2"
+interface DashboardTabsProps {
+  semester1: RawSemesterData;
+  semester2: RawSemesterData;
+}
 
 /**
  * DashboardTabs — tab-panel container for the class leaderboard page.
@@ -14,7 +17,7 @@ import { semester2 } from "@/data/semester2"
  * Final Cumulative CGPA leaderboard. Raw semester data is imported at
  * this level and passed down to child table components.
  */
-export function DashboardTabs() {
+export function DashboardTabs({ semester1, semester2 }: DashboardTabsProps) {
     return (
         <Tabs defaultValue="semester2" className="w-full space-y-6">
             <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-zinc-100 py-2 -mx-2 sm:-mx-3 px-2 sm:px-3">

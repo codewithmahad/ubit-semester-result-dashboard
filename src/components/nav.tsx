@@ -40,10 +40,11 @@ export function Nav() {
     e.preventDefault();
     if (searchQuery.trim().length === 0) return;
     const seatNo = searchQuery.trim().toUpperCase();
+    const sanitizedSeat = encodeURIComponent(seatNo.replace(/[^a-zA-Z0-9-]/g, ''));
     setSearchQuery("");
     setMobileMenuOpen(false);
     startTransition(() => {
-      router.push(`/student/${seatNo}`);
+      router.push(`/student/${sanitizedSeat}`);
     });
   }
 
