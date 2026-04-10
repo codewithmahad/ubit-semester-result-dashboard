@@ -27,7 +27,7 @@ export default async function ClassLeaderboardPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-white flex flex-col pb-12">
+    <div className="min-h-screen bg-white flex flex-col">
       <Nav />
 
       {/* Page header */}
@@ -50,7 +50,7 @@ export default async function ClassLeaderboardPage({ params }: Props) {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 w-full max-w-[1800px] mx-auto px-0 sm:px-6 py-6 sm:py-8">
+      <main className="flex-1 w-full max-w-[1800px] mx-auto px-2 sm:px-4 md:px-8 py-6 pb-16 mb-16">
         <BatchMetrics />
         
         <div className="bg-white border-t border-b sm:border border-gray-300 px-4 sm:px-6 py-2 pb-6 mb-8">
