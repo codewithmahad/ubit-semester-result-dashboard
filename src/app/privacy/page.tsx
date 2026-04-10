@@ -29,9 +29,11 @@ export default function PrivacyPage() {
         </p>
 
         <article className="prose prose-zinc max-w-none prose-headings:text-[#1f2432] prose-headings:font-bold prose-p:text-gray-600 prose-p:leading-loose">
-          <p className="mb-8 p-5 bg-white border border-gray-200 rounded-xl text-[14px] shadow-sm">
-            <strong>TL;DR:</strong> We do not track you. We do not use cookies. We do not require accounts, passwords, or emails. We do not sell data. The UBIT Results Portal is a zero-telemetry, static application.
-          </p>
+          <div className="mb-8 p-6 bg-blue-50 border border-blue-100 rounded-xl shadow-sm">
+            <p className="text-[15px] text-blue-900 font-medium leading-relaxed m-0">
+              <strong className="text-blue-950 font-black tracking-wide">TL;DR:</strong> We do not track you. We do not use cookies. We do not require accounts, passwords, or emails. We do not sell data. The UBIT Results Portal is a zero-telemetry, static application.
+            </p>
+          </div>
 
           <h2 className="text-xl md:text-2xl font-bold mb-4">1. Information We Collect</h2>
           <p className="mb-6">

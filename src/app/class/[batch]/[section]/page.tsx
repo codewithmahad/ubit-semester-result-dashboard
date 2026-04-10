@@ -53,7 +53,7 @@ export default async function ClassLeaderboardPage({ params }: Props) {
       <main className="flex-1 w-full max-w-[1800px] mx-auto px-0 sm:px-6 py-6 sm:py-8">
         <BatchMetrics />
         
-        <div className="bg-white border-t border-b sm:border border-gray-300 px-4 sm:px-6 py-2 pb-6 max-h-[calc(100vh-10rem)]">
+        <div className="bg-white border-t border-b sm:border border-gray-300 px-4 sm:px-6 py-2 pb-6 mb-8">
           <DashboardTabs semester1={semester1} semester2={semester2} />
         </div>
       </main>

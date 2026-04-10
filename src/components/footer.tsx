@@ -14,10 +14,10 @@ export function Footer() {
             <h4 className="font-bold text-[#8F141B] text-[15px]">UBIT Results</h4>
           </div>
           
-          <p className="text-[12px] font-medium text-gray-500 leading-relaxed overflow-wrap-normal">
+          <p className="text-[12px] font-medium text-gray-700 leading-relaxed overflow-wrap-normal">
             A fast, accessible student-built portal for academic results, transcripts, and standing metrics.
           </p>
-          <p className="text-[11px] font-semibold text-gray-400 mt-1 mb-4">
+          <p className="text-[11px] font-semibold text-gray-600 mt-1 mb-4">
             Disclaimer: Independent student project. Not an official University of Karachi website.
           </p>
         </div>
@@ -58,11 +58,11 @@ export function Footer() {
       </div>
       
       {/* Bottom Legal Utilities Bar */}
-      <div className="max-w-[1800px] mx-auto mt-10 pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
-        <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest text-center md:text-left">
+      <div className="max-w-[1800px] mx-auto mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+        <p className="text-[11px] font-bold text-gray-600 uppercase tracking-widest text-center md:text-left">
           &copy; {new Date().getFullYear()} BSSE &#39;25 Initiative
         </p>
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-[12px] font-semibold text-gray-500">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-[12px] font-bold text-gray-600">
           <Link href="/about" className="hover:text-[#0056D2] transition-colors">About the Initiative</Link>
           <Link href="/privacy" className="hover:text-[#0056D2] transition-colors">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-[#0056D2] transition-colors">Terms of Use</Link>
