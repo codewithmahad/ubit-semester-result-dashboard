@@ -104,10 +104,10 @@ export function Nav() {
             <div className="relative" data-notifications>
               <button
                 onClick={() => { setShowNotifications(!showNotifications); setMobileMenuOpen(false); }}
-                className="relative flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
+                className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
               >
-                <Bell className="w-[18px] h-[18px]" />
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white" />
+                <Bell className="w-5 h-5" />
+                <span className="absolute top-[8px] right-[8px] w-2.5 h-2.5 bg-[#EF4444] rounded-full border-2 border-white shadow-[0_0_8px_rgba(239,68,68,0.6)] animate-pulse" />
               </button>
 
               {/* Notification Panel */}
@@ -207,19 +207,19 @@ export function Nav() {
             <Link
               href="/leaderboards"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between px-5 py-4 border-b border-gray-100 text-[15px] font-semibold text-[#1f2432] hover:bg-gray-50 active:bg-gray-100 transition-colors"
+              className="flex items-center justify-between px-6 py-5 border-b border-gray-100 text-[16px] font-semibold text-[#1f2432] hover:bg-gray-50 active:bg-gray-100 transition-colors"
             >
-              Leaderboards
-              <ChevronRight className="w-4 h-4 text-gray-400" />
+              Class Leaderboards
+              <ChevronRight className="w-5 h-5 text-gray-400" />
             </Link>
 
             <Link
               href="/calculator"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between px-5 py-4 border-b border-gray-100 text-[15px] font-semibold text-[#1f2432] hover:bg-gray-50 active:bg-gray-100 transition-colors"
+              className="flex items-center justify-between px-6 py-5 border-b border-gray-100 text-[16px] font-semibold text-[#1f2432] hover:bg-gray-50 active:bg-gray-100 transition-colors"
             >
               GPA Calculator
-              <ChevronRight className="w-4 h-4 text-gray-400" />
+              <ChevronRight className="w-5 h-5 text-gray-400" />
             </Link>
 
             <div className="px-5 py-4 flex items-center gap-3">

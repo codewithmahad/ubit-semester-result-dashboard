@@ -234,15 +234,15 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
 
     // Sticky col px offsets — rank(90) + roll(130) + name(220)
     function thStickyClass(id: string) {
-        if (id === "rank") return "max-sm:static sticky left-0 z-40"
-        if (id === "roll") return "max-sm:static max-sm:shadow-none sticky left-[90px] z-40 shadow-[1px_0_0_#1E293B]"
-        if (id === "name") return "max-sm:static max-sm:shadow-none sticky left-[220px] z-40 shadow-[2px_0_0_#1E293B]"
+        if (id === "rank") return "max-md:static sticky left-0 z-40 shadow-[1px_0_0_#1E293B]"
+        if (id === "roll") return "max-md:static max-md:shadow-none sticky left-[90px] z-40 shadow-[2px_0_0_#1E293B]"
+        if (id === "name") return "max-md:static max-md:shadow-none sticky left-[220px] z-40 shadow-[2px_0_0_#1E293B]"
         return ""
     }
     function tdStickyClass(id: string) {
-        if (id === "rank") return "max-sm:static sticky left-0 z-20"
-        if (id === "roll") return "max-sm:static max-sm:shadow-none sticky left-[90px] z-20 shadow-[1px_0_0_#F1F5F9]"
-        if (id === "name") return "max-sm:static max-sm:shadow-none sticky left-[220px] z-20 shadow-[2px_0_0_#F1F5F9]"
+        if (id === "rank") return "max-md:static sticky left-0 z-20 shadow-[1px_0_0_#F1F5F9]"
+        if (id === "roll") return "max-md:static max-md:shadow-none sticky left-[90px] z-20 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
+        if (id === "name") return "max-md:static max-md:shadow-none sticky left-[220px] z-20 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
         return ""
     }
     function thStickyStyle(id: string): React.CSSProperties {
@@ -289,7 +289,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                 style={{ border: "1px solid #E2E8F0" }}
             >
 
-                <div style={{ overflowX: "auto", overflowY: "clip" }}>
+                <div className="overflow-auto max-h-[70vh] w-full" style={{ WebkitOverflowScrolling: 'touch' }}>
                     <table className="w-full text-sm text-left align-middle border-separate border-spacing-0">
 
                         {/* Dark navy sticky header */}
