@@ -285,23 +285,23 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
     }
 
     function thStickyClass(id: string) {
-        if (id === "rank") return "max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
-        if (id === "roll") return "max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
+        if (id === "rank") return "w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
+        if (id === "roll") return "w-[120px] min-w-[120px] sm:w-[150px] sm:min-w-[150px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
         return ""
     }
     function tdStickyClass(id: string) {
-        if (id === "rank") return "max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]"
-        if (id === "roll") return "max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
+        if (id === "rank") return "w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]"
+        if (id === "roll") return "w-[120px] min-w-[120px] sm:w-[150px] sm:min-w-[150px] max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
         return ""
     }
     function thStickyStyle(id: string): React.CSSProperties {
-        if (id === "rank") return { width: 52, minWidth: 52, background: C.navy }
-        if (id === "roll") return { width: 120, minWidth: 120, background: C.navy }
+        if (id === "rank") return { background: C.navy }
+        if (id === "roll") return { background: C.navy }
         return {}
     }
     function tdStickyStyle(id: string, bg: string): React.CSSProperties {
-        if (id === "rank") return { width: 52, minWidth: 52, background: bg || "#fff" }
-        if (id === "roll") return { width: 120, minWidth: 120, background: bg || "#fff" }
+        if (id === "rank") return { background: bg || "#fff" }
+        if (id === "roll") return { background: bg || "#fff" }
         return {}
     }
 
@@ -347,11 +347,10 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                                         return (
                                             <th
                                                 key={h.id}
-                                                className={thStickyClass(h.id)}
+                                                className={`${thStickyClass(h.id)} max-md:px-2.5 max-md:py-2 md:px-4 md:py-2.5`}
                                                 style={{
                                                     ...thStickyStyle(h.id),
                                                     borderBottom: `1px solid ${C.navyMid}`,
-                                                    padding: "8px 10px",
                                                     userSelect: "none",
                                                     cursor: sortable ? "pointer" : "default",
                                                     background: thStickyStyle(h.id).background || C.navy,
@@ -390,10 +389,9 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                                             {row.getVisibleCells().map(cell => (
                                                 <td
                                                     key={cell.id}
-                                                    className={tdStickyClass(cell.column.id)}
+                                                    className={`${tdStickyClass(cell.column.id)} max-md:px-2.5 max-md:py-2.5 md:px-4 md:py-3`}
                                                     style={{
                                                         ...tdStickyStyle(cell.column.id, bg === "transparent" ? "#fff" : bg),
-                                                        padding: "10px 10px",
                                                         borderBottom: "1px solid #F1F5F9",
                                                         whiteSpace: "nowrap",
                                                     }}

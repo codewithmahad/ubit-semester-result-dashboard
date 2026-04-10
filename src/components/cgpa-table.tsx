@@ -250,27 +250,27 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
 
     // Sticky col px offsets — rank(90) + roll(130) + name(220)
     function thStickyClass(id: string) {
-        if (id === "rank") return "max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
-        if (id === "roll") return "max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
-        if (id === "name") return "max-md:static max-md:shadow-none sticky left-[220px] z-30 shadow-[2px_0_0_#1E293B]"
+        if (id === "rank") return "w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
+        if (id === "roll") return "w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
+        if (id === "name") return "w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-30 shadow-[2px_0_0_#1E293B]"
         return ""
     }
     function tdStickyClass(id: string) {
-        if (id === "rank") return "max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]"
-        if (id === "roll") return "max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-        if (id === "name") return "max-md:static max-md:shadow-none sticky left-[220px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
+        if (id === "rank") return "w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]"
+        if (id === "roll") return "w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
+        if (id === "name") return "w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
         return ""
     }
     function thStickyStyle(id: string): React.CSSProperties {
-        if (id === "rank") return { width: 52, minWidth: 52, background: C.navy }
-        if (id === "roll") return { width: 100, minWidth: 100, background: C.navy }
-        if (id === "name") return { width: 160, minWidth: 160, background: C.navy }
+        if (id === "rank") return { background: C.navy }
+        if (id === "roll") return { background: C.navy }
+        if (id === "name") return { background: C.navy }
         return {}
     }
     function tdStickyStyle(id: string, bg: string): React.CSSProperties {
-        if (id === "rank") return { width: 52, minWidth: 52, background: bg }
-        if (id === "roll") return { width: 100, minWidth: 100, background: bg }
-        if (id === "name") return { width: 160, minWidth: 160, background: bg }
+        if (id === "rank") return { background: bg }
+        if (id === "roll") return { background: bg }
+        if (id === "name") return { background: bg }
         return {}
     }
 
@@ -317,11 +317,10 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                         return (
                                             <th
                                                 key={h.id}
-                                                className={thStickyClass(h.id)}
+                                                className={`${thStickyClass(h.id)} max-md:px-2.5 max-md:py-2 md:px-4 md:py-2.5`}
                                                 style={{
                                                     ...thStickyStyle(h.id),
                                                     borderBottom: `1px solid ${C.navyMid}`,
-                                                    padding: "8px 10px",
                                                     userSelect: "none",
                                                     cursor: sortable ? "pointer" : "default",
                                                     background: thStickyStyle(h.id).background || C.navy,
@@ -367,10 +366,9 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                             {row.getVisibleCells().map(cell => (
                                                 <td
                                                     key={cell.id}
-                                                    className={tdStickyClass(cell.column.id)}
+                                                    className={`${tdStickyClass(cell.column.id)} max-md:px-2.5 max-md:py-2.5 md:px-4 md:py-3`}
                                                     style={{
                                                         ...tdStickyStyle(cell.column.id, bg),
-                                                        padding: "10px 10px",
                                                         borderBottom: "1px solid #F1F5F9",
                                                         whiteSpace: "nowrap",
                                                     }}
