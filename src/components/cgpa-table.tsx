@@ -17,78 +17,7 @@ import { Button } from "@/components/ui/button"
 import { Download, Search, CheckCircle2, XCircle, ChevronUp, ChevronDown } from "lucide-react"
 import { StudentModal } from "@/components/student-modal"
 
-// ── Same design tokens as result-table ──────────────────────────
-const C = {
-    navy: "#0F172A",
-    navyMid: "#1E293B",
-    ink: "#1E293B",
-    muted: "#64748B",
-    faint: "#94A3B8",
-    line: "#E2E8F0",
-    gold: "#8A6E14",
-    silver: "#4B6280",
-    bronze: "#6B4B28",
-    goldRow: "rgba(138,110,20,0.04)",
-    silverRow: "rgba(75,98,128,0.04)",
-    bronzeRow: "rgba(107,75,40,0.04)",
-}
-
-// ── Same medal SVGs as result-table ────────────────────────────
-function CrownIcon({ className }: { className?: string }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M2 19h20v2H2v-2zM2 6l5 7 5-9 5 9 5-7v11H2V6z" />
-        </svg>
-    )
-}
-function DiamondIcon({ className }: { className?: string }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
-            <polygon points="12 2 22 9 18 20 6 20 2 9" />
-        </svg>
-    )
-}
-function ShieldIcon({ className }: { className?: string }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        </svg>
-    )
-}
-
-function MedalBadge({ rank }: { rank: number }) {
-    const num = String(rank).padStart(2, "0")
-    if (rank === 1) return (
-        <div className="flex flex-col items-center justify-center gap-0.5">
-            <span style={{ background: C.gold }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
-                <CrownIcon className="w-3 h-3 text-white" />
-            </span>
-            <span style={{ color: C.gold }} className="font-bold text-[11px] tabular-nums">{num}</span>
-        </div>
-    )
-    if (rank === 2) return (
-        <div className="flex flex-col items-center justify-center gap-0.5">
-            <span style={{ background: C.silver }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
-                <DiamondIcon className="w-2.5 h-2.5 text-white" />
-            </span>
-            <span style={{ color: C.silver }} className="font-bold text-[11px] tabular-nums">{num}</span>
-        </div>
-    )
-    if (rank === 3) return (
-        <div className="flex flex-col items-center justify-center gap-0.5">
-            <span style={{ background: C.bronze }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
-                <ShieldIcon className="w-2.5 h-2.5 text-white" />
-            </span>
-            <span style={{ color: C.bronze }} className="font-bold text-[11px] tabular-nums">{num}</span>
-        </div>
-    )
-    return (
-        <div className="flex flex-col items-center justify-center h-full">
-            <span className="font-medium text-[13px] text-slate-500 tabular-nums">{num}</span>
-        </div>
-    )
-}
-
+import { MedalBadge, CrownIcon, DiamondIcon, ShieldIcon } from "@/components/ui/medal-badge"
 interface CGPATableProps {
     sem1Data: RawSemesterData
     sem2Data: RawSemesterData
@@ -109,13 +38,13 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
         {
             accessorKey: "rank",
             header: () => <Th>Final Rank</Th>,
-            cell: ({ row }) => <MedalBadge rank={row.getValue("rank") as number} />,
+            cell: ({ row }) => <MedalBadge medalRank={row.getValue("rank") as number} displayNumber={row.getValue("rank") as number} />,
         },
         {
             accessorKey: "roll",
             header: () => <Th>Roll No.</Th>,
             cell: ({ row }) => (
-                <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-wide" style={{ color: C.muted }}>
+                <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-wide text-ubit-muted">
                     {row.getValue("roll")}
                 </span>
             ),
@@ -124,7 +53,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             accessorKey: "name",
             header: () => <Th>Student Name</Th>,
             cell: ({ row }) => (
-                <span className="font-bold text-[11px] sm:text-[13px] tracking-tight" style={{ color: C.ink }}>
+                <span className="font-bold text-[11px] sm:text-[13px] tracking-tight text-ubit-ink">
                     {row.getValue("name")}
                 </span>
             ),
@@ -137,8 +66,8 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                 return (
                     <div className="flex justify-center items-center w-full">
                         {v === 0
-                            ? <span style={{ color: C.faint }}>–</span>
-                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums" style={{ color: C.ink }}>{v.toFixed(2)}</span>}
+                            ? <span className="text-ubit-faint">–</span>
+                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums text-ubit-ink">{v.toFixed(2)}</span>}
                     </div>
                 )
             },
@@ -151,8 +80,8 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                 return (
                     <div className="flex justify-center items-center w-full">
                         {v === 0
-                            ? <span style={{ color: C.faint }}>–</span>
-                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums" style={{ color: C.ink }}>{v.toFixed(2)}</span>}
+                            ? <span className="text-ubit-faint">–</span>
+                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums text-ubit-ink">{v.toFixed(2)}</span>}
                     </div>
                 )
             },
@@ -162,7 +91,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             header: () => <Th>Grand Total</Th>,
             cell: ({ row }) => (
                 <div className="flex justify-center items-center w-full">
-                    <span className="font-bold text-[12px] sm:text-[14px] tabular-nums" style={{ color: C.ink }}>
+                    <span className="font-bold text-[12px] sm:text-[14px] tabular-nums text-ubit-ink">
                         {row.getValue("totalMarks")}
                     </span>
                 </div>
@@ -174,18 +103,17 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             cell: ({ row }) => {
                 const cgpa = row.getValue("cgpa") as number
                 const rank = row.original.rank || 0
-                const chipStyle =
-                    rank === 1 ? { background: C.gold, color: "#fff" } :
-                        rank === 2 ? { background: C.silver, color: "#fff" } :
-                            rank === 3 ? { background: C.bronze, color: "#fff" } :
-                                cgpa >= 3.8 ? { background: C.navy, color: "#fff" } :
-                                    cgpa >= 2.0 ? { background: "#F1F5F9", color: C.ink, border: "1px solid #CBD5E1" } :
-                                        { background: "#FFF1F2", color: "#E11D48", border: "1px solid #FECDD3" }
+                const chipClass =
+                    rank === 1 ? "bg-ubit-gold text-white" :
+                        rank === 2 ? "bg-ubit-silver text-white" :
+                            rank === 3 ? "bg-ubit-bronze text-white" :
+                                cgpa >= 3.8 ? "bg-ubit-navy text-white" :
+                                    cgpa >= 2.0 ? "bg-slate-100 text-ubit-ink border border-slate-300" :
+                                        "bg-rose-50 text-rose-600 border border-rose-200"
                 return (
                     <div className="flex justify-center items-center w-full">
                         <span
-                            style={chipStyle}
-                            className="inline-flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg text-[11px] sm:text-[13px] font-bold tabular-nums"
+                            className={`inline-flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg text-[11px] sm:text-[13px] font-bold tabular-nums ${chipClass}`}
                         >
                             {cgpa.toFixed(2)}
                         </span>
@@ -207,8 +135,8 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                 )
                 return (
                     <div className="flex justify-center items-center gap-1.5 w-full">
-                        <XCircle className="w-3.5 h-3.5 shrink-0" style={{ color: C.faint }} />
-                        <span className="text-[12px] font-semibold" style={{ color: C.muted }}>Fail</span>
+                        <XCircle className="w-3.5 h-3.5 shrink-0 text-ubit-faint" />
+                        <span className="text-[12px] font-semibold text-ubit-muted">Fail</span>
                     </div>
                 )
             },
@@ -241,37 +169,25 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
     }
 
     // Row background
-    function rowBg(rank: number) {
-        if (rank === 1) return C.goldRow
-        if (rank === 2) return C.silverRow
-        if (rank === 3) return C.bronzeRow
-        return "transparent"
+    function rowBgClass(rank: number) {
+        if (rank === 1) return "bg-ubit-goldrow"
+        if (rank === 2) return "bg-ubit-silverrow"
+        if (rank === 3) return "bg-ubit-bronzerow"
+        return ""
     }
 
     // Sticky col px offsets — rank(90) + roll(130) + name(220)
     function thStickyClass(id: string) {
-        if (id === "rank") return "w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
-        if (id === "roll") return "w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
-        if (id === "name") return "w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-30 shadow-[2px_0_0_#1E293B]"
+        if (id === "rank") return "bg-ubit-navy w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
+        if (id === "roll") return "bg-ubit-navy w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
+        if (id === "name") return "bg-ubit-navy w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-30 shadow-[2px_0_0_#1E293B]"
         return ""
     }
-    function tdStickyClass(id: string) {
-        if (id === "rank") return "w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]"
-        if (id === "roll") return "w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
-        if (id === "name") return "w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]"
+    function tdStickyClass(id: string, bgClass?: string) {
+        if (id === "rank") return `${bgClass || "bg-white"} w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]`
+        if (id === "roll") return `${bgClass || "bg-white"} w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]`
+        if (id === "name") return `${bgClass || "bg-white"} w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]`
         return ""
-    }
-    function thStickyStyle(id: string): React.CSSProperties {
-        if (id === "rank") return { background: C.navy }
-        if (id === "roll") return { background: C.navy }
-        if (id === "name") return { background: C.navy }
-        return {}
-    }
-    function tdStickyStyle(id: string, bg: string): React.CSSProperties {
-        if (id === "rank") return { background: bg }
-        if (id === "roll") return { background: bg }
-        if (id === "name") return { background: bg }
-        return {}
     }
 
     return (
@@ -280,18 +196,17 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             <div className="bg-white/95 pb-2 pt-0 z-10 relative">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <div className="relative w-full sm:max-w-xs">
-                        <Search className="absolute left-3 top-2.5 h-3.5 w-3.5" style={{ color: C.faint }} />
+                        <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-ubit-faint" />
                         <Input
                             placeholder="Search name or roll number..."
                             value={globalFilter}
                             onChange={e => setGlobalFilter(e.target.value)}
-                            className="pl-9 h-9 bg-white border-slate-200 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-slate-400 rounded-lg text-[13px] font-medium text-slate-700"
+                            className="pl-9 h-9 border-slate-200 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-slate-400 rounded-lg text-[13px] font-medium text-slate-700"
                         />
                     </div>
                     <Button
                         onClick={exportPDF}
-                        className="w-full sm:w-auto h-9 font-semibold text-[13px] px-5 rounded-lg tracking-tight transition-all"
-                        style={{ background: C.navy, color: "#fff" }}
+                        className="w-full sm:w-auto h-9 font-semibold text-[13px] px-5 rounded-lg tracking-tight transition-all bg-ubit-navy text-white hover:bg-ubit-navymid"
                     >
                         <Download className="w-3.5 h-3.5 mr-2" /> Download PDF
                     </Button>
@@ -309,9 +224,9 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                     <table className="w-full text-sm text-left align-middle border-separate border-spacing-0">
 
                         {/* Dark navy sticky header */}
-                        <thead style={{ position: "sticky", top: 0, zIndex: 20 }}>
+                        <thead className="sticky top-0 z-20">
                             {table.getHeaderGroups().map(hg => (
-                                <tr key={hg.id} style={{ background: C.navy }}>
+                                <tr key={hg.id} className="bg-ubit-navy">
                                     {hg.headers.map(h => {
                                         const sortable = h.column.getCanSort()
                                         return (
@@ -319,11 +234,8 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                                 key={h.id}
                                                 className={`${thStickyClass(h.id)} max-md:px-2.5 max-md:py-2 md:px-4 md:py-2.5`}
                                                 style={{
-                                                    ...thStickyStyle(h.id),
-                                                    borderBottom: `1px solid ${C.navyMid}`,
                                                     userSelect: "none",
                                                     cursor: sortable ? "pointer" : "default",
-                                                    background: thStickyStyle(h.id).background || C.navy,
                                                     whiteSpace: "nowrap",
                                                 }}
                                                 onClick={sortable ? h.column.getToggleSortingHandler() : undefined}
@@ -349,7 +261,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                             {table.getRowModel().rows.length ? (
                                 table.getRowModel().rows.map(row => {
                                     const rank = row.original.rank || 0
-                                    const bg = rowBg(rank) === "transparent" ? "#fff" : rowBg(rank)
+                                    const bgClass = rowBgClass(rank)
                                     return (
                                         <tr
                                             key={row.id}
@@ -360,15 +272,14 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                                     setSelectedStudent(s1RankItem || null)
                                                 }
                                             }}
-                                            style={{ background: bg, cursor: "pointer" }}
-                                            className="group/row transition-colors hover:bg-slate-50"
+                                            style={{ cursor: "pointer" }}
+                                            className={`group/row transition-colors hover:bg-slate-50 ${bgClass || "bg-white"}`}
                                         >
                                             {row.getVisibleCells().map(cell => (
                                                 <td
                                                     key={cell.id}
-                                                    className={`${tdStickyClass(cell.column.id)} max-md:px-2.5 max-md:py-2.5 md:px-4 md:py-3`}
+                                                    className={`${tdStickyClass(cell.column.id, bgClass)} max-md:px-2.5 max-md:py-2.5 md:px-4 md:py-3`}
                                                     style={{
-                                                        ...tdStickyStyle(cell.column.id, bg),
                                                         borderBottom: "1px solid #F1F5F9",
                                                         whiteSpace: "nowrap",
                                                     }}
@@ -382,9 +293,9 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                             ) : (
                                 <tr>
                                     <td colSpan={columns.length} style={{ padding: "56px 0", textAlign: "center", borderBottom: "1px solid #F1F5F9" }}>
-                                        <div className="flex flex-col items-center" style={{ color: C.faint }}>
+                                        <div className="flex flex-col items-center text-ubit-faint">
                                             <Search className="h-6 w-6 mb-2 opacity-30" />
-                                            <p className="text-[13px] font-semibold" style={{ color: C.ink }}>No students found</p>
+                                            <p className="text-[13px] font-semibold text-ubit-ink">No students found</p>
                                             <p className="text-[11px] mt-0.5">Try adjusting your search.</p>
                                         </div>
                                     </td>
@@ -395,19 +306,19 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                 </div>
 
                 {/* Footer — legend + date */}
-                <div style={{ background: "#F8FAFC", borderTop: "1px solid #E2E8F0", padding: "8px 20px", fontSize: 11, color: C.faint, letterSpacing: "0.06em", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-50 border-t border-slate-200 py-2 px-5 text-[11px] text-ubit-faint tracking-wider">
+                    <div className="flex items-center gap-3">
                         {[
-                            { label: "Gold", color: C.gold, icon: <CrownIcon className="w-2.5 h-2.5" /> },
-                            { label: "Silver", color: C.silver, icon: <DiamondIcon className="w-2.5 h-2.5" /> },
-                            { label: "Bronze", color: C.bronze, icon: <ShieldIcon className="w-2.5 h-2.5" /> },
+                            { label: "Gold", colorClass: "bg-ubit-gold", icon: <CrownIcon className="w-2.5 h-2.5 text-white" /> },
+                            { label: "Silver", colorClass: "bg-ubit-silver", icon: <DiamondIcon className="w-2.5 h-2.5 text-white" /> },
+                            { label: "Bronze", colorClass: "bg-ubit-bronze", icon: <ShieldIcon className="w-2.5 h-2.5 text-white" /> },
                         ].map(m => (
-                            <div key={m.label} style={{ display: "flex", alignItems: "center", gap: 5 }}>
-                                <span style={{ background: m.color, color: "#fff", borderRadius: 4, padding: "2px 4px", display: "flex" }}>{m.icon}</span>
-                                <span style={{ fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: C.faint }}>{m.label}</span>
+                            <div key={m.label} className="flex items-center gap-1.5">
+                                <span className={`${m.colorClass} rounded px-1 py-0.5 flex items-center`}>{m.icon}</span>
+                                <span className="text-[10px] font-bold uppercase tracking-widest text-ubit-faint">{m.label}</span>
                             </div>
                         ))}
-                        <span style={{ color: "#CBD5E1", fontSize: 10 }}>— Cumulative GPA rank</span>
+                        <span className="text-slate-300 text-[10px]">— Cumulative GPA rank</span>
                     </div>
                     <span>{sem1Data.university} · {currentDate || "—"}</span>
                 </div>

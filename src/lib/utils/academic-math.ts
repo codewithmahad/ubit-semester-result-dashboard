@@ -290,3 +290,29 @@ export function calculateCGPARankings(
 
   return finalRankings;
 }
+
+// ─── Async Wrappers (Preparation for Spring Boot API Migration) ───────────────
+
+/**
+ * Asynchronous wrapper for calculateRankings.
+ * Currently resolves immediately but establishes the correct Promise 
+ * architecture for future HTTP fetches.
+ */
+export async function calculateRankingsAsync(
+  courses: Course[],
+  students: RawStudent[]
+): Promise<StudentRanking[]> {
+  return calculateRankings(courses, students);
+}
+
+/**
+ * Asynchronous wrapper for calculateCGPARankings.
+ * Currently resolves immediately but establishes the correct Promise 
+ * architecture for future HTTP fetches.
+ */
+export async function calculateCGPARankingsAsync(
+  sem1: RawSemesterData,
+  sem2: RawSemesterData
+): Promise<CGPARanking[]> {
+  return calculateCGPARankings(sem1, sem2);
+}

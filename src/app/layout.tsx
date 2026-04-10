@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   description:
     "Official academic result portal for BSSE Batch 2025, Department of Computer Science (UBIT), University of Karachi. View grades, GPA, rankings, and download transcripts.",
   keywords: ["UBIT", "results", "BSSE", "University of Karachi", "GPA", "CGPA", "grades"],
+  robots: {
+    index: false,
+    follow: false,
+  },
+  icons: {
+    icon: "/uok-logo.png",
+  },
   openGraph: {
     title: "UBIT Results Portal",
     description: "BSSE Batch 2025 — Academic Results Dashboard",
