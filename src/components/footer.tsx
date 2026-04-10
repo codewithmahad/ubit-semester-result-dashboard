@@ -20,10 +20,6 @@ export function Footer() {
           <p className="text-[11px] font-semibold text-gray-400 mt-1 mb-4">
             Disclaimer: Independent student project. Not an official University of Karachi website.
           </p>
-          
-          <p className="text-[11px] font-bold text-[#1f2432] uppercase tracking-widest">
-            &copy; {new Date().getFullYear()} BSSE &#39;25 Initiative
-          </p>
         </div>
 
         {/* Right Side: Links */}
@@ -58,6 +54,18 @@ export function Footer() {
             <Bug className="w-4 h-4" />
             Report Issue
           </a>
+        </div>
+      </div>
+      
+      {/* Bottom Legal Utilities Bar */}
+      <div className="max-w-[1800px] mx-auto mt-10 pt-6 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
+        <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest text-center md:text-left">
+          &copy; {new Date().getFullYear()} BSSE &#39;25 Initiative
+        </p>
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-[12px] font-semibold text-gray-500">
+          <Link href="/about" className="hover:text-[#0056D2] transition-colors">About the Initiative</Link>
+          <Link href="/privacy" className="hover:text-[#0056D2] transition-colors">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-[#0056D2] transition-colors">Terms of Use</Link>
         </div>
       </div>
     </footer>
