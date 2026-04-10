@@ -59,30 +59,34 @@ function ShieldIcon({ className }: { className?: string }) {
 function MedalBadge({ rank }: { rank: number }) {
     const num = String(rank).padStart(2, "0")
     if (rank === 1) return (
-        <div className="flex items-center gap-2">
-            <span style={{ background: C.gold }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
-                <CrownIcon className="w-3.5 h-3.5 text-white" />
+        <div className="flex flex-col items-center justify-center gap-0.5">
+            <span style={{ background: C.gold }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
+                <CrownIcon className="w-3 h-3 text-white" />
             </span>
-            <span style={{ color: C.gold }} className="font-bold text-[15px] tabular-nums">{num}</span>
+            <span style={{ color: C.gold }} className="font-bold text-[11px] tabular-nums">{num}</span>
         </div>
     )
     if (rank === 2) return (
-        <div className="flex items-center gap-2">
-            <span style={{ background: C.silver }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
-                <DiamondIcon className="w-3 h-3 text-white" />
+        <div className="flex flex-col items-center justify-center gap-0.5">
+            <span style={{ background: C.silver }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
+                <DiamondIcon className="w-2.5 h-2.5 text-white" />
             </span>
-            <span style={{ color: C.silver }} className="font-bold text-[15px] tabular-nums">{num}</span>
+            <span style={{ color: C.silver }} className="font-bold text-[11px] tabular-nums">{num}</span>
         </div>
     )
     if (rank === 3) return (
-        <div className="flex items-center gap-2">
-            <span style={{ background: C.bronze }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
-                <ShieldIcon className="w-3 h-3 text-white" />
+        <div className="flex flex-col items-center justify-center gap-0.5">
+            <span style={{ background: C.bronze }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
+                <ShieldIcon className="w-2.5 h-2.5 text-white" />
             </span>
-            <span style={{ color: C.bronze }} className="font-bold text-[15px] tabular-nums">{num}</span>
+            <span style={{ color: C.bronze }} className="font-bold text-[11px] tabular-nums">{num}</span>
         </div>
     )
-    return <span className="font-medium text-[14px] text-slate-500 tabular-nums pl-8">{num}</span>
+    return (
+        <div className="flex flex-col items-center justify-center h-full">
+            <span className="font-medium text-[13px] text-slate-500 tabular-nums">{num}</span>
+        </div>
+    )
 }
 
 interface CGPATableProps {
@@ -111,7 +115,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             accessorKey: "roll",
             header: () => <Th>Roll No.</Th>,
             cell: ({ row }) => (
-                <span className="font-mono text-[11px] font-medium tracking-wide" style={{ color: C.muted }}>
+                <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-wide" style={{ color: C.muted }}>
                     {row.getValue("roll")}
                 </span>
             ),
@@ -120,7 +124,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             accessorKey: "name",
             header: () => <Th>Student Name</Th>,
             cell: ({ row }) => (
-                <span className="font-semibold text-[13px] tracking-tight" style={{ color: C.ink }}>
+                <span className="font-bold text-[11px] sm:text-[13px] tracking-tight" style={{ color: C.ink }}>
                     {row.getValue("name")}
                 </span>
             ),
@@ -130,9 +134,13 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             header: () => <Th>Sem 1 SGPA</Th>,
             cell: ({ row }) => {
                 const v = row.getValue("sem1SGPA") as number
-                return v === 0
-                    ? <span style={{ color: C.faint }}>–</span>
-                    : <span className="font-semibold text-[13px] tabular-nums" style={{ color: C.ink }}>{v.toFixed(2)}</span>
+                return (
+                    <div className="flex justify-center items-center w-full">
+                        {v === 0
+                            ? <span style={{ color: C.faint }}>–</span>
+                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums" style={{ color: C.ink }}>{v.toFixed(2)}</span>}
+                    </div>
+                )
             },
         },
         {
@@ -140,18 +148,24 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             header: () => <Th>Sem 2 SGPA</Th>,
             cell: ({ row }) => {
                 const v = row.getValue("sem2SGPA") as number
-                return v === 0
-                    ? <span style={{ color: C.faint }}>–</span>
-                    : <span className="font-semibold text-[13px] tabular-nums" style={{ color: C.ink }}>{v.toFixed(2)}</span>
+                return (
+                    <div className="flex justify-center items-center w-full">
+                        {v === 0
+                            ? <span style={{ color: C.faint }}>–</span>
+                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums" style={{ color: C.ink }}>{v.toFixed(2)}</span>}
+                    </div>
+                )
             },
         },
         {
             accessorKey: "totalMarks",
             header: () => <Th>Grand Total</Th>,
             cell: ({ row }) => (
-                <span className="font-semibold text-[14px] tabular-nums" style={{ color: C.ink }}>
-                    {row.getValue("totalMarks")}
-                </span>
+                <div className="flex justify-center items-center w-full">
+                    <span className="font-bold text-[12px] sm:text-[14px] tabular-nums" style={{ color: C.ink }}>
+                        {row.getValue("totalMarks")}
+                    </span>
+                </div>
             ),
         },
         {
@@ -168,12 +182,14 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                     cgpa >= 2.0 ? { background: "#F1F5F9", color: C.ink, border: "1px solid #CBD5E1" } :
                                         { background: "#FFF1F2", color: "#E11D48", border: "1px solid #FECDD3" }
                 return (
-                    <span
-                        style={chipStyle}
-                        className="inline-flex items-center justify-center px-2.5 py-1 rounded-lg text-[13px] font-bold tabular-nums"
-                    >
-                        {cgpa.toFixed(2)}
-                    </span>
+                    <div className="flex justify-center items-center w-full">
+                        <span
+                            style={chipStyle}
+                            className="inline-flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg text-[11px] sm:text-[13px] font-bold tabular-nums"
+                        >
+                            {cgpa.toFixed(2)}
+                        </span>
+                    </div>
                 )
             },
         },
@@ -184,13 +200,13 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
             cell: ({ row }) => {
                 const cgpa = row.original.cgpa
                 if (cgpa >= 2.0) return (
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex justify-center items-center gap-1.5 w-full">
                         <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: "#16A34A" }} />
                         <span className="text-[12px] font-semibold" style={{ color: "#15803D" }}>Pass</span>
                     </div>
                 )
                 return (
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex justify-center items-center gap-1.5 w-full">
                         <XCircle className="w-3.5 h-3.5 shrink-0" style={{ color: C.faint }} />
                         <span className="text-[12px] font-semibold" style={{ color: C.muted }}>Fail</span>
                     </div>
@@ -246,22 +262,22 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
         return ""
     }
     function thStickyStyle(id: string): React.CSSProperties {
-        if (id === "rank") return { width: 90, minWidth: 90, background: C.navy }
-        if (id === "roll") return { width: 130, minWidth: 130, background: C.navy }
-        if (id === "name") return { width: 220, minWidth: 220, background: C.navy }
+        if (id === "rank") return { width: 52, minWidth: 52, background: C.navy }
+        if (id === "roll") return { width: 100, minWidth: 100, background: C.navy }
+        if (id === "name") return { width: 160, minWidth: 160, background: C.navy }
         return {}
     }
     function tdStickyStyle(id: string, bg: string): React.CSSProperties {
-        if (id === "rank") return { width: 90, minWidth: 90, background: bg }
-        if (id === "roll") return { width: 130, minWidth: 130, background: bg }
-        if (id === "name") return { width: 220, minWidth: 220, background: bg }
+        if (id === "rank") return { width: 52, minWidth: 52, background: bg }
+        if (id === "roll") return { width: 100, minWidth: 100, background: bg }
+        if (id === "name") return { width: 160, minWidth: 160, background: bg }
         return {}
     }
 
     return (
         <div className="space-y-3">
-            {/* Controls — sticky below the tab bar */}
-            <div className="sticky bg-white/95 backdrop-blur-sm py-2" style={{ top: 52, zIndex: 35 }}>
+            {/* Controls */}
+            <div className="bg-white/95 pb-2 pt-0 z-10 relative">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <div className="relative w-full sm:max-w-xs">
                         <Search className="absolute left-3 top-2.5 h-3.5 w-3.5" style={{ color: C.faint }} />
@@ -305,7 +321,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                                 style={{
                                                     ...thStickyStyle(h.id),
                                                     borderBottom: `1px solid ${C.navyMid}`,
-                                                    padding: "10px 16px",
+                                                    padding: "8px 10px",
                                                     userSelect: "none",
                                                     cursor: sortable ? "pointer" : "default",
                                                     background: thStickyStyle(h.id).background || C.navy,
@@ -313,7 +329,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                                 }}
                                                 onClick={sortable ? h.column.getToggleSortingHandler() : undefined}
                                             >
-                                                <div className="flex items-center gap-1">
+                                                <div className={`flex items-center ${["roll", "name"].includes(h.id) ? "justify-start" : "justify-center"} gap-1`}>
                                                     {flexRender(h.column.columnDef.header, h.getContext())}
                                                     {sortable && (
                                                         <span style={{ opacity: h.column.getIsSorted() ? 1 : 0.25, transition: "opacity 0.15s" }}>
@@ -354,7 +370,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                                     className={tdStickyClass(cell.column.id)}
                                                     style={{
                                                         ...tdStickyStyle(cell.column.id, bg),
-                                                        padding: "12px 16px",
+                                                        padding: "10px 10px",
                                                         borderBottom: "1px solid #F1F5F9",
                                                         whiteSpace: "nowrap",
                                                     }}

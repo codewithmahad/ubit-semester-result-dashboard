@@ -73,30 +73,34 @@ function MedalBadge({ cumulativeRank, semRank }: { cumulativeRank: number | null
     const num = String(semRank).padStart(2, "0")
 
     if (cumulativeRank === 1) return (
-        <div className="flex items-center gap-2">
-            <span style={{ background: C.gold }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
-                <CrownIcon className="w-3.5 h-3.5 text-white" />
+        <div className="flex flex-col items-center justify-center gap-0.5">
+            <span style={{ background: C.gold }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
+                <CrownIcon className="w-3 h-3 text-white" />
             </span>
-            <span style={{ color: C.gold }} className="font-bold text-[15px] tabular-nums">{num}</span>
+            <span style={{ color: C.gold }} className="font-bold text-[11px] tabular-nums">{num}</span>
         </div>
     )
     if (cumulativeRank === 2) return (
-        <div className="flex items-center gap-2">
-            <span style={{ background: C.silver }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
-                <DiamondIcon className="w-3 h-3 text-white" />
+        <div className="flex flex-col items-center justify-center gap-0.5">
+            <span style={{ background: C.silver }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
+                <DiamondIcon className="w-2.5 h-2.5 text-white" />
             </span>
-            <span style={{ color: C.silver }} className="font-bold text-[15px] tabular-nums">{num}</span>
+            <span style={{ color: C.silver }} className="font-bold text-[11px] tabular-nums">{num}</span>
         </div>
     )
     if (cumulativeRank === 3) return (
-        <div className="flex items-center gap-2">
-            <span style={{ background: C.bronze }} className="flex items-center justify-center w-6 h-6 rounded-md shrink-0">
-                <ShieldIcon className="w-3 h-3 text-white" />
+        <div className="flex flex-col items-center justify-center gap-0.5">
+            <span style={{ background: C.bronze }} className="flex items-center justify-center w-5 h-5 rounded-[4px] shrink-0 shadow-sm">
+                <ShieldIcon className="w-2.5 h-2.5 text-white" />
             </span>
-            <span style={{ color: C.bronze }} className="font-bold text-[15px] tabular-nums">{num}</span>
+            <span style={{ color: C.bronze }} className="font-bold text-[11px] tabular-nums">{num}</span>
         </div>
     )
-    return <span className="font-medium text-[14px] text-slate-500 tabular-nums pl-8">{num}</span>
+    return (
+        <div className="flex flex-col items-center justify-center h-full">
+            <span className="font-medium text-[13px] text-slate-500 tabular-nums">{num}</span>
+        </div>
+    )
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -170,7 +174,7 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                 accessorKey: "roll",
                 header: () => <Th>Seat No.</Th>,
                 cell: ({ row }) => (
-                    <span className="font-mono text-[13px] font-bold tracking-wide" style={{ color: C.ink }}>
+                    <span className="font-mono text-[11px] sm:text-[13px] font-bold tracking-wide" style={{ color: C.ink }}>
                         {row.getValue("roll")}
                     </span>
                 ),
@@ -182,8 +186,8 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
             enableSorting: false,  // no accidental re-sort on course headers
             header: () => (
                 <div className="flex flex-col items-center text-center leading-tight">
-                    <span className="text-[11px] font-bold tracking-wide" style={{ color: "#F1F5F9" }}>{course.code}</span>
-                    <span className="text-[9px] font-medium uppercase tracking-widest mt-0.5" style={{ color: "#94A3B8" }}>{course.creditHours} cr</span>
+                    <span className="text-[10px] sm:text-[11px] font-bold tracking-wide" style={{ color: "#F1F5F9" }}>{course.code}</span>
+                    <span className="text-[8px] sm:text-[9px] font-medium uppercase tracking-widest mt-0.5" style={{ color: "#94A3B8" }}>{course.creditHours} cr</span>
                 </div>
             ),
             accessorFn: row => row.results[course.code],
@@ -191,9 +195,9 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                 const res = getValue() as { marks: number; grade: string } | undefined
                 if (!res) return <span className="text-slate-300 flex justify-center">–</span>
                 return (
-                    <div className="flex flex-col items-center text-center">
-                        <span className="text-[14px] tabular-nums font-semibold leading-tight" style={{ color: C.ink }}>{res.marks}</span>
-                        <span className="text-[10px] tracking-wide mt-0.5 font-medium" style={{ color: gradeColor(res.grade) }}>{res.grade}</span>
+                    <div className="flex flex-col items-center text-center w-full">
+                        <span className="text-[12px] sm:text-[14px] tabular-nums font-bold leading-tight" style={{ color: C.ink }}>{res.marks}</span>
+                        <span className="text-[9px] sm:text-[10px] tracking-wide mt-0.5 font-bold" style={{ color: gradeColor(res.grade) }}>{res.grade}</span>
                     </div>
                 )
             },
@@ -204,9 +208,11 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                 accessorKey: "totalMarks",
                 header: () => <Th>Total</Th>,
                 cell: ({ row }) => (
-                    <span className="font-semibold text-[14px] tabular-nums" style={{ color: C.ink }}>
-                        {row.getValue("totalMarks")}
-                    </span>
+                    <div className="flex justify-center items-center w-full">
+                        <span className="font-bold text-[12px] sm:text-[14px] tabular-nums" style={{ color: C.ink }}>
+                            {row.getValue("totalMarks")}
+                        </span>
+                    </div>
                 ),
             },
             {
@@ -217,12 +223,14 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                     const cr = cumulativeRankMap.get(row.original.roll)
                     const chip = sgpaChip(sgpa, cr)
                     return (
-                        <span
-                            style={chip}
-                            className="inline-flex items-center justify-center px-2.5 py-1 rounded-lg text-[13px] font-bold tabular-nums"
-                        >
-                            {sgpa.toFixed(2)}
-                        </span>
+                        <div className="flex justify-center items-center w-full">
+                            <span
+                                style={chip}
+                                className="inline-flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg text-[11px] sm:text-[13px] font-bold tabular-nums"
+                            >
+                                {sgpa.toFixed(2)}
+                            </span>
+                        </div>
                     )
                 },
             },
@@ -234,15 +242,15 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                     const failCount = Object.values(row.original.results)
                         .filter(r => r.grade === "F" || r.gradePoint === 0).length
                     if (failCount > 0) return (
-                        <div className="flex items-center gap-1.5">
+                        <div className="flex justify-center items-center gap-1.5 w-full">
                             <XCircle className="w-3.5 h-3.5 shrink-0" style={{ color: C.faint }} />
                             <span className="text-[12px] font-semibold" style={{ color: C.muted }}>Fail <span style={{ color: C.faint }}>({failCount})</span></span>
                         </div>
                     )
                     return (
-                        <div className="flex items-center gap-1.5">
+                        <div className="flex justify-center items-center gap-1.5 w-full">
                             <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: "#16A34A" }} />
-                            <span className="text-[12px] font-semibold" style={{ color: "#15803D" }}>Pass</span>
+                            <span className="text-[11px] sm:text-[12px] font-bold" style={{ color: "#15803D" }}>Pass</span>
                         </div>
                     )
                 },
@@ -287,20 +295,20 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
         return ""
     }
     function thStickyStyle(id: string): React.CSSProperties {
-        if (id === "rank") return { width: 90, minWidth: 90, background: C.navy }
-        if (id === "roll") return { width: 150, minWidth: 150, background: C.navy }
+        if (id === "rank") return { width: 52, minWidth: 52, background: C.navy }
+        if (id === "roll") return { width: 120, minWidth: 120, background: C.navy }
         return {}
     }
     function tdStickyStyle(id: string, bg: string): React.CSSProperties {
-        if (id === "rank") return { width: 90, minWidth: 90, background: bg || "#fff" }
-        if (id === "roll") return { width: 150, minWidth: 150, background: bg || "#fff" }
+        if (id === "rank") return { width: 52, minWidth: 52, background: bg || "#fff" }
+        if (id === "roll") return { width: 120, minWidth: 120, background: bg || "#fff" }
         return {}
     }
 
     return (
         <div className="space-y-3">
-            {/* Controls — sticky below the tab bar */}
-            <div className="sticky bg-white/95 backdrop-blur-sm py-2" style={{ top: 52, zIndex: 35 }}>
+            {/* Controls */}
+            <div className="bg-white/95 pb-2 pt-0 z-10 relative">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <div className="relative w-full sm:max-w-xs">
                         <Search className="absolute left-3 top-2.5 h-3.5 w-3.5" style={{ color: C.faint }} />
@@ -343,7 +351,7 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                                                 style={{
                                                     ...thStickyStyle(h.id),
                                                     borderBottom: `1px solid ${C.navyMid}`,
-                                                    padding: "10px 16px",
+                                                    padding: "8px 10px",
                                                     userSelect: "none",
                                                     cursor: sortable ? "pointer" : "default",
                                                     background: thStickyStyle(h.id).background || C.navy,
@@ -351,7 +359,7 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                                                 }}
                                                 onClick={sortable ? h.column.getToggleSortingHandler() : undefined}
                                             >
-                                                <div className={`flex items-center ${["rank", "roll", "name"].includes(h.id) ? "justify-start" : "justify-center"} gap-1 w-full`}>
+                                                <div className={`flex items-center ${["roll", "name"].includes(h.id) ? "justify-start" : "justify-center"} gap-1 w-full`}>
                                                     {flexRender(h.column.columnDef.header, h.getContext())}
                                                     {sortable && (
                                                         <span style={{ opacity: h.column.getIsSorted() ? 1 : 0.25, transition: "opacity 0.15s" }}>
@@ -385,7 +393,7 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
                                                     className={tdStickyClass(cell.column.id)}
                                                     style={{
                                                         ...tdStickyStyle(cell.column.id, bg === "transparent" ? "#fff" : bg),
-                                                        padding: "12px 16px",
+                                                        padding: "10px 10px",
                                                         borderBottom: "1px solid #F1F5F9",
                                                         whiteSpace: "nowrap",
                                                     }}
