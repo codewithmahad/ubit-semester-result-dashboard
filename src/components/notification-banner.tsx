@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { X } from "lucide-react";
 
 export function NotificationBanner() {
@@ -9,7 +10,7 @@ export function NotificationBanner() {
   if (!visible) return null;
 
   return (
-    <div className="w-full bg-[#001c47] border-b border-[#00255d]">
+    <div className="sticky top-[60px] md:top-[68px] z-40 w-full bg-[#001c47] border-b border-[#00255d]">
       <div className="max-w-[1800px] mx-auto px-4 sm:px-8 py-2.5 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="bg-white/10 w-[22px] h-[22px] rounded-full flex items-center justify-center shrink-0">
@@ -17,7 +18,7 @@ export function NotificationBanner() {
           </div>
           <p className="text-[#b1c0e0] text-[13px] sm:text-[14px]">
             <strong className="text-white mr-1">New Results:</strong>
-            Semester II "OOPs" results are out. <span className="text-white font-medium cursor-pointer hover:underline mx-1">Check CGPA</span>
+            Semester II "OOPs" results are out. <Link href="/leaderboards" className="text-white font-medium cursor-pointer hover:underline mx-1">Check CGPA</Link>
           </p>
         </div>
         <button 
