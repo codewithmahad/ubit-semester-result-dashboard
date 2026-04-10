@@ -1,4 +1,5 @@
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { CalculatorClient } from "@/components/calculator-client";
 import type { Metadata } from "next";
 
@@ -25,6 +26,7 @@ export default function CalculatorPage() {
 
         <CalculatorClient />
       </main>
+      <Footer />
     </div>
   );
 }

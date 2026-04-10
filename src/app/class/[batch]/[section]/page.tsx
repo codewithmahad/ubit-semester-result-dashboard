@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import { DashboardTabs } from "@/components/dashboard-tabs";
+import { BatchMetrics } from "@/components/batch-metrics";
+import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import { semester1 } from "@/data/semester1";
 import { semester2 } from "@/data/semester2";
@@ -49,10 +51,14 @@ export default async function ClassLeaderboardPage({ params }: Props) {
 
       {/* Main Content Area */}
       <main className="flex-1 w-full max-w-[1800px] mx-auto px-0 sm:px-6 py-6 sm:py-8">
+        <BatchMetrics />
+        
         <div className="bg-white border-t border-b sm:border border-gray-300 px-4 sm:px-6 py-2 pb-6 max-h-[calc(100vh-10rem)]">
           <DashboardTabs semester1={semester1} semester2={semester2} />
         </div>
       </main>
+      
+      <Footer />
     </div>
   );
 }

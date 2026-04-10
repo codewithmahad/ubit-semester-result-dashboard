@@ -5,6 +5,7 @@ import { getClassData, getClassStats } from "@/lib/data";
 import { SearchOmnibar } from "@/components/search-omnibar";
 import { Nav } from "@/components/nav";
 import { NotificationBanner } from "@/components/notification-banner";
+import { Footer } from "@/components/footer";
 
 export const metadata = {
   title: "UBIT Results Portal",
@@ -113,43 +114,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── Footer ──────────────────────────────────────────────── */}
-      <footer className="relative z-10 border-t border-gray-200 bg-white px-4 md:px-8 py-8 md:py-12">
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
-
-          <div className="max-w-sm">
-            <div className="flex items-center gap-2 mb-3">
-              <Image src="/ubit-logo.jpg" alt="UBIT" width={22} height={22} className="object-contain" />
-              <h4 className="font-bold text-[#8F141B] text-[14px]">UBIT Results</h4>
-            </div>
-            <p className="text-[12px] text-gray-500 leading-relaxed mb-3">
-              A fast, accessible student-built portal for academic results, transcripts, and standing metrics.
-            </p>
-            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">
-              © {new Date().getFullYear()} BSSE &#39;25 Initiative
-            </p>
-          </div>
-
-          <div className="flex gap-12 md:gap-16">
-            <div>
-              <h4 className="font-bold text-[#1f2432] text-[12px] md:text-[14px] mb-3 uppercase tracking-wider">Resources</h4>
-              <ul className="flex flex-col gap-2.5 text-[12px] md:text-[13px] text-[#0056D2]">
-                <li><Link href="/leaderboards" className="hover:underline">Class Leaderboards</Link></li>
-                <li><Link href="/calculator" className="hover:underline">GPA Calculator</Link></li>
-                <li><Link href="/developer" className="hover:underline font-semibold flex items-center gap-1">About Developer <ArrowRight className="w-3 h-3" /></Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-[#1f2432] text-[12px] md:text-[14px] mb-3 uppercase tracking-wider">Disclaimer</h4>
-              <p className="text-[11px] md:text-[12px] text-gray-500 max-w-[200px] leading-relaxed">
-                Independent student project. Not an official University of Karachi website.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

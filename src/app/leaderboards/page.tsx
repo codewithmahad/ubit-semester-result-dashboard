@@ -1,4 +1,5 @@
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { LeaderboardClient } from "@/components/leaderboard-client";
 import type { Metadata } from "next";
 import type { ClassSection } from "@/types";
@@ -43,6 +44,7 @@ export default function LeaderboardsPage() {
 
         <LeaderboardClient sections={sections} />
       </main>
+      <Footer />
     </div>
   );
 }

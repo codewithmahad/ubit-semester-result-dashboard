@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Printer, Award, BookOpen, AlertCircle, CheckCircle2 } from "lucide-react";
 import { getStudent } from "@/lib/data";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { SemesterCard } from "@/components/semester-card";
 import type { Metadata } from "next";
 
@@ -167,6 +168,7 @@ export default async function StudentPage({ params }: Props) {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }
