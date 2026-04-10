@@ -107,7 +107,7 @@ export function Nav() {
                 className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
               >
                 <Bell className="w-5 h-5" />
-                <span className="absolute top-[8px] right-[8px] w-2.5 h-2.5 bg-[#EF4444] rounded-full border-2 border-white shadow-[0_0_8px_rgba(239,68,68,0.6)] animate-pulse" />
+                <span className="absolute top-[8px] right-[8px] w-2.5 h-2.5 bg-[#EF4444] rounded-full border-[1.5px] border-white" />
               </button>
 
               {/* Notification Panel */}

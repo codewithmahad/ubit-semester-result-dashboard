@@ -27,7 +27,7 @@ export default async function ClassLeaderboardPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col pb-12">
       <Nav />
 
       {/* Page header */}
