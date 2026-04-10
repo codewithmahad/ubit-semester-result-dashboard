@@ -6,6 +6,13 @@ import { Search, Bell, User, Menu, X, ChevronRight } from "lucide-react";
 import { useState, useEffect, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
+/**
+ * Nav — sticky top navigation bar.
+ *
+ * Features: Logo + desktop nav links, seat number search, notification bell
+ * with a dropdown panel, and a responsive hamburger menu for mobile.
+ * Uses Next.js `useRouter` for client-side navigation on seat search.
+ */
 export function Nav() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showNotifications, setShowNotifications] = useState(false);

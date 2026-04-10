@@ -10,8 +10,8 @@ import {
     SortingState,
     ColumnDef,
 } from "@tanstack/react-table"
-import { SemesterData } from "@/data/semester1"
-import { calculateCGPARankings, calculateRankings, CGPARanking } from "@/lib/calculations"
+import type { RawSemesterData, CGPARanking, StudentRanking } from "@/types"
+import { calculateCGPARankings, calculateRankings } from "@/lib/utils/academic-math"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Download, Search, CheckCircle2, XCircle, ChevronUp, ChevronDown } from "lucide-react"
@@ -85,10 +85,9 @@ function MedalBadge({ rank }: { rank: number }) {
     return <span className="font-medium text-[14px] text-slate-500 tabular-nums pl-8">{num}</span>
 }
 
-// ── Props ──────────────────────────────────────────────────────
 interface CGPATableProps {
-    sem1Data: SemesterData
-    sem2Data: SemesterData
+    sem1Data: RawSemesterData
+    sem2Data: RawSemesterData
 }
 
 export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
@@ -96,7 +95,7 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
     const [globalFilter, setGlobalFilter] = useState("")
     const printRef = useRef<HTMLDivElement>(null)
     const [currentDate, setCurrentDate] = useState("")
-    const [selectedStudent, setSelectedStudent] = useState<any>(null)
+    const [selectedStudent, setSelectedStudent] = useState<StudentRanking | null>(null)
 
     useEffect(() => { setCurrentDate(new Date().toLocaleDateString()) }, [])
 

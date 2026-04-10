@@ -3,62 +3,42 @@
 import { useState, useMemo } from "react";
 import { Plus, Trash2, RotateCcw } from "lucide-react";
 import { Nav } from "@/components/nav";
+import { UBIT_GRADE_SCALE } from "@/constants/academic";
+import { getGradeInfo, getGradeColor } from "@/lib/utils/academic-math";
+import type { CalculatorRow } from "@/types";
 
-const GRADE_SCALE = [
-  { min: 90, max: 100, grade: "A+", gp: 4.0 },
-  { min: 85, max: 89,  grade: "A",  gp: 4.0 },
-  { min: 80, max: 84,  grade: "A-", gp: 3.8 },
-  { min: 75, max: 79,  grade: "B+", gp: 3.4 },
-  { min: 71, max: 74,  grade: "B",  gp: 3.0 },
-  { min: 68, max: 70,  grade: "B-", gp: 2.8 },
-  { min: 64, max: 67,  grade: "C+", gp: 2.4 },
-  { min: 61, max: 63,  grade: "C",  gp: 2.0 },
-  { min: 57, max: 60,  grade: "C-", gp: 1.8 },
-  { min: 53, max: 56,  grade: "D+", gp: 1.4 },
-  { min: 50, max: 52,  grade: "D",  gp: 1.0 },
-  { min: 0,  max: 49,  grade: "F",  gp: 0.0 },
-];
-
-function getGradeInfo(marks: number) {
-  return GRADE_SCALE.find((g) => marks >= g.min && marks <= g.max) ?? GRADE_SCALE[GRADE_SCALE.length - 1];
-}
-
-interface Row {
-  id: string;
-  subject: string;
-  credits: number;
-  marks: number;
-}
-
-const DEFAULT_ROWS: Row[] = [
+const DEFAULT_ROWS: CalculatorRow[] = [
   { id: "1", subject: "", credits: 3, marks: 75 },
   { id: "2", subject: "", credits: 3, marks: 75 },
   { id: "3", subject: "", credits: 3, marks: 75 },
 ];
 
-function gradeColor(grade: string) {
-  if (grade === "F") return "text-red-700 bg-red-50 border-red-200";
-  if (grade.startsWith("A")) return "text-green-700 bg-green-50 border-green-200";
-  if (grade.startsWith("B")) return "text-blue-700 bg-blue-50 border-blue-200";
-  if (grade.startsWith("C")) return "text-orange-700 bg-orange-50 border-orange-200";
-  return "text-gray-600 bg-gray-50 border-gray-200";
-}
-
+/**
+ * GPA Calculator page.
+ *
+ * Allows students to enter expected marks for each course and instantly
+ * see their projected SGPA based on the official UBIT grading scale.
+ * All grade computation is delegated to `getGradeInfo` from academic-math.ts.
+ */
 export default function CalculatorPage() {
-  const [rows, setRows] = useState<Row[]>(DEFAULT_ROWS);
+  const [rows, setRows] = useState<CalculatorRow[]>(DEFAULT_ROWS);
 
+  /** Appends a new blank course row to the calculator. */
   function addRow() {
     setRows((r) => [...r, { id: String(Date.now()), subject: "", credits: 3, marks: 75 }]);
   }
 
+  /** Removes a course row by its unique ID. */
   function removeRow(id: string) {
     setRows((r) => r.filter((row) => row.id !== id));
   }
 
-  function updateRow(id: string, patch: Partial<Row>) {
+  /** Partially updates a course row, merging the patch into the existing row. */
+  function updateRow(id: string, patch: Partial<CalculatorRow>) {
     setRows((r) => r.map((row) => (row.id === id ? { ...row, ...patch } : row)));
   }
 
+  /** Resets all rows to the default three blank courses. */
   function reset() {
     setRows(DEFAULT_ROWS);
   }
@@ -66,8 +46,8 @@ export default function CalculatorPage() {
   const { sgpa, totalCredits, totalQP } = useMemo(() => {
     let qp = 0, tc = 0;
     rows.forEach((row) => {
-      const { gp } = getGradeInfo(row.marks);
-      qp += gp * row.credits;
+      const { gradePoint } = getGradeInfo(row.marks);
+      qp += gradePoint * row.credits;
       tc += row.credits;
     });
     return { sgpa: tc > 0 ? Number((qp / tc).toFixed(2)) : 0, totalCredits: tc, totalQP: qp };
@@ -111,7 +91,7 @@ export default function CalculatorPage() {
             {/* Rows */}
             <div className="divide-y divide-gray-100">
               {rows.map((row, i) => {
-                const { grade, gp } = getGradeInfo(row.marks);
+                const { grade, gradePoint } = getGradeInfo(row.marks);
                 return (
                   <div key={row.id} className="group p-4 md:px-5 md:py-3.5">
 
@@ -168,14 +148,14 @@ export default function CalculatorPage() {
                       <div className="flex md:contents items-center justify-between bg-gray-50 md:bg-transparent rounded-lg md:rounded-none p-2.5 md:p-0 gap-2">
                         <div className="flex items-center gap-3 md:justify-center md:w-full">
                           <label className="text-[10px] font-bold text-gray-400 uppercase md:hidden">Grade</label>
-                          <span className={`inline-flex items-center justify-center h-8 w-10 rounded border text-[12px] font-bold ${gradeColor(grade)}`}>
+                          <span className={`inline-flex items-center justify-center h-8 w-10 rounded border text-[12px] font-bold ${getGradeColor(grade)}`}>
                             {grade}
                           </span>
                         </div>
 
                         <div className="flex items-center gap-3 md:justify-between md:w-full">
                           <label className="text-[10px] font-bold text-gray-400 uppercase md:hidden">GP</label>
-                          <span className="text-[16px] md:text-[15px] font-black tabular-nums text-gray-800">{gp.toFixed(1)}</span>
+                          <span className="text-[16px] md:text-[15px] font-black tabular-nums text-gray-800">{gradePoint.toFixed(1)}</span>
                           {rows.length > 1 && (
                             <button
                               onClick={() => removeRow(row.id)}
@@ -220,10 +200,10 @@ export default function CalculatorPage() {
                 <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Official Grading Scale</p>
               </div>
               <div className="divide-y divide-gray-100">
-                {GRADE_SCALE.map(g => (
+                {UBIT_GRADE_SCALE.map(g => (
                   <div key={g.grade} className="flex justify-between items-center px-4 py-2.5 hover:bg-gray-50/70 transition-colors">
                     <div className="flex items-center gap-3">
-                      <span className={`inline-flex items-center justify-center w-9 h-6 rounded border text-[11px] font-bold ${gradeColor(g.grade)}`}>{g.grade}</span>
+                      <span className={`inline-flex items-center justify-center w-9 h-6 rounded border text-[11px] font-bold ${getGradeColor(g.grade)}`}>{g.grade}</span>
                       <span className="text-[12px] text-gray-500 font-medium tabular-nums">{g.min}–{g.max}</span>
                     </div>
                     <span className="font-extrabold text-[#1f2432] text-[13px] tabular-nums">{g.gp.toFixed(1)}</span>
@@ -241,10 +221,10 @@ export default function CalculatorPage() {
               <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest text-center">Grading Scale Reference</p>
             </div>
             <div className="grid grid-cols-2 divide-x divide-gray-100">
-              {GRADE_SCALE.map(g => (
+              {UBIT_GRADE_SCALE.map(g => (
                 <div key={g.grade} className="flex items-center justify-between px-3 py-2.5 border-b border-gray-100 last:border-b-0 hover:bg-gray-50/70">
                   <div className="flex items-center gap-2">
-                    <span className={`inline-flex items-center justify-center w-8 h-6 rounded border text-[11px] font-bold ${gradeColor(g.grade)}`}>{g.grade}</span>
+                    <span className={`inline-flex items-center justify-center w-8 h-6 rounded border text-[11px] font-bold ${getGradeColor(g.grade)}`}>{g.grade}</span>
                     <span className="text-[11px] text-gray-400 tabular-nums">{g.min}–{g.max}</span>
                   </div>
                   <span className="font-extrabold text-[12px] text-[#1f2432] tabular-nums">{g.gp.toFixed(1)}</span>
@@ -258,7 +238,14 @@ export default function CalculatorPage() {
   );
 }
 
-/* ── Extracted SGPA Display Card ── */
+/**
+ * Displays the computed SGPA result in a premium dark card.
+ * Used both in the sidebar (desktop) and above the form (mobile).
+ *
+ * @param sgpa          - The computed semester GPA (0.00–4.00).
+ * @param totalCredits  - Sum of credit hours across all calculator rows.
+ * @param totalQP       - Sum of quality points (gradePoint × credits).
+ */
 function SGPACard({ sgpa, totalCredits, totalQP }: { sgpa: number; totalCredits: number; totalQP: number }) {
   return (
     <div className="bg-[#00255d] rounded-xl shadow-lg p-6 text-center relative overflow-hidden">

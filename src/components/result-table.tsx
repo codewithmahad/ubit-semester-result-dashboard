@@ -10,8 +10,8 @@ import {
     SortingState,
     ColumnDef,
 } from "@tanstack/react-table"
-import { SemesterData } from "@/data/semester1"
-import { calculateRankings, calculateCGPARankings, StudentRanking } from "@/lib/calculations"
+import type { RawSemesterData, StudentRanking } from "@/types"
+import { calculateRankings, calculateCGPARankings } from "@/lib/utils/academic-math"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Download, Search, CheckCircle2, ChevronUp, ChevronDown, XCircle } from "lucide-react"
@@ -103,8 +103,8 @@ function MedalBadge({ cumulativeRank, semRank }: { cumulativeRank: number | null
 // Props
 // ─────────────────────────────────────────────────────────────────────────────
 interface ResultTableProps {
-    data: SemesterData
-    allSemData?: SemesterData[]
+    data: RawSemesterData
+    allSemData?: RawSemesterData[]
 }
 
 export function ResultTable({ data, allSemData }: ResultTableProps) {

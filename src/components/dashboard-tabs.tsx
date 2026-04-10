@@ -7,6 +7,13 @@ import { CGPATable } from "@/components/cgpa-table"
 import { semester1 } from "@/data/semester1"
 import { semester2 } from "@/data/semester2"
 
+/**
+ * DashboardTabs — tab-panel container for the class leaderboard page.
+ *
+ * Renders three tabs: Semester I results, Semester II results, and the
+ * Final Cumulative CGPA leaderboard. Raw semester data is imported at
+ * this level and passed down to child table components.
+ */
 export function DashboardTabs() {
     return (
         <Tabs defaultValue="semester2" className="w-full space-y-6">

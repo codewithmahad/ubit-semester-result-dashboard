@@ -1,6 +1,6 @@
-import { SemesterData } from "@/data/semester1";
+import type { RawSemesterData } from "@/types";
 
-export const semester2: SemesterData = {
+export const semester2: RawSemesterData = {
     name: "BSSE Semester II (Partial Result)",
     batch: "2025 (Evening Program)",
     university: "UBIT - University of Karachi",

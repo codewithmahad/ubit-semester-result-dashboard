@@ -19,6 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+/**
+ * Student profile page — displays the full computed academic record
+ * for a single student identified by their roll number.
+ *
+ * Data is fetched server-side via `getStudent()` from lib/data.ts.
+ * Returns a 404 if the roll number is not found in the dataset.
+ * Includes a print-ready transcript trigger via an inline script.
+ */
 export default async function StudentPage({ params }: Props) {
   const { rollNo } = await params;
   const student = getStudent(rollNo);

@@ -12,21 +12,28 @@ export const metadata = {
     "Official academic result portal for BSSE Batch 2025, Department of Computer Science (UBIT), University of Karachi.",
 };
 
+/**
+ * Landing page — the application's entry point.
+ *
+ * Renders the hero search bar, feature cards (Leaderboards, GPA Calculator),
+ * and a static University of Karachi logo watermark in the background.
+ * All student data is loaded server-side via `getClassData()` from lib/data.ts.
+ */
 export default function LandingPage() {
   const { students } = getClassData();
   const stats = getClassStats(students);
   void stats; // suppress unused warning
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#f5f7f8]">
       <Nav />
       <NotificationBanner />
 
       {/* Subtle background watermark */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.025] pointer-events-none select-none z-0">
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.035] pointer-events-none select-none z-0">
         <Image src="/uok-logo.png" alt="" width={500} height={500} className="object-contain" />
       </div>
 
-      <section className="relative z-10 bg-[#f5f7f8] min-h-screen pb-16">
+      <section className="relative z-10 min-h-screen pb-16">
 
         {/* ── Hero Search ──────────────────────────────────────── */}
         <div className="w-full max-w-[860px] mx-auto px-4 md:px-8 pt-10 md:pt-16 pb-10 md:pb-14 flex flex-col items-center text-center">
@@ -107,7 +114,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── Footer ──────────────────────────────────────────────── */}
-      <footer className="border-t border-gray-200 bg-white px-4 md:px-8 py-8 md:py-12">
+      <footer className="relative z-10 border-t border-gray-200 bg-white px-4 md:px-8 py-8 md:py-12">
         <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
 
           <div className="max-w-sm">

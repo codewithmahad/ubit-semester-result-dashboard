@@ -1,30 +1,6 @@
-export interface Course {
-  code: string;
-  name: string;
-  creditHours: number;
-}
+import type { RawSemesterData } from "@/types";
 
-export interface Result {
-  marks: number;
-  gradePoint: number;
-  grade: string;
-}
-
-export interface Student {
-  name: string;
-  roll: string;
-  results: Record<string, Result>;
-}
-
-export interface SemesterData {
-  name: string;
-  batch: string;
-  university: string;
-  courses: Course[];
-  students: Student[];
-}
-
-export const semester1: SemesterData = {
+export const semester1: RawSemesterData = {
     name: "BSSE Semester I",
     batch: "2025 (Evening Program)",
     university: "UBIT - University of Karachi",

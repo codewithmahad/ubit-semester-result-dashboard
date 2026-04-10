@@ -1,186 +1,270 @@
-# UBIT Semester Result Dashboard
+# UBIT Results Portal
 
-A modern web dashboard for visualizing semester results and GPA rankings for students at the **Department of Computer Science (UBIT), University of Karachi**.
+A fast, institution-grade academic results portal for **BSSE Batch 2025 (Evening Program)**, Department of Computer Science, University of Karachi (UBIT).
 
-This project solves a practical problem faced by UBIT students: semester results are released **course by course at different times**, making it difficult to track overall GPA and ranking during the semester.
-The dashboard generates a structured result sheet with **automatic SGPA calculation, dynamic ranking, and PDF export**, allowing results to be shared easily with students.
-
-The system is intentionally designed as a **frontend-only static application** so it can be deployed quickly on **Vercel** without any backend or database.
+Built by students, for students. Provides instant access to official grade records, SGPA/CGPA analytics, class rankings, and a print-ready transcript system.
 
 ---
 
-## Live Demo
+## Tech Stack
 
-<https://ubit-results.vercel.app>
-
----
-
-## Features
-
-* Automatic **SGPA calculation** based on course credit hours
-* Dynamic **student ranking system**
-* Support for **partial results** (when only some courses are released)
-* Clean and responsive **result dashboard**
-* **Search and sort** students
-* **PDF export** that preserves the visual layout of the result sheet
-* Data-driven architecture using a structured data file
-* Fully static and deployable on **Vercel**
+| Layer | Technology |
+|---|---|
+| Framework | [Next.js 15](https://nextjs.org/) (App Router) |
+| Language | TypeScript (strict mode) |
+| Styling | Tailwind CSS v3 |
+| UI Components | shadcn/ui (Radix UI primitives) |
+| Data Tables | TanStack Table v8 |
+| Charts | Recharts |
+| PDF Export | html2pdf.js (dynamic import) |
+| Font | Inter (Google Fonts via `next/font`) |
 
 ---
 
-## Technology Stack
-
-**Framework**
-
-* Next.js (App Router)
-* React
-* TypeScript
-
-**UI**
-
-* TailwindCSS
-* shadcn/ui
-* Component-based architecture
-
-**Utilities**
-
-* GPA calculation engine
-* Ranking algorithm
-* PDF export system (html2pdf.js)
-
----
-
-## Project Architecture
-
-The project is intentionally structured to keep **data, logic, and UI separated**.
+## File Architecture
 
 ```
 src/
-├── app/
-├── components/
-├── data/
+├── app/                          # Next.js App Router pages
+│   ├── layout.tsx                # Root layout: font, metadata, global CSS
+│   ├── page.tsx                  # Landing page (hero search + feature cards)
+│   ├── leaderboards/
+│   │   └── page.tsx              # Section browser — lists all available classes
+│   ├── class/[batch]/[section]/
+│   │   └── page.tsx              # Class leaderboard shell (renders DashboardTabs)
+│   ├── student/[rollNo]/
+│   │   └── page.tsx              # Individual student transcript page
+│   └── calculator/
+│       └── page.tsx              # Interactive SGPA calculator
+│
+├── components/                   # Reusable React components
+│   ├── nav.tsx                   # Sticky top navigation bar
+│   ├── notification-banner.tsx   # Dismissable announcement banner
+│   ├── search-omnibar.tsx        # Hero search input (seat number → /student/:rollNo)
+│   ├── dashboard-tabs.tsx        # Tab container for Sem I / Sem II / Cumulative views
+│   ├── result-table.tsx          # Single-semester ranked result table (TanStack)
+│   ├── cgpa-table.tsx            # Cumulative CGPA ranked table (TanStack)
+│   ├── semester-card.tsx         # Per-semester course result card on transcript
+│   ├── student-modal.tsx         # Slide-out detail panel with radar chart
+│   └── ui/                       # shadcn/ui primitives (auto-generated)
+│
 ├── lib/
+│   ├── data.ts                   # Data adapter: builds StudentProfile objects, exposes query API
+│   ├── utils.ts                  # Tailwind class merger (cn utility)
+│   └── utils/
+│       └── academic-math.ts      # Pure academic computation functions (GPA, ranking)
+│
+├── constants/
+│   └── academic.ts               # UBIT grading scale, passing CGPA, batch metadata
+│
+├── types/
+│   └── index.ts                  # Central type registry — ALL domain interfaces live here
+│
+└── data/                         # Raw student result data (static, never mutated)
+    ├── semester1.ts              # Semester I: courses + per-student results
+    └── semester2.ts              # Semester II: courses + per-student results
 ```
-
-**Key responsibilities**
-
-* `src/data/`
-  Contains structured semester data including courses, credit hours, and student results.
-
-* `src/lib/`
-  Contains reusable logic such as SGPA calculation, CGPA calculation, and ranking algorithms.
-
-* `src/components/`
-  Reusable UI components such as the result table, tabs, and layout elements.
-
-* `src/app/`
-  Next.js application routes and page structure.
 
 ---
 
-## Data Structure
+## Data Schema
 
-All semester information is defined inside a data file.
+### Raw Data Layer (`src/data/`)
 
-Example:
+Each semester file exports a single `RawSemesterData` object:
 
-```ts
-export const semester = {
-  name: "BSSE Semester I",
-  batch: "2025",
+```typescript
+// src/types/index.ts
+interface RawSemesterData {
+  name: string;         // e.g. "BSSE Semester I"
+  batch: string;        // e.g. "2025 (Evening Program)"
+  university: string;   // e.g. "UBIT - University of Karachi"
+  courses: Course[];
+  students: RawStudent[];
+}
 
-  courses: [
-    { code: "SE-351", creditHours: 4 },
-    { code: "SE-353", creditHours: 3 },
-    { code: "SE-355", creditHours: 3 }
-  ],
+interface Course {
+  code: string;         // e.g. "SE-351" — used as key in results map
+  name: string;         // e.g. "Programming Fundamentals"
+  creditHours: number;  // e.g. 4
+}
 
-  students: [
-    {
-      name: "Student Name",
-      roll: "EB25210106113",
-      results: {
-        "SE-351": { marks: 97, gradePoint: 4.0, grade: "A+" },
-        "SE-353": { marks: 86, gradePoint: 4.0, grade: "A" }
-      }
-    }
-  ]
+interface RawStudent {
+  name: string;         // UPPERCASE full name
+  roll: string;         // e.g. "EB25210106004"
+  results: Record<string, SemesterResult>; // key = Course.code
+}
+
+interface SemesterResult {
+  marks: number;        // 0–100
+  gradePoint: number;   // e.g. 3.8 — pre-computed from marks
+  grade: string;        // e.g. "A-"
 }
 ```
 
-The system automatically:
+### Computed Layer (`src/lib/data.ts`)
 
-* calculates SGPA
-* calculates Final Cumulative GPA (CGPA)
-* generates rankings
-* renders the result dashboard
+`getClassData()` builds `StudentProfile` objects by merging all semesters:
 
----
-
-## SGPA Calculation
-
-SGPA is calculated using the standard weighted GPA formula based on official UBIT grading rules.
-
+```typescript
+interface StudentProfile {
+  rollNo: string;
+  name: string;
+  batch: string;
+  shift: string;
+  semesters: SemesterRecord[];  // one per available semester
+  cgpa: number;                 // cumulative across all semesters
+  totalCredits: number;
+  totalMarks: number;
+  cgpaRank?: number;            // tie-aware rank (dense ranking)
+}
 ```
-SGPA = Σ(gradePoint × creditHours) / Σ(creditHours)
+
+---
+
+## How to Run
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Type-check without emitting (CI)
+npx tsc --noEmit
+
+# Production build
+npm run build
 ```
 
-Important rules:
-
-* Only courses with available results are included
-* Supports partial result releases
-* SGPA values are rounded to two decimal places
+The dev server runs at `http://localhost:3000`.
 
 ---
 
-## Ranking System
+## Adding New Semester Data
 
-Student ranking is determined using the following rules:
+This is the step-by-step procedure for adding **Semester III** (or any future semester) to the portal.
 
-1. Higher SGPA (or CGPA) ranks higher
-2. If SGPA/CGPA is equal, higher total marks ranks higher
-3. If still tied, alphabetical order is used
+### Step 1 — Create the Data File
 
-The ranking updates automatically whenever the dataset changes.
+Create `src/data/semester3.ts`. The file must import `RawSemesterData` from `@/types` and export a single named constant:
+
+```typescript
+// src/data/semester3.ts
+import type { RawSemesterData } from "@/types";
+
+export const semester3: RawSemesterData = {
+  name: "BSSE Semester III",
+  batch: "2025 (Evening Program)",
+  university: "UBIT - University of Karachi",
+  courses: [
+    { code: "SE-XXXX", name: "Data Structures & Algorithms", creditHours: 4 },
+    { code: "SE-YYYY", name: "Digital Logic Design",         creditHours: 3 },
+    // ... add all courses for this semester
+  ],
+  students: [
+    {
+      name: "STUDENT FULL NAME",     // UPPERCASE
+      roll: "EB25210106XXX",
+      results: {
+        "SE-XXXX": { marks: 85, gradePoint: 4.0, grade: "A" },
+        "SE-YYYY": { marks: 72, gradePoint: 3.0, grade: "B" },
+        // ... one entry per course code
+      },
+    },
+    // ... repeat for every student
+  ],
+};
+```
+
+> **Grade Point Rule:** `gradePoint` must be pre-computed from `marks` using the UBIT scale in `src/constants/academic.ts`. Use `getGradeInfo(marks).gradePoint` from `src/lib/utils/academic-math.ts` in your data-generation script if automating.
+
+### Step 2 — Register in the Data Adapter
+
+Open `src/lib/data.ts` and make three changes:
+
+**a) Import the new semester:**
+```typescript
+import { semester3 } from "@/data/semester3";
+```
+
+**b) Add the new roll numbers to the rollSet in `buildStudentProfiles()`:**
+```typescript
+semester3.students.forEach((s) => rollSet.add(s.roll));
+```
+
+**c) Build and merge the Semester 3 record inside the `for (const roll of rollSet)` loop:**
+```typescript
+const s3 = semester3.students.find((s) => s.roll === roll);
+const sem3Record = s3 ? buildSemesterRecord(semester3, 3, s3.results) : null;
+
+if (sem3Record) {
+  semesters.push(sem3Record);
+  totalQP += sem3Record.qualityPoints;
+  totalCr += sem3Record.totalCredits;
+  sem3Record.courses.forEach((c) => (totalMarks += c.marks));
+}
+```
+
+**d) Update the `semesterCount` in `getClassData()`:**
+```typescript
+_cache = {
+  batch: BATCH_INFO.batch,
+  shift: BATCH_INFO.shift,
+  semesterCount: 3, // ← increment this
+  students: buildStudentProfiles(),
+};
+```
+
+### Step 3 — Update `calculateCGPARankings` (if needed)
+
+The current `calculateCGPARankings` in `src/lib/utils/academic-math.ts` is scoped to two semesters. If you need a 3-semester cumulative ranking for the CGPA leaderboard, extend the function signature to accept a third `RawSemesterData` parameter and repeat the same processing pattern for Semester 3.
+
+### Step 4 — Add a Tab to the Dashboard
+
+Open `src/components/dashboard-tabs.tsx`:
+
+```typescript
+import { semester3 } from "@/data/semester3";
+
+// Inside the <TabsList>:
+<TabsTrigger value="semester3">Semester III</TabsTrigger>
+
+// Inside the <Tabs> body:
+<TabsContent value="semester3">
+  <ResultTable data={semester3} allSemData={[semester1, semester2, semester3]} />
+</TabsContent>
+```
+
+### Step 5 — Update the Cumulative Tab
+
+Pass `semester3` as an additional argument to `CGPATable` if the function signature was updated:
+
+```typescript
+<CGPATable sem1Data={semester1} sem2Data={semester2} />
+// or, after extending: 
+<CGPATable sem1Data={semester1} sem2Data={semester2} sem3Data={semester3} />
+```
+
+### Step 6 — Type Check
+
+```bash
+npx tsc --noEmit
+```
+
+Zero errors expected. If any `Record<string, SemesterResult>` mismatches appear, verify that every `results` key exactly matches a `course.code` in the semester's `courses` array.
 
 ---
 
-## Deployment
+## Environment
 
-This project is designed to be deployed as a **static application**.
-
-Deployment platform:
-
-**Vercel**
-
-Typical workflow:
-
-1. Push repository to GitHub
-2. Import the repository into Vercel
-3. Deploy
-
-No backend configuration is required.
+No environment variables are required. All data is static and bundled at build time. This project has no backend, no database, and no authentication.
 
 ---
 
-## Use Case
+## Notes
 
-This dashboard is intended for **UBIT students** to easily track semester results and GPA standings while results are being released.
-
-It also provides a convenient way to generate **clean result sheets that can be shared with students**.
-
----
-
-## Future Improvements
-
-Possible future extensions include:
-
-* Additional Multi-semester result pages
-* Automated data import and scraping utilities
-* Batch comparison analytics
-
----
-
-## License
-
-This project is intended for educational and community use within UBIT.
+- **Data is read-only.** Student records in `src/data/` are never mutated at runtime. All computations (GPA, rankings) happen at server-render time and are cached in module scope.
+- **Grading scale is centralized.** Any change to grade boundaries must be made only in `src/constants/academic.ts`. The grading scale is the single source of truth for both the calculator and the result tables.
+- **Type safety.** All domain interfaces live in `src/types/index.ts`. Never define structural types inline in components or data files.

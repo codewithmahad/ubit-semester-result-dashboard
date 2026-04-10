@@ -8,8 +8,7 @@ import {
     SheetHeader,
     SheetTitle,
 } from "@/components/ui/sheet"
-import { StudentRanking } from "@/lib/calculations"
-import { Course } from "@/data/semester1"
+import type { StudentRanking, Course } from "@/types"
 import { Badge } from "@/components/ui/badge"
 import {
     Radar,

@@ -1,4 +1,4 @@
-import type { SemesterRecord } from "@/lib/data";
+import type { SemesterRecord } from "@/types";
 
 interface SemesterCardProps {
   semester: SemesterRecord;

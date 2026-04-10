@@ -5,8 +5,10 @@ import Link from "next/link";
 import { Search, Users, ChevronRight, UserCheck } from "lucide-react";
 import { Nav } from "@/components/nav";
 import Image from "next/image";
+import type { ClassSection } from "@/types";
 
-const sections = [
+/** Registry of all available class sections with live result data. */
+const sections: ClassSection[] = [
   {
     id: "2025-evening-a",
     batch: "2025",
@@ -21,6 +23,10 @@ const sections = [
   },
 ];
 
+/**
+ * Leaderboards page — lists all available class sections with a search filter.
+ * Navigates to the class result leaderboard on card click.
+ */
 export default function LeaderboardsPage() {
   const [query, setQuery] = useState("");
 

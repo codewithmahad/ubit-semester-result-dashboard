@@ -1,57 +1,52 @@
 /**
- * src/lib/data.ts
- * Unified data adapter — wraps the raw semester data files and exposes
+ * @file src/lib/data.ts
+ * @description Unified data adapter — wraps raw semester data files and exposes
  * a clean, typed interface for the entire application.
- * All SGPA/CGPA values are computed here from the canonical grade points
- * stored in the semester data files.
+ *
+ * Responsibilities:
+ *   - Build computed `StudentProfile` objects from raw semester records.
+ *   - Compute and cache the full `ClassRecord` for the active batch.
+ *   - Expose query helpers (`getStudent`, `searchStudents`, `getClassStats`)
+ *     so pages never import directly from src/data/*.ts files.
+ *
+ * All SGPA/CGPA computation is delegated to `src/lib/utils/academic-math.ts`.
+ * All types are sourced from `src/types/index.ts`.
+ * All constants (batch name, passing threshold) are sourced from `src/constants/academic.ts`.
+ *
+ * Re-exports computed types for backward compatibility with components that
+ * currently import types from this module.
  */
 
 import { semester1 } from "@/data/semester1";
 import { semester2 } from "@/data/semester2";
+import { BATCH_INFO, PASSING_CGPA } from "@/constants/academic";
+import type {
+  RawSemesterData,
+  CourseResult,
+  SemesterRecord,
+  StudentProfile,
+  ClassRecord,
+} from "@/types";
 
-// ── Types ──────────────────────────────────────────────────────────────────────
+// Re-export computed types so existing consumers don't break.
+// New code should import directly from "@/types".
+export type { CourseResult, SemesterRecord, StudentProfile, ClassRecord };
 
-export interface CourseResult {
-  courseCode: string;
-  courseName: string;
-  creditHours: number;
-  marks: number;
-  grade: string;
-  gradePoint: number;
-}
+// ─── Internal Builders ────────────────────────────────────────────────────────
 
-export interface SemesterRecord {
-  semesterNum: number;
-  semesterName: string;
-  courses: CourseResult[];
-  sgpa: number;
-  totalCredits: number;
-  qualityPoints: number;
-}
-
-export interface StudentProfile {
-  rollNo: string;
-  name: string;
-  batch: string;
-  shift: string;
-  semesters: SemesterRecord[];
-  cgpa: number;
-  totalCredits: number;
-  totalMarks: number;
-  cgpaRank?: number;
-}
-
-export interface ClassRecord {
-  batch: string;
-  shift: string;
-  semesterCount: number;
-  students: StudentProfile[];
-}
-
-// ── Builder ────────────────────────────────────────────────────────────────────
-
+/**
+ * Builds a single computed `SemesterRecord` for one student within a semester.
+ *
+ * Filters to only the courses for which this student has a result entry,
+ * then calculates SGPA and quality points from those results.
+ *
+ * @param semData        - The full raw semester data object.
+ * @param semNum         - The semester number (1, 2, 3, …) for display purposes.
+ * @param studentResults - The student's raw result map (code → result).
+ * @returns A computed `SemesterRecord`, or `null` if the student has no results.
+ */
 function buildSemesterRecord(
-  semData: typeof semester1,
+  semData: RawSemesterData,
   semNum: number,
   studentResults: Record<string, { marks: number; gradePoint: number; grade: string }>
 ): SemesterRecord | null {
@@ -71,9 +66,13 @@ function buildSemesterRecord(
 
   if (courses.length === 0) return null;
 
-  const qualityPoints = courses.reduce((sum, c) => sum + c.gradePoint * c.creditHours, 0);
+  const qualityPoints = courses.reduce(
+    (sum, c) => sum + c.gradePoint * c.creditHours,
+    0
+  );
   const totalCredits = courses.reduce((sum, c) => sum + c.creditHours, 0);
-  const sgpa = totalCredits > 0 ? Number((qualityPoints / totalCredits).toFixed(2)) : 0;
+  const sgpa =
+    totalCredits > 0 ? Number((qualityPoints / totalCredits).toFixed(2)) : 0;
 
   return {
     semesterNum: semNum,
@@ -85,8 +84,20 @@ function buildSemesterRecord(
   };
 }
 
+/**
+ * Constructs the full list of computed `StudentProfile` objects by merging
+ * data across all available semesters.
+ *
+ * A student who only appears in Semester 1 will still be included, with their
+ * Semester 2 record simply absent from their `semesters` array.
+ *
+ * After building, profiles are sorted by CGPA → totalMarks → name,
+ * and tie-aware `cgpaRank` values are assigned.
+ *
+ * @returns Sorted array of `StudentProfile` with ranks assigned.
+ */
 function buildStudentProfiles(): StudentProfile[] {
-  // Collect all unique roll numbers across both semesters
+  // Collect unique roll numbers across all semesters
   const rollSet = new Set<string>();
   semester1.students.forEach((s) => rollSet.add(s.roll));
   semester2.students.forEach((s) => rollSet.add(s.roll));
@@ -125,8 +136,8 @@ function buildStudentProfiles(): StudentProfile[] {
     profiles.push({
       rollNo: roll,
       name,
-      batch: "2025",
-      shift: "Evening",
+      batch: BATCH_INFO.batch,
+      shift: BATCH_INFO.shift,
       semesters,
       cgpa,
       totalCredits: totalCr,
@@ -134,14 +145,14 @@ function buildStudentProfiles(): StudentProfile[] {
     });
   }
 
-  // Sort by CGPA → totalMarks → name
+  // Sort by CGPA → totalMarks → alphabetical name
   profiles.sort((a, b) => {
     if (b.cgpa !== a.cgpa) return b.cgpa - a.cgpa;
     if (b.totalMarks !== a.totalMarks) return b.totalMarks - a.totalMarks;
     return a.name.localeCompare(b.name);
   });
 
-  // Assign cumulative ranks (ties share the same rank)
+  // Tie-aware CGPA rank assignment
   let rank = 1;
   for (let i = 0; i < profiles.length; i++) {
     if (
@@ -159,27 +170,51 @@ function buildStudentProfiles(): StudentProfile[] {
   return profiles;
 }
 
-// ── Cache ──────────────────────────────────────────────────────────────────────
+// ─── Module-Level Cache ───────────────────────────────────────────────────────
 
+/** Cached ClassRecord — built once on first call, reused on all subsequent calls. */
 let _cache: ClassRecord | null = null;
 
+// ─── Public API ───────────────────────────────────────────────────────────────
+
+/**
+ * Returns the fully computed `ClassRecord` for the active batch.
+ *
+ * The result is memoized: the `buildStudentProfiles()` computation only runs
+ * on the first call. All subsequent calls return the cached value.
+ *
+ * @returns The batch's `ClassRecord` containing all computed student profiles.
+ */
 export function getClassData(): ClassRecord {
   if (_cache) return _cache;
   _cache = {
-    batch: "2025",
-    shift: "Evening",
+    batch: BATCH_INFO.batch,
+    shift: BATCH_INFO.shift,
     semesterCount: 2,
     students: buildStudentProfiles(),
   };
   return _cache;
 }
 
-// ── Query helpers ──────────────────────────────────────────────────────────────
-
+/**
+ * Looks up a single student profile by roll number.
+ *
+ * @param rollNo - The student's roll number (e.g. "EB25210106004").
+ * @returns The matching `StudentProfile`, or `null` if not found.
+ */
 export function getStudent(rollNo: string): StudentProfile | null {
   return getClassData().students.find((s) => s.rollNo === rollNo) ?? null;
 }
 
+/**
+ * Searches for students matching a name or roll number query.
+ *
+ * Matching is case-insensitive, space-trimmed substring search.
+ * Results are capped at 8 entries to keep the search omnibar performant.
+ *
+ * @param query - The raw search query string from the user input.
+ * @returns Up to 8 minimal student records (rollNo, name, cgpa, cgpaRank).
+ */
 export function searchStudents(
   query: string
 ): Pick<StudentProfile, "rollNo" | "name" | "cgpa" | "cgpaRank">[] {
@@ -194,10 +229,22 @@ export function searchStudents(
     .map(({ rollNo, name, cgpa, cgpaRank }) => ({ rollNo, name, cgpa, cgpaRank }));
 }
 
+/**
+ * Computes summary statistics for a given list of student profiles.
+ *
+ * Statistics computed:
+ *   - `total`    — total number of students.
+ *   - `passing`  — students with CGPA ≥ PASSING_CGPA (2.0).
+ *   - `passRate` — percentage of passing students (rounded integer).
+ *   - `avgCGPA`  — class average CGPA among students with CGPA > 0.
+ *
+ * @param students - Array of student profiles (typically from `getClassData().students`).
+ * @returns An object with the four computed statistics.
+ */
 export function getClassStats(students: StudentProfile[]) {
   const total = students.length;
   const withCGPA = students.filter((s) => s.cgpa > 0);
-  const passing = students.filter((s) => s.cgpa >= 2.0).length;
+  const passing = students.filter((s) => s.cgpa >= PASSING_CGPA).length;
   const avgCGPA =
     withCGPA.length > 0
       ? Number(
