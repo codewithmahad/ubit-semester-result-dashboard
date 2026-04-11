@@ -25,7 +25,7 @@ export default async function LeaderboardsPage() {
         semester: `Semesters: ${meta.activeSemesters.length} · University of Karachi`,
         students: studentCount,
         cr: meta.cr,
-        topPerformer: meta.topPerformer,
+        topPerformer: data && data.students.length > 0 ? data.students[0].name : "TBD",
         href: `/class/${meta.batch}/${meta.id.split('-').slice(2).join('-')}`, // e.g. /class/2025/evening-a or morning-b
         live: true,
       };

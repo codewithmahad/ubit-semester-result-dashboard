@@ -11,7 +11,6 @@ export interface ClassMetadata {
   section: string; // e.g. "Section B"
   degree: string;
   cr: string;
-  topPerformer: string;
   activeSemesters: string[];
 }
 
@@ -24,7 +23,6 @@ export const CLASS_REGISTRY: ClassMetadata[] = [
     section: "Section A",
     degree: "Software Engineering",
     cr: "Kazim Hussain",
-    topPerformer: "Shaikh Mahad",
     activeSemesters: ["semester1", "semester2"],
   },
   {
@@ -35,7 +33,6 @@ export const CLASS_REGISTRY: ClassMetadata[] = [
     section: "Section B",
     degree: "Computer Science", // Adjust if another string is preferred
     cr: "Syed Azfar Abbas",
-    topPerformer: "Nabeerah Yaqoot",
     activeSemesters: ["semester1", "semester2"],
   },
 ];
