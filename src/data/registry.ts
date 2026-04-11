@@ -34,8 +34,8 @@ export const CLASS_REGISTRY: ClassMetadata[] = [
     shift: "Morning",
     section: "Section B",
     degree: "Computer Science", // Adjust if another string is preferred
-    cr: "TBD",
-    topPerformer: "TBD",
+    cr: "Syed Azfar Abbas",
+    topPerformer: "Nabeerah Yaqoot",
     activeSemesters: ["semester1", "semester2"],
   },
 ];
