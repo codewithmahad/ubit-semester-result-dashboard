@@ -190,77 +190,61 @@ export function calculateRankings(
  * @returns Sorted, ranked array of `CGPARanking` objects.
  */
 export function calculateCGPARankings(
-  sem1: RawSemesterData,
-  sem2: RawSemesterData
+  semesters: RawSemesterData[]
 ): CGPARanking[] {
   const cgpaMap = new Map<string, CGPARanking>();
 
-  // ── Process Semester 1 ──────────────────────────────────────────
-  const sem1Rankings = calculateRankings(sem1.courses, sem1.students);
-  sem1Rankings.forEach((s1) => {
-    let totalPoints = 0;
-    let totalCredits = 0;
-    sem1.courses.forEach((c) => {
-      const r = s1.results[c.code];
-      if (r) {
-        totalPoints += r.gradePoint * c.creditHours;
-        totalCredits += c.creditHours;
-      }
-    });
+  if (!semesters || semesters.length === 0) return [];
 
-    cgpaMap.set(s1.roll, {
-      name: s1.name,
-      roll: s1.roll,
-      sem1SGPA: s1.sgpa,
-      sem2SGPA: 0,
-      cgpa: 0,
-      totalMarks: s1.totalMarks,
-      sem1Points: totalPoints,
-      sem1Credits: totalCredits,
-      sem2Points: 0,
-      sem2Credits: 0,
-    });
-  });
+  semesters.forEach((sem) => {
+    // Early return defensive check
+    if (!sem.students || sem.students.length === 0) return;
 
-  // ── Process Semester 2 ──────────────────────────────────────────
-  const sem2Rankings = calculateRankings(sem2.courses, sem2.students);
-  sem2Rankings.forEach((s2) => {
-    let totalPoints = 0;
-    let totalCredits = 0;
-    sem2.courses.forEach((c) => {
-      const r = s2.results[c.code];
-      if (r) {
-        totalPoints += r.gradePoint * c.creditHours;
-        totalCredits += c.creditHours;
-      }
-    });
-
-    if (cgpaMap.has(s2.roll)) {
-      const entry = cgpaMap.get(s2.roll)!;
-      entry.sem2SGPA = s2.sgpa;
-      entry.sem2Points = totalPoints;
-      entry.sem2Credits = totalCredits;
-      entry.totalMarks += s2.totalMarks;
-    } else {
-      cgpaMap.set(s2.roll, {
-        name: s2.name,
-        roll: s2.roll,
-        sem1SGPA: 0,
-        sem2SGPA: s2.sgpa,
-        cgpa: 0,
-        totalMarks: s2.totalMarks,
-        sem1Points: 0,
-        sem1Credits: 0,
-        sem2Points: totalPoints,
-        sem2Credits: totalCredits,
+    const semRankings = calculateRankings(sem.courses, sem.students);
+    semRankings.forEach((s) => {
+      let totalPoints = 0;
+      let totalCredits = 0;
+      
+      sem.courses.forEach((c) => {
+        const r = s.results[c.code];
+        if (r) {
+          totalPoints += r.gradePoint * c.creditHours;
+          totalCredits += c.creditHours;
+        }
       });
-    }
+
+      if (cgpaMap.has(s.roll)) {
+        const entry = cgpaMap.get(s.roll)!;
+        entry.semesterStats.push({
+          name: sem.name,
+          sgpa: s.sgpa,
+          points: totalPoints,
+          credits: totalCredits,
+        });
+        entry.totalMarks += s.totalMarks;
+      } else {
+        cgpaMap.set(s.roll, {
+          name: s.name,
+          roll: s.roll,
+          cgpa: 0,
+          totalMarks: s.totalMarks,
+          semesterStats: [
+            {
+              name: sem.name,
+              sgpa: s.sgpa,
+              points: totalPoints,
+              credits: totalCredits,
+            }
+          ]
+        });
+      }
+    });
   });
 
   // ── Compute final CGPA for every entry ─────────────────────────
   const finalRankings = Array.from(cgpaMap.values()).map((entry) => {
-    const totalCredits = entry.sem1Credits + entry.sem2Credits;
-    const totalPoints = entry.sem1Points + entry.sem2Points;
+    const totalCredits = entry.semesterStats.reduce((sum, stat) => sum + stat.credits, 0);
+    const totalPoints = entry.semesterStats.reduce((sum, stat) => sum + stat.points, 0);
     entry.cgpa =
       totalCredits === 0 ? 0 : Number((totalPoints / totalCredits).toFixed(2));
     return entry;
@@ -311,8 +295,7 @@ export async function calculateRankingsAsync(
  * architecture for future HTTP fetches.
  */
 export async function calculateCGPARankingsAsync(
-  sem1: RawSemesterData,
-  sem2: RawSemesterData
+  semesters: RawSemesterData[]
 ): Promise<CGPARanking[]> {
-  return calculateCGPARankings(sem1, sem2);
+  return calculateCGPARankings(semesters);
 }

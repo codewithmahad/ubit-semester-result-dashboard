@@ -151,15 +151,15 @@ export interface StudentRanking extends RawStudent {
 export interface CGPARanking {
   name: string;
   roll: string;
-  sem1SGPA: number;
-  sem2SGPA: number;
   cgpa: number;
   totalMarks: number;
   rank?: number;
-  sem1Points: number;
-  sem1Credits: number;
-  sem2Points: number;
-  sem2Credits: number;
+  semesterStats: {
+    name: string;
+    sgpa: number;
+    points: number;
+    credits: number;
+  }[];
 }
 
 // ─── UI-Specific Types ────────────────────────────────────────────────────────

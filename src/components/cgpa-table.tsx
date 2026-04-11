@@ -19,11 +19,10 @@ import { StudentModal } from "@/components/student-modal"
 
 import { MedalBadge, CrownIcon, DiamondIcon, ShieldIcon } from "@/components/ui/medal-badge"
 interface CGPATableProps {
-    sem1Data: RawSemesterData
-    sem2Data: RawSemesterData
+    semesters: RawSemesterData[]
 }
 
-export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
+export function CGPATable({ semesters }: CGPATableProps) {
     const [sorting, setSorting] = useState<SortingState>([{ id: "rank", desc: false }])
     const [globalFilter, setGlobalFilter] = useState("")
     const printRef = useRef<HTMLDivElement>(null)
@@ -32,116 +31,111 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
 
     useEffect(() => { setCurrentDate(new Date().toLocaleDateString()) }, [])
 
-    const rankedStudents = useMemo(() => calculateCGPARankings(sem1Data, sem2Data), [sem1Data, sem2Data])
+    const rankedStudents = useMemo(() => calculateCGPARankings(semesters), [semesters])
 
-    const columns = useMemo<ColumnDef<CGPARanking>[]>(() => [
-        {
-            accessorKey: "rank",
-            header: () => <Th>Final Rank</Th>,
-            cell: ({ row }) => <MedalBadge medalRank={row.getValue("rank") as number} displayNumber={row.getValue("rank") as number} />,
-        },
-        {
-            accessorKey: "roll",
-            header: () => <Th>Roll No.</Th>,
-            cell: ({ row }) => (
-                <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-wide text-ubit-muted">
-                    {row.getValue("roll")}
-                </span>
-            ),
-        },
-        {
-            accessorKey: "name",
-            header: () => <Th>Student Name</Th>,
-            cell: ({ row }) => (
-                <span className="font-bold text-[11px] sm:text-[13px] tracking-tight text-ubit-ink">
-                    {row.getValue("name")}
-                </span>
-            ),
-        },
-        {
-            accessorKey: "sem1SGPA",
-            header: () => <Th>Sem 1 SGPA</Th>,
-            cell: ({ row }) => {
-                const v = row.getValue("sem1SGPA") as number
-                return (
-                    <div className="flex justify-center items-center w-full">
-                        {v === 0
-                            ? <span className="text-ubit-faint">–</span>
-                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums text-ubit-ink">{v.toFixed(2)}</span>}
-                    </div>
-                )
+    const columns = useMemo<ColumnDef<CGPARanking>[]>(() => {
+        const baseCols: ColumnDef<CGPARanking>[] = [
+            {
+                accessorKey: "rank",
+                header: () => <Th>Final Rank</Th>,
+                cell: ({ row }) => <MedalBadge medalRank={row.getValue("rank") as number} displayNumber={row.getValue("rank") as number} />,
             },
-        },
-        {
-            accessorKey: "sem2SGPA",
-            header: () => <Th>Sem 2 SGPA</Th>,
-            cell: ({ row }) => {
-                const v = row.getValue("sem2SGPA") as number
-                return (
-                    <div className="flex justify-center items-center w-full">
-                        {v === 0
-                            ? <span className="text-ubit-faint">–</span>
-                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums text-ubit-ink">{v.toFixed(2)}</span>}
-                    </div>
-                )
-            },
-        },
-        {
-            accessorKey: "totalMarks",
-            header: () => <Th>Grand Total</Th>,
-            cell: ({ row }) => (
-                <div className="flex justify-center items-center w-full">
-                    <span className="font-bold text-[12px] sm:text-[14px] tabular-nums text-ubit-ink">
-                        {row.getValue("totalMarks")}
+            {
+                accessorKey: "roll",
+                header: () => <Th>Roll No.</Th>,
+                cell: ({ row }) => (
+                    <span className="font-mono text-[10px] sm:text-[11px] font-bold tracking-wide text-ubit-muted">
+                        {row.getValue("roll")}
                     </span>
-                </div>
-            ),
-        },
-        {
-            accessorKey: "cgpa",
-            header: () => <Th>Cumulative GPA</Th>,
+                ),
+            },
+            {
+                accessorKey: "name",
+                header: () => <Th>Student Name</Th>,
+                cell: ({ row }) => (
+                    <span className="font-bold text-[11px] sm:text-[13px] tracking-tight text-ubit-ink">
+                        {row.getValue("name")}
+                    </span>
+                ),
+            },
+        ];
+
+        const semCols: ColumnDef<CGPARanking>[] = semesters.map((sem, idx) => ({
+            id: `sem${idx}`,
+            header: () => <Th>{sem.name.split(' ').slice(1).join(' ')} SGPA</Th>,
             cell: ({ row }) => {
-                const cgpa = row.getValue("cgpa") as number
-                const rank = row.original.rank || 0
-                const chipClass =
-                    rank === 1 ? "bg-ubit-gold text-white" :
-                        rank === 2 ? "bg-ubit-silver text-white" :
-                            rank === 3 ? "bg-ubit-bronze text-white" :
-                                cgpa >= 3.8 ? "bg-ubit-navy text-white" :
-                                    cgpa >= 2.0 ? "bg-slate-100 text-ubit-ink border border-slate-300" :
-                                        "bg-rose-50 text-rose-600 border border-rose-200"
+                const stat = row.original.semesterStats?.find(s => s.name === sem.name);
+                const v = stat ? stat.sgpa : 0;
                 return (
                     <div className="flex justify-center items-center w-full">
-                        <span
-                            className={`inline-flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg text-[11px] sm:text-[13px] font-bold tabular-nums ${chipClass}`}
-                        >
-                            {cgpa.toFixed(2)}
+                        {v === 0
+                            ? <span className="text-ubit-faint">–</span>
+                            : <span className="font-bold text-[11px] sm:text-[13px] tabular-nums text-ubit-ink">{v.toFixed(2)}</span>}
+                    </div>
+                )
+            },
+        }));
+
+        const endCols: ColumnDef<CGPARanking>[] = [
+            {
+                accessorKey: "totalMarks",
+                header: () => <Th>Grand Total</Th>,
+                cell: ({ row }) => (
+                    <div className="flex justify-center items-center w-full">
+                        <span className="font-bold text-[12px] sm:text-[14px] tabular-nums text-ubit-ink">
+                            {row.getValue("totalMarks")}
                         </span>
                     </div>
-                )
+                ),
             },
-        },
-        {
-            id: "status",
-            enableSorting: false,
-            header: () => <Th>Status</Th>,
-            cell: ({ row }) => {
-                const cgpa = row.original.cgpa
-                if (cgpa >= 2.0) return (
-                    <div className="flex justify-center items-center gap-1.5 w-full">
-                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: "#16A34A" }} />
-                        <span className="text-[12px] font-semibold" style={{ color: "#15803D" }}>Pass</span>
-                    </div>
-                )
-                return (
-                    <div className="flex justify-center items-center gap-1.5 w-full">
-                        <XCircle className="w-3.5 h-3.5 shrink-0 text-ubit-faint" />
-                        <span className="text-[12px] font-semibold text-ubit-muted">Fail</span>
-                    </div>
-                )
+            {
+                accessorKey: "cgpa",
+                header: () => <Th>Cumulative GPA</Th>,
+                cell: ({ row }) => {
+                    const cgpa = row.getValue("cgpa") as number
+                    const rank = row.original.rank || 0
+                    const chipClass =
+                        rank === 1 ? "bg-ubit-gold text-white" :
+                            rank === 2 ? "bg-ubit-silver text-white" :
+                                rank === 3 ? "bg-ubit-bronze text-white" :
+                                    cgpa >= 3.8 ? "bg-ubit-navy text-white" :
+                                        cgpa >= 2.0 ? "bg-slate-100 text-ubit-ink border border-slate-300" :
+                                            "bg-rose-50 text-rose-600 border border-rose-200"
+                    return (
+                        <div className="flex justify-center items-center w-full">
+                            <span
+                                className={`inline-flex items-center justify-center px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg text-[11px] sm:text-[13px] font-bold tabular-nums ${chipClass}`}
+                            >
+                                {cgpa.toFixed(2)}
+                            </span>
+                        </div>
+                    )
+                },
             },
-        },
-    ], [])
+            {
+                id: "status",
+                enableSorting: false,
+                header: () => <Th>Status</Th>,
+                cell: ({ row }) => {
+                    const cgpa = row.original.cgpa
+                    if (cgpa >= 2.0) return (
+                        <div className="flex justify-center items-center gap-1.5 w-full">
+                            <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: "#16A34A" }} />
+                            <span className="text-[12px] font-semibold" style={{ color: "#15803D" }}>Pass</span>
+                        </div>
+                    )
+                    return (
+                        <div className="flex justify-center items-center gap-1.5 w-full">
+                            <XCircle className="w-3.5 h-3.5 shrink-0 text-ubit-faint" />
+                            <span className="text-[12px] font-semibold text-ubit-muted">Fail</span>
+                        </div>
+                    )
+                },
+            },
+        ];
+
+        return [...baseCols, ...semCols, ...endCols];
+    }, [semesters])
 
     const table = useReactTable({
         data: rankedStudents,
@@ -266,9 +260,9 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                                         <tr
                                             key={row.id}
                                             onClick={() => {
-                                                const studentRaw = sem1Data.students.find(s => s.roll === row.original.roll)
+                                                const studentRaw = semesters[0]?.students?.find(s => s.roll === row.original.roll)
                                                 if (studentRaw) {
-                                                    const s1RankItem = calculateRankings(sem1Data.courses, sem1Data.students).find(s => s.roll === row.original.roll)
+                                                    const s1RankItem = calculateRankings(semesters[0].courses, semesters[0].students).find(s => s.roll === row.original.roll)
                                                     setSelectedStudent(s1RankItem || null)
                                                 }
                                             }}
@@ -320,13 +314,13 @@ export function CGPATable({ sem1Data, sem2Data }: CGPATableProps) {
                         ))}
                         <span className="text-slate-300 text-[10px]">— Cumulative GPA rank</span>
                     </div>
-                    <span>{sem1Data.university} · {currentDate || "—"}</span>
+                    <span>{semesters[0]?.university ?? "UBIT - University of Karachi"} · {currentDate || "—"}</span>
                 </div>
             </div>
 
             <StudentModal
                 student={selectedStudent}
-                courses={sem1Data.courses}
+                courses={semesters[0]?.courses || []}
                 open={!!selectedStudent}
                 onOpenChange={(o) => { if (!o) setSelectedStudent(null) }}
                 cumulativeRank={selectedStudent ? rankedStudents.find(r => r.roll === selectedStudent.roll)?.rank || null : null}

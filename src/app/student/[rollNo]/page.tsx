@@ -13,7 +13,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { rollNo } = await params;
-  const student = getStudent(rollNo);
+  const student = await getStudent(rollNo);
   if (!student) return { title: "Student Not Found" };
   return {
     title: `${student.name} — Academic Record`,
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  */
 export default async function StudentPage({ params }: Props) {
   const { rollNo } = await params;
-  const student = getStudent(rollNo);
+  const student = await getStudent(rollNo);
   if (!student) notFound();
 
   const overallPass = student.cgpa >= 2.0;

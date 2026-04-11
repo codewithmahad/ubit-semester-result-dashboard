@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { getClassData, getClassStats } from "@/lib/data";
+
 import { SearchOmnibar } from "@/components/search-omnibar";
 import { Nav } from "@/components/nav";
 import { NotificationBanner } from "@/components/notification-banner";
@@ -21,9 +21,6 @@ export const metadata = {
  * All student data is loaded server-side via `getClassData()` from lib/data.ts.
  */
 export default function LandingPage() {
-  const { students } = getClassData();
-  const stats = getClassStats(students);
-  void stats; // suppress unused warning
   return (
     <main className="min-h-screen bg-[#f5f7f8]">
       <Nav />

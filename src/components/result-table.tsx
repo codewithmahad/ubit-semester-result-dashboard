@@ -41,8 +41,8 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
 
     const cumulativeRankMap = useMemo(() => {
         const map = new Map<string, number>()
-        if (!allSemData || allSemData.length < 2) return map
-        calculateCGPARankings(allSemData[0], allSemData[1])
+        if (!allSemData || allSemData.length === 0) return map
+        calculateCGPARankings(allSemData)
             .forEach(r => { if (r.rank !== undefined) map.set(r.roll, r.rank) })
         return map
     }, [allSemData])

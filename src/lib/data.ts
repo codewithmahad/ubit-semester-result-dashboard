@@ -1,25 +1,16 @@
 /**
  * @file src/lib/data.ts
- * @description Unified data adapter — wraps raw semester data files and exposes
+ * @description Unified data adapter — wraps dynamic semester data files and exposes
  * a clean, typed interface for the entire application.
  *
  * Responsibilities:
+ *   - Load data dynamically using the CLASS_REGISTRY.
  *   - Build computed `StudentProfile` objects from raw semester records.
- *   - Compute and cache the full `ClassRecord` for the active batch.
- *   - Expose query helpers (`getStudent`, `searchStudents`, `getClassStats`)
- *     so pages never import directly from src/data/*.ts files.
- *
- * All SGPA/CGPA computation is delegated to `src/lib/utils/academic-math.ts`.
- * All types are sourced from `src/types/index.ts`.
- * All constants (batch name, passing threshold) are sourced from `src/constants/academic.ts`.
- *
- * Re-exports computed types for backward compatibility with components that
- * currently import types from this module.
+ *   - Expose query helpers (`getStudent`, `searchStudents`) that scan all registries.
  */
 
-import { semester1 } from "@/data/semester1";
-import { semester2 } from "@/data/semester2";
-import { BATCH_INFO, PASSING_CGPA } from "@/constants/academic";
+import { PASSING_CGPA } from "@/constants/academic";
+import { CLASS_REGISTRY, type ClassMetadata } from "@/data/registry";
 import type {
   RawSemesterData,
   CourseResult,
@@ -28,23 +19,31 @@ import type {
   ClassRecord,
 } from "@/types";
 
-// Re-export computed types so existing consumers don't break.
-// New code should import directly from "@/types".
 export type { CourseResult, SemesterRecord, StudentProfile, ClassRecord };
+
+// ─── Dynamic Loader ────────────────────────────────────────────────────────
+// Next.js (Webpack) can bundle this safely because the base path is static.
+export async function loadClassSemesters(classId: string): Promise<RawSemesterData[]> {
+  const meta = CLASS_REGISTRY.find((c) => c.id === classId);
+  if (!meta) return [];
+
+  const semestersData: RawSemesterData[] = [];
+  for (const sem of meta.activeSemesters) {
+    try {
+      const mod = await import(`@/data/${classId}/${sem}.ts`);
+      if (mod && mod[sem]) {
+        semestersData.push(mod[sem]);
+      }
+    } catch (e) {
+      console.warn(`Failed to dynamically load @/data/${classId}/${sem}.ts`, e);
+    }
+  }
+
+  return semestersData;
+}
 
 // ─── Internal Builders ────────────────────────────────────────────────────────
 
-/**
- * Builds a single computed `SemesterRecord` for one student within a semester.
- *
- * Filters to only the courses for which this student has a result entry,
- * then calculates SGPA and quality points from those results.
- *
- * @param semData        - The full raw semester data object.
- * @param semNum         - The semester number (1, 2, 3, …) for display purposes.
- * @param studentResults - The student's raw result map (code → result).
- * @returns A computed `SemesterRecord`, or `null` if the student has no results.
- */
 function buildSemesterRecord(
   semData: RawSemesterData,
   semNum: number,
@@ -71,8 +70,7 @@ function buildSemesterRecord(
     0
   );
   const totalCredits = courses.reduce((sum, c) => sum + c.creditHours, 0);
-  const sgpa =
-    totalCredits > 0 ? Number((qualityPoints / totalCredits).toFixed(2)) : 0;
+  const sgpa = totalCredits > 0 ? Number((qualityPoints / totalCredits).toFixed(2)) : 0;
 
   return {
     semesterNum: semNum,
@@ -84,60 +82,52 @@ function buildSemesterRecord(
   };
 }
 
-/**
- * Constructs the full list of computed `StudentProfile` objects by merging
- * data across all available semesters.
- *
- * A student who only appears in Semester 1 will still be included, with their
- * Semester 2 record simply absent from their `semesters` array.
- *
- * After building, profiles are sorted by CGPA → totalMarks → name,
- * and tie-aware `cgpaRank` values are assigned.
- *
- * @returns Sorted array of `StudentProfile` with ranks assigned.
- */
-function buildStudentProfiles(): StudentProfile[] {
-  // Collect unique roll numbers across all semesters
+function buildStudentProfiles(
+  meta: ClassMetadata,
+  semestersData: RawSemesterData[]
+): StudentProfile[] {
+  if (semestersData.length === 0) return [];
+
   const rollSet = new Set<string>();
-  semester1.students.forEach((s) => rollSet.add(s.roll));
-  semester2.students.forEach((s) => rollSet.add(s.roll));
+  semestersData.forEach((sem) => {
+    if (sem.students) {
+      sem.students.forEach((s) => rollSet.add(s.roll));
+    }
+  });
 
   const profiles: StudentProfile[] = [];
 
   for (const roll of rollSet) {
-    const s1 = semester1.students.find((s) => s.roll === roll);
-    const s2 = semester2.students.find((s) => s.roll === roll);
-    const name = (s1 ?? s2)!.name;
-
+    // Find the student name from the first available record
+    let name = "";
     const semesters: SemesterRecord[] = [];
     let totalQP = 0;
     let totalCr = 0;
     let totalMarks = 0;
 
-    const sem1Record = s1 ? buildSemesterRecord(semester1, 1, s1.results) : null;
-    const sem2Record = s2 ? buildSemesterRecord(semester2, 2, s2.results) : null;
-
-    if (sem1Record) {
-      semesters.push(sem1Record);
-      totalQP += sem1Record.qualityPoints;
-      totalCr += sem1Record.totalCredits;
-      sem1Record.courses.forEach((c) => (totalMarks += c.marks));
-    }
-
-    if (sem2Record) {
-      semesters.push(sem2Record);
-      totalQP += sem2Record.qualityPoints;
-      totalCr += sem2Record.totalCredits;
-      sem2Record.courses.forEach((c) => (totalMarks += c.marks));
-    }
+    semestersData.forEach((sem, index) => {
+      if (!sem.students) return;
+      const sRaw = sem.students.find((s) => s.roll === roll);
+      if (sRaw) {
+        if (!name) name = sRaw.name;
+        // Construct the semNum from index
+        const record = buildSemesterRecord(sem, index + 1, sRaw.results);
+        if (record) {
+          semesters.push(record);
+          totalQP += record.qualityPoints;
+          totalCr += record.totalCredits;
+          record.courses.forEach((c) => (totalMarks += c.marks));
+        }
+      }
+    });
 
     const cgpa = totalCr > 0 ? Number((totalQP / totalCr).toFixed(2)) : 0;
 
     profiles.push({
       rollNo: roll,
       name,
-      batch: BATCH_INFO.batch,
-      shift: BATCH_INFO.shift,
+      batch: meta.batch,
+      shift: meta.shift,
       semesters,
       cgpa,
       totalCredits: totalCr,
@@ -171,76 +161,72 @@ function buildStudentProfiles(): StudentProfile[] {
 }
 
 // ─── Module-Level Cache ───────────────────────────────────────────────────────
-
-/** Cached ClassRecord — built once on first call, reused on all subsequent calls. */
-let _cache: ClassRecord | null = null;
+const _cache: Record<string, ClassRecord> = {};
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
 /**
- * Returns the fully computed `ClassRecord` for the active batch.
- *
- * The result is memoized: the `buildStudentProfiles()` computation only runs
- * on the first call. All subsequent calls return the cached value.
- *
- * @returns The batch's `ClassRecord` containing all computed student profiles.
+ * Returns the fully computed `ClassRecord` for a given class ID dynamically.
  */
-export function getClassData(): ClassRecord {
-  if (_cache) return _cache;
-  _cache = {
-    batch: BATCH_INFO.batch,
-    shift: BATCH_INFO.shift,
-    semesterCount: 2,
-    students: buildStudentProfiles(),
+export async function getClassData(classId: string): Promise<ClassRecord | null> {
+  if (_cache[classId]) return _cache[classId];
+
+  const meta = CLASS_REGISTRY.find(c => c.id === classId);
+  if (!meta) return null;
+
+  const semestersData = await loadClassSemesters(classId);
+
+  const record: ClassRecord = {
+    batch: meta.batch,
+    shift: meta.shift,
+    semesterCount: semestersData.length,
+    students: buildStudentProfiles(meta, semestersData),
   };
-  return _cache;
+
+  _cache[classId] = record;
+  return record;
 }
 
 /**
- * Looks up a single student profile by roll number.
- *
- * @param rollNo - The student's roll number (e.g. "EB25210106004").
- * @returns The matching `StudentProfile`, or `null` if not found.
+ * Looks up a single student profile by roll number across ALL registries.
  */
-export function getStudent(rollNo: string): StudentProfile | null {
-  return getClassData().students.find((s) => s.rollNo === rollNo) ?? null;
+export async function getStudent(rollNo: string): Promise<StudentProfile | null> {
+  for (const meta of CLASS_REGISTRY) {
+    const classData = await getClassData(meta.id);
+    if (!classData) continue;
+    const student = classData.students.find((s) => s.rollNo === rollNo);
+    if (student) return student;
+  }
+  return null;
 }
 
 /**
- * Searches for students matching a name or roll number query.
- *
- * Matching is case-insensitive, space-trimmed substring search.
- * Results are capped at 8 entries to keep the search omnibar performant.
- *
- * @param query - The raw search query string from the user input.
- * @returns Up to 8 minimal student records (rollNo, name, cgpa, cgpaRank).
+ * Searches for students matching a name or roll number query across ALL registries.
  */
-export function searchStudents(
+export async function searchStudents(
   query: string
-): Pick<StudentProfile, "rollNo" | "name" | "cgpa" | "cgpaRank">[] {
+): Promise<Pick<StudentProfile, "rollNo" | "name" | "cgpa" | "cgpaRank">[]> {
   if (!query.trim()) return [];
   const q = query.toLowerCase().trim();
-  return getClassData()
-    .students.filter(
-      (s) =>
-        s.name.toLowerCase().includes(q) || s.rollNo.toLowerCase().includes(q)
-    )
-    .slice(0, 8)
-    .map(({ rollNo, name, cgpa, cgpaRank }) => ({ rollNo, name, cgpa, cgpaRank }));
+  
+  const results: Pick<StudentProfile, "rollNo" | "name" | "cgpa" | "cgpaRank">[] = [];
+
+  for (const meta of CLASS_REGISTRY) {
+    const classData = await getClassData(meta.id);
+    if (!classData) continue;
+    
+    const matches = classData.students.filter(
+      (s) => s.name.toLowerCase().includes(q) || s.rollNo.toLowerCase().includes(q)
+    );
+    matches.forEach(({ rollNo, name, cgpa, cgpaRank }) => {
+      results.push({ rollNo, name, cgpa, cgpaRank });
+    });
+  }
+
+  // Cap to 8
+  return results.slice(0, 8);
 }
 
-/**
- * Computes summary statistics for a given list of student profiles.
- *
- * Statistics computed:
- *   - `total`    — total number of students.
- *   - `passing`  — students with CGPA ≥ PASSING_CGPA (2.0).
- *   - `passRate` — percentage of passing students (rounded integer).
- *   - `avgCGPA`  — class average CGPA among students with CGPA > 0.
- *
- * @param students - Array of student profiles (typically from `getClassData().students`).
- * @returns An object with the four computed statistics.
- */
 export function getClassStats(students: StudentProfile[]) {
   const total = students.length;
   const withCGPA = students.filter((s) => s.cgpa > 0);

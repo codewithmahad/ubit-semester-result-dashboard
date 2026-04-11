@@ -1,8 +1,8 @@
-import { getClassData, getClassStats } from "@/lib/data";
+import { getClassStats } from "@/lib/data";
 import { TrendingUp, Award, BarChart, Users } from "lucide-react";
+import type { ClassRecord } from "@/types";
 
-export function BatchMetrics() {
-  const data = getClassData();
+export function BatchMetrics({ data }: { data: ClassRecord }) {
   const stats = getClassStats(data.students);
   
   const highestCGPA = data.students.length > 0 ? data.students[0].cgpa.toFixed(2) : "0.00";

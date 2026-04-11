@@ -9,23 +9,28 @@ export const metadata: Metadata = {
   description: "Browse official university sections and batches. Access comprehensive analytics, course-wise performance, and student ranking records.",
 };
 
-/** Registry of all available class sections with live result data. */
-const sections: ClassSection[] = [
-  {
-    id: "2025-evening-a",
-    batch: "2025",
-    section: "BSSE Batch 2025 (Evening) - Section A",
-    degree: "Software Engineering",
-    semester: "Semester II · University of Karachi",
-    students: 68,
-    cr: "Kazim Hussain",
-    topPerformer: "Shaikh Mahad",
-    href: "/class/2025/evening",
-    live: true,
-  },
-];
+import { CLASS_REGISTRY } from "@/data/registry";
+import { getClassData } from "@/lib/data";
 
-export default function LeaderboardsPage() {
+export default async function LeaderboardsPage() {
+  const sections: ClassSection[] = await Promise.all(
+    CLASS_REGISTRY.map(async (meta) => {
+      const data = await getClassData(meta.id);
+      const studentCount = data ? data.students.length : 0;
+      return {
+        id: meta.id,
+        batch: meta.batch,
+        section: `${meta.program} Batch ${meta.batch} (${meta.shift}) - ${meta.section}`,
+        degree: meta.degree,
+        semester: `Semesters: ${meta.activeSemesters.length} · University of Karachi`,
+        students: studentCount,
+        cr: meta.cr,
+        topPerformer: meta.topPerformer,
+        href: `/class/${meta.batch}/${meta.id.split('-').slice(2).join('-')}`, // e.g. /class/2025/evening-a or morning-b
+        live: true,
+      };
+    })
+  );
   return (
     <div className="min-h-screen bg-[#f5f7f8] flex flex-col">
       <Nav />
