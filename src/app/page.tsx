@@ -10,7 +10,7 @@ import { Footer } from "@/components/footer";
 export const metadata = {
   title: "UBIT Results Portal",
   description:
-    "Official academic result portal for BSSE Batch 2025, Department of Computer Science (UBIT), University of Karachi.",
+    "Unofficial academic result portal for BSSE Batch 2025, Department of Computer Science (UBIT), University of Karachi.",
 };
 
 /**
@@ -39,7 +39,7 @@ export default function LandingPage() {
             Academic Results Hub
           </h1>
           <p className="text-[14px] sm:text-[16px] md:text-[18px] text-gray-500 mb-8 md:mb-10 max-w-xl leading-relaxed font-medium">
-            The official portal for{" "}
+            An unofficial portal for{" "}
             <span className="font-bold text-[#8F141B]">UBIT Students</span>.
             Instant access to your academic transcripts, GPA metrics, and class standings.
           </p>
