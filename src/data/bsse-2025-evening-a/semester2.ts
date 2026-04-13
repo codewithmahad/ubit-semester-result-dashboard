@@ -4,33 +4,35 @@ export const semester2: RawSemesterData = {
     name: "BSSE Semester II (Partial Result)",
     batch: "2025 (Evening Program)",
     university: "UBIT - University of Karachi",
-    courses: [
-        { code: "OOPs", name: "Object Oriented Concepts & Pro", creditHours: 4 },
-        { code: "SE", name: "Software Engineering", creditHours: 3 },
-        { code: "MV Calc", name: "Multivariable Calculus", creditHours: 3 },
-        { code: "Stats", name: "Probability & Statistics", creditHours: 3 }
+        courses: [
+        { code: "SE-352", name: "Object Oriented Concepts & Programming", creditHours: 4 },
+        { code: "SE-354", name: "Software Eng. Fundamentals", creditHours: 3 },
+        { code: "SE-356", name: "Multivariable Calculus", creditHours: 3 },
+        { code: "SE-358", name: "Applied Physics", creditHours: 3 },
+        { code: "SE-360", name: "Probability & Statistics", creditHours: 3 },
+        { code: "SE-362", name: "Islamic Studies", creditHours: 2 }
     ],
     students: [
   {
     "name": "ABDUL RAFAY",
     "roll": "EB25210106004",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 88,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 36,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
@@ -41,22 +43,22 @@ export const semester2: RawSemesterData = {
     "name": "ABDUL REHMAN ANWER",
     "roll": "EB25210106007",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 79,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 80,
         "gradePoint": 3.8,
         "grade": "A-"
@@ -67,22 +69,22 @@ export const semester2: RawSemesterData = {
     "name": "ADEEL ALI",
     "roll": "EB25210106009",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 100,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -93,22 +95,22 @@ export const semester2: RawSemesterData = {
     "name": "AHMED HUSSAIN BUTT",
     "roll": "EB25210106010",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 70,
         "gradePoint": 2.8,
         "grade": "B-"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 45,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
@@ -119,22 +121,22 @@ export const semester2: RawSemesterData = {
     "name": "AHSAN ALI SHAIKH",
     "roll": "EB25210106011",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 83,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 95,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
@@ -145,22 +147,22 @@ export const semester2: RawSemesterData = {
     "name": "ALEEZA PERVEN",
     "roll": "EB25210106012",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 60,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 31,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 31,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
@@ -171,22 +173,22 @@ export const semester2: RawSemesterData = {
     "name": "ALI AHMED KHAN",
     "roll": "EB25210106013",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 74,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 87,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
@@ -197,22 +199,22 @@ export const semester2: RawSemesterData = {
     "name": "ANAS AHMED KHAN",
     "roll": "EB25210106017",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 67,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 92,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 45,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
@@ -223,22 +225,22 @@ export const semester2: RawSemesterData = {
     "name": "ANUS",
     "roll": "EB25210106018",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 79,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 98,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 76,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
@@ -249,22 +251,22 @@ export const semester2: RawSemesterData = {
     "name": "ASAD AFTAB AHMED",
     "roll": "EB25210106019",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 87,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 76,
         "gradePoint": 3.4,
         "grade": "B+"
@@ -275,22 +277,22 @@ export const semester2: RawSemesterData = {
     "name": "ASAD NOOR",
     "roll": "EB25210106020",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 86,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 99,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
@@ -301,22 +303,22 @@ export const semester2: RawSemesterData = {
     "name": "ASIF ASAD",
     "roll": "EB25210106021",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 31,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 55,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -327,22 +329,22 @@ export const semester2: RawSemesterData = {
     "name": "AYESHA IZZAT",
     "roll": "EB25210106023",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 88,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 98,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 91,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
@@ -353,22 +355,22 @@ export const semester2: RawSemesterData = {
     "name": "AYESHA MOIN",
     "roll": "EB25210106024",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
@@ -379,22 +381,22 @@ export const semester2: RawSemesterData = {
     "name": "BAZIL AHMED",
     "roll": "EB25210106025",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 65,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 80,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 55,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -405,22 +407,22 @@ export const semester2: RawSemesterData = {
     "name": "FAHAD SHAIKH",
     "roll": "EB25210106026",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 62,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
@@ -431,22 +433,22 @@ export const semester2: RawSemesterData = {
     "name": "FIRZA TAHIR",
     "roll": "EB25210106028",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 100,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
@@ -457,22 +459,22 @@ export const semester2: RawSemesterData = {
     "name": "HUZAIFA BIN ANWAR",
     "roll": "EB25210106038",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 78,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 78,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -483,22 +485,22 @@ export const semester2: RawSemesterData = {
     "name": "KAZIM HUSSAIN",
     "roll": "EB25210106039",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 88,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 38,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
@@ -509,22 +511,22 @@ export const semester2: RawSemesterData = {
     "name": "LAVIZAH ZEESHAN",
     "roll": "EB25210106042",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 86,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 94,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
@@ -535,22 +537,22 @@ export const semester2: RawSemesterData = {
     "name": "MAAZ AHMED KHAN",
     "roll": "EB25210106043",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 86,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 97,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 88,
         "gradePoint": 4.0,
         "grade": "A"
@@ -561,22 +563,22 @@ export const semester2: RawSemesterData = {
     "name": "MAAZ BIN AAMIR",
     "roll": "EB25210106044",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 80,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 100,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 56,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -587,22 +589,22 @@ export const semester2: RawSemesterData = {
     "name": "MAHAM ATIF",
     "roll": "EB25210106045",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 53,
         "gradePoint": 1.4,
         "grade": "D+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 90,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 62,
         "gradePoint": 2.0,
         "grade": "C"
@@ -613,22 +615,22 @@ export const semester2: RawSemesterData = {
     "name": "MALIK ABDUL MANNAN",
     "roll": "EB25210106046",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 96,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 55,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -639,22 +641,22 @@ export const semester2: RawSemesterData = {
     "name": "MASAB SUHAIB",
     "roll": "EB25210106047",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 80,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 83,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -665,22 +667,22 @@ export const semester2: RawSemesterData = {
     "name": "MIRZA MUZAMMIL ULLAH BAIG",
     "roll": "EB25210106049",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 40,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 45,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 23,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 55,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -691,22 +693,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD AAYAN",
     "roll": "EB25210106051",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 99,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 36,
         "gradePoint": 0.0,
         "grade": "-"
@@ -717,22 +719,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD ABDULLAH BASHIR",
     "roll": "EB25210106052",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 53,
         "gradePoint": 1.4,
         "grade": "D+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 46,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 43,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
@@ -743,22 +745,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD ALI",
     "roll": "EB25210106054",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 70,
         "gradePoint": 2.8,
         "grade": "B-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 100,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
@@ -769,22 +771,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD ALI RAZA",
     "roll": "EB25210106056",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 80,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 92,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
@@ -795,22 +797,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD FAQIH UL HASNAIN",
     "roll": "EB25210106065",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 90,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 66,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 65,
         "gradePoint": 2.4,
         "grade": "C+"
@@ -821,22 +823,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD FARJAD",
     "roll": "EB25210106066",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 63,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 12,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 10,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 55,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -847,22 +849,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD MAHAD",
     "roll": "EB25210106071",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 83,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 56,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -873,22 +875,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD SAAD ANSARI",
     "roll": "EB25210106078",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 98,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -899,22 +901,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD SAEED",
     "roll": "EB25210106082",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 35,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 88,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 37,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 56,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -925,22 +927,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD SAFI ULLAH",
     "roll": "EB25210106083",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 65,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 99,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 37,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 65,
         "gradePoint": 2.4,
         "grade": "C+"
@@ -951,22 +953,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD SAMEER UDDIN",
     "roll": "EB25210106084",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 70,
         "gradePoint": 2.8,
         "grade": "B-"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 16,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 65,
         "gradePoint": 2.4,
         "grade": "C+"
@@ -977,22 +979,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD SHARIQ",
     "roll": "EB25210106086",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 83,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 26,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
@@ -1003,22 +1005,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD SHAYAN",
     "roll": "EB25210106087",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 79,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 96,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 72,
         "gradePoint": 3.0,
         "grade": "B"
@@ -1029,22 +1031,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD SOHAIB",
     "roll": "EB25210106088",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 99,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 44,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 55,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -1055,22 +1057,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD SUFYAN",
     "roll": "EB25210106089",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 80,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 41,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
@@ -1081,22 +1083,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD UMAR SHAFIQE",
     "roll": "EB25210106091",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 74,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 62,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
@@ -1107,22 +1109,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD USMAN ASAD",
     "roll": "EB25210106094",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 59,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 95,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 60,
         "gradePoint": 1.8,
         "grade": "C-"
@@ -1133,22 +1135,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD UZAIR",
     "roll": "EB25210106096",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 82,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 100,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 78,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 89,
         "gradePoint": 4.0,
         "grade": "A"
@@ -1159,22 +1161,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD WASIQ",
     "roll": "EB25210106097",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 80,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 83,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 78,
         "gradePoint": 3.4,
         "grade": "B+"
@@ -1185,22 +1187,22 @@ export const semester2: RawSemesterData = {
     "name": "MUHAMMAD YASEEN ARIF",
     "roll": "EB25210106098",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 72,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 62,
         "gradePoint": 2.0,
         "grade": "C"
@@ -1211,22 +1213,22 @@ export const semester2: RawSemesterData = {
     "name": "MUNAWER HUSSAIN",
     "roll": "EB25210106100",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 82,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 54,
         "gradePoint": 1.4,
         "grade": "D+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 56,
         "gradePoint": 1.4,
         "grade": "D+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 52,
         "gradePoint": 1.0,
         "grade": "D"
@@ -1237,22 +1239,22 @@ export const semester2: RawSemesterData = {
     "name": "MUZAMMIL KALIM",
     "roll": "EB25210106101",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 79,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 82,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 33,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
@@ -1263,22 +1265,22 @@ export const semester2: RawSemesterData = {
     "name": "RAFIA ATHAR",
     "roll": "EB25210106104",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 89,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 91,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 53,
         "gradePoint": 1.4,
         "grade": "D+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
@@ -1289,22 +1291,22 @@ export const semester2: RawSemesterData = {
     "name": "SAAD AHMED",
     "roll": "EB25210106105",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 86,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 93,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
@@ -1315,22 +1317,22 @@ export const semester2: RawSemesterData = {
     "name": "SANILAH AHMED",
     "roll": "EB25210106109",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 86,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 99,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -1341,22 +1343,22 @@ export const semester2: RawSemesterData = {
     "name": "SHAIKH MAHAD UD DIN",
     "roll": "EB25210106113",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 83,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 96,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 85,
         "gradePoint": 4.0,
         "grade": "A"
@@ -1367,22 +1369,22 @@ export const semester2: RawSemesterData = {
     "name": "SYED ALI ZAIB BUKHARI",
     "roll": "EB25210106115",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 78,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 32,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 18,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
@@ -1393,22 +1395,22 @@ export const semester2: RawSemesterData = {
     "name": "SYED HASHIR IMAM",
     "roll": "EB25210106119",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 82,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 64,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 59,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
@@ -1419,22 +1421,22 @@ export const semester2: RawSemesterData = {
     "name": "SYED MEHDI HASSAN RIZVI",
     "roll": "EB25210106122",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 76,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 100,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 72,
         "gradePoint": 3.0,
         "grade": "B"
@@ -1445,22 +1447,22 @@ export const semester2: RawSemesterData = {
     "name": "SYED MUHAMMAD TAHA HASSAN SHAH",
     "roll": "EB25210106125",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 79,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 100,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 75,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -1471,22 +1473,22 @@ export const semester2: RawSemesterData = {
     "name": "SYED MUHAMMAD USMAN GHANI",
     "roll": "EB25210106126",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 74,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 66,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 21,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 54,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -1497,22 +1499,22 @@ export const semester2: RawSemesterData = {
     "name": "SYED SAIM HUSSAIN",
     "roll": "EB25210106127",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 97,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 36,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
@@ -1523,22 +1525,22 @@ export const semester2: RawSemesterData = {
     "name": "SYEDA HOORIYA KASHIF",
     "roll": "EB25210106129",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 77,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 76,
         "gradePoint": 3.4,
         "grade": "B+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 36,
         "gradePoint": 0.0,
         "grade": "F"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 54,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -1549,22 +1551,22 @@ export const semester2: RawSemesterData = {
     "name": "TAHA ALI",
     "roll": "EB25210106131",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 86,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 93,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -1575,22 +1577,22 @@ export const semester2: RawSemesterData = {
     "name": "TAHREEM RANA",
     "roll": "EB25210106132",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 84,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 99,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 68,
         "gradePoint": 2.8,
         "grade": "B-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -1601,22 +1603,22 @@ export const semester2: RawSemesterData = {
     "name": "UZAIR MUKHTAR",
     "roll": "EB25210106134",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 60,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 56,
         "gradePoint": 1.4,
         "grade": "D+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 56,
         "gradePoint": 1.4,
         "grade": "D+"
@@ -1627,22 +1629,22 @@ export const semester2: RawSemesterData = {
     "name": "WANIA",
     "roll": "EB25210106136",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 94,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 66,
         "gradePoint": 2.4,
         "grade": "C+"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 71,
         "gradePoint": 3.0,
         "grade": "B"
@@ -1653,22 +1655,22 @@ export const semester2: RawSemesterData = {
     "name": "WAREESHA BEGUM",
     "roll": "EB25210106137",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 88,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 88,
         "gradePoint": 4.0,
         "grade": "A"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 58,
         "gradePoint": 1.8,
         "grade": "C-"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 65,
         "gradePoint": 2.4,
         "grade": "C+"
@@ -1679,22 +1681,22 @@ export const semester2: RawSemesterData = {
     "name": "WASIF KHAN",
     "roll": "EB25210106138",
     "results": {
-      "SE": {
+      "SE-354": {
         "marks": 81,
         "gradePoint": 3.8,
         "grade": "A-"
       },
-      "MV Calc": {
+      "SE-356": {
         "marks": 95,
         "gradePoint": 4.0,
         "grade": "A+"
       },
-      "Stats": {
+      "SE-360": {
         "marks": 50,
         "gradePoint": 1.0,
         "grade": "D"
       },
-      "OOPs": {
+      "SE-352": {
         "marks": 61,
         "gradePoint": 2.0,
         "grade": "C"
