@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useTransition } from "react";
+import { useState, useRef, useTransition, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 
@@ -10,6 +10,19 @@ export function SearchOmnibar() {
   const [isPending, startTransition] = useTransition();
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+
+  // "/" keyboard shortcut — focus search (ignore if already in an input)
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== "/") return;
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      e.preventDefault();
+      inputRef.current?.focus();
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -52,6 +65,13 @@ export function SearchOmnibar() {
             autoComplete="off"
             spellCheck={false}
           />
+
+          {/* Shortcut hint — hidden when typing or on mobile */}
+          {!focused && query.length === 0 && (
+            <kbd className="hidden sm:flex items-center justify-center h-6 min-w-[24px] px-1.5 mr-3 rounded-md bg-gray-200/80 text-gray-500 text-[11px] font-bold font-mono border border-gray-300/60 select-none shrink-0 pointer-events-none">
+              /
+            </kbd>
+          )}
 
           {/* Submit button — minimum 44px tap target */}
           <button

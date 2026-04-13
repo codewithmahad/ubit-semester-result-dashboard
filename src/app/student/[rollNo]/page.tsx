@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer";
 import { SemesterCard } from "@/components/semester-card";
 import { LogVisit } from "@/components/log-visit";
 import { PrintButton } from "@/components/print-button";
+import { StudentActions } from "@/components/student-actions";
 import type { Metadata } from "next";
 
 interface Props {
@@ -86,8 +87,9 @@ export default async function StudentPage({ params }: Props) {
               <p className="font-medium text-base sm:text-lg text-[#0056D2] tracking-wide">{student.rollNo}</p>
             </div>
 
-            {/* Quick Actions / Print */}
-            <div className="no-print shrink-0 self-start">
+            {/* Quick Actions */}
+            <div className="no-print shrink-0 self-start flex flex-col items-end gap-2.5">
+              <StudentActions rollNo={student.rollNo} studentName={student.name} />
               <PrintButton />
             </div>
           </div>
