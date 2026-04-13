@@ -19,6 +19,7 @@ import { saveToRecentViews } from "@/lib/recent-views"
 
 import { getGradeColor } from "@/lib/utils/academic-math"
 import { MedalBadge, CrownIcon, DiamondIcon, ShieldIcon } from "@/components/ui/medal-badge"
+import { Th, thStickyClassResult, tdStickyClassResult, MEDAL_LEGEND } from "@/components/ui/table-helpers"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Props
@@ -201,16 +202,6 @@ export function ResultTable({ data, allSemData, tabsList }: ResultTableProps) {
         }).from(element).save()
     }
 
-    function thStickyClass(id: string) {
-        if (id === "rank") return "bg-ubit-navy w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
-        if (id === "roll") return "bg-ubit-navy w-[120px] min-w-[120px] sm:w-[150px] sm:min-w-[150px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
-        return ""
-    }
-    function tdStickyClass(id: string, bgClass: string) {
-        if (id === "rank") return `${bgClass || "bg-white"} w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]`
-        if (id === "roll") return `${bgClass || "bg-white"} w-[120px] min-w-[120px] sm:w-[150px] sm:min-w-[150px] max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]`
-        return ""
-    }
 
     return (
         <div className="space-y-3 relative z-10 w-full overflow-hidden">
@@ -261,7 +252,7 @@ export function ResultTable({ data, allSemData, tabsList }: ResultTableProps) {
                                         return (
                                             <th
                                                 key={h.id}
-                                                className={`${thStickyClass(h.id)} max-md:px-2.5 max-md:py-2 md:px-4 md:py-2.5`}
+                                                className={`${thStickyClassResult(h.id)} max-md:px-2.5 max-md:py-2 md:px-4 md:py-2.5`}
                                                 style={{
                                                     userSelect: "none",
                                                     cursor: sortable ? "pointer" : "default",
@@ -308,7 +299,7 @@ export function ResultTable({ data, allSemData, tabsList }: ResultTableProps) {
                                             {row.getVisibleCells().map(cell => (
                                                 <td
                                                     key={cell.id}
-                                                    className={`${tdStickyClass(cell.column.id, bgClass)} max-md:px-2.5 max-md:py-2.5 md:px-4 md:py-3`}
+                                                    className={`${tdStickyClassResult(cell.column.id, bgClass)} max-md:px-2.5 max-md:py-2.5 md:px-4 md:py-3`}
                                                     style={{
                                                         borderBottom: "1px solid #F1F5F9",
                                                         whiteSpace: "nowrap",
@@ -336,13 +327,9 @@ export function ResultTable({ data, allSemData, tabsList }: ResultTableProps) {
                     className="flex flex-wrap items-center justify-between gap-2 bg-slate-50 border-t border-slate-200 py-2 px-5 text-[11px] text-ubit-faint tracking-wider"
                 >
                     <div className="flex items-center gap-3">
-                        {[
-                            { label: "Gold", colorClass: "bg-ubit-gold", icon: <CrownIcon className="w-2.5 h-2.5 text-white" /> },
-                            { label: "Silver", colorClass: "bg-ubit-silver", icon: <DiamondIcon className="w-2.5 h-2.5 text-white" /> },
-                            { label: "Bronze", colorClass: "bg-ubit-bronze", icon: <ShieldIcon className="w-2.5 h-2.5 text-white" /> },
-                        ].map(m => (
+                        {MEDAL_LEGEND.map(m => (
                             <div key={m.label} className="flex items-center gap-1.5">
-                                <span className={`${m.colorClass} rounded px-1 py-0.5 flex items-center`}>{m.icon}</span>
+                                <span className={`${m.colorClass} rounded px-1 py-0.5 flex items-center`}></span>
                                 <span className="text-[10px] font-bold uppercase tracking-widest text-ubit-faint">{m.label}</span>
                             </div>
                         ))}
@@ -365,11 +352,3 @@ export function ResultTable({ data, allSemData, tabsList }: ResultTableProps) {
     )
 }
 
-// ── Tiny header label helper ───────────────────────────────────
-function Th({ children }: { children: React.ReactNode }) {
-    return (
-        <span style={{ color: "#F1F5F9", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em" }}>
-            {children}
-        </span>
-    )
-}

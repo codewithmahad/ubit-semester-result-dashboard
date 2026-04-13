@@ -18,6 +18,7 @@ import { TableEmptyState } from "@/components/table-empty-state"
 import { saveToRecentViews } from "@/lib/recent-views"
 
 import { MedalBadge, CrownIcon, DiamondIcon, ShieldIcon } from "@/components/ui/medal-badge"
+import { Th, thStickyClassCGPA, tdStickyClassCGPA, MEDAL_LEGEND } from "@/components/ui/table-helpers"
 interface CGPATableProps {
     semesters: RawSemesterData[]
     tabsList?: React.ReactNode
@@ -171,18 +172,6 @@ export function CGPATable({ semesters, tabsList }: CGPATableProps) {
         return ""
     }
 
-    // Sticky col px offsets — rank(90) + roll(130) + name(220)
-    function thStickyClass(id: string) {
-        if (id === "rank") return "bg-ubit-navy w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
-        if (id === "roll") return "bg-ubit-navy w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
-        if (id === "name") return "bg-ubit-navy w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-30 shadow-[2px_0_0_#1E293B]"
-        return ""
-    }
-    function tdStickyClass(id: string, bgClass?: string) {
-        if (id === "rank") return `${bgClass || "bg-white"} w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]`
-        if (id === "roll") return `${bgClass || "bg-white"} w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]`
-        if (id === "name") return `${bgClass || "bg-white"} w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]`
-    }
     return (
         <div className="space-y-3 relative z-10 w-full overflow-hidden">
             {/* ── Floating Premium Controls ────────────────────────────── */}
@@ -232,7 +221,7 @@ export function CGPATable({ semesters, tabsList }: CGPATableProps) {
                                         return (
                                             <th
                                                 key={h.id}
-                                                className={`${thStickyClass(h.id)} max-md:px-2.5 max-md:py-2 md:px-4 md:py-2.5`}
+                                                className={`${thStickyClassCGPA(h.id)} max-md:px-2.5 max-md:py-2 md:px-4 md:py-2.5`}
                                                 style={{
                                                     userSelect: "none",
                                                     cursor: sortable ? "pointer" : "default",
@@ -286,7 +275,7 @@ export function CGPATable({ semesters, tabsList }: CGPATableProps) {
                                             {row.getVisibleCells().map(cell => (
                                                 <td
                                                     key={cell.id}
-                                                    className={`${tdStickyClass(cell.column.id, bgClass)} max-md:px-2.5 max-md:py-2.5 md:px-4 md:py-3`}
+                                                    className={`${tdStickyClassCGPA(cell.column.id, bgClass)} max-md:px-2.5 max-md:py-2.5 md:px-4 md:py-3`}
                                                     style={{
                                                         borderBottom: "1px solid #F1F5F9",
                                                         whiteSpace: "nowrap",
@@ -312,13 +301,9 @@ export function CGPATable({ semesters, tabsList }: CGPATableProps) {
                 {/* Footer — legend + date */}
                 <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-50 border-t border-slate-200 py-2 px-5 text-[11px] text-ubit-faint tracking-wider">
                     <div className="flex items-center gap-3">
-                        {[
-                            { label: "Gold", colorClass: "bg-ubit-gold", icon: <CrownIcon className="w-2.5 h-2.5 text-white" /> },
-                            { label: "Silver", colorClass: "bg-ubit-silver", icon: <DiamondIcon className="w-2.5 h-2.5 text-white" /> },
-                            { label: "Bronze", colorClass: "bg-ubit-bronze", icon: <ShieldIcon className="w-2.5 h-2.5 text-white" /> },
-                        ].map(m => (
+                        {MEDAL_LEGEND.map(m => (
                             <div key={m.label} className="flex items-center gap-1.5">
-                                <span className={`${m.colorClass} rounded px-1 py-0.5 flex items-center`}>{m.icon}</span>
+                                <span className={`${m.colorClass} rounded px-1 py-0.5 flex items-center`}></span>
                                 <span className="text-[10px] font-bold uppercase tracking-widest text-ubit-faint">{m.label}</span>
                             </div>
                         ))}
@@ -336,13 +321,5 @@ export function CGPATable({ semesters, tabsList }: CGPATableProps) {
                 cumulativeRank={selectedStudent ? rankedStudents.find(r => r.roll === selectedStudent.roll)?.rank || null : null}
             />
         </div>
-    )
-}
-
-function Th({ children }: { children: React.ReactNode }) {
-    return (
-        <span style={{ color: "#F1F5F9", fontSize: 10, fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.12em" }}>
-            {children}
-        </span>
     )
 }
