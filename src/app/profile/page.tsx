@@ -208,12 +208,14 @@ export default function ProfilePage() {
                 </div>
               </div>
 
-              <div className="mt-10 flex items-center justify-between pt-8 border-t border-gray-50">
-                <div className="flex items-center gap-2 text-[12px] font-medium text-gray-400">
-                  <Shield className="w-4 h-4" />
-                  All data is currently stored locally in your browser session.
+              <div className="mt-10 flex flex-col-reverse sm:flex-row sm:items-center justify-between pt-8 border-t border-gray-50 gap-5 sm:gap-4">
+                <div className="flex items-start sm:items-center gap-2.5 text-[12px] font-medium text-gray-400">
+                  <Shield className="w-4 h-4 shrink-0 mt-0.5 sm:mt-0" />
+                  <span className="leading-relaxed sm:leading-normal">
+                    All data is currently stored locally in your browser session.
+                  </span>
                 </div>
-                <button className="h-11 px-8 bg-ubit-navy text-white text-[14px] font-bold rounded-xl hover:opacity-90 transition-all shadow-md active:scale-[0.98]">
+                <button className="w-full sm:w-auto h-12 sm:h-11 px-8 bg-ubit-navy text-white text-[15px] sm:text-[14px] font-bold rounded-xl hover:opacity-90 transition-all shadow-md active:scale-[0.98]">
                   Save Changes
                 </button>
               </div>

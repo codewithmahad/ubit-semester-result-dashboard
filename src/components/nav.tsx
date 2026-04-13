@@ -22,6 +22,7 @@ export function Nav() {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
@@ -61,6 +62,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
     const sanitizedSeat = encodeURIComponent(seatNo.replace(/[^a-zA-Z0-9-]/g, ''));
     setSearchQuery("");
     setMobileMenuOpen(false);
+    setShowMobileSearch(false);
     startTransition(() => {
       router.push(`/student/${sanitizedSeat}`);
     });
@@ -108,7 +110,61 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
   return (
     <>
       <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm h-[60px] md:h-[68px] flex items-center">
-        <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between px-4 md:px-8">
+        
+        {/* ── MOBILE HEADER (Coursera Layout Style) ─────────────────────────── */}
+        {showMobileSearch ? (
+          <div className="md:hidden w-full flex items-center px-4 gap-3 bg-white h-full z-50">
+             <form onSubmit={handleSearch} className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                <input
+                  type="text"
+                  autoFocus
+                  placeholder="Search seat number..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-9 pr-4 py-2 bg-gray-100 rounded-lg text-[14px] outline-none border-none focus:ring-2 focus:ring-[#0056D2]/20"
+                />
+             </form>
+             <button onClick={() => setShowMobileSearch(false)} className="text-[14px] font-medium text-[#0056D2]">
+               Cancel
+             </button>
+          </div>
+        ) : (
+          <div className="flex md:hidden items-center justify-between w-full px-4">
+            <div className="flex items-center gap-3">
+              <button
+                className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 text-gray-600 transition-colors"
+                onClick={() => { setMobileMenuOpen(true); setShowNotifications(false); }}
+              >
+                <Menu className="w-[18px] h-[18px]" />
+              </button>
+              <Link href="/" className="flex items-center gap-2 shrink-0">
+                <Image src="/ubit-logo.jpg" alt="UBIT" width={24} height={24} className="object-contain rounded-sm" />
+                <span className="text-[17px] font-bold text-[#8F141B] tracking-tight leading-none">UBIT Results</span>
+              </Link>
+            </div>
+            <div className="flex items-center gap-1">
+              <button 
+                className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
+                onClick={() => { setShowNotifications(true); setMobileMenuOpen(false); }}
+              >
+                <Bell className="w-5 h-5" />
+                {NOTIFICATIONS.some(n => !n.read) && (
+                  <span className="absolute top-[8px] right-[8px] w-2.5 h-2.5 bg-[#EF4444] rounded-full border-[1.5px] border-white" />
+                )}
+              </button>
+              <button 
+                className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
+                onClick={() => setShowMobileSearch(true)}
+              >
+                <Search className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── DESKTOP HEADER ─────────────────────────────────────────── */}
+        <div className="hidden md:flex mx-auto w-full max-w-[1800px] items-center justify-between px-8">
 
           {/* ── Left: Logo + Desktop Links ───────────────────────────── */}
           <div className="flex items-center gap-5 md:gap-8">
@@ -169,39 +225,23 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
                 )}
               </button>
 
-              {/* Notification Panel */}
+              {/* Desktop Notification Panel */}
               {showNotifications && (
                 <>
-                  {/* Backdrop */}
-                  <div
-                    className="fixed inset-0 z-40"
-                    onClick={() => setShowNotifications(false)}
-                  />
-
-                  {/* Mobile: fixed & centered; Desktop: absolute from bell icon */}
-                  <div className="
-                    fixed left-1/2 -translate-x-1/2 w-[calc(100vw-32px)] max-w-[360px]
-                    md:absolute md:fixed-[unset] md:left-auto md:translate-x-0 md:right-0 md:w-80
-                    top-[68px] md:top-auto md:mt-2
-                    bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden z-50">
+                  <div className="fixed inset-0 z-40 hidden md:block" onClick={() => setShowNotifications(false)} />
+                  <div className="hidden md:block absolute right-0 mt-2 w-80 bg-white border border-gray-200 shadow-2xl rounded-xl overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-200">
                     <div className="px-4 py-3 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
                       <span className="font-bold text-[13px] text-[#1f2432]">Notifications</span>
-                      <button
-                        onClick={() => setShowNotifications(false)}
-                        className="text-[11px] text-[#0056D2] font-semibold hover:underline cursor-pointer"
-                      >
-                        Mark all read
-                      </button>
+                      <button onClick={() => setShowNotifications(false)} className="text-[11px] text-[#0056D2] font-semibold hover:underline">Mark all read</button>
                     </div>
-
                     <div className="max-h-[300px] overflow-y-auto">
-                      {NOTIFICATIONS.map((notification) => (
-                        <div key={notification.id} className="p-4 hover:bg-gray-50 transition-colors border-b border-gray-100 cursor-pointer active:bg-gray-100">
+                      {NOTIFICATIONS.map((n) => (
+                        <div key={n.id} className="p-4 hover:bg-gray-50 transition-colors border-b border-gray-100 cursor-pointer">
                           <div className="flex gap-3">
-                            <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${notification.read ? 'bg-gray-300' : 'bg-blue-500'}`} />
+                            <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${n.read ? 'bg-gray-300' : 'bg-blue-500'}`} />
                             <div>
-                              <p className="text-[13px] text-[#1f2432] font-medium leading-snug">{notification.content}</p>
-                              <p className="text-[11px] text-gray-400 mt-1">{formatRelativeTime(notification.timestamp)}</p>
+                              <p className="text-[13px] text-[#1f2432] font-medium leading-snug">{n.content}</p>
+                              <p className="text-[11px] text-gray-400 mt-1">{formatRelativeTime(n.timestamp)}</p>
                             </div>
                           </div>
                         </div>
@@ -300,73 +340,159 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
                 </div>
               )}
             </div>
-
-            {/* Mobile Hamburger */}
-            <button
-              className="md:hidden flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 text-gray-600 transition-colors"
-              onClick={() => { setMobileMenuOpen(!mobileMenuOpen); setShowNotifications(false); }}
-            >
-              {mobileMenuOpen ? <X className="w-[18px] h-[18px]" /> : <Menu className="w-[18px] h-[18px]" />}
-            </button>
           </div>
         </div>
       </nav>
 
-      {/* ── Mobile slide-down Menu ─────────── */}
-      {mobileMenuOpen && (
-        <>
-          <div className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 top-[60px]" onClick={() => setMobileMenuOpen(false)} />
-          <div className="md:hidden fixed top-[60px] left-0 right-0 bg-white border-b border-gray-200 shadow-xl z-50 flex flex-col">
-
-            {/* Mobile search */}
-            <div className="p-3 border-b border-gray-100">
-              <form onSubmit={handleSearch} className="flex items-center gap-2 w-full overflow-hidden">
-                <div className="relative flex-1 min-w-0">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search seat number..."
-                    className="w-full h-11 pl-9 pr-3 rounded-xl border border-gray-200 text-base outline-none focus:border-[#0056D2] transition-colors bg-gray-50"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={isPending || searchQuery.trim().length === 0}
-                  className="h-11 w-11 flex items-center justify-center bg-[#0056D2] rounded-xl text-white shrink-0 disabled:opacity-40 disabled:bg-gray-300 transition-colors"
-                >
-                  <Search className="w-4 h-4" />
-                </button>
-              </form>
+      {/* ── MOBILE: Notification Bottom Sheet ──────────────────── */}
+      {showNotifications && (
+        <div className="md:hidden">
+          <div className="fixed inset-0 bg-black/50 z-[60] animate-in fade-in" onClick={() => setShowNotifications(false)} />
+          <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl z-[70] flex flex-col max-h-[85vh] animate-in slide-in-from-bottom-full duration-300">
+            <div className="flex justify-between items-center p-5 border-b border-gray-100">
+              <span className="font-bold text-[20px] text-[#1f2432]">Notifications</span>
+              <button onClick={() => setShowNotifications(false)} className="p-1 hover:bg-gray-100 rounded-full transition-colors">
+                <X className="w-6 h-6 text-gray-500" />
+              </button>
             </div>
-
-            <Link
-              href="/leaderboards"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between px-6 py-5 border-b border-gray-100 text-[16px] font-semibold text-[#1f2432] hover:bg-gray-50 active:bg-gray-100 transition-colors"
-            >
-              Class Leaderboards
-              <ChevronRight className="w-5 h-5 text-gray-400" />
-            </Link>
-
-            <Link
-              href="/calculator"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between px-6 py-5 border-b border-gray-100 text-[16px] font-semibold text-[#1f2432] hover:bg-gray-50 active:bg-gray-100 transition-colors"
-            >
-              GPA Calculator
-              <ChevronRight className="w-5 h-5 text-gray-400" />
-            </Link>
-
-            <div className="px-5 py-4 flex items-center gap-3">
-              <div className="h-8 w-8 rounded-full border border-gray-200 bg-gray-100 text-gray-400 flex items-center justify-center shrink-0">
-                <User className="w-4 h-4" />
-              </div>
-              <span className="text-[14px] font-semibold text-gray-500">Guest</span>
+            <div className="flex-1 overflow-y-auto pb-6">
+              {NOTIFICATIONS.length === 0 ? (
+                <div className="flex flex-col items-center justify-center py-12 px-6 text-center">
+                   <h3 className="text-lg font-bold text-gray-900 mb-2">No notifications</h3>
+                   <p className="text-[14px] text-gray-500">We'll let you know when deadlines are approaching, or there is a course update</p>
+                </div>
+              ) : (
+                NOTIFICATIONS.map((n) => (
+                  <div key={n.id} className="px-5 py-4 hover:bg-gray-50 border-b border-gray-100/50 flex gap-4 cursor-pointer">
+                    <div className={`mt-1.5 w-2.5 h-2.5 rounded-full shrink-0 ${n.read ? 'bg-gray-200' : 'bg-[#0056D2]'}`} />
+                    <div>
+                      <p className="text-[15px] font-medium text-[#1f2432] leading-snug mb-1">{n.content}</p>
+                      <p className="text-[12px] text-gray-400">{formatRelativeTime(n.timestamp)}</p>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
-        </>
+        </div>
+      )}
+
+      {/* ── MOBILE: Hamburger Drawer (Slide from Left) ─────────── */}
+      {mobileMenuOpen && (
+        <div className="md:hidden">
+          <div className="fixed inset-0 bg-black/60 z-[60] animate-in fade-in duration-300" onClick={() => setMobileMenuOpen(false)} />
+          <div className="fixed top-0 left-0 bottom-0 w-[85vw] max-w-[320px] bg-white z-[70] shadow-2xl flex flex-col animate-in slide-in-from-left duration-300 ease-out">
+            
+            {/* Drawer Brand Header */}
+            <div className="flex justify-between items-center px-5 py-4 border-b border-gray-100 bg-white">
+                <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 shrink-0">
+                  <Image src="/ubit-logo.jpg" alt="UBIT" width={28} height={28} className="object-contain rounded-sm" />
+                  <span className="text-[18px] font-bold text-[#8F141B] tracking-tight leading-none">
+                    UBIT Results
+                  </span>
+                </Link>
+                <button onClick={() => setMobileMenuOpen(false)} className="p-1.5 hover:bg-gray-100 rounded-full text-gray-600 transition-colors">
+                   <X className="w-6 h-6" strokeWidth={1.5} />
+                </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto pb-6">
+              {/* Header */}
+              <Link 
+                href="/profile" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-6 py-5 border-b border-gray-100 bg-gray-50/30 hover:bg-gray-50 transition-colors group/header"
+              >
+                <div className="flex items-center gap-3.5">
+                  <div className="w-12 h-12 rounded-full bg-ubit-navy flex items-center justify-center text-white text-[19px] font-bold group-hover/header:scale-105 transition-transform shadow-sm">
+                    S
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[16px] font-bold text-gray-900 leading-tight">Guest Student</span>
+                    <span className="text-[13px] text-gray-500 font-medium pt-0.5">BSSE 2025 Morning</span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Links Group 1: Academic */}
+              <div className="py-2.5">
+                <Link href="/profile" onClick={() => setMobileMenuOpen(false)} className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                  <div className="flex items-center gap-4">
+                    <FileText className="w-[18px] h-[18px] text-gray-400" />
+                    My Transcript
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                </Link>
+                <Link href="/leaderboards" onClick={() => setMobileMenuOpen(false)} className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                  <div className="flex items-center gap-4">
+                    <Medal className="w-[18px] h-[18px] text-gray-400" />
+                    Medals & Rankings
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                </Link>
+                <button className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                  <div className="flex items-center gap-4">
+                    <BarChart3 className="w-[18px] h-[18px] text-gray-400" />
+                    Cumulative Stats
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                </button>
+              </div>
+
+              <div className="h-px bg-gray-100 mx-6 my-1" />
+
+              {/* Links Group 2: Tools */}
+              <div className="py-2.5">
+                <Link href="/calculator" onClick={() => setMobileMenuOpen(false)} className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                  <div className="flex items-center gap-4">
+                    <Calculator className="w-[18px] h-[18px] text-gray-400" />
+                    GPA Calculator
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                </Link>
+                <button className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                  <div className="flex items-center gap-4">
+                    <Settings className="w-[18px] h-[18px] text-gray-400" />
+                    Portal Settings
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                </button>
+              </div>
+
+              <div className="h-px bg-gray-100 mx-6 my-1" />
+
+              {/* Links Group 3: Support */}
+              <div className="py-2.5">
+                <button className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                  <div className="flex items-center gap-4">
+                    <HelpCircle className="w-[18px] h-[18px] text-gray-400" />
+                    Help Center
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                </button>
+                <button className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-bold text-[#8F141B] hover:bg-red-50/50 transition-colors">
+                  <div className="flex items-center gap-4">
+                    <LogOut className="w-[18px] h-[18px]" />
+                    Log Out
+                  </div>
+                </button>
+              </div>
+
+              {/* Premium CTA Footer */}
+              <div className="px-5 pt-3 pb-6">
+                <div className="bg-gray-50/80 p-4 rounded-xl border border-gray-200">
+                  <p className="text-[13px] font-bold text-[#8F141B] flex items-center justify-between">
+                    Official Transcript
+                    <ExternalLink className="w-[14px] h-[14px] text-[#8F141B]" />
+                  </p>
+                  <p className="text-[12px] text-gray-500 mt-1.5 leading-relaxed">
+                    Need an authorized document? Visit the UBIT Admin Office.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </>
   );
