@@ -14,6 +14,8 @@ import type { RawSemesterData, StudentRanking } from "@/types"
 import { calculateRankings, calculateCGPARankings } from "@/lib/utils/academic-math"
 import { Download, Search, CheckCircle2, ChevronUp, ChevronDown, XCircle } from "lucide-react"
 import { StudentModal } from "@/components/student-modal"
+import { TableEmptyState } from "@/components/table-empty-state"
+import { saveToRecentViews } from "@/lib/recent-views"
 
 import { getGradeColor } from "@/lib/utils/academic-math"
 import { MedalBadge, CrownIcon, DiamondIcon, ShieldIcon } from "@/components/ui/medal-badge"
@@ -291,7 +293,15 @@ export function ResultTable({ data, allSemData, tabsList }: ResultTableProps) {
                                     return (
                                         <tr
                                             key={row.id}
-                                            onClick={() => setSelectedStudent(row.original)}
+                                            onClick={() => {
+                                                setSelectedStudent(row.original)
+                                                saveToRecentViews({
+                                                  roll: row.original.roll,
+                                                  name: row.original.name,
+                                                  batch: data.batch.split(" ")[0], // Extract year e.g. "2025" from "2025 (Morning Program)"
+                                                  shift: data.batch.includes("Morning") ? "Morning" : "Evening"
+                                                })
+                                            }}
                                             style={{ cursor: "pointer" }}
                                             className={`group/row transition-colors hover:bg-slate-50 ${bgClass || "bg-white"}`}
                                         >
@@ -312,12 +322,8 @@ export function ResultTable({ data, allSemData, tabsList }: ResultTableProps) {
                                 })
                             ) : (
                                 <tr>
-                                    <td colSpan={columns.length} style={{ padding: "56px 0", textAlign: "center", borderBottom: "1px solid #F1F5F9" }}>
-                                        <div className="flex flex-col items-center text-ubit-faint">
-                                            <Search className="h-6 w-6 mb-2 opacity-30" />
-                                            <p className="text-[13px] font-semibold text-slate-700">No students found</p>
-                                            <p className="text-[11px] mt-0.5">Try adjusting your search.</p>
-                                        </div>
+                                    <td colSpan={columns.length} className="border-b border-zinc-100">
+                                        <TableEmptyState onReset={() => setGlobalFilter("")} />
                                     </td>
                                 </tr>
                             )}

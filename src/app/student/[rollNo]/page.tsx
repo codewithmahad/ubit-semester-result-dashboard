@@ -5,6 +5,7 @@ import { getStudent } from "@/lib/data";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { SemesterCard } from "@/components/semester-card";
+import { LogVisit } from "@/components/log-visit";
 import type { Metadata } from "next";
 
 interface Props {
@@ -38,6 +39,12 @@ export default async function StudentPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#f5f7f8]">
       <Nav />
+      <LogVisit student={{
+        roll: student.rollNo,
+        name: student.name,
+        batch: student.batch,
+        shift: student.shift
+      }} />
 
       {/* Print header — only visible when printing */}
       <div className="print-header print-only hidden">

@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { SearchOmnibar } from "@/components/search-omnibar";
 import { Nav } from "@/components/nav";
 import { NotificationBanner } from "@/components/notification-banner";
+import { RecentViews } from "@/components/recent-views-client";
 import { Footer } from "@/components/footer";
 
 export const metadata = {
@@ -47,6 +48,7 @@ export default function LandingPage() {
           {/* Search card */}
           <div className="w-full max-w-[700px]">
             <SearchOmnibar />
+            <RecentViews />
           </div>
         </div>
 

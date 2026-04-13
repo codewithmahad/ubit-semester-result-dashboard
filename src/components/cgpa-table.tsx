@@ -14,6 +14,8 @@ import type { RawSemesterData, CGPARanking, StudentRanking } from "@/types"
 import { calculateCGPARankings, calculateRankings } from "@/lib/utils/academic-math"
 import { Download, Search, CheckCircle2, XCircle, ChevronUp, ChevronDown } from "lucide-react"
 import { StudentModal } from "@/components/student-modal"
+import { TableEmptyState } from "@/components/table-empty-state"
+import { saveToRecentViews } from "@/lib/recent-views"
 
 import { MedalBadge, CrownIcon, DiamondIcon, ShieldIcon } from "@/components/ui/medal-badge"
 interface CGPATableProps {
@@ -268,6 +270,14 @@ export function CGPATable({ semesters, tabsList }: CGPATableProps) {
                                                 if (studentRaw) {
                                                     const s1RankItem = calculateRankings(semesters[0].courses, semesters[0].students).find(s => s.roll === row.original.roll)
                                                     setSelectedStudent(s1RankItem || null)
+                                                    
+                                                    // Save to recent views
+                                                    saveToRecentViews({
+                                                      roll: row.original.roll,
+                                                      name: row.original.name,
+                                                      batch: semesters[0]?.batch.split(" ")[0] || "2025",
+                                                      shift: semesters[0]?.batch.includes("Morning") ? "Morning" : "Evening"
+                                                    })
                                                 }
                                             }}
                                             style={{ cursor: "pointer" }}
@@ -290,12 +300,8 @@ export function CGPATable({ semesters, tabsList }: CGPATableProps) {
                                 })
                             ) : (
                                 <tr>
-                                    <td colSpan={columns.length} style={{ padding: "56px 0", textAlign: "center", borderBottom: "1px solid #F1F5F9" }}>
-                                        <div className="flex flex-col items-center text-ubit-faint">
-                                            <Search className="h-6 w-6 mb-2 opacity-30" />
-                                            <p className="text-[13px] font-semibold text-ubit-ink">No students found</p>
-                                            <p className="text-[11px] mt-0.5">Try adjusting your search.</p>
-                                        </div>
+                                    <td colSpan={columns.length} className="border-b border-zinc-100">
+                                        <TableEmptyState onReset={() => setGlobalFilter("")} />
                                     </td>
                                 </tr>
                             )}
