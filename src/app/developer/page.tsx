@@ -1,197 +1,268 @@
 import { Nav } from "@/components/nav";
-import {
-  Terminal,
-  Database,
-  Server,
-  BookOpen,
-  Github,
-  Linkedin,
-  Mail,
-  ArrowUpRight,
-  Cpu,
-  Layers,
-  ShieldCheck,
-  PenLine,
-  GitBranch,
-  Rocket,
-  Braces
-} from "lucide-react";
+import { Footer } from "@/components/footer";
+import { Github, Linkedin, Mail, ArrowUpRight, Globe } from "lucide-react";
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Shaikh Mahad — Engineering Portfolio",
+  title: "Shaikh Mahad — Developer",
   description:
-    "Software Engineer & System Architect. Builder of the UBIT Results Portal",
+    "Software engineer and system architect. Built the UBIT Results Portal to solve a real institutional problem for 200+ students at the University of Karachi.",
 };
+
+// ── Stack items — shown as code, not icon boxes ────────────────
+const FRONTEND_STACK = [
+  "Next.js 15 (App Router)",
+  "TypeScript (strict mode)",
+  "Tailwind CSS v3",
+  "TanStack Table v8",
+  "@tanstack/react-table",
+  "Lucide React",
+  "html2pdf.js",
+];
+
+const BACKEND_PLANNED = [
+  "Java 25 + Project Loom",
+  "Spring Boot 4",
+  "PostgreSQL",
+  "JWT (stateless auth)",
+  "Maven build system",
+  "REST API (JSON:API spec)",
+];
+
+const METRICS = [
+  { value: "200+",   label: "students tracked" },
+  { value: "4",      label: "classes indexed" },
+  { value: "2",      label: "semesters of live data" },
+  { value: "~3k",    label: "lines of TypeScript" },
+];
 
 export default function DeveloperPage() {
   return (
-    <main className="min-h-screen bg-[#f5f7f8] selection:bg-[#0056D2] selection:text-white">
+    <div className="min-h-screen bg-[#F5F7F8] flex flex-col">
       <Nav />
 
-      <div className="max-w-[1100px] mx-auto px-4 md:px-8 py-10 md:py-16">
-        
-        {/* ════════════════════════════════════════════════════════════════
-            HERO — Portal Theme
-        ════════════════════════════════════════════════════════════════ */}
-        <div className="bg-white rounded-[24px] border border-[#e2e6ea] shadow-sm p-8 md:p-12 mb-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#f0f4f9] w-fit mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0056D2] animate-pulse" />
-                <span className="text-[11px] font-black uppercase tracking-widest text-[#1f2432]">Software Engineer</span>
-              </div>
-              
-              <h1 className="text-[36px] md:text-[52px] font-black tracking-tight leading-[1.1] text-[#1f2432] mb-4">
-                Shaikh Mahad
-              </h1>
-              
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6">
-                 <p className="text-[15px] font-mono text-gray-500 font-medium tracking-tight">@codewithmahad</p>
-                 <span className="hidden sm:inline text-gray-300">|</span>
-                 <p className="text-[15px] text-[#0056D2] font-bold">System Architect · BSSE Batch 2025</p>
-              </div>
+      <main className="flex-1">
+        <div className="max-w-[1100px] mx-auto px-4 md:px-8 py-10 md:py-14">
 
-              <p className="text-[16px] md:text-[18px] font-medium text-gray-600 leading-relaxed max-w-2xl border-l-2 border-[#8F141B] pl-5">
-                Engineered to eliminate institutional friction. I built this architecture to dynamically track, compute, and persist academic analytics for all of UBIT Batch 2025.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 items-start">
 
-            <div className="shrink-0 flex flex-col gap-3">
-              <a 
-                href="mailto:codewithmahad@gmail.com" 
-                className="group flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-bold text-[14px] text-white bg-[#1f2432] transition-colors hover:bg-black shadow-sm"
-              >
-                <Mail className="w-5 h-5" /> Let&apos;s Talk Architecture
-              </a>
-              <a 
-                href="https://shaikhmahad.vercel.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-bold text-[14px] text-[#0056D2] bg-[#f0f4f9] border border-[#e2e6ea] transition-all hover:border-[#0056D2] hover:bg-blue-50"
-              >
-                <Rocket className="w-5 h-5" /> View Official Portfolio
-              </a>
-            </div>
-          </div>
-        </div>
+            {/* ── LEFT — sticky identity panel ─────────────────── */}
+            <div className="bg-[#0F172A] rounded-2xl overflow-hidden lg:sticky lg:top-[84px]">
 
-        {/* ════════════════════════════════════════════════════════════════
-            BENTO GRID
-        ════════════════════════════════════════════════════════════════ */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
-          
-          {/* Card 1: Frontend Stack */}
-          <div className="md:col-span-5 bg-white rounded-[24px] border border-[#e2e6ea] shadow-sm p-8 flex flex-col hover:-translate-y-0.5 hover:shadow-md transition-all">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-[#f0f4f9] text-[#0056D2] flex items-center justify-center border border-[#e2e6ea]">
-                <Terminal className="w-5 h-5" />
-              </div>
-              <span className="text-[11px] font-black uppercase tracking-widest text-gray-400">Live Stack</span>
-            </div>
-            <h2 className="text-[22px] font-black text-[#1f2432] mb-6 leading-tight">Current Production Architecture</h2>
-            
-            <div className="space-y-4 mt-auto">
-              {[
-                { name: "Next.js 15 App Router", icon: <Layers className="w-4 h-4" /> },
-                { name: "Strict TypeScript Domain", icon: <Braces className="w-4 h-4" /> },
-                { name: "Tailwind CSS v3 Design", icon: <Terminal className="w-4 h-4" /> },
-                { name: "Pure Math Computing Utilities", icon: <Cpu className="w-4 h-4" /> },
-              ].map((item) => (
-                <div key={item.name} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-500">
-                    {item.icon}
-                  </div>
-                  <span className="font-bold text-[14px] text-[#1f2432]">{item.name}</span>
+              {/* Top: identity */}
+              <div className="px-7 pt-9 pb-7 border-b border-white/[0.07]">
+                {/* Monogram */}
+                <div className="w-16 h-16 rounded-full bg-[#8F141B] flex items-center justify-center text-white text-[26px] font-black mb-5">
+                  SM
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Card 2: Enterprise Roadmap */}
-          <div className="md:col-span-7 bg-[#00255d] text-white rounded-[24px] border border-[#001d4a] shadow-sm p-8 md:p-10 flex flex-col relative overflow-hidden group hover:-translate-y-0.5 hover:shadow-md transition-all">
-            {/* Subtle background element */}
-            <div className="absolute right-0 top-0 w-64 h-64 bg-gradient-to-br from-[#0056D2] to-[#00255d] rounded-bl-[130px] opacity-60 -mr-14 -mt-14 pointer-events-none" />
-            
-            <div className="relative z-10 flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-4">
-                 <span className="bg-[#8F141B] text-white text-[10px] uppercase font-black tracking-widest px-3 py-1 rounded">Enterprise</span>
+                <h1 className="text-[22px] font-black text-white tracking-tight leading-tight mb-1">
+                  Shaikh Mahad
+                </h1>
+                <p className="text-[12px] font-mono text-slate-500 mb-4">
+                  @codewithmahad
+                </p>
+
+                <div className="space-y-1.5">
+                  {[
+                    "Software Engineer",
+                    "BSSE Batch 2025",
+                    "University of Karachi",
+                  ].map(line => (
+                    <p key={line} className="text-[12px] font-semibold text-slate-500">
+                      {line}
+                    </p>
+                  ))}
+                </div>
               </div>
-              <h2 className="text-[24px] md:text-[28px] font-black tracking-tight mb-4 text-white hover:text-amber-400 transition-colors">
-                Upcoming Backend Migration
-              </h2>
-              <p className="text-blue-100 font-medium text-[15px] leading-relaxed mb-8 max-w-lg">
-                Transitioning this platform to an enterprise-grade backend powered by Java 25, Spring Boot 4, and PostgreSQL, utilizing Maven and strict JWT security infrastructure.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-auto">
+
+              {/* Links */}
+              <div className="px-5 py-5 space-y-2">
                 {[
-                  { title: "Java 25 Core", desc: "Project Loom threads" },
-                  { title: "Spring Boot 4", desc: "RESTful architecture" },
-                  { title: "PostgreSQL", desc: "Relational persistence" },
-                ].map((item) => (
-                  <div key={item.title} className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-4">
-                    <p className="font-bold text-white text-[14px] leading-tight mb-1">{item.title}</p>
-                    <p className="text-blue-200 text-[12px] font-medium leading-tight">{item.desc}</p>
-                  </div>
+                  {
+                    href: "https://shaikhmahad.vercel.app/",
+                    icon: <Globe className="w-4 h-4" />,
+                    label: "shaikhmahad.vercel.app",
+                    external: true,
+                  },
+                  {
+                    href: "https://github.com/codewithmahad",
+                    icon: <Github className="w-4 h-4" />,
+                    label: "github.com/codewithmahad",
+                    external: true,
+                  },
+                  {
+                    href: "https://linkedin.com/in/codewithmahad",
+                    icon: <Linkedin className="w-4 h-4" />,
+                    label: "in/codewithmahad",
+                    external: true,
+                  },
+                  {
+                    href: "mailto:codewithmahad@gmail.com",
+                    icon: <Mail className="w-4 h-4" />,
+                    label: "codewithmahad@gmail.com",
+                    external: false,
+                  },
+                ].map(({ href, icon, label, external }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/[0.06] transition-colors"
+                  >
+                    <span className="text-slate-600 group-hover:text-slate-400 transition-colors shrink-0">
+                      {icon}
+                    </span>
+                    <span className="text-[11px] font-mono text-slate-500 group-hover:text-slate-300 transition-colors truncate">
+                      {label}
+                    </span>
+                  </a>
                 ))}
               </div>
+
+              {/* Status */}
+              <div className="px-5 pb-6">
+                <div className="flex items-center gap-2.5 px-3 py-2.5 bg-white/[0.03] border border-white/[0.05] rounded-xl">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                  <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">
+                    Open to opportunities
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* ── RIGHT — substance ─────────────────────────────── */}
+            <div className="space-y-0 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden divide-y divide-gray-50">
+
+              {/* What I shipped ───────────────────────────────── */}
+              <section className="px-8 py-8">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8F141B] mb-5">
+                  What I shipped
+                </p>
+
+                <h2 className="text-[26px] font-black text-[#1f2432] tracking-tight leading-tight mb-3">
+                  UBIT Results Portal
+                </h2>
+
+                <p className="text-[14px] text-gray-500 font-medium leading-relaxed max-w-xl mb-7">
+                  A full-stack academic analytics platform built to replace blurry WhatsApp
+                  screenshots and hallway notice boards. Parses raw institutional result data
+                  into a live, searchable dashboard with auto-computed CGPA, class rankings,
+                  and print-ready transcripts.
+                </p>
+
+                {/* Metrics strip */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-100 rounded-xl overflow-hidden border border-gray-100">
+                  {METRICS.map(({ value, label }) => (
+                    <div
+                      key={label}
+                      className="bg-white flex flex-col items-center justify-center py-5 px-3 text-center"
+                    >
+                      <span className="text-[28px] font-black text-[#1f2432] tabular-nums leading-none mb-1">
+                        {value}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                        {label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-5">
+                  <Link
+                    href="/"
+                    className="group inline-flex items-center gap-2 text-[13px] font-bold text-[#0056D2] hover:underline"
+                  >
+                    Open the portal
+                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </Link>
+                </div>
+              </section>
+
+              {/* Frontend stack ───────────────────────────────── */}
+              <section className="px-8 py-8">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-5">
+                  Current stack
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {FRONTEND_STACK.map(tech => (
+                    <code
+                      key={tech}
+                      className="px-3 py-1.5 bg-[#F3F4F6] text-[#1f2432] text-[12px] font-mono font-bold rounded-lg border border-gray-200"
+                    >
+                      {tech}
+                    </code>
+                  ))}
+                </div>
+              </section>
+
+              {/* Backend roadmap ──────────────────────────────── */}
+              <section className="px-8 py-8">
+                <div className="flex items-start justify-between gap-4 mb-5">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
+                    Next build
+                  </p>
+                  <span className="px-2.5 py-1 bg-[#8F141B] rounded-full text-[9px] font-black uppercase tracking-widest text-white shrink-0">
+                    In progress
+                  </span>
+                </div>
+
+                <h3 className="text-[18px] font-black text-[#1f2432] tracking-tight mb-2">
+                  Enterprise Backend Migration
+                </h3>
+                <p className="text-[13px] text-gray-500 font-medium leading-relaxed mb-6 max-w-lg">
+                  Replacing the static data layer with a production Java/Spring Boot API.
+                  JWT authentication, relational persistence, and a fully typed REST
+                  contract between client and server.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {BACKEND_PLANNED.map(tech => (
+                    <code
+                      key={tech}
+                      className="px-3 py-1.5 bg-[#F8F9FF] text-[#00255d] text-[12px] font-mono font-bold rounded-lg border border-blue-100"
+                    >
+                      {tech}
+                    </code>
+                  ))}
+                </div>
+              </section>
+
+              {/* Contact ──────────────────────────────────────── */}
+              <section className="px-8 py-8">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-5">
+                  Get in touch
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="mailto:codewithmahad@gmail.com"
+                    className="group flex items-center justify-center gap-2.5 h-11 px-6 bg-[#0F172A] text-white text-[13px] font-bold rounded-xl hover:bg-black transition-all shadow-sm"
+                  >
+                    <Mail className="w-4 h-4" />
+                    codewithmahad@gmail.com
+                  </a>
+                  <a
+                    href="https://shaikhmahad.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-center gap-2.5 h-11 px-6 bg-white text-[#1f2432] text-[13px] font-bold rounded-xl border border-gray-200 hover:border-gray-400 transition-all"
+                  >
+                    <Globe className="w-4 h-4" />
+                    Full portfolio
+                    <ArrowUpRight className="w-3.5 h-3.5 text-gray-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
+              </section>
+
             </div>
           </div>
-
         </div>
+      </main>
 
-        {/* ════════════════════════════════════════════════════════════════
-            FOOTER GRID
-        ════════════════════════════════════════════════════════════════ */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          {/* Technical Writing */}
-          <div className="md:col-span-2 bg-white rounded-[24px] border border-[#e2e6ea] shadow-sm p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-            <div className="flex-1 max-w-sm">
-               <h2 className="text-[20px] font-black text-[#1f2432] mb-2 leading-tight">Engineering Log</h2>
-               <p className="text-[14px] text-gray-600 font-medium leading-relaxed">
-                 Publishing deep-dive technical articles scaling from React render optimization to full-stack scaling strategies.
-               </p>
-            </div>
-            <div className="bg-[#f0f4f9] rounded-xl border border-[#e2e6ea] p-4 flex items-center gap-4 shrink-0">
-               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-[#0056D2] shadow-sm">
-                  <PenLine className="w-5 h-5" />
-               </div>
-               <div>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-[#0056D2] mb-0.5">Medium</p>
-                  <p className="font-bold text-[#1f2432] text-[14px]">Every Saturday</p>
-               </div>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="md:col-span-1 bg-white rounded-[24px] border border-[#e2e6ea] shadow-sm p-8 flex flex-col justify-center">
-             <p className="text-[11px] font-black uppercase tracking-widest text-gray-400 mb-6 text-center">Connect</p>
-             <div className="flex gap-4 justify-center">
-               <a 
-                 href="https://github.com/codewithmahad" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="w-14 h-14 rounded-2xl bg-gray-50 border border-[#e2e6ea] flex items-center justify-center text-[#1f2432] hover:bg-black hover:text-white transition-colors"
-               >
-                 <Github className="w-6 h-6" />
-               </a>
-               <a 
-                 href="https://linkedin.com/in/codewithmahad" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="w-14 h-14 rounded-2xl bg-gray-50 border border-[#e2e6ea] flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-colors"
-               >
-                 <Linkedin className="w-6 h-6" />
-               </a>
-             </div>
-          </div>
-
-        </div>
-
-      </div>
-    </main>
+      <Footer />
+    </div>
   );
 }
