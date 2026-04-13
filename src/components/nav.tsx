@@ -225,9 +225,13 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
               {showProfileMenu && (
                 <div className="absolute right-0 mt-3 w-72 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-100 overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-200">
                   {/* Header */}
-                  <div className="px-5 py-5 border-b border-gray-50 bg-gray-50/50">
+                  <Link 
+                    href="/profile" 
+                    onClick={() => setShowProfileMenu(false)}
+                    className="block px-5 py-5 border-b border-gray-50 bg-gray-50/50 hover:bg-gray-100 transition-colors group/header"
+                  >
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-full bg-ubit-navy flex items-center justify-center text-white text-lg font-bold">
+                      <div className="w-11 h-11 rounded-full bg-ubit-navy flex items-center justify-center text-white text-lg font-bold group-hover/header:scale-105 transition-transform">
                         S
                       </div>
                       <div className="flex flex-col">
@@ -235,7 +239,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
                         <span className="text-[12px] text-gray-500 font-medium">BSSE 2025 Morning</span>
                       </div>
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Links Group 1: Academic */}
                   <div className="py-2">
