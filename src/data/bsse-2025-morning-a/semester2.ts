@@ -4,7 +4,7 @@ export const semester2: RawSemesterData = {
     name: "BSSE Semester II",
     batch: "2025 (Morning Program)",
     university: "UBIT - University of Karachi",
-        courses: [
+    courses: [
         { code: "SE-352", name: "Object Oriented Concepts & Programming", creditHours: 4 },
         { code: "SE-354", name: "Software Eng. Fundamentals", creditHours: 3 },
         { code: "SE-356", name: "Multivariable Calculus", creditHours: 3 },
@@ -18,7 +18,9 @@ export const semester2: RawSemesterData = {
             name: "ABDUL REHMAN AHMED",
             results: {
                 "SE-354": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 62, grade: "C", gradePoint: 2.0 }
+                "SE-356": { marks: 55, grade: "D+", gradePoint: 1.4 },
+                "SE-362": { marks: 62, grade: "C", gradePoint: 2.0 },
+                "SE-360": { marks: 25, grade: "F", gradePoint: 0.0 }
             }
         },
         {
@@ -26,23 +28,29 @@ export const semester2: RawSemesterData = {
             name: "ABDUL WASAY KHAN",
             results: {
                 "SE-354": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 15, grade: "F", gradePoint: 0.0 }
+                "SE-356": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-362": { marks: 15, grade: "F", gradePoint: 0.0 },
+                "SE-360": { marks: 15, grade: "F", gradePoint: 0.0 }
             }
         },
         {
             roll: "B24110106003",
             name: "ABDULLAH",
             results: {
-                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-362": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-356": { marks: 86, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 82, grade: "A-", gradePoint: 3.8 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
             roll: "B24110106004",
             name: "ABEERA FAIZ",
             results: {
-                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 }
+                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 90, grade: "A+", gradePoint: 4.0 }
             }
         },
         {
@@ -50,7 +58,9 @@ export const semester2: RawSemesterData = {
             name: "AFIFA",
             results: {
                 "SE-354": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 91, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 85, grade: "A", gradePoint: 4.0 }
             }
         },
         {
@@ -58,7 +68,9 @@ export const semester2: RawSemesterData = {
             name: "AHMED MOHIUDDIN",
             results: {
                 "SE-354": { marks: 71, grade: "B", gradePoint: 3.0 },
-                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 58, grade: "C-", gradePoint: 1.8 },
+                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 50, grade: "D", gradePoint: 1.0 }
             }
         },
         {
@@ -66,7 +78,9 @@ export const semester2: RawSemesterData = {
             name: "AHSAN ZAHEER SHAIKH",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 84, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 60, grade: "C-", gradePoint: 1.8 }
             }
         },
         {
@@ -74,31 +88,39 @@ export const semester2: RawSemesterData = {
             name: "ALI YAQOOB KHAN",
             results: {
                 "SE-354": { marks: 92, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 67, grade: "C+", gradePoint: 2.4 },
+                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 68, grade: "B-", gradePoint: 2.8 }
             }
         },
         {
             roll: "B24110106009",
             name: "AMMAR AHMED",
             results: {
-                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-362": { marks: 75, grade: "B+", gradePoint: 3.4 }
+                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 79, grade: "B+", gradePoint: 3.4 },
+                "SE-362": { marks: 75, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 71, grade: "B", gradePoint: 3.0 }
             }
         },
         {
             roll: "B24110106010",
             name: "ANOUSHA FARHAN",
             results: {
-                "SE-354": { marks: 70, grade: "B-", gradePoint: 2.7 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-354": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-356": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
             roll: "B24110106011",
             name: "ANUMTA NADEEM",
             results: {
-                "SE-354": { marks: 70, grade: "B-", gradePoint: 2.7 },
-                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 }
+                "SE-354": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-356": { marks: 90, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 85, grade: "A", gradePoint: 4.0 }
             }
         },
         {
@@ -106,7 +128,9 @@ export const semester2: RawSemesterData = {
             name: "ANUMTA TARIQ",
             results: {
                 "SE-354": { marks: 76, grade: "B+", gradePoint: 3.4 },
-                "SE-362": { marks: 74, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 67, grade: "C+", gradePoint: 2.4 },
+                "SE-362": { marks: 74, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 60, grade: "C-", gradePoint: 1.8 }
             }
         },
         {
@@ -114,23 +138,29 @@ export const semester2: RawSemesterData = {
             name: "AZAAN MEHTAB KHAN",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 85, grade: "A", gradePoint: 4.0 }
             }
         },
         {
             roll: "B24110106014",
             name: "AZWA AHMED",
             results: {
-                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 }
+                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 85, grade: "A", gradePoint: 4.0 }
             }
         },
         {
             roll: "B24110106015",
             name: "DUA E ZEHRA",
             results: {
-                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 }
+                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-356": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -138,7 +168,9 @@ export const semester2: RawSemesterData = {
             name: "DUA ENAM",
             results: {
                 "SE-354": { marks: 66, grade: "C+", gradePoint: 2.4 },
-                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 79, grade: "B+", gradePoint: 3.4 },
+                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 72, grade: "B", gradePoint: 3.0 }
             }
         },
         {
@@ -146,7 +178,9 @@ export const semester2: RawSemesterData = {
             name: "EMAN IQBAL",
             results: {
                 "SE-354": { marks: 89, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 74, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 76, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -154,7 +188,9 @@ export const semester2: RawSemesterData = {
             name: "EZHA FATIMA",
             results: {
                 "SE-354": { marks: 89, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 81, grade: "A-", gradePoint: 3.7 }
+                "SE-356": { marks: 72, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 81, grade: "A-", gradePoint: 3.8 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -162,15 +198,19 @@ export const semester2: RawSemesterData = {
             name: "FABHA IQBAL",
             results: {
                 "SE-354": { marks: 89, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 91, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 71, grade: "B", gradePoint: 3.0 }
             }
         },
         {
             roll: "B24110106020",
             name: "FATIMA RAZA KHAN",
             results: {
-                "SE-354": { marks: 70, grade: "B-", gradePoint: 2.7 },
-                "SE-362": { marks: 75, grade: "B+", gradePoint: 3.4 }
+                "SE-354": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-356": { marks: 68, grade: "B-", gradePoint: 2.8 },
+                "SE-362": { marks: 75, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -178,7 +218,9 @@ export const semester2: RawSemesterData = {
             name: "HAFIZ HUZAIFA BIN WAQAS",
             results: {
                 "SE-354": { marks: 91, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 88, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 91, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 88, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 71, grade: "B", gradePoint: 3.0 }
             }
         },
         {
@@ -186,7 +228,9 @@ export const semester2: RawSemesterData = {
             name: "HAFIZA WADIAH IQBAL",
             results: {
                 "SE-354": { marks: 91, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 85, grade: "A", gradePoint: 4.0 }
             }
         },
         {
@@ -194,7 +238,9 @@ export const semester2: RawSemesterData = {
             name: "HAMMAD RAZZAQUE",
             results: {
                 "SE-354": { marks: 0, grade: "F", gradePoint: 0.0 },
-                "SE-362": { marks: 0, grade: "F", gradePoint: 0.0 }
+                "SE-356": { marks: 36, grade: "F", gradePoint: 0.0 },
+                "SE-362": { marks: 0, grade: "F", gradePoint: 0.0 },
+                "SE-360": { marks: 0, grade: "F", gradePoint: 0.0 }
             }
         },
         {
@@ -202,7 +248,9 @@ export const semester2: RawSemesterData = {
             name: "HAMMAD TAHIR",
             results: {
                 "SE-354": { marks: 52, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 58, grade: "C-", gradePoint: 1.8 },
+                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -210,7 +258,9 @@ export const semester2: RawSemesterData = {
             name: "HUSNAIN WAHID",
             results: {
                 "SE-354": { marks: 0, grade: "F", gradePoint: 0.0 },
-                "SE-362": { marks: 0, grade: "F", gradePoint: 0.0 }
+                "SE-356": { marks: 0, grade: "F", gradePoint: 0.0 },
+                "SE-362": { marks: 0, grade: "F", gradePoint: 0.0 },
+                "SE-360": { marks: 0, grade: "F", gradePoint: 0.0 }
             }
         },
         {
@@ -218,7 +268,9 @@ export const semester2: RawSemesterData = {
             name: "IJAZ",
             results: {
                 "SE-354": { marks: 76, grade: "B+", gradePoint: 3.4 },
-                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 59, grade: "C-", gradePoint: 1.8 },
+                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 68, grade: "B-", gradePoint: 2.8 }
             }
         },
         {
@@ -226,7 +278,9 @@ export const semester2: RawSemesterData = {
             name: "KAAIF AHMED KHAN",
             results: {
                 "SE-354": { marks: 93, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 87, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 98, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 87, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 78, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -234,7 +288,9 @@ export const semester2: RawSemesterData = {
             name: "LAIBA SIDDIQUI",
             results: {
                 "SE-354": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 56, grade: "D+", gradePoint: 1.4 }
             }
         },
         {
@@ -242,15 +298,19 @@ export const semester2: RawSemesterData = {
             name: "MANAHIL NOOR",
             results: {
                 "SE-354": { marks: 95, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 81, grade: "A-", gradePoint: 3.7 }
+                "SE-356": { marks: 96, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 81, grade: "A-", gradePoint: 3.8 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
             roll: "B24110106030",
             name: "MUHAMMAD ARHAM REHAN",
             results: {
-                "SE-354": { marks: 58, grade: "C-", gradePoint: 1.7 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-354": { marks: 58, grade: "C-", gradePoint: 1.8 },
+                "SE-356": { marks: 71, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 68, grade: "B-", gradePoint: 2.8 }
             }
         },
         {
@@ -258,7 +318,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD ASIM KHAN",
             results: {
                 "SE-354": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 62, grade: "C", gradePoint: 2.0 },
+                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 71, grade: "B", gradePoint: 3.0 }
             }
         },
         {
@@ -266,7 +328,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD EHTAISHAM ALI",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 93, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -274,7 +338,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD FASEEH",
             results: {
                 "SE-354": { marks: 86, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 86, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 76, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -282,7 +348,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD HADI ANSARI",
             results: {
                 "SE-354": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 71, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 78, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -290,15 +358,19 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD HAMZA",
             results: {
                 "SE-354": { marks: 75, grade: "B+", gradePoint: 3.4 },
-                "SE-362": { marks: 75, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 69, grade: "B-", gradePoint: 2.8 },
+                "SE-362": { marks: 75, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 35, grade: "F", gradePoint: 0.0 }
             }
         },
         {
             roll: "B24110106036",
             name: "MUHAMMAD HAMZA SIDDIQUI",
             results: {
-                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 }
+                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-356": { marks: 65, grade: "C+", gradePoint: 2.4 },
+                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 71, grade: "B", gradePoint: 3.0 }
             }
         },
         {
@@ -306,15 +378,19 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD HARIS JAWAID",
             results: {
                 "SE-354": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 84, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
             roll: "B24110106038",
             name: "MUHAMMAD HUNAIN AHMED",
             results: {
-                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-362": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-356": { marks: 61, grade: "C", gradePoint: 2.0 },
+                "SE-362": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-360": { marks: 50, grade: "D", gradePoint: 1.0 }
             }
         },
         {
@@ -322,7 +398,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD IRTIZA KHAN",
             results: {
                 "SE-354": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 56, grade: "D+", gradePoint: 1.4 }
             }
         },
         {
@@ -330,14 +408,17 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD ISBAH ARFIN",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 50, grade: "D", gradePoint: 1.0 }
             }
         },
         {
             roll: "B24110106041",
             name: "MUHAMMAD JAVED",
             results: {
-                "SE-354": { marks: 83, grade: "A-", gradePoint: 3.7 },
+                "SE-354": { marks: 83, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 86, grade: "A", gradePoint: 4.0 },
                 "SE-362": { marks: 67, grade: "C+", gradePoint: 2.4 }
             }
         },
@@ -346,7 +427,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD KAIF SIDDIQUI",
             results: {
                 "SE-354": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 61, grade: "C", gradePoint: 2.0 }
+                "SE-356": { marks: 56, grade: "D+", gradePoint: 1.4 },
+                "SE-362": { marks: 61, grade: "C", gradePoint: 2.0 },
+                "SE-360": { marks: 23, grade: "F", gradePoint: 0.0 }
             }
         },
         {
@@ -354,7 +437,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD MUBASHIRUDDIN",
             results: {
                 "SE-354": { marks: 75, grade: "B+", gradePoint: 3.4 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -362,7 +447,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD RAYYAN KHAN",
             results: {
                 "SE-354": { marks: 72, grade: "B", gradePoint: 3.0 },
-                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 71, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 71, grade: "B", gradePoint: 3.0 }
             }
         },
         {
@@ -370,7 +457,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD SAAD PERVAIZ",
             results: {
                 "SE-354": { marks: 92, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 66, grade: "C+", gradePoint: 2.4 }
+                "SE-356": { marks: 74, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 66, grade: "C+", gradePoint: 2.4 },
+                "SE-360": { marks: 61, grade: "C", gradePoint: 2.0 }
             }
         },
         {
@@ -378,7 +467,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD SARIM",
             results: {
                 "SE-354": { marks: 71, grade: "B", gradePoint: 3.0 },
-                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 67, grade: "C+", gradePoint: 2.4 },
+                "SE-362": { marks: 79, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 77, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -386,7 +477,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD SHARJEEL",
             results: {
                 "SE-354": { marks: 94, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 86, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 86, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -394,7 +487,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD TAHA",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 63, grade: "C", gradePoint: 2.0 }
+                "SE-356": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 63, grade: "C", gradePoint: 2.0 },
+                "SE-360": { marks: 60, grade: "C-", gradePoint: 1.8 }
             }
         },
         {
@@ -402,7 +497,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD TALHA",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 93, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 77, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -410,7 +507,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD TALHA SHAFIQUE",
             results: {
                 "SE-354": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 63, grade: "C", gradePoint: 2.0 },
+                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 60, grade: "C-", gradePoint: 1.8 }
             }
         },
         {
@@ -418,7 +517,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD TAMJEED HUSSAIN",
             results: {
                 "SE-354": { marks: 53, grade: "D+", gradePoint: 1.4 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 64, grade: "C+", gradePoint: 2.4 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 66, grade: "C+", gradePoint: 2.4 }
             }
         },
         {
@@ -426,7 +527,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD UMER KHAN",
             results: {
                 "SE-354": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 71, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 55, grade: "D+", gradePoint: 1.4 },
+                "SE-362": { marks: 71, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 23, grade: "F", gradePoint: 0.0 }
             }
         },
         {
@@ -434,15 +537,19 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD USMAN ASIF",
             results: {
                 "SE-354": { marks: 91, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 68, grade: "B-", gradePoint: 2.8 },
+                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 59, grade: "C-", gradePoint: 1.8 }
             }
         },
         {
             roll: "B24110106054",
             name: "MUHAMMAD ZAID",
             results: {
-                "SE-354": { marks: 82, grade: "A-", gradePoint: 3.7 },
-                "SE-362": { marks: 74, grade: "B", gradePoint: 3.0 }
+                "SE-354": { marks: 82, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 58, grade: "C-", gradePoint: 1.8 },
+                "SE-362": { marks: 74, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 59, grade: "C-", gradePoint: 1.8 }
             }
         },
         {
@@ -450,7 +557,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD ZAID BIN SHAHID",
             results: {
                 "SE-354": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 64, grade: "C+", gradePoint: 2.4 }
             }
         },
         {
@@ -458,7 +567,9 @@ export const semester2: RawSemesterData = {
             name: "MUHAMMAD ZARRAR HADEER",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 61, grade: "C", gradePoint: 2.0 }
+                "SE-356": { marks: 65, grade: "C+", gradePoint: 2.4 },
+                "SE-362": { marks: 61, grade: "C", gradePoint: 2.0 },
+                "SE-360": { marks: 71, grade: "B", gradePoint: 3.0 }
             }
         },
         {
@@ -466,7 +577,9 @@ export const semester2: RawSemesterData = {
             name: "MUJTABA ASIM",
             results: {
                 "SE-354": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 68, grade: "B-", gradePoint: 2.7 }
+                "SE-356": { marks: 76, grade: "B+", gradePoint: 3.4 },
+                "SE-362": { marks: 68, grade: "B-", gradePoint: 2.8 },
+                "SE-360": { marks: 61, grade: "C", gradePoint: 2.0 }
             }
         },
         {
@@ -474,15 +587,19 @@ export const semester2: RawSemesterData = {
             name: "MUSTAFA MURTAZA",
             results: {
                 "SE-354": { marks: 55, grade: "D+", gradePoint: 1.4 },
-                "SE-362": { marks: 65, grade: "C+", gradePoint: 2.4 }
+                "SE-356": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 65, grade: "C+", gradePoint: 2.4 },
+                "SE-360": { marks: 56, grade: "D+", gradePoint: 1.4 }
             }
         },
         {
             roll: "B24110106059",
             name: "MUZNA",
             results: {
-                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-362": { marks: 75, grade: "B+", gradePoint: 3.4 }
+                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 79, grade: "B+", gradePoint: 3.4 },
+                "SE-362": { marks: 75, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -490,7 +607,9 @@ export const semester2: RawSemesterData = {
             name: "QURRATULAIN",
             results: {
                 "SE-354": { marks: 55, grade: "D+", gradePoint: 1.4 },
-                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 53, grade: "D+", gradePoint: 1.4 },
+                "SE-362": { marks: 77, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 64, grade: "C+", gradePoint: 2.4 }
             }
         },
         {
@@ -498,7 +617,9 @@ export const semester2: RawSemesterData = {
             name: "RABIA FATIMA",
             results: {
                 "SE-354": { marks: 93, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 98, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 71, grade: "B", gradePoint: 3.0 }
             }
         },
         {
@@ -506,7 +627,9 @@ export const semester2: RawSemesterData = {
             name: "RABIYA",
             results: {
                 "SE-354": { marks: 94, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 93, grade: "A+", gradePoint: 4.0 },
+                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 88, grade: "A", gradePoint: 4.0 }
             }
         },
         {
@@ -514,7 +637,9 @@ export const semester2: RawSemesterData = {
             name: "RIJA E ZEHRA",
             results: {
                 "SE-354": { marks: 89, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 81, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -522,23 +647,29 @@ export const semester2: RawSemesterData = {
             name: "SADIA AHMED",
             results: {
                 "SE-354": { marks: 65, grade: "C+", gradePoint: 2.4 },
-                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 87, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 62, grade: "C", gradePoint: 2.0 }
             }
         },
         {
             roll: "B24110106065",
             name: "SAIF UL LLAH",
             results: {
-                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-362": { marks: 65, grade: "C+", gradePoint: 2.4 }
+                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-356": { marks: 63, grade: "C", gradePoint: 2.0 },
+                "SE-362": { marks: 65, grade: "C+", gradePoint: 2.4 },
+                "SE-360": { marks: 26, grade: "F", gradePoint: 0.0 }
             }
         },
         {
             roll: "B24110106066",
             name: "SAMEER AZAM KHAN",
             results: {
-                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-362": { marks: 81, grade: "A-", gradePoint: 3.7 }
+                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 87, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 81, grade: "A-", gradePoint: 3.8 },
+                "SE-360": { marks: 61, grade: "C", gradePoint: 2.0 }
             }
         },
         {
@@ -546,7 +677,9 @@ export const semester2: RawSemesterData = {
             name: "SAMI UDDIN",
             results: {
                 "SE-354": { marks: 0, grade: "F", gradePoint: 0.0 },
-                "SE-362": { marks: 0, grade: "F", gradePoint: 0.0 }
+                "SE-356": { marks: 0, grade: "F", gradePoint: 0.0 },
+                "SE-362": { marks: 0, grade: "F", gradePoint: 0.0 },
+                "SE-360": { marks: 0, grade: "F", gradePoint: 0.0 }
             }
         },
         {
@@ -554,15 +687,19 @@ export const semester2: RawSemesterData = {
             name: "SAMIA QADRI",
             results: {
                 "SE-354": { marks: 89, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 81, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
             roll: "B24110106069",
             name: "SHAHMEER SIDDIQUI",
             results: {
-                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-362": { marks: 86, grade: "A", gradePoint: 4.0 }
+                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-356": { marks: 89, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 86, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 50, grade: "D", gradePoint: 1.0 }
             }
         },
         {
@@ -570,7 +707,9 @@ export const semester2: RawSemesterData = {
             name: "SHARJEEL AHMED",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-356": { marks: 87, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 82, grade: "A-", gradePoint: 3.8 },
+                "SE-360": { marks: 81, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -578,7 +717,9 @@ export const semester2: RawSemesterData = {
             name: "SHEHNILA KANWAL",
             results: {
                 "SE-354": { marks: 52, grade: "D", gradePoint: 1.0 },
-                "SE-362": { marks: 71, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 66, grade: "C+", gradePoint: 2.4 },
+                "SE-362": { marks: 71, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 38, grade: "F", gradePoint: 0.0 }
             }
         },
         {
@@ -586,7 +727,9 @@ export const semester2: RawSemesterData = {
             name: "SYED HAMZA",
             results: {
                 "SE-354": { marks: 75, grade: "B+", gradePoint: 3.4 },
-                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 78, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -594,7 +737,9 @@ export const semester2: RawSemesterData = {
             name: "SYED MOHIB",
             results: {
                 "SE-354": { marks: 75, grade: "B+", gradePoint: 3.4 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 81, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -602,15 +747,19 @@ export const semester2: RawSemesterData = {
             name: "SYED MOHTASHIM ALI",
             results: {
                 "SE-354": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 }
+                "SE-356": { marks: 75, grade: "B+", gradePoint: 3.4 },
+                "SE-362": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 53, grade: "D+", gradePoint: 1.4 }
             }
         },
         {
             roll: "B24110106075",
             name: "SYED MUHAMMAD AREEB IQBAL",
             results: {
-                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-362": { marks: 63, grade: "C", gradePoint: 2.0 }
+                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 53, grade: "D+", gradePoint: 1.4 },
+                "SE-362": { marks: 63, grade: "C", gradePoint: 2.0 },
+                "SE-360": { marks: 33, grade: "F", gradePoint: 0.0 }
             }
         },
         {
@@ -618,7 +767,9 @@ export const semester2: RawSemesterData = {
             name: "SYED SAAD BIN IRFAN",
             results: {
                 "SE-354": { marks: 91, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 62, grade: "C", gradePoint: 2.0 },
+                "SE-362": { marks: 78, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 68, grade: "B-", gradePoint: 2.8 }
             }
         },
         {
@@ -626,23 +777,29 @@ export const semester2: RawSemesterData = {
             name: "SYEDA SARA AMIR",
             results: {
                 "SE-354": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 71, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 72, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 68, grade: "B-", gradePoint: 2.8 }
             }
         },
         {
             roll: "B24110106078",
             name: "TALHA ALI",
             results: {
-                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 }
+                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-356": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 50, grade: "D", gradePoint: 1.0 }
             }
         },
         {
             roll: "B24110106079",
             name: "TANZEEL MAZHAR",
             results: {
-                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-362": { marks: 88, grade: "A", gradePoint: 4.0 }
+                "SE-354": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-356": { marks: 71, grade: "B", gradePoint: 3.0 },
+                "SE-362": { marks: 88, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -650,7 +807,9 @@ export const semester2: RawSemesterData = {
             name: "UMAMAH IBREEQ ZAFAR",
             results: {
                 "SE-354": { marks: 94, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 }
+                "SE-356": { marks: 82, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 },
+                "SE-360": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -658,7 +817,9 @@ export const semester2: RawSemesterData = {
             name: "URWA MUNAWAR",
             results: {
                 "SE-354": { marks: 89, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 81, grade: "A-", gradePoint: 3.7 }
+                "SE-356": { marks: 83, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 81, grade: "A-", gradePoint: 3.8 },
+                "SE-360": { marks: 85, grade: "A", gradePoint: 4.0 }
             }
         },
         {
@@ -666,7 +827,9 @@ export const semester2: RawSemesterData = {
             name: "WANIYA",
             results: {
                 "SE-354": { marks: 91, grade: "A+", gradePoint: 4.0 },
-                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 }
+                "SE-356": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-362": { marks: 76, grade: "B+", gradePoint: 3.4 },
+                "SE-360": { marks: 76, grade: "B+", gradePoint: 3.4 }
             }
         },
         {
@@ -674,7 +837,9 @@ export const semester2: RawSemesterData = {
             name: "YUSMA MAJID",
             results: {
                 "SE-354": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-362": { marks: 69, grade: "B-", gradePoint: 2.7 }
+                "SE-356": { marks: 85, grade: "A", gradePoint: 4.0 },
+                "SE-362": { marks: 69, grade: "B-", gradePoint: 2.8 },
+                "SE-360": { marks: 68, grade: "B-", gradePoint: 2.8 }
             }
         }
     ]
