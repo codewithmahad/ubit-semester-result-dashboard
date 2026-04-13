@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Printer, Award, BookOpen, AlertCircle, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Award, BookOpen, AlertCircle, CheckCircle2 } from "lucide-react";
 import { getStudent } from "@/lib/data";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { SemesterCard } from "@/components/semester-card";
 import { LogVisit } from "@/components/log-visit";
+import { PrintButton } from "@/components/print-button";
 import type { Metadata } from "next";
 
 interface Props {
@@ -87,24 +88,7 @@ export default async function StudentPage({ params }: Props) {
 
             {/* Quick Actions / Print */}
             <div className="no-print shrink-0 self-start">
-              <button
-                onClick={undefined}
-                id="print-transcript"
-                className="flex items-center gap-2 bg-white border-2 border-[#0056D2] text-[#0056D2] hover:bg-[#0056D2] hover:text-white px-5 py-2 rounded-full text-sm font-bold shadow-sm transition-all focus:ring-2 focus:ring-[#0056D2] focus:outline-none"
-              >
-                <Printer className="h-4 w-4" />
-                Print Transcript
-              </button>
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    document.addEventListener('DOMContentLoaded', function() {
-                      var btn = document.getElementById('print-transcript');
-                      if (btn) btn.addEventListener('click', function() { window.print(); });
-                    });
-                  `,
-                }}
-              />
+              <PrintButton />
             </div>
           </div>
 

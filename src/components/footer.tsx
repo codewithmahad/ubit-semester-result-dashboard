@@ -48,7 +48,7 @@ export function Footer() {
           </Link>
 
           <a
-            href="mailto:issue@example.com?subject=UBIT%20Portal%20Issue"
+            href="mailto:codewithmahad@gmail.com?subject=UBIT%20Portal%20Bug%20Report"
             className="flex items-center gap-2 text-[13px] font-semibold text-gray-600 hover:text-[#0056D2] transition-colors"
           >
             <Bug className="w-4 h-4" />

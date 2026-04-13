@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { DashboardTabs } from "@/components/dashboard-tabs";
 import { BatchMetrics } from "@/components/batch-metrics";
 import { Footer } from "@/components/footer";
@@ -55,10 +56,17 @@ export default async function ClassLeaderboardPage({ params }: Props) {
 
         <div className="relative mx-auto max-w-[1800px] px-6 sm:px-10 py-8 sm:py-10 pl-8 sm:pl-12">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 mb-4">
-            <svg viewBox="0 0 16 16" fill="none" className="w-3.5 h-3.5 text-[#8F141B]" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M2 8h12M8 2l6 6-6 6" />
-            </svg>
+          <div className="flex items-center gap-3 mb-4">
+            <Link
+              href="/leaderboards"
+              className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-[0.15em] text-gray-400 hover:text-[#8F141B] transition-colors"
+            >
+              <svg viewBox="0 0 16 16" fill="none" className="w-3 h-3 rotate-180" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 8h12M8 2l6 6-6 6" />
+              </svg>
+              Leaderboards
+            </Link>
+            <span className="text-gray-200">·</span>
             <span className="text-[10px] font-black uppercase tracking-[0.15em] text-gray-400">
               {meta.program} &nbsp;·&nbsp; Batch {p.batch} &nbsp;·&nbsp; {meta.shift} Program
             </span>

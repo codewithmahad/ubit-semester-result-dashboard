@@ -19,6 +19,14 @@ export default function ProfilePage() {
     section: "B",
     shift: "Morning"
   });
+  const [showSaved, setShowSaved] = useState(false);
+
+  function handleSave() {
+    // Save to localStorage for full front-end persistence
+    localStorage.setItem("ubit-profile", JSON.stringify(formData));
+    setShowSaved(true);
+    setTimeout(() => setShowSaved(false), 3000);
+  }
 
   const programs = [
     "Bachelor of Science in Software Engineering",
@@ -38,6 +46,18 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex flex-col">
       <Nav />
+      
+      {/* ── Save Success Toast ─────────────────────────────── */}
+      {showSaved && (
+        <div className="fixed bottom-6 right-6 z-[100] flex items-center gap-3 bg-[#1f2432] text-white px-5 py-3.5 rounded-2xl shadow-2xl animate-in slide-in-from-bottom-4 fade-in duration-300">
+          <div className="w-5 h-5 rounded-full bg-green-400 flex items-center justify-center shrink-0">
+            <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span className="text-[14px] font-bold">Profile saved locally!</span>
+        </div>
+      )}
       
       {/* ── Disclaimer Banner ─────────────────────────────────── */}
       <div className="bg-[#8F141B] text-white py-3.5 px-4 text-center z-40">
@@ -215,7 +235,9 @@ export default function ProfilePage() {
                     All data is currently stored locally in your browser session.
                   </span>
                 </div>
-                <button className="w-full sm:w-auto h-12 sm:h-11 px-8 bg-ubit-navy text-white text-[15px] sm:text-[14px] font-bold rounded-xl hover:opacity-90 transition-all shadow-md active:scale-[0.98]">
+                <button
+                  onClick={handleSave}
+                  className="w-full sm:w-auto h-12 sm:h-11 px-8 bg-ubit-navy text-white text-[15px] sm:text-[14px] font-bold rounded-xl hover:opacity-90 transition-all shadow-md active:scale-[0.98]">
                   Save Changes
                 </button>
               </div>

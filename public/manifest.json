@@ -1,0 +1,23 @@
+{
+  "name": "UBIT Results Portal",
+  "short_name": "UBIT Results",
+  "description": "Academic results portal for BSSE Batch 2025 — UBIT, University of Karachi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7f8",
+  "theme_color": "#0F172A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/ubit-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ubit-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

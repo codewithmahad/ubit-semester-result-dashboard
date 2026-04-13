@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Search, Home, FileQuestion } from "lucide-react";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 
 export default function NotFound() {
   return (
@@ -35,6 +36,7 @@ export default function NotFound() {
           University of Karachi · UBIT
         </p>
       </main>
+      <Footer />
     </div>
   );
 }

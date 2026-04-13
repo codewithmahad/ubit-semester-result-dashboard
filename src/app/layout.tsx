@@ -24,10 +24,27 @@ export const metadata: Metadata = {
   icons: {
     icon: "/uok-logo.png",
   },
+  manifest: "/manifest.json",
   openGraph: {
-    title: "UBIT Results Portal",
-    description: "BSSE Batch 2025 — Academic Results Dashboard",
+    title: "UBIT Results Portal — Academic Dashboard",
+    description: "Instant access to BSSE Batch 2025 grades, cumulative GPA, class rankings, and printable transcripts. Built by students, for students.",
     type: "website",
+    url: "https://ubit-results.vercel.app",
+    siteName: "UBIT Results Portal",
+    locale: "en_US",
+    images: [
+      {
+        url: "/ubit-logo.jpg",
+        width: 200,
+        height: 200,
+        alt: "UBIT Results Portal",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "UBIT Results Portal",
+    description: "BSSE Batch 2025 — View grades, GPA, class rankings and download transcripts.",
   },
 };
 

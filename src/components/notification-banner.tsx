@@ -1,11 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { X } from "lucide-react";
 
+const BANNER_ID = "notification-banner-v3"; // bump this to show the banner again
+
 export function NotificationBanner() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem(BANNER_ID);
+    if (!dismissed) setVisible(true);
+  }, []);
+
+  function dismiss() {
+    localStorage.setItem(BANNER_ID, "1");
+    setVisible(false);
+  }
 
   if (!visible) return null;
 
@@ -18,11 +30,14 @@ export function NotificationBanner() {
           </div>
           <p className="text-[#b1c0e0] text-[13px] sm:text-[14px]">
             <strong className="text-white mr-1">New Results:</strong>
-            Semester II "OOPs" results are out. <Link href="/leaderboards" className="text-white font-medium cursor-pointer hover:underline mx-1">Check CGPA</Link>
+            Semester II &quot;OOPs&quot; results are out.{" "}
+            <Link href="/leaderboards" className="text-white font-medium cursor-pointer hover:underline mx-1">
+              Check CGPA
+            </Link>
           </p>
         </div>
-        <button 
-          onClick={() => setVisible(false)}
+        <button
+          onClick={dismiss}
           className="text-[#a4b1cd] hover:text-white transition-colors p-1 rounded-md hover:bg-white/10"
         >
           <X className="w-[18px] h-[18px]" />

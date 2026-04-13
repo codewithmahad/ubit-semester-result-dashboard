@@ -8,7 +8,7 @@ import {
   Settings, HelpCircle, LogOut, ExternalLink
 } from "lucide-react";
 import { useState, useEffect, useTransition } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 /**
  * Nav — sticky top navigation bar.
@@ -25,6 +25,7 @@ export function Nav() {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
+  const pathname = usePathname();
 
 const [currentTime, setCurrentTime] = useState<Date | null>(null);
 
@@ -133,6 +134,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
           <div className="flex md:hidden items-center justify-between w-full px-4">
             <div className="flex items-center gap-3">
               <button
+                aria-label="Open menu"
                 className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 text-gray-600 transition-colors"
                 onClick={() => { setMobileMenuOpen(true); setShowNotifications(false); }}
               >
@@ -145,6 +147,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
             </div>
             <div className="flex items-center gap-1">
               <button 
+                aria-label="Notifications"
                 className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
                 onClick={() => { setShowNotifications(true); setMobileMenuOpen(false); }}
               >
@@ -154,6 +157,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
                 )}
               </button>
               <button 
+                aria-label="Search"
                 className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
                 onClick={() => setShowMobileSearch(true)}
               >
@@ -183,10 +187,24 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
 
             {/* Desktop nav links */}
             <div className="hidden md:flex items-center gap-6">
-              <Link href="/leaderboards" className="text-[13px] font-semibold text-gray-600 hover:text-[#0056D2] transition-colors">
+              <Link
+                href="/leaderboards"
+                className={`text-[13px] font-semibold transition-colors relative pb-0.5 ${
+                  pathname === '/leaderboards'
+                    ? 'text-[#0056D2] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#0056D2] after:rounded-full'
+                    : 'text-gray-600 hover:text-[#0056D2]'
+                }`}
+              >
                 Leaderboards
               </Link>
-              <Link href="/calculator" className="text-[13px] font-semibold text-gray-600 hover:text-[#0056D2] transition-colors">
+              <Link
+                href="/calculator"
+                className={`text-[13px] font-semibold transition-colors relative pb-0.5 ${
+                  pathname === '/calculator'
+                    ? 'text-[#0056D2] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#0056D2] after:rounded-full'
+                    : 'text-gray-600 hover:text-[#0056D2]'
+                }`}
+              >
                 GPA Calculator
               </Link>
             </div>
@@ -216,6 +234,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
             {/* Notification Bell */}
             <div className="relative" data-notifications>
               <button
+                aria-label="Notifications"
                 onClick={() => { setShowNotifications(!showNotifications); setMobileMenuOpen(false); }}
                 className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
               >
@@ -255,6 +274,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
             {/* Desktop User icon & Dropdown */}
             <div className="relative hidden md:block" data-profile-menu>
               <button
+                aria-label="Profile menu"
                 onClick={() => { setShowProfileMenu(!showProfileMenu); setShowNotifications(false); }}
                 className="flex h-9 w-9 rounded-full border border-gray-200 bg-ubit-navy text-white items-center justify-center cursor-pointer hover:opacity-90 transition shadow-sm overflow-hidden"
               >
