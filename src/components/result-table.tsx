@@ -12,8 +12,6 @@ import {
 } from "@tanstack/react-table"
 import type { RawSemesterData, StudentRanking } from "@/types"
 import { calculateRankings, calculateCGPARankings } from "@/lib/utils/academic-math"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 import { Download, Search, CheckCircle2, ChevronUp, ChevronDown, XCircle } from "lucide-react"
 import { StudentModal } from "@/components/student-modal"
 
@@ -201,8 +199,8 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
     }
 
     function thStickyClass(id: string) {
-        if (id === "rank") return "bg-ubit-navy w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
-        if (id === "roll") return "bg-ubit-navy w-[120px] min-w-[120px] sm:w-[150px] sm:min-w-[150px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
+        if (id === "rank") return "bg-[#8F141B] w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#7a1117]"
+        if (id === "roll") return "bg-[#8F141B] w-[120px] min-w-[120px] sm:w-[150px] sm:min-w-[150px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#7a1117]"
         return ""
     }
     function tdStickyClass(id: string, bgClass: string) {
@@ -213,39 +211,40 @@ export function ResultTable({ data, allSemData }: ResultTableProps) {
 
     return (
         <div className="space-y-3">
-            {/* Controls */}
-            <div className="bg-white/95 pb-2 pt-0 z-10 relative">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-                    <div className="relative w-full sm:max-w-xs">
-                        <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-ubit-faint" />
-                        <Input
-                            placeholder="Search seat number..."
-                            value={globalFilter}
-                            onChange={e => setGlobalFilter(e.target.value)}
-                            className="pl-9 h-9 border-slate-200 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-slate-400 rounded-lg text-[13px] font-medium text-slate-700"
-                        />
-                    </div>
-                    <Button
-                        onClick={exportPDF}
-                        className="w-full sm:w-auto h-9 font-semibold text-[13px] px-5 rounded-lg tracking-tight transition-all bg-ubit-navy text-white hover:bg-ubit-navymid"
-                    >
-                        <Download className="w-3.5 h-3.5 mr-2" /> Download PDF
-                    </Button>
+            {/* ── Floating Premium Controls ────────────────────────────── */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                {/* Search */}
+                <div className="relative w-full sm:w-[280px] group">
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400 group-focus-within:text-[#8F141B] transition-colors" />
+                    <input
+                        placeholder="Search seat number..."
+                        value={globalFilter}
+                        onChange={e => setGlobalFilter(e.target.value)}
+                        className="w-full h-10 pl-10 pr-4 text-[13px] font-medium text-gray-700 placeholder:text-gray-400 bg-white border border-gray-200 rounded-xl shadow-sm outline-none focus:border-[#8F141B]/40 focus:ring-2 focus:ring-[#8F141B]/10 transition-all"
+                    />
                 </div>
+
+                {/* Download */}
+                <button
+                    onClick={exportPDF}
+                    className="no-print inline-flex items-center gap-2 h-10 px-5 bg-[#1f2432] hover:bg-[#2a3040] text-white text-[12px] font-bold tracking-wide rounded-xl shadow-sm transition-all hover:shadow-md active:scale-[0.98] shrink-0"
+                >
+                    <Download className="w-3.5 h-3.5" />
+                    Download PDF
+                </button>
             </div>
 
-            {/* Table card */}
+            {/* ── Table Card ──────────────────────────────────────── */}
             <div
                 ref={printRef}
-                className="rounded-xl overflow-hidden shadow-sm"
-                style={{ border: "1px solid #E2E8F0" }}
+                className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
             >
                 <div className="overflow-auto max-h-[70vh] w-full" style={{ WebkitOverflowScrolling: 'touch' }}>
                     <table className="w-full text-sm text-left align-middle border-separate border-spacing-0">
 
                         <thead className="sticky top-0 z-20">
                             {table.getHeaderGroups().map(hg => (
-                                <tr key={hg.id} className="bg-ubit-navy">
+                                <tr key={hg.id} className="bg-[#8F141B]">
                                     {hg.headers.map(h => {
                                         const sortable = h.column.getCanSort()
                                         return (

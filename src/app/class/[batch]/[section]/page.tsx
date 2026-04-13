@@ -25,45 +25,82 @@ export default async function ClassLeaderboardPage({ params }: Props) {
     (c) => c.batch === p.batch && c.id.endsWith(p.section)
   );
 
-  if (!meta) {
-    notFound();
-  }
+  if (!meta) notFound();
 
   const classData = await getClassData(meta.id);
   const semestersData = await loadClassSemesters(meta.id);
 
-  if (!classData || semestersData.length === 0) {
-    notFound(); // or you could show an empty state
-  }
+  if (!classData || semestersData.length === 0) notFound();
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-[#f5f7f8] flex flex-col">
       <Nav />
-      {/* Page header */}
-      <header className="bg-white border-b-2 border-gray-200 px-6 py-8 sm:px-10 border-t-4 border-blue-800">
-        <div className="mx-auto max-w-[1800px]">
-          <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+
+      {/* ── Page Header ──────────────────────────────────────────────── */}
+      <header className="relative bg-white border-b border-gray-100 overflow-hidden">
+        {/* Crimson left accent bar */}
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#8F141B]" />
+
+        {/* Subtle grid texture */}
+        <div
+          className="absolute inset-0 opacity-[0.025] pointer-events-none"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg,transparent,transparent 39px,#8F141B 39px,#8F141B 40px), repeating-linear-gradient(90deg,transparent,transparent 39px,#8F141B 39px,#8F141B 40px)",
+          }}
+        />
+
+        {/* Crimson radial glow */}
+        <div className="absolute -right-32 -top-32 w-80 h-80 rounded-full bg-[#8F141B] opacity-[0.04] pointer-events-none" />
+
+        <div className="relative mx-auto max-w-[1800px] px-6 sm:px-10 py-8 sm:py-10 pl-8 sm:pl-12">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 mb-4">
+            <svg viewBox="0 0 16 16" fill="none" className="w-3.5 h-3.5 text-[#8F141B]" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 8h12M8 2l6 6-6 6" />
+            </svg>
+            <span className="text-[10px] font-black uppercase tracking-[0.15em] text-gray-400">
+              {meta.program} &nbsp;·&nbsp; Batch {p.batch} &nbsp;·&nbsp; {meta.shift} Program
+            </span>
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
-              <p className="mb-1 text-[11px] font-bold uppercase tracking-widest text-gray-500">
-                {meta.program} · Batch {p.batch} · {meta.shift} Program
-              </p>
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight uppercase tracking-wider mt-2 mb-2">
+              <h1 className="text-[28px] sm:text-[38px] md:text-[46px] font-black text-[#1f2432] leading-none tracking-tight mb-3">
                 Class Leaderboard
               </h1>
-              <p className="mt-1 text-sm text-gray-700 font-medium max-w-2xl">
-                Official repository of academic performance and class standings for {meta.section}.
+              <p className="text-[13px] sm:text-[14px] text-gray-500 font-medium max-w-lg leading-relaxed">
+                Official academic performance records and class standings for{" "}
+                <span className="font-bold text-[#1f2432]">{meta.section}</span>.
               </p>
+            </div>
+
+            {/* Section badge */}
+            <div className="flex items-center gap-3 shrink-0">
+              <div className="flex flex-col items-end gap-1">
+                <div className="inline-flex items-center gap-2 bg-[#8F141B]/[0.07] border border-[#8F141B]/20 rounded-full px-3.5 py-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8F141B] animate-pulse" />
+                  <span className="text-[11px] font-black text-[#8F141B] uppercase tracking-widest">Active</span>
+                </div>
+                {meta.cr && (
+                  <span className="text-[11px] text-gray-400 font-semibold">
+                    CR: <span className="text-[#1f2432]">{meta.cr}</span>
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </header>
-      <main className="flex-1 w-full max-w-[1800px] mx-auto px-2 sm:px-4 md:px-8 py-6 pb-16 mb-16">
+
+      {/* ── Main Content ─────────────────────────────────────────────── */}
+      <main className="flex-1 w-full max-w-[1800px] mx-auto px-3 sm:px-6 md:px-10 py-8 pb-20">
         <BatchMetrics data={classData} />
-        
-        <div className="bg-white border-t border-b sm:border border-gray-300 px-4 sm:px-6 py-2 pb-6 mb-8">
-          <DashboardTabs semesters={semestersData} />
-        </div>
+
+        {/* Table section */}
+        <DashboardTabs semesters={semestersData} />
       </main>
+
       <Footer />
     </div>
   );

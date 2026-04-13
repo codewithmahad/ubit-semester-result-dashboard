@@ -10,32 +10,63 @@ interface DashboardTabsProps {
 }
 
 export function DashboardTabs({ semesters }: DashboardTabsProps) {
-    const defaultTab = semesters.length > 0 ? semesters[semesters.length - 1].name.replace(/\s+/g, '') : "cumulative";
+  const defaultTab = semesters.length > 0
+    ? semesters[semesters.length - 1].name.replace(/\s+/g, '')
+    : "cumulative";
 
-    return (
-        <Tabs defaultValue={defaultTab} className="w-full space-y-6">
-            <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-zinc-100 py-2 -mx-2 sm:-mx-3 px-2 sm:px-3">
-                <TabsList className="bg-zinc-100/80 border border-zinc-200 text-zinc-500 shadow-sm p-1.5 rounded-xl max-sm:flex max-sm:w-full max-sm:overflow-x-auto max-sm:no-scrollbar max-sm:justify-start max-sm:items-center">
-                    {semesters.map((sem, idx) => (
-                      <TabsTrigger key={idx} value={sem.name.replace(/\s+/g, '')} className="data-[state=active]:bg-zinc-950 data-[state=active]:text-white data-[state=active]:shadow-md hover:text-zinc-900 rounded-lg font-bold tracking-tight px-6 sm:px-8 py-2 text-sm max-sm:text-xs max-sm:px-5 whitespace-nowrap shrink-0">
-                          {sem.name.split(' ').slice(1).join(' ')}
-                      </TabsTrigger>
-                    ))}
-                    <TabsTrigger value="cumulative" className="data-[state=active]:bg-zinc-950 data-[state=active]:text-white data-[state=active]:shadow-md hover:text-zinc-900 rounded-lg font-bold tracking-tight px-6 sm:px-8 py-2 text-sm max-sm:text-xs max-sm:px-5 whitespace-nowrap shrink-0">
-                        Final Cumulative
-                    </TabsTrigger>
-                </TabsList>
-            </div>
+  return (
+    <Tabs defaultValue={defaultTab} className="w-full">
+      {/* Sticky tab bar */}
+      <div className="sticky top-[60px] md:top-[68px] z-40 bg-white border-b border-gray-100 px-4 sm:px-6">
+        <TabsList className="bg-transparent border-0 shadow-none p-0 gap-1 h-auto flex items-end max-sm:overflow-x-auto max-sm:no-scrollbar">
+          {semesters.map((sem, idx) => (
+            <TabsTrigger
+              key={idx}
+              value={sem.name.replace(/\s+/g, '')}
+              className="
+                relative px-4 sm:px-6 py-4 text-[12px] sm:text-[13px] font-bold tracking-tight 
+                text-gray-400 rounded-none border-0 shadow-none bg-transparent
+                data-[state=active]:text-[#1f2432] data-[state=active]:bg-transparent data-[state=active]:shadow-none
+                hover:text-[#1f2432] transition-colors whitespace-nowrap shrink-0
+                after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px]
+                after:bg-[#8F141B] after:scale-x-0 after:transition-transform after:duration-200
+                data-[state=active]:after:scale-x-100
+              "
+            >
+              {sem.name.split(' ').slice(1).join(' ')}
+            </TabsTrigger>
+          ))}
+          <TabsTrigger
+            value="cumulative"
+            className="
+              relative px-4 sm:px-6 py-4 text-[12px] sm:text-[13px] font-bold tracking-tight
+              text-gray-400 rounded-none border-0 shadow-none bg-transparent
+              data-[state=active]:text-[#1f2432] data-[state=active]:bg-transparent data-[state=active]:shadow-none
+              hover:text-[#1f2432] transition-colors whitespace-nowrap shrink-0
+              after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px]
+              after:bg-[#8F141B] after:scale-x-0 after:transition-transform after:duration-200
+              data-[state=active]:after:scale-x-100
+            "
+          >
+            Final Cumulative
+          </TabsTrigger>
+        </TabsList>
+      </div>
 
-            {semesters.map((sem, idx) => (
-              <TabsContent key={idx} value={sem.name.replace(/\s+/g, '')} className="space-y-4 outline-none data-[state=inactive]:hidden">
-                  <ResultTable data={sem} allSemData={semesters} />
-              </TabsContent>
-            ))}
+      {/* Tab panels */}
+      {semesters.map((sem, idx) => (
+        <TabsContent
+          key={idx}
+          value={sem.name.replace(/\s+/g, '')}
+          className="outline-none data-[state=inactive]:hidden m-0"
+        >
+          <ResultTable data={sem} allSemData={semesters} />
+        </TabsContent>
+      ))}
 
-            <TabsContent value="cumulative" className="space-y-4 outline-none data-[state=inactive]:hidden">
-                <CGPATable semesters={semesters} />
-            </TabsContent>
-        </Tabs>
-    )
+      <TabsContent value="cumulative" className="outline-none data-[state=inactive]:hidden m-0">
+        <CGPATable semesters={semesters} />
+      </TabsContent>
+    </Tabs>
+  );
 }
