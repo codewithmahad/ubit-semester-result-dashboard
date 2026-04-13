@@ -7,6 +7,8 @@ import {
   Camera, Share2, ExternalLink, GraduationCap, ChevronDown
 } from "lucide-react";
 import Link from "next/link";
+import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 
 export default function ProfilePage() {
   const [formData, setFormData] = useState({
@@ -34,18 +36,20 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] pb-20">
+    <div className="min-h-screen bg-[#F8FAFC] flex flex-col">
+      <Nav />
+      
       {/* ── Disclaimer Banner ─────────────────────────────────── */}
-      <div className="bg-[#8F141B] text-white py-4 px-4 text-center">
+      <div className="bg-[#8F141B] text-white py-3.5 px-4 text-center z-40">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3">
-          <AlertCircle className="w-5 h-5 shrink-0" />
-          <p className="text-[14px] md:text-[15px] font-bold tracking-tight">
+          <AlertCircle className="w-4 h-4 md:w-5 md:h-5 shrink-0" />
+          <p className="text-[12px] md:text-[14px] font-bold tracking-tight">
             DEVELOPMENT PHASE: Backend integration and Google Login system will be implemented in a future update.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* ── Left Sidebar: Profile Summary ──────────────────────── */}
@@ -227,7 +231,9 @@ export default function ProfilePage() {
             </div>
           </div>
         </div>
-      </div>
+      </main>
+
+      <Footer />
     </div>
   );
 }
