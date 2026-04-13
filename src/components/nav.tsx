@@ -20,6 +20,8 @@ export function Nav() {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
+const [currentTime, setCurrentTime] = useState<Date | null>(null);
+
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -36,6 +38,15 @@ export function Nav() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Update time for relative timestamps when notifications are shown
+  useEffect(() => {
+    if (showNotifications) {
+      setCurrentTime(new Date());
+      const interval = setInterval(() => setCurrentTime(new Date()), 60000);
+      return () => clearInterval(interval);
+    }
+  }, [showNotifications]);
+
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
     if (searchQuery.trim().length === 0) return;
@@ -47,6 +58,45 @@ export function Nav() {
       router.push(`/student/${sanitizedSeat}`);
     });
   }
+
+  function formatRelativeTime(dateString: string) {
+    if (!currentTime) return "";
+    const date = new Date(dateString);
+    const seconds = Math.floor((currentTime.getTime() - date.getTime()) / 1000);
+    
+    if (seconds < 60) return "just now";
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return `${minutes} minute${minutes !== 1 ? 's' : ''} ago`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours} hour${hours !== 1 ? 's' : ''} ago`;
+    const days = Math.floor(hours / 24);
+    if (days === 1) return 'yesterday';
+    if (days < 30) return `${days} day${days !== 1 ? 's' : ''} ago`;
+    const months = Math.floor(days / 30);
+    return `${months} month${months !== 1 ? 's' : ''} ago`;
+  }
+
+  // Use the time provided in the prompt context to make it feel completely realistic
+  const NOTIFICATIONS = [
+    {
+      id: "1",
+      content: <>Admin added the result of <span className="font-bold">morning BSSE 2025</span> batch.</>,
+      timestamp: "2026-04-13T22:31:00+05:00",
+      read: false
+    },
+    {
+      id: "2",
+      content: <>Result for <span className="font-bold">CS sec B morning</span> semester 2 added.</>,
+      timestamp: "2026-04-12T15:30:00+05:00",
+      read: false
+    },
+    {
+      id: "3",
+      content: <>Result portal for <span className="font-bold">Batch 2025 Evening</span> is now live.</>,
+      timestamp: "2026-04-10T08:00:00+05:00",
+      read: true
+    }
+  ];
 
   return (
     <>
@@ -107,7 +157,9 @@ export function Nav() {
                 className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
               >
                 <Bell className="w-5 h-5" />
-                <span className="absolute top-[8px] right-[8px] w-2.5 h-2.5 bg-[#EF4444] rounded-full border-[1.5px] border-white" />
+                {NOTIFICATIONS.some(n => !n.read) && (
+                  <span className="absolute top-[8px] right-[8px] w-2.5 h-2.5 bg-[#EF4444] rounded-full border-[1.5px] border-white" />
+                )}
               </button>
 
               {/* Notification Panel */}
@@ -135,24 +187,18 @@ export function Nav() {
                       </button>
                     </div>
 
-                    <div className="p-4 hover:bg-gray-50 transition-colors border-b border-gray-100 cursor-pointer active:bg-gray-100">
-                      <div className="flex gap-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mt-1.5 shrink-0" />
-                        <div>
-                          <p className="text-[13px] text-[#1f2432] font-medium leading-snug">Admin added the <span className="font-bold">OOPs results</span> and updated the class GPA.</p>
-                          <p className="text-[11px] text-gray-400 mt-1">14 minutes ago</p>
+                    <div className="max-h-[300px] overflow-y-auto">
+                      {NOTIFICATIONS.map((notification) => (
+                        <div key={notification.id} className="p-4 hover:bg-gray-50 transition-colors border-b border-gray-100 cursor-pointer active:bg-gray-100">
+                          <div className="flex gap-3">
+                            <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${notification.read ? 'bg-gray-300' : 'bg-blue-500'}`} />
+                            <div>
+                              <p className="text-[13px] text-[#1f2432] font-medium leading-snug">{notification.content}</p>
+                              <p className="text-[11px] text-gray-400 mt-1">{formatRelativeTime(notification.timestamp)}</p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-
-                    <div className="p-4 hover:bg-gray-50 transition-colors cursor-pointer active:bg-gray-100">
-                      <div className="flex gap-3">
-                        <div className="w-2 h-2 bg-gray-300 rounded-full mt-1.5 shrink-0" />
-                        <div>
-                          <p className="text-[13px] text-[#1f2432] leading-snug">Result portal for Batch 2025 Evening is now live.</p>
-                          <p className="text-[11px] text-gray-400 mt-1">2 days ago</p>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </>
