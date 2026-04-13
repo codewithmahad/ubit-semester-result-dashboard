@@ -14,45 +14,38 @@ export function DashboardTabs({ semesters }: DashboardTabsProps) {
     ? semesters[semesters.length - 1].name.replace(/\s+/g, '')
     : "cumulative";
 
-  return (
-    <Tabs defaultValue={defaultTab} className="w-full">
-      {/* Sticky tab bar */}
-      <div className="sticky top-[60px] md:top-[68px] z-40 bg-white border-b border-gray-100 px-4 sm:px-6">
-        <TabsList className="bg-transparent border-0 shadow-none p-0 gap-1 h-auto flex items-end max-sm:overflow-x-auto max-sm:no-scrollbar">
-          {semesters.map((sem, idx) => (
-            <TabsTrigger
-              key={idx}
-              value={sem.name.replace(/\s+/g, '')}
-              className="
-                relative px-4 sm:px-6 py-4 text-[12px] sm:text-[13px] font-bold tracking-tight 
-                text-gray-400 rounded-none border-0 shadow-none bg-transparent
-                data-[state=active]:text-[#1f2432] data-[state=active]:bg-transparent data-[state=active]:shadow-none
-                hover:text-[#1f2432] transition-colors whitespace-nowrap shrink-0
-                after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px]
-                after:bg-[#8F141B] after:scale-x-0 after:transition-transform after:duration-200
-                data-[state=active]:after:scale-x-100
-              "
-            >
-              {sem.name.split(' ').slice(1).join(' ')}
-            </TabsTrigger>
-          ))}
-          <TabsTrigger
-            value="cumulative"
-            className="
-              relative px-4 sm:px-6 py-4 text-[12px] sm:text-[13px] font-bold tracking-tight
-              text-gray-400 rounded-none border-0 shadow-none bg-transparent
-              data-[state=active]:text-[#1f2432] data-[state=active]:bg-transparent data-[state=active]:shadow-none
-              hover:text-[#1f2432] transition-colors whitespace-nowrap shrink-0
-              after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px]
-              after:bg-[#8F141B] after:scale-x-0 after:transition-transform after:duration-200
-              data-[state=active]:after:scale-x-100
-            "
-          >
-            Final Cumulative
-          </TabsTrigger>
-        </TabsList>
-      </div>
+  const tabsList = (
+    <TabsList className="bg-gray-200/60 p-1.5 rounded-xl flex items-center h-12 w-full md:w-auto overflow-x-auto no-scrollbar">
+      {semesters.map((sem, idx) => (
+        <TabsTrigger
+          key={idx}
+          value={sem.name.replace(/\s+/g, '')}
+          className="
+            relative px-5 py-2.5 text-[13px] font-bold tracking-tight rounded-lg whitespace-nowrap shrink-0
+            text-gray-500 hover:text-gray-700
+            data-[state=active]:bg-[#8F141B] data-[state=active]:text-white data-[state=active]:shadow-sm
+            transition-all duration-200
+          "
+        >
+          {sem.name.split(' ').slice(1).join(' ')}
+        </TabsTrigger>
+      ))}
+      <TabsTrigger
+        value="cumulative"
+        className="
+          relative px-5 py-2.5 text-[13px] font-bold tracking-tight rounded-lg whitespace-nowrap shrink-0
+          text-gray-500 hover:text-gray-700
+          data-[state=active]:bg-[#8F141B] data-[state=active]:text-white data-[state=active]:shadow-sm
+          transition-all duration-200
+        "
+      >
+        Final Cumulative
+      </TabsTrigger>
+    </TabsList>
+  );
 
+  return (
+    <Tabs defaultValue={defaultTab} className="w-full relative z-10">
       {/* Tab panels */}
       {semesters.map((sem, idx) => (
         <TabsContent
@@ -60,12 +53,12 @@ export function DashboardTabs({ semesters }: DashboardTabsProps) {
           value={sem.name.replace(/\s+/g, '')}
           className="outline-none data-[state=inactive]:hidden m-0"
         >
-          <ResultTable data={sem} allSemData={semesters} />
+          <ResultTable data={sem} allSemData={semesters} tabsList={tabsList} />
         </TabsContent>
       ))}
 
       <TabsContent value="cumulative" className="outline-none data-[state=inactive]:hidden m-0">
-        <CGPATable semesters={semesters} />
+        <CGPATable semesters={semesters} tabsList={tabsList} />
       </TabsContent>
     </Tabs>
   );

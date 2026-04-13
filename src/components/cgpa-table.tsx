@@ -18,9 +18,10 @@ import { StudentModal } from "@/components/student-modal"
 import { MedalBadge, CrownIcon, DiamondIcon, ShieldIcon } from "@/components/ui/medal-badge"
 interface CGPATableProps {
     semesters: RawSemesterData[]
+    tabsList?: React.ReactNode
 }
 
-export function CGPATable({ semesters }: CGPATableProps) {
+export function CGPATable({ semesters, tabsList }: CGPATableProps) {
     const [sorting, setSorting] = useState<SortingState>([{ id: "rank", desc: false }])
     const [globalFilter, setGlobalFilter] = useState("")
     const printRef = useRef<HTMLDivElement>(null)
@@ -170,55 +171,60 @@ export function CGPATable({ semesters }: CGPATableProps) {
 
     // Sticky col px offsets — rank(90) + roll(130) + name(220)
     function thStickyClass(id: string) {
-        if (id === "rank") return "bg-[#8F141B] w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#7a1117]"
-        if (id === "roll") return "bg-[#8F141B] w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#7a1117]"
-        if (id === "name") return "bg-[#8F141B] w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-30 shadow-[2px_0_0_#7a1117]"
+        if (id === "rank") return "bg-ubit-navy w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]"
+        if (id === "roll") return "bg-ubit-navy w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]"
+        if (id === "name") return "bg-ubit-navy w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-30 shadow-[2px_0_0_#1E293B]"
         return ""
     }
     function tdStickyClass(id: string, bgClass?: string) {
         if (id === "rank") return `${bgClass || "bg-white"} w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-10 shadow-[1px_0_0_#F1F5F9]`
         if (id === "roll") return `${bgClass || "bg-white"} w-[100px] min-w-[100px] sm:w-[130px] sm:min-w-[130px] max-md:static max-md:shadow-none sticky left-[90px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]`
         if (id === "name") return `${bgClass || "bg-white"} w-[160px] min-w-[160px] sm:w-[220px] sm:min-w-[220px] max-md:static max-md:shadow-none sticky left-[220px] z-10 shadow-[2px_0_5px_rgba(0,0,0,0.05)]`
-        return ""
     }
-
     return (
-        <div>
-            {/* ── Premium Controls Bar ───────────────────────────────────── */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-4 sm:px-6 py-4 bg-white border-b border-gray-100">
+        <div className="space-y-3 relative z-10 w-full overflow-hidden">
+            {/* ── Floating Premium Controls ────────────────────────────── */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3 bg-transparent pb-3">
                 {/* Search */}
-                <div className="relative w-full sm:w-[280px] group">
-                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400 group-focus-within:text-[#8F141B] transition-colors" />
+                <div className="relative w-full md:w-[280px] group order-2 md:order-1 flex-shrink-0">
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-[#8F141B] transition-colors" />
                     <input
                         placeholder="Search name or roll number..."
                         value={globalFilter}
                         onChange={e => setGlobalFilter(e.target.value)}
-                        className="w-full h-9 pl-9 pr-4 text-[13px] font-medium text-gray-700 placeholder:text-gray-400 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:border-[#8F141B]/40 focus:bg-white focus:ring-2 focus:ring-[#8F141B]/10 transition-all"
+                        className="w-full h-[46px] pl-[42px] pr-4 text-[13px] font-medium text-gray-700 placeholder:text-gray-400 bg-white border border-gray-200 rounded-xl shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] outline-none focus:border-[#8F141B]/40 focus:ring-4 focus:ring-[#8F141B]/10 transition-all"
                     />
+                </div>
+
+                {/* Tabs Center */}
+                <div className="flex justify-center order-1 md:order-2 w-full md:w-auto">
+                    {tabsList}
                 </div>
 
                 {/* Download */}
                 <button
                     onClick={exportPDF}
-                    className="no-print inline-flex items-center gap-2 h-9 px-5 bg-[#1f2432] hover:bg-[#2a3040] text-white text-[12px] font-bold tracking-wide rounded-xl transition-all hover:shadow-md active:scale-[0.98] shrink-0"
+                    className="no-print inline-flex items-center justify-center gap-2 h-[46px] px-6 bg-ubit-navy hover:bg-[#2a3040] text-white text-[13px] font-bold tracking-wide rounded-xl shadow-[0_2px_10px_-4px_rgba(31,36,50,0.4)] transition-all hover:shadow-lg active:scale-[0.98] shrink-0 order-3 w-full md:w-auto"
                 >
-                    <Download className="w-3.5 h-3.5" />
+                    <Download className="w-4 h-4" />
                     Download PDF
                 </button>
             </div>
 
-            {/* Table — no extra wrapper border since parent card handles it */}
+            {/* ── Table Card ──────────────────────────────────────── */}
             <div
                 ref={printRef}
-                className="overflow-hidden"
+                className="bg-white rounded-2xl border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative"
             >
+                {/* Scrollbar top right corner fix */}
+                <div className="absolute top-0 right-0 w-[6px] h-[36px] md:h-[41px] bg-ubit-navy rounded-tr-2xl z-30 pointer-events-none" />
 
-                <div className="overflow-auto max-h-[70vh] w-full" style={{ WebkitOverflowScrolling: 'touch' }}>
+                <div className="overflow-auto max-h-[70vh] w-full styled-scrollbar rounded-2xl" style={{ WebkitOverflowScrolling: 'touch' }}>
                     <table className="w-full text-sm text-left align-middle border-separate border-spacing-0">
 
                         <thead className="sticky top-0 z-20">
                             {table.getHeaderGroups().map(hg => (
-                                <tr key={hg.id} className="bg-[#8F141B]">
+                                <tr key={hg.id} className="bg-ubit-navy">
                                     {hg.headers.map(h => {
                                         const sortable = h.column.getCanSort()
                                         return (
