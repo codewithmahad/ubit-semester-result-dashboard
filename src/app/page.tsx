@@ -34,7 +34,7 @@ export default function LandingPage() {
       <section className="relative z-10 min-h-screen pb-16">
 
         {/* ── Hero Search ──────────────────────────────────────── */}
-        <div className="w-full max-w-[860px] mx-auto px-4 md:px-8 pt-10 md:pt-16 pb-10 md:pb-14 flex flex-col items-center text-center">
+        <div className="w-full max-w-[860px] mx-auto px-4 md:px-8 min-h-[calc(100vh-140px)] flex flex-col items-center justify-center text-center">
           <h1 className="text-[30px] sm:text-[42px] md:text-[54px] font-black text-[#1f2432] mb-3 md:mb-4 tracking-tighter leading-[1.1]">
             Academic Results Hub
           </h1>
