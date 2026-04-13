@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Bell, User, Menu, X, ChevronRight } from "lucide-react";
+import { 
+  Search, Bell, User, Menu, X, ChevronRight, 
+  FileText, Medal, BarChart3, Calculator, 
+  Settings, HelpCircle, LogOut, ExternalLink
+} from "lucide-react";
 import { useState, useEffect, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
@@ -16,6 +20,7 @@ import { useRouter } from "next/navigation";
 export function Nav() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showNotifications, setShowNotifications] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
@@ -26,6 +31,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
   useEffect(() => {
     setMobileMenuOpen(false);
     setShowNotifications(false);
+    setShowProfileMenu(false);
   }, []);
 
   // Close dropdowns when clicking outside
@@ -33,6 +39,7 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
     function handleClickOutside(e: MouseEvent) {
       const target = e.target as HTMLElement;
       if (!target.closest("[data-notifications]")) setShowNotifications(false);
+      if (!target.closest("[data-profile-menu]")) setShowProfileMenu(false);
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -205,9 +212,89 @@ const [currentTime, setCurrentTime] = useState<Date | null>(null);
               )}
             </div>
 
-            {/* Desktop User icon */}
-            <div className="hidden md:flex h-8 w-8 rounded-full border border-gray-300 bg-gray-50 text-gray-400 items-center justify-center cursor-pointer hover:bg-gray-100 transition">
-              <User className="w-4 h-4" />
+            {/* Desktop User icon & Dropdown */}
+            <div className="relative hidden md:block" data-profile-menu>
+              <button
+                onClick={() => { setShowProfileMenu(!showProfileMenu); setShowNotifications(false); }}
+                className="flex h-9 w-9 rounded-full border border-gray-200 bg-ubit-navy text-white items-center justify-center cursor-pointer hover:opacity-90 transition shadow-sm overflow-hidden"
+              >
+                <div className="text-[14px] font-bold">S</div>
+              </button>
+
+              {/* Profile Dropdown Card */}
+              {showProfileMenu && (
+                <div className="absolute right-0 mt-3 w-72 bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-gray-100 overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-200">
+                  {/* Header */}
+                  <div className="px-5 py-5 border-b border-gray-50 bg-gray-50/50">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 rounded-full bg-ubit-navy flex items-center justify-center text-white text-lg font-bold">
+                        S
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[15px] font-bold text-gray-900 leading-tight">Guest Student</span>
+                        <span className="text-[12px] text-gray-500 font-medium">BSSE 2025 Morning</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Links Group 1: Academic */}
+                  <div className="py-2">
+                    <Link href="/profile" onClick={() => setShowProfileMenu(false)} className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                      <FileText className="w-4 h-4 text-gray-400" />
+                      My Transcript
+                    </Link>
+                    <Link href="/leaderboards" onClick={() => setShowProfileMenu(false)} className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                      <Medal className="w-4 h-4 text-gray-400" />
+                      Medals & Rankings
+                    </Link>
+                    <button className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                      <BarChart3 className="w-4 h-4 text-gray-400" />
+                      Cumulative Stats
+                    </button>
+                  </div>
+
+                  <div className="h-px bg-gray-100 mx-5" />
+
+                  {/* Links Group 2: Tools */}
+                  <div className="py-2">
+                    <Link href="/calculator" onClick={() => setShowProfileMenu(false)} className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                      <Calculator className="w-4 h-4 text-gray-400" />
+                      GPA Calculator
+                    </Link>
+                    <button className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                      <Settings className="w-4 h-4 text-gray-400" />
+                      Portal Settings
+                    </button>
+                  </div>
+
+                  <div className="h-px bg-gray-100 mx-5" />
+
+                  {/* Links Group 3: Support */}
+                  <div className="py-2">
+                    <button className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+                      <HelpCircle className="w-4 h-4 text-gray-400" />
+                      Help Center
+                    </button>
+                    <button className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-[#8F141B] hover:bg-red-50/50 transition-colors">
+                      <LogOut className="w-4 h-4" />
+                      Log Out
+                    </button>
+                  </div>
+
+                  {/* Premium CTA Footer */}
+                  <div className="p-4 bg-gray-50 mt-1 border-t border-gray-100">
+                    <div className="bg-white p-3 rounded-xl border border-gray-200 shadow-sm group cursor-pointer hover:border-[#8F141B]/30 transition-all">
+                      <p className="text-[12px] font-bold text-[#8F141B] flex items-center justify-between">
+                        Official Transcript
+                        <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </p>
+                      <p className="text-[11px] text-gray-500 mt-0.5 leading-relaxed">
+                        Need an authorized document? Visit the UBIT Admin Office.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Mobile Hamburger */}
