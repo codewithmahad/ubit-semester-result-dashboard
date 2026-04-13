@@ -1,75 +1,150 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Bug, Calculator, CodeSquare, TrendingUp } from "lucide-react";
+import { Bug, Calculator, TrendingUp, CodeSquare, BookOpen, FileText, Info, Shield, ScrollText, Mail } from "lucide-react";
+
+const EXPLORE_LINKS = [
+  { href: "/leaderboards", label: "Class Leaderboards",    icon: TrendingUp },
+  { href: "/calculator",   label: "GPA Calculator",        icon: Calculator },
+  { href: "/developer",    label: "About Developer",       icon: CodeSquare },
+];
+
+const LEGAL_LINKS = [
+  { href: "/about",   label: "About the Initiative", icon: Info },
+  { href: "/privacy", label: "Privacy Policy",        icon: Shield },
+  { href: "/terms",   label: "Terms of Use",          icon: ScrollText },
+];
 
 export function Footer() {
   return (
-    <footer className="w-full bg-white border-t border-gray-200 py-10 px-4 sm:px-6 md:px-8 mt-auto no-print">
-      <div className="max-w-[1800px] mx-auto flex flex-col lg:flex-row items-center lg:items-end justify-between gap-8 lg:gap-6">
+    <footer className="w-full bg-[#0F172A] no-print" aria-label="Site footer">
 
-        {/* Left Side: Branding & Details */}
-        <div className="text-center lg:text-left flex flex-col items-center lg:items-start max-w-xl">
-          <div className="flex items-center gap-2 mb-3">
-            <Image src="/ubit-logo.jpg" alt="UBIT" width={22} height={22} className="object-contain" />
-            <h4 className="font-bold text-[#8F141B] text-[15px]">UBIT Results</h4>
+      {/* ── Crimson accent rule ──────────────────────────────── */}
+      <div className="h-[3px] w-full bg-gradient-to-r from-[#8F141B] via-[#c0272d] to-transparent" />
+
+      {/* ── Main footer body ─────────────────────────────────── */}
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 pt-14 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-12 md:gap-20">
+
+          {/* ─ Brand column ─────────────────────────────────── */}
+          <div className="max-w-sm">
+            {/* Logo + name */}
+            <div className="flex items-center gap-3 mb-5">
+              <Image
+                src="/ubit-logo.jpg"
+                alt="UBIT"
+                width={32}
+                height={32}
+                className="object-contain rounded-sm opacity-90"
+              />
+              <span className="text-[18px] font-black text-white tracking-tight leading-none">
+                UBIT Results
+              </span>
+            </div>
+
+            {/* Tagline */}
+            <p className="text-[13px] text-slate-400 font-medium leading-relaxed mb-6">
+              Instant access to academic transcripts, cumulative GPA metrics,
+              and class-wide standings for BSSE Batch 2025 — Department of Computer Science,
+              University of Karachi.
+            </p>
+
+            {/* Status badge */}
+            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3.5 py-1.5 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+              <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-widest">
+                Portal Active
+              </span>
+            </div>
+
+            {/* Disclaimer */}
+            <p className="text-[11px] text-slate-600 font-semibold leading-relaxed border-l-2 border-slate-700 pl-3">
+              Independent student project. Not an official website of the
+              University of Karachi or UBIT.
+            </p>
           </div>
 
-          <p className="text-[12px] font-medium text-gray-700 leading-relaxed overflow-wrap-normal">
-            A fast, accessible student-built portal for academic results, transcripts, and standing metrics.
-          </p>
-          <p className="text-[11px] font-semibold text-gray-600 mt-1 mb-4">
-            Disclaimer: Independent student project. Not an official University of Karachi website.
-          </p>
-        </div>
+          {/* ─ Explore column ───────────────────────────────── */}
+          <div>
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 mb-5">
+              Explore
+            </p>
+            <ul className="space-y-3.5">
+              {EXPLORE_LINKS.map(({ href, label, icon: Icon }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-400 hover:text-white transition-colors"
+                  >
+                    <Icon className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                    {label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="mailto:codewithmahad@gmail.com?subject=UBIT%20Portal%20Bug%20Report"
+                  className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-400 hover:text-white transition-colors"
+                >
+                  <Bug className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                  Report a Bug
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        {/* Right Side: Links */}
-        <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-8 gap-y-4 mb-0.5">
-          <Link
-            href="/leaderboards"
-            className="flex items-center gap-2 text-[13px] font-semibold text-gray-600 hover:text-[#0056D2] transition-colors"
-          >
-            <TrendingUp className="w-4 h-4" />
-            Class Leaderboards
-          </Link>
-          <Link
-            href="/calculator"
-            className="flex items-center gap-2 text-[13px] font-semibold text-gray-600 hover:text-[#0056D2] transition-colors"
-          >
-            <Calculator className="w-4 h-4" />
-            GPA Calculator
-          </Link>
+          {/* ─ Legal column ─────────────────────────────────── */}
+          <div>
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 mb-5">
+              Legal
+            </p>
+            <ul className="space-y-3.5">
+              {LEGAL_LINKS.map(({ href, label, icon: Icon }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-400 hover:text-white transition-colors"
+                  >
+                    <Icon className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                    {label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="mailto:codewithmahad@gmail.com"
+                  className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-400 hover:text-white transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
 
-          <Link
-            href="/developer"
-            className="flex items-center gap-2 text-[13px] font-semibold text-gray-600 hover:text-[#0056D2] transition-colors"
-          >
-            <CodeSquare className="w-4 h-4" />
-            About Developer
-          </Link>
-
-          <a
-            href="mailto:codewithmahad@gmail.com?subject=UBIT%20Portal%20Bug%20Report"
-            className="flex items-center gap-2 text-[13px] font-semibold text-gray-600 hover:text-[#0056D2] transition-colors"
-          >
-            <Bug className="w-4 h-4" />
-            Report Issue
-          </a>
         </div>
       </div>
 
-      {/* Bottom Legal Utilities Bar */}
-      <div className="max-w-[1800px] mx-auto mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-0">
-        <p className="text-[11px] font-bold text-gray-600 uppercase tracking-widest text-center md:text-left">
-          &copy; {new Date().getFullYear()} BSSE &#39;25 Initiative
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-[12px] font-bold text-gray-600">
-          <Link href="/about" className="hover:text-[#0056D2] transition-colors py-1">About the Initiative</Link>
-          <span className="text-gray-300 hidden sm:inline-block md:hidden lg:inline-block">/</span>
-          <Link href="/privacy" className="hover:text-[#0056D2] transition-colors py-1">Privacy Policy</Link>
-          <span className="text-gray-300 hidden sm:inline-block md:hidden lg:inline-block">/</span>
-          <Link href="/terms" className="hover:text-[#0056D2] transition-colors py-1">Terms of Use</Link>
+      {/* ── Bottom bar ───────────────────────────────────────── */}
+      <div className="border-t border-white/[0.06]">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[11px] font-bold text-slate-700 uppercase tracking-widest text-center sm:text-left">
+            &copy; {new Date().getFullYear()} BSSE &apos;25 Initiative &nbsp;·&nbsp; All rights reserved
+          </p>
+          <p className="text-[11px] font-medium text-slate-700 text-center sm:text-right">
+            Built by{" "}
+            <a
+              href="https://shaikhmahad.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-slate-500 hover:text-white transition-colors"
+            >
+              Shaikh Mahad
+            </a>
+            {" "}· University of Karachi
+          </p>
         </div>
       </div>
+
     </footer>
   );
 }
