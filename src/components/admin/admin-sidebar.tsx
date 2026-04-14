@@ -11,15 +11,20 @@ import {
   LogOut,
   ShieldCheck,
   TrendingUp,
-  FileText
+  FileText,
+  Contact,
+  Terminal
 } from "lucide-react";
 
 const ADMIN_LINKS = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/admin/students", label: "Students", icon: Users },
-  { href: "/admin/semesters", label: "Semesters", icon: BookOpen },
-  { href: "/admin/notifications", label: "Notifications", icon: Bell },
-  { href: "/admin/analytics", label: "Analytics", icon: TrendingUp },
+  { href: "/admin/directory", label: "Academic Directory", icon: BookOpen },
+  { href: "/admin/users", label: "Google Auth Users", icon: Contact },
+  { href: "/admin/results", label: "Result Engine", icon: FileText },
+  { href: "/admin/notifications", label: "Broadcasts", icon: Bell },
+  { href: "/admin/roles", label: "Roles & Access", icon: ShieldCheck },
+  { href: "/admin/audit-logs", label: "System Audit", icon: Terminal },
+  { href: "/admin/settings", label: "Portal Settings", icon: Settings },
 ];
 
 export function AdminSidebar() {
@@ -44,7 +49,7 @@ export function AdminSidebar() {
           <p className="px-2 mb-4 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">Management</p>
           <nav className="space-y-1">
             {ADMIN_LINKS.map(({ href, label, icon: Icon }) => {
-              const active = pathname === href;
+              const active = pathname === href || pathname.startsWith(`${href}/`);
               return (
                 <Link
                   key={href}
@@ -60,26 +65,6 @@ export function AdminSidebar() {
                 </Link>
               );
             })}
-          </nav>
-        </div>
-
-        <div>
-          <p className="px-2 mb-4 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em]">System</p>
-          <nav className="space-y-1">
-            <Link
-              href="/admin/settings"
-              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-bold text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all"
-            >
-              <Settings className="w-4 h-4 text-slate-500" />
-              Settings
-            </Link>
-            <Link
-              href="/admin/logs"
-              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[13px] font-bold text-slate-400 hover:text-white hover:bg-slate-800/50 transition-all"
-            >
-              <FileText className="w-4 h-4 text-slate-500" />
-              System Logs
-            </Link>
           </nav>
         </div>
       </div>
