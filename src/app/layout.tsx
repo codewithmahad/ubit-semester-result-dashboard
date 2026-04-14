@@ -48,6 +48,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { Analytics } from "@vercel/analytics/react";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -55,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${inter.variable} font-sans antialiased bg-white text-zinc-900 selection:bg-blue-100 selection:text-blue-900`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
