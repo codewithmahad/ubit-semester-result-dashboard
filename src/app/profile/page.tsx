@@ -17,7 +17,7 @@ const PROGRAMS = [
   { label: "BS Data Science",            value: "Bachelor of Science in Data Science",            abbr: "BSDS" },
 ];
 
-const BATCHES = Array.from({ length: 8 }, (_, i) => String(2018 + i));
+const BATCHES = Array.from({ length: 12 }, (_, i) => String(2018 + i));
 
 // ── Tiny field wrapper ────────────────────────────────────────
 function Field({
@@ -244,10 +244,10 @@ export default function ProfilePage() {
           </div>
 
           {/* ── RIGHT — form ──────────────────────────────────── */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col relative z-20">
 
             {/* Form header */}
-            <div className="px-8 pt-8 pb-6 border-b border-gray-50">
+            <div className="px-8 pt-8 pb-6 border-b border-gray-50 bg-white rounded-t-2xl">
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8F141B] mb-1.5">
                 Academic Identity
               </p>
@@ -343,7 +343,7 @@ export default function ProfilePage() {
             </div>
 
             {/* Form footer */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-8 py-5 bg-gray-50/70 border-t border-gray-100">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-8 py-5 bg-gray-50/70 border-t border-gray-100 rounded-b-2xl">
               <div className="flex items-center gap-2 text-[12px] text-gray-400 font-medium">
                 <Shield className="w-3.5 h-3.5 shrink-0" />
                 Data stored in this browser only — never uploaded.
