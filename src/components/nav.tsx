@@ -77,14 +77,14 @@ export function Nav() {
         {showMobileSearch ? (
           <div className="md:hidden w-full flex items-center px-4 gap-3 bg-white h-full z-50">
             <form onSubmit={handleSearch} className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
                 autoFocus
                 placeholder="Search seat number..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 bg-gray-100 rounded-lg text-[14px] outline-none border-none focus:ring-2 focus:ring-[#0056D2]/20"
+                className="w-full pl-10 pr-4 py-2.5 bg-gray-100/80 rounded-xl text-[14px] font-medium outline-none border-2 border-transparent focus:bg-white focus:border-[#0F172A] focus:shadow-sm transition-all placeholder:text-gray-400"
               />
             </form>
             <button onClick={() => setShowMobileSearch(false)} className="text-[14px] font-medium text-[#0056D2]">
@@ -113,7 +113,7 @@ export function Nav() {
                 onClick={() => { setShowNotifications(true); setMobileMenuOpen(false); }}
               >
                 <Bell className="w-5 h-5" />
-                {hasUnread && <span className="absolute top-[8px] right-[8px] w-2.5 h-2.5 bg-[#EF4444] rounded-full border-[1.5px] border-white" />}
+                {hasUnread && <span className="absolute top-[8px] right-[9px] w-[9px] h-[9px] bg-[#8F141B] rounded-full border-2 border-white" />}
               </button>
               <button
                 aria-label="Search"
@@ -161,21 +161,22 @@ export function Nav() {
           {/* Right: Search + Bell + Profile */}
           <div className="flex items-center gap-2 md:gap-4">
 
-            {/* Desktop search */}
-            <form onSubmit={handleSearch} className="hidden md:flex relative items-center w-[260px] lg:w-[340px]">
+            {/* Desktop search omnibar */}
+            <form onSubmit={handleSearch} className="hidden md:flex relative items-center w-[260px] lg:w-[320px]">
+              <Search className="absolute left-4 w-4 h-4 text-gray-400 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search seat number..."
-                className="w-full h-9 pl-4 pr-10 rounded-full border border-gray-300 text-[13px] outline-none text-gray-900 bg-white focus:border-[#0056D2] transition-colors"
+                className="w-full h-[40px] pl-10 pr-16 rounded-full border-2 border-transparent bg-gray-100/80 text-[13px] font-semibold outline-none text-[#1f2432] focus:bg-white focus:border-[#0F172A] transition-all hover:bg-gray-200/50 focus:shadow-[0_4px_20px_rgba(0,0,0,0.06)] placeholder:text-gray-400"
               />
               <button
                 type="submit"
-                disabled={isPending}
-                className="absolute right-0 h-9 w-9 flex items-center justify-center bg-[#0056D2] rounded-full text-white hover:bg-blue-700 transition cursor-pointer disabled:opacity-75"
+                disabled={isPending || searchQuery.trim().length === 0}
+                className="absolute right-2 h-7 px-3.5 flex items-center justify-center bg-[#0F172A] rounded-full text-white text-[11px] font-bold tracking-wide hover:bg-[#8F141B] transition-colors cursor-pointer disabled:opacity-0 disabled:scale-95 duration-200"
               >
-                <Search className="w-3.5 h-3.5" />
+                Find
               </button>
             </form>
 
@@ -187,7 +188,7 @@ export function Nav() {
                 className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 text-gray-600 hover:text-[#0056D2] transition-colors"
               >
                 <Bell className="w-5 h-5" />
-                {hasUnread && <span className="absolute top-[8px] right-[8px] w-2.5 h-2.5 bg-[#EF4444] rounded-full border-[1.5px] border-white" />}
+                {hasUnread && <span className="absolute top-[8px] right-[9px] w-[9px] h-[9px] bg-[#8F141B] rounded-full border-2 border-white" />}
               </button>
               <NavNotificationsPanel
                 show={showNotifications}

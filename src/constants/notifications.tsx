@@ -1,8 +1,11 @@
 import type React from "react";
 
 // ── Notification data type ─────────────────────────────────────
+export type NotificationType = "result" | "system" | "alert";
+
 export interface AppNotification {
   id: string;
+  type: NotificationType;
   content: React.ReactNode;
   timestamp: string;
   read: boolean;
@@ -14,6 +17,7 @@ export interface AppNotification {
 export const NOTIFICATIONS: AppNotification[] = [
   {
     id: "1",
+    type: "result",
     content: (
       <>
         Admin added the result of{" "}
@@ -25,6 +29,7 @@ export const NOTIFICATIONS: AppNotification[] = [
   },
   {
     id: "2",
+    type: "result",
     content: (
       <>
         Result for <span className="font-bold">CS sec B morning</span> semester 2 added.
@@ -35,6 +40,7 @@ export const NOTIFICATIONS: AppNotification[] = [
   },
   {
     id: "3",
+    type: "system",
     content: (
       <>
         Result portal for{" "}
