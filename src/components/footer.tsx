@@ -42,22 +42,14 @@ export function Footer() {
             </div>
 
             {/* Tagline */}
-            <p className="text-[13px] text-slate-300 font-medium leading-relaxed mb-6">
+            <p className="text-[13px] text-slate-300 font-medium leading-relaxed mb-8">
               Instant access to academic transcripts, cumulative GPA metrics,
-              and class-wide standings for BSSE Batch 2025 — Department of Computer Science,
+              and class-wide standings for the Department of Computer Science,
               University of Karachi.
             </p>
 
-            {/* Status badge */}
-            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3.5 py-1.5 mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-              <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-widest">
-                Portal Active
-              </span>
-            </div>
-
             {/* Disclaimer */}
-            <p className="text-[11px] text-slate-400 font-semibold leading-relaxed border-l-2 border-slate-700 pl-3">
+            <p className="text-[11px] text-slate-500 font-semibold leading-relaxed">
               Independent student project. Not an official website of the
               University of Karachi or UBIT.
             </p>
@@ -65,7 +57,7 @@ export function Footer() {
 
           {/* ─ Explore column ───────────────────────────────── */}
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-5">
+            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500 mb-6">
               Explore
             </p>
             <ul className="space-y-3.5">
@@ -75,7 +67,7 @@ export function Footer() {
                     href={href}
                     className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-300 hover:text-white transition-colors"
                   >
-                    <Icon className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                    <Icon className="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors shrink-0" />
                     {label}
                   </Link>
                 </li>
@@ -85,7 +77,7 @@ export function Footer() {
                   href="mailto:codewithmahad@gmail.com?subject=UBIT%20Portal%20Bug%20Report"
                   className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-300 hover:text-white transition-colors"
                 >
-                  <Bug className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                  <Bug className="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors shrink-0" />
                   Report a Bug
                 </a>
               </li>
@@ -94,7 +86,7 @@ export function Footer() {
 
           {/* ─ Legal column ─────────────────────────────────── */}
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-5">
+            <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500 mb-6">
               Legal
             </p>
             <ul className="space-y-3.5">
@@ -104,7 +96,7 @@ export function Footer() {
                     href={href}
                     className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-300 hover:text-white transition-colors"
                   >
-                    <Icon className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                    <Icon className="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors shrink-0" />
                     {label}
                   </Link>
                 </li>
@@ -114,7 +106,7 @@ export function Footer() {
                   href="mailto:codewithmahad@gmail.com"
                   className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-300 hover:text-white transition-colors"
                 >
-                  <Mail className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                  <Mail className="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors shrink-0" />
                   Contact
                 </a>
               </li>
@@ -125,7 +117,7 @@ export function Footer() {
       </div>
 
       {/* ── Bottom bar ───────────────────────────────────────── */}
-      <div className="border-t border-white/[0.06]">
+      <div className="border-t border-slate-800/80">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[11px] font-bold text-slate-500 uppercase tracking-widest text-center sm:text-left">
             &copy; {new Date().getFullYear()} BSSE &apos;25 Initiative &nbsp;·&nbsp; All rights reserved
