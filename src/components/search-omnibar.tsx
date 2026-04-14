@@ -48,7 +48,7 @@ export function SearchOmnibar() {
         <div
           className={`flex items-center w-full rounded-xl transition-all duration-200 relative ${
             focused
-              ? "bg-white shadow-[0_0_0_2px_#0056D2] ring-4 ring-[#0056D2]/10"
+              ? "bg-white shadow-[0_0_0_2px_#0F172A] ring-4 ring-[#0F172A]/10"
               : "bg-[#f0f3f7] hover:bg-[#eaecf1]"
           }`}
         >
@@ -79,7 +79,7 @@ export function SearchOmnibar() {
             disabled={query.trim().length === 0 || isPending}
             className={`flex items-center justify-center w-[44px] h-[44px] md:w-[50px] md:h-[50px] mr-1.5 rounded-xl transition-all duration-200 shrink-0 ${
               query.trim().length > 0
-                ? "bg-[#1f2432] text-white shadow-md hover:bg-[#0056D2] hover:scale-[1.03] active:scale-95"
+                ? "bg-[#0F172A] text-white shadow-md hover:bg-[#8F141B] hover:scale-[1.03] active:scale-95"
                 : "bg-gray-200 text-gray-400 pointer-events-none"
             }`}
           >

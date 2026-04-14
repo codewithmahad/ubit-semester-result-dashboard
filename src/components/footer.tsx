@@ -3,15 +3,15 @@ import Image from "next/image";
 import { Bug, Calculator, TrendingUp, CodeSquare, BookOpen, FileText, Info, Shield, ScrollText, Mail } from "lucide-react";
 
 const EXPLORE_LINKS = [
-  { href: "/leaderboards", label: "Class Leaderboards",    icon: TrendingUp },
-  { href: "/calculator",   label: "GPA Calculator",        icon: Calculator },
-  { href: "/developer",    label: "About Developer",       icon: CodeSquare },
+  { href: "/leaderboards", label: "Class Leaderboards", icon: TrendingUp },
+  { href: "/calculator", label: "GPA Calculator", icon: Calculator },
+  { href: "/developer", label: "About Developer", icon: CodeSquare },
 ];
 
 const LEGAL_LINKS = [
-  { href: "/about",   label: "About the Initiative", icon: Info },
-  { href: "/privacy", label: "Privacy Policy",        icon: Shield },
-  { href: "/terms",   label: "Terms of Use",          icon: ScrollText },
+  { href: "/about", label: "About the Initiative", icon: Info },
+  { href: "/privacy", label: "Privacy Policy", icon: Shield },
+  { href: "/terms", label: "Terms of Use", icon: ScrollText },
 ];
 
 export function Footer() {

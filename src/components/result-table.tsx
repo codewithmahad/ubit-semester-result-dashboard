@@ -207,14 +207,14 @@ export function ResultTable({ data, allSemData, tabsList }: ResultTableProps) {
         <div className="space-y-3 relative z-10 w-full overflow-hidden">
             {/* ── Floating Premium Controls ────────────────────────────── */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-3 bg-transparent pb-3">
-                {/* Search */}
-                <div className="relative w-full md:w-[280px] group order-2 md:order-1 flex-shrink-0">
-                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-[#8F141B] transition-colors" />
+                {/* Search Omnibar */}
+                <div className="relative w-full md:w-[320px] group order-2 md:order-1 flex-shrink-0">
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-[#8F141B] transition-colors pointer-events-none" />
                     <input
                         placeholder="Search seat number..."
                         value={globalFilter}
                         onChange={e => setGlobalFilter(e.target.value)}
-                        className="w-full h-[46px] pl-[42px] pr-4 text-[13px] font-medium text-gray-700 placeholder:text-gray-400 bg-white border border-gray-200 rounded-xl shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] outline-none focus:border-[#8F141B]/40 focus:ring-4 focus:ring-[#8F141B]/10 transition-all"
+                        className="w-full h-[48px] pl-11 pr-4 text-[13px] font-semibold text-[#1f2432] placeholder:text-gray-400 bg-white border-2 border-transparent shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] outline-none hover:bg-gray-50/50 focus:bg-white focus:border-[#0F172A] rounded-xl transition-all"
                     />
                 </div>
 

@@ -52,15 +52,21 @@ export function NavMobileDrawer({ open, onClose }: NavMobileDrawerProps) {
           <Link
             href="/profile"
             onClick={onClose}
-            className="block px-6 py-5 border-b border-gray-100 bg-gray-50/30 hover:bg-gray-50 transition-colors group/header"
+            className="block px-5 py-6 border-b border-gray-100 bg-[#0F172A] hover:bg-[#151f38] transition-colors group/header"
           >
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-full bg-ubit-navy flex items-center justify-center text-white text-[19px] font-bold group-hover/header:scale-105 transition-transform shadow-sm">
+            <div className="flex items-center gap-4">
+              <div className="w-[52px] h-[52px] rounded-full bg-[#1e293b] flex items-center justify-center text-white text-[20px] font-bold group-hover/header:scale-105 transition-transform shadow-md relative">
                 S
+                {/* Verified Badge */}
+                <div className="absolute -bottom-1 -right-1 flex items-center justify-center w-[22px] h-[22px] bg-white rounded-full border-2 border-[#0F172A]">
+                  <div className="w-full h-full bg-[#0056D2] rounded-full flex items-center justify-center">
+                    <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-[16px] font-bold text-gray-900 leading-tight">Guest Student</span>
-                <span className="text-[13px] text-gray-500 font-medium pt-0.5">Department of Computer Science</span>
+                <span className="text-[17px] font-bold text-white leading-tight">Guest Student</span>
+                <span className="text-[13px] text-slate-400 font-medium pt-1">Dept. of Computer Science</span>
               </div>
             </div>
           </Link>

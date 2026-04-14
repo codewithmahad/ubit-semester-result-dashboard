@@ -11,13 +11,7 @@ import type React from "react";
 export function Th({ children }: { children: React.ReactNode }) {
   return (
     <span
-      style={{
-        color: "#F1F5F9",
-        fontSize: 10,
-        fontWeight: 700,
-        textTransform: "uppercase" as const,
-        letterSpacing: "0.12em",
-      }}
+      className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-200"
     >
       {children}
     </span>
@@ -28,9 +22,9 @@ export function Th({ children }: { children: React.ReactNode }) {
 // rank(90px) + roll(150px)
 export function thStickyClassResult(id: string): string {
   if (id === "rank")
-    return "bg-ubit-navy w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1E293B]";
+    return "bg-[#0F172A] w-[52px] min-w-[52px] sm:w-[90px] sm:min-w-[90px] max-md:static sticky left-0 z-30 shadow-[1px_0_0_#1e293b]";
   if (id === "roll")
-    return "bg-ubit-navy w-[120px] min-w-[120px] sm:w-[150px] sm:min-w-[150px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1E293B]";
+    return "bg-[#0F172A] w-[120px] min-w-[120px] sm:w-[150px] sm:min-w-[150px] max-md:static max-md:shadow-none sticky left-[90px] z-30 shadow-[2px_0_0_#1e293b]";
   return "";
 }
 

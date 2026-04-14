@@ -25,15 +25,21 @@ export function NavDesktopProfile({ show, onClose }: NavDesktopProfileProps) {
       <Link
         href="/profile"
         onClick={onClose}
-        className="block px-5 py-5 border-b border-gray-50 bg-gray-50/50 hover:bg-gray-100 transition-colors group/header"
+        className="block px-5 py-5 border-b border-gray-100 bg-[#0F172A] hover:bg-[#151f38] transition-colors group/header"
       >
-        <div className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-full bg-ubit-navy flex items-center justify-center text-white text-lg font-bold group-hover/header:scale-105 transition-transform">
+        <div className="flex items-center gap-3.5">
+          <div className="w-11 h-11 rounded-full bg-[#1e293b] flex items-center justify-center text-white text-lg font-bold group-hover/header:scale-105 transition-transform relative">
             S
+            {/* Verified Badge */}
+            <div className="absolute -bottom-1 -right-1 flex items-center justify-center w-[20px] h-[20px] bg-white rounded-full border-2 border-[#0F172A]">
+              <div className="w-full h-full bg-[#0056D2] rounded-full flex items-center justify-center">
+                <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </div>
+            </div>
           </div>
           <div className="flex flex-col">
-            <span className="text-[15px] font-bold text-gray-900 leading-tight">Guest Student</span>
-            <span className="text-[12px] text-gray-500 font-medium">Department of Computer Science</span>
+            <span className="text-[15px] font-bold text-white leading-tight">Guest Student</span>
+            <span className="text-[12px] text-slate-400 font-medium mt-0.5">Dept. of Computer Science</span>
           </div>
         </div>
       </Link>
