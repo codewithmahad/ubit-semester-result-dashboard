@@ -8,6 +8,7 @@ import { SemesterCard } from "@/components/semester-card";
 import { LogVisit } from "@/components/log-visit";
 import { PrintButton } from "@/components/print-button";
 import { StudentActions } from "@/components/student-actions";
+import { PerformanceTrend } from "@/components/performance-trend";
 import type { Metadata } from "next";
 
 interface Props {
@@ -118,6 +119,11 @@ export default async function StudentPage({ params }: Props) {
               <p className="text-3xl sm:text-4xl font-extrabold text-[#1f2432] tabular-nums">{student.totalMarks}</p>
             </div>
           </div>
+        </div>
+
+        {/* ── Performance Trajectory ──────────────────────────── */}
+        <div className="mb-8 no-print antialiased">
+          <PerformanceTrend semesters={student.semesters} cgpa={student.cgpa} />
         </div>
 
         {/* ── Status Banner ────────────────────────────────────── */}
