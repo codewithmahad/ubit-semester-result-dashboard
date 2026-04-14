@@ -52,9 +52,7 @@ export function NavDesktopProfile({ show, onClose }: NavDesktopProfileProps) {
         <Link href="/leaderboards" onClick={onClose} className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
           <Medal className="w-4 h-4 text-gray-400" /> Medals &amp; Rankings
         </Link>
-        <button className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-          <BarChart3 className="w-4 h-4 text-gray-400" /> Cumulative Stats
-        </button>
+
       </div>
 
       <div className="h-px bg-gray-100 mx-5" />
@@ -67,18 +65,16 @@ export function NavDesktopProfile({ show, onClose }: NavDesktopProfileProps) {
         <Link href="/calculator" onClick={onClose} className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
           <Calculator className="w-4 h-4 text-gray-400" /> GPA Calculator
         </Link>
-        <button className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-          <Settings className="w-4 h-4 text-gray-400" /> Portal Settings
-        </button>
+
       </div>
 
       <div className="h-px bg-gray-100 mx-5" />
 
       {/* Support group */}
       <div className="py-2">
-        <button className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+        <Link href="/help-center" onClick={onClose} className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
           <HelpCircle className="w-4 h-4 text-gray-400" /> Help Center
-        </button>
+        </Link>
         <button className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-[#8F141B] hover:bg-red-50/50 transition-colors">
           <LogOut className="w-4 h-4" /> Log Out
         </button>

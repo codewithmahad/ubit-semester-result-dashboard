@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   X, ChevronRight, FileText, Medal, BarChart3,
-  Calculator, Settings, HelpCircle, LogOut, ExternalLink,
+  Calculator, Settings, HelpCircle, LogOut, ExternalLink, ShieldCheck,
 } from "lucide-react";
 
 interface NavMobileDrawerProps {
@@ -87,19 +87,24 @@ export function NavMobileDrawer({ open, onClose }: NavMobileDrawerProps) {
                 <ChevronRight className="w-5 h-5 text-gray-400" />
               </Link>
             ))}
-            <button className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-              <div className="flex items-center gap-4">
-                <BarChart3 className="w-[18px] h-[18px] text-gray-400" />
-                Cumulative Stats
-              </div>
-              <ChevronRight className="w-5 h-5 text-gray-400" />
-            </button>
+
           </div>
 
           <div className="h-px bg-gray-100 mx-6 my-1" />
 
           {/* Tools links */}
           <div className="py-2.5">
+            <Link
+              href="/admin"
+              onClick={onClose}
+              className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-bold text-[#8F141B] bg-red-50/20 hover:bg-red-50/40 transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <ShieldCheck className="w-[18px] h-[18px]" />
+                Admin Portal
+              </div>
+              <ChevronRight className="w-5 h-5 text-gray-400" />
+            </Link>
             <Link
               href="/calculator"
               onClick={onClose}
@@ -111,26 +116,23 @@ export function NavMobileDrawer({ open, onClose }: NavMobileDrawerProps) {
               </div>
               <ChevronRight className="w-5 h-5 text-gray-400" />
             </Link>
-            <button className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
-              <div className="flex items-center gap-4">
-                <Settings className="w-[18px] h-[18px] text-gray-400" />
-                Portal Settings
-              </div>
-              <ChevronRight className="w-5 h-5 text-gray-400" />
-            </button>
           </div>
 
           <div className="h-px bg-gray-100 mx-6 my-1" />
 
           {/* Support links */}
           <div className="py-2.5">
-            <button className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
+            <Link
+              href="/help-center"
+              onClick={onClose}
+              className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+            >
               <div className="flex items-center gap-4">
                 <HelpCircle className="w-[18px] h-[18px] text-gray-400" />
                 Help Center
               </div>
               <ChevronRight className="w-5 h-5 text-gray-400" />
-            </button>
+            </Link>
             <button className="w-full flex items-center justify-between px-6 py-3.5 text-[15px] font-bold text-[#8F141B] hover:bg-red-50/50 transition-colors">
               <div className="flex items-center gap-4">
                 <LogOut className="w-[18px] h-[18px]" />
