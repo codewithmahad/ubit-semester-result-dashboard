@@ -3,7 +3,7 @@
 import Link from "next/link";
 import {
   FileText, Medal, BarChart3, Calculator,
-  Settings, HelpCircle, LogOut, ExternalLink,
+  Settings, HelpCircle, LogOut, ExternalLink, ShieldCheck
 } from "lucide-react";
 
 interface NavDesktopProfileProps {
@@ -61,6 +61,9 @@ export function NavDesktopProfile({ show, onClose }: NavDesktopProfileProps) {
 
       {/* Tools group */}
       <div className="py-2">
+        <Link href="/admin" onClick={onClose} className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-bold text-[#8F141B] bg-red-50/30 hover:bg-red-50 transition-colors">
+          <ShieldCheck className="w-4 h-4" /> Admin Portal
+        </Link>
         <Link href="/calculator" onClick={onClose} className="w-full flex items-center gap-3 px-5 py-2.5 text-[13px] font-semibold text-gray-700 hover:bg-gray-50 transition-colors">
           <Calculator className="w-4 h-4 text-gray-400" /> GPA Calculator
         </Link>
