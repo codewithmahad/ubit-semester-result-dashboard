@@ -41,8 +41,64 @@ function Field({
 const inputCls =
   "w-full bg-transparent border-0 border-b-2 border-gray-200 focus:border-[#0F172A] pb-2 pt-1 text-[15px] font-semibold text-[#1f2432] outline-none transition-colors placeholder:text-gray-300";
 
-const selectCls =
-  "w-full bg-transparent border-0 border-b-2 border-gray-200 focus:border-[#0F172A] pb-2 pt-1 text-[15px] font-semibold text-[#1f2432] outline-none transition-colors appearance-none cursor-pointer";
+function CustomSelect({
+  value,
+  options,
+  onChange,
+  icon: Icon
+}: {
+  value: string;
+  options: { label: string; value: string }[];
+  onChange: (val: string) => void;
+  icon?: any;
+}) {
+  const [open, setOpen] = useState(false);
+  const selectedLabel = options.find(o => o.value === value)?.label || value;
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="w-full bg-transparent border-0 border-b-2 border-gray-200 focus:border-[#0F172A] pb-2 pt-1 text-[15px] font-semibold text-[#1f2432] outline-none transition-colors text-left flex justify-between items-center cursor-pointer"
+      >
+        <span className="truncate pr-4">{selectedLabel}</span>
+        <div className="flex gap-3 items-center text-gray-300 pointer-events-none">
+          {Icon && <Icon className="w-4 h-4" />}
+          <ChevronDown className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} />
+        </div>
+      </button>
+
+      {open && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} />
+          <div className="absolute left-0 right-0 top-[110%] bg-white border border-gray-100 rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100 max-h-64 overflow-y-auto">
+            <div className="py-1">
+              {options.map((opt) => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => {
+                    onChange(opt.value);
+                    setOpen(false);
+                  }}
+                  className={`w-full text-left px-5 py-3.5 text-[14px] transition-colors flex items-center justify-between ${
+                    value === opt.value
+                      ? "bg-slate-50 text-[#0F172A] font-bold"
+                      : "text-gray-600 font-medium hover:bg-gray-50 hover:text-gray-900"
+                  }`}
+                >
+                  <span className="truncate">{opt.label}</span>
+                  {value === opt.value && <Check className="w-4 h-4 text-[#8F141B]" />}
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default function ProfilePage() {
   const [form, setForm] = useState({
@@ -118,8 +174,10 @@ export default function ProfilePage() {
                 <div className="w-20 h-20 rounded-full bg-[#8F141B] flex items-center justify-center text-white text-[28px] font-black tracking-tight shadow-lg">
                   {initials}
                 </div>
-                {/* Online dot */}
-                <div className="absolute bottom-0.5 right-0.5 w-4 h-4 rounded-full bg-emerald-400 border-2 border-[#0F172A]" />
+                {/* Academic Verified Badge */}
+                <div className="absolute -bottom-1 -right-0.5 w-7 h-7 rounded-full bg-[#0056D2] border-[3px] border-[#0F172A] flex items-center justify-center shadow-sm">
+                  <Check className="w-3.5 h-3.5 text-white" strokeWidth={4} />
+                </div>
               </div>
 
               {/* Name */}
@@ -128,7 +186,7 @@ export default function ProfilePage() {
               </h1>
 
               {/* Seat number as code badge */}
-              <code className="mt-2 px-3 py-1 bg-white/[0.06] border border-white/10 rounded-full text-[11px] font-mono font-bold text-slate-300 tracking-widest">
+              <code className="mt-2 px-3 py-1 bg-white/[0.08] border border-white/10 rounded-full text-[11px] font-mono font-bold text-white tracking-widest shadow-sm">
                 {form.seatNo || "Seat No."}
               </code>
 
@@ -141,7 +199,7 @@ export default function ProfilePage() {
                 ].map(chip => (
                   <span
                     key={chip}
-                    className="px-2.5 py-1 bg-white/[0.05] border border-white/[0.08] rounded-full text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                    className="px-2.5 py-1 bg-white/[0.05] border border-white/[0.08] rounded-full text-[10px] font-bold text-slate-200 uppercase tracking-widest shadow-sm"
                   >
                     {chip}
                   </span>
@@ -150,37 +208,36 @@ export default function ProfilePage() {
             </div>
 
             {/* Quick actions */}
-            <div className="px-5 py-5 space-y-2.5">
+            <div className="px-5 py-5 space-y-2.5 border-b border-white/[0.07]">
               <Link
                 href={form.seatNo ? `/student/${encodeURIComponent(form.seatNo.trim().toUpperCase())}` : "#"}
-                className="group w-full flex items-center justify-between px-4 py-3 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.06] rounded-xl text-[13px] font-bold text-slate-200 hover:text-white transition-all"
+                className="group w-full flex items-center justify-between px-4 py-3 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] rounded-xl text-[13px] font-bold text-white transition-all shadow-sm"
               >
-                <div className="flex items-center gap-2.5">
-                  <FileText className="w-4 h-4 text-slate-400 group-hover:text-[#8F141B] transition-colors" />
+                <div className="flex items-center gap-3">
+                  <FileText className="w-4 h-4 text-slate-300 group-hover:text-[#8F141B] transition-colors" />
                   View My Results
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors" />
               </Link>
 
               <Link
                 href="/leaderboards"
-                className="group w-full flex items-center justify-between px-4 py-3 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.06] rounded-xl text-[13px] font-bold text-slate-200 hover:text-white transition-all"
+                className="group w-full flex items-center justify-between px-4 py-3 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] rounded-xl text-[13px] font-bold text-white transition-all shadow-sm"
               >
-                <div className="flex items-center gap-2.5">
-                  <MapPin className="w-4 h-4 text-slate-400 group-hover:text-[#8F141B] transition-colors" />
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-4 h-4 text-slate-300 group-hover:text-[#8F141B] transition-colors" />
                   Class Leaderboard
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors" />
               </Link>
             </div>
 
             {/* Storage note */}
-            <div className="px-5 pb-6">
-              <div className="flex items-start gap-2.5 px-4 py-3 bg-white/[0.03] rounded-xl border border-white/[0.05]">
-                <Shield className="w-3.5 h-3.5 text-slate-500 mt-0.5 shrink-0" />
-                <p className="text-[11px] text-slate-400 font-medium leading-relaxed">
-                  Your profile is stored only in this browser.
-                  No data is sent to any server.
+            <div className="px-5 py-6">
+              <div className="flex items-start gap-3 px-4 py-3 bg-white/[0.03] rounded-xl border border-white/[0.05]">
+                <Shield className="w-4 h-4 text-slate-300 mt-0.5 shrink-0" />
+                <p className="text-[11.5px] text-slate-200 font-medium leading-relaxed">
+                  Your profile is securely stored locally encoded in your browser. No data is sent to external servers.
                 </p>
               </div>
             </div>
@@ -233,34 +290,22 @@ export default function ProfilePage() {
 
               {/* Program — full width */}
               <Field label="Degree Program" className="md:col-span-2">
-                <div className="relative">
-                  <select
-                    className={selectCls}
-                    value={form.department}
-                    onChange={e => patch("department", e.target.value)}
-                  >
-                    {PROGRAMS.map(p => (
-                      <option key={p.value} value={p.value}>{p.label}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="absolute right-0 bottom-3 w-4 h-4 text-gray-300 pointer-events-none" />
-                  <BookOpen className="absolute right-6 bottom-3 w-4 h-4 text-gray-300 pointer-events-none" />
-                </div>
+                <CustomSelect
+                  value={form.department}
+                  options={PROGRAMS.map(p => ({ label: p.label, value: p.value }))}
+                  onChange={v => patch("department", v)}
+                  icon={BookOpen}
+                />
               </Field>
 
               {/* Batch */}
               <Field label="Batch Year">
-                <div className="relative">
-                  <select
-                    className={selectCls}
-                    value={form.batch}
-                    onChange={e => patch("batch", e.target.value)}
-                  >
-                    {BATCHES.map(b => <option key={b} value={b}>{b}</option>)}
-                  </select>
-                  <ChevronDown className="absolute right-0 bottom-3 w-4 h-4 text-gray-300 pointer-events-none" />
-                  <Calendar className="absolute right-6 bottom-3 w-4 h-4 text-gray-300 pointer-events-none" />
-                </div>
+                <CustomSelect
+                  value={form.batch}
+                  options={BATCHES.map(b => ({ label: b, value: b }))}
+                  onChange={v => patch("batch", v)}
+                  icon={Calendar}
+                />
               </Field>
 
               {/* Section */}
