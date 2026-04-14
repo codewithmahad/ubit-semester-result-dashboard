@@ -80,10 +80,10 @@ export function AdminSidebar() {
               <span className="text-[11px] text-slate-500 font-medium">Full Access</span>
            </div>
         </div>
-        <button className="w-full mt-2 flex items-center justify-center gap-2 py-2 text-[11px] font-bold text-slate-400 hover:text-[#8F141B] transition-colors uppercase tracking-widest">
+        <Link href="/" className="w-full mt-2 flex items-center justify-center gap-2 py-2 text-[11px] font-bold text-slate-400 hover:text-[#8F141B] transition-colors uppercase tracking-widest">
            <LogOut className="w-3.5 h-3.5" />
            Exit Portal
-        </button>
+        </Link>
       </div>
     </aside>
   );
