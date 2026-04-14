@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { AdminSidebar } from "@/components/admin/admin-sidebar";
+import { DevBanner } from "@/components/dev-banner";
 import { Menu, Bell } from "lucide-react";
 import Link from "next/link";
 
@@ -48,8 +49,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <AdminSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
 
       {/* Main Content Area — shifted for Sidebar width on desktop */}
-      <div className="flex-1 md:ml-64 transition-all duration-300 min-h-screen">
-        <div className="max-w-[1600px] mx-auto">
+      <div className="flex-1 md:ml-64 transition-all duration-300 min-h-screen flex flex-col">
+        <DevBanner className="shrink-0" />
+        <div className="max-w-[1600px] w-full mx-auto">
           {children}
         </div>
       </div>

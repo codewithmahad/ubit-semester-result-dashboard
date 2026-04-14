@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { DevBanner } from "@/components/dev-banner";
 
 const PROGRAMS = [
   { label: "BS Software Engineering",    value: "Bachelor of Science in Software Engineering",    abbr: "BSSE" },
@@ -142,14 +143,7 @@ export default function ProfilePage() {
       <Nav />
 
       {/* ── Dev banner ──────────────────────────────────────── */}
-      <div className="bg-[#8F141B] text-white py-3 px-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-center gap-2.5">
-          <AlertCircle className="w-4 h-4 shrink-0" />
-          <p className="text-[12px] md:text-[13px] font-bold tracking-tight">
-            DEVELOPMENT PHASE — Backend integration pending. Data is stored locally in your browser.
-          </p>
-        </div>
-      </div>
+      <DevBanner />
 
       {/* ── Save toast ──────────────────────────────────────── */}
       {saved && (
