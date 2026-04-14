@@ -32,10 +32,10 @@ export default function LandingPage() {
         <Image src="/uok-logo.png" alt="" width={500} height={500} className="object-contain" />
       </div>
 
-      <section className="relative z-10 pb-16 md:pb-24">
+      <section className="relative z-10 pb-16 md:pb-24 min-h-[calc(100vh-140px)]">
 
         {/* ── Hero Search ──────────────────────────────────────── */}
-        <div className="w-full max-w-[860px] mx-auto px-4 md:px-8 pt-12 sm:pt-20 md:pt-0 md:min-h-[calc(100vh-140px)] flex flex-col items-center md:justify-center text-center">
+        <div className="w-full max-w-[860px] mx-auto px-4 md:px-8 pt-16 sm:pt-24 md:pt-36 flex flex-col items-center text-center">
           <h1 className="text-[30px] sm:text-[42px] md:text-[54px] font-black text-[#1f2432] mb-3 md:mb-4 tracking-tighter leading-[1.1]">
             Academic Results Hub
           </h1>
@@ -53,7 +53,7 @@ export default function LandingPage() {
         </div>
 
         {/* ── Feature Cards ─────────────────────────────────────── */}
-        <div className="max-w-[1100px] mx-auto px-4 md:px-8 mt-12 sm:mt-16 md:mt-0">
+        <div className="max-w-[1100px] mx-auto px-4 md:px-8 mt-24 sm:mt-28 md:mt-32">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
 
             {/* Card 1: Leaderboards */}
