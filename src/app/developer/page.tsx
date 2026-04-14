@@ -60,17 +60,17 @@ export default function DeveloperPage() {
                 <h1 className="text-[22px] font-black text-white tracking-tight leading-tight mb-1">
                   Shaikh Mahad
                 </h1>
-                <p className="text-[12px] font-mono text-slate-400 mb-4">
+                <p className="text-[13px] font-mono text-slate-300 mb-5">
                   @codewithmahad
                 </p>
 
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   {[
                     "Software Engineer",
-                    "BSSE Batch 2025",
+                    "Department of Computer Science",
                     "University of Karachi",
                   ].map(line => (
-                    <p key={line} className="text-[12px] font-semibold text-slate-400">
+                    <p key={line} className="text-[13px] font-bold text-white">
                       {line}
                     </p>
                   ))}
@@ -109,12 +109,12 @@ export default function DeveloperPage() {
                     key={href}
                     href={href}
                     {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/[0.06] transition-colors"
+                    className="group flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/[0.08] transition-colors"
                   >
-                    <span className="text-slate-400 group-hover:text-slate-200 transition-colors shrink-0">
+                    <span className="text-slate-300 group-hover:text-white transition-colors shrink-0">
                       {icon}
                     </span>
-                    <span className="text-[11px] font-mono text-slate-300 group-hover:text-white transition-colors truncate">
+                    <span className="text-[12px] font-medium text-slate-100 group-hover:text-white transition-colors truncate">
                       {label}
                     </span>
                   </a>
@@ -122,12 +122,20 @@ export default function DeveloperPage() {
               </div>
 
               {/* Status */}
-              <div className="px-5 pb-6">
-                <div className="flex items-center gap-2.5 px-3 py-2.5 bg-white/[0.03] border border-white/[0.05] rounded-xl">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-                  <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">
-                    Open to opportunities
-                  </span>
+              <div className="px-7 pb-8">
+                <div className="flex flex-col gap-2 pt-6 border-t border-white/[0.07]">
+                  <p className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-300">
+                    Current Status
+                  </p>
+                  <div className="flex items-center gap-2.5 mt-0.5">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
+                    </span>
+                    <span className="text-[12px] font-bold text-white tracking-wide">
+                      Accepting New Roles
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
