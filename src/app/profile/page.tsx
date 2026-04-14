@@ -128,7 +128,7 @@ export default function ProfilePage() {
               </h1>
 
               {/* Seat number as code badge */}
-              <code className="mt-2 px-3 py-1 bg-white/[0.06] border border-white/10 rounded-full text-[11px] font-mono font-bold text-slate-400 tracking-widest">
+              <code className="mt-2 px-3 py-1 bg-white/[0.06] border border-white/10 rounded-full text-[11px] font-mono font-bold text-slate-300 tracking-widest">
                 {form.seatNo || "Seat No."}
               </code>
 
@@ -141,7 +141,7 @@ export default function ProfilePage() {
                 ].map(chip => (
                   <span
                     key={chip}
-                    className="px-2.5 py-1 bg-white/[0.05] border border-white/[0.08] rounded-full text-[10px] font-bold text-slate-500 uppercase tracking-widest"
+                    className="px-2.5 py-1 bg-white/[0.05] border border-white/[0.08] rounded-full text-[10px] font-bold text-slate-400 uppercase tracking-widest"
                   >
                     {chip}
                   </span>
@@ -153,32 +153,32 @@ export default function ProfilePage() {
             <div className="px-5 py-5 space-y-2.5">
               <Link
                 href={form.seatNo ? `/student/${encodeURIComponent(form.seatNo.trim().toUpperCase())}` : "#"}
-                className="group w-full flex items-center justify-between px-4 py-3 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.06] rounded-xl text-[13px] font-bold text-slate-300 hover:text-white transition-all"
+                className="group w-full flex items-center justify-between px-4 py-3 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.06] rounded-xl text-[13px] font-bold text-slate-200 hover:text-white transition-all"
               >
                 <div className="flex items-center gap-2.5">
-                  <FileText className="w-4 h-4 text-slate-600 group-hover:text-[#8F141B] transition-colors" />
+                  <FileText className="w-4 h-4 text-slate-400 group-hover:text-[#8F141B] transition-colors" />
                   View My Results
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-700 group-hover:text-slate-400 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-colors" />
               </Link>
 
               <Link
                 href="/leaderboards"
-                className="group w-full flex items-center justify-between px-4 py-3 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.06] rounded-xl text-[13px] font-bold text-slate-300 hover:text-white transition-all"
+                className="group w-full flex items-center justify-between px-4 py-3 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.06] rounded-xl text-[13px] font-bold text-slate-200 hover:text-white transition-all"
               >
                 <div className="flex items-center gap-2.5">
-                  <MapPin className="w-4 h-4 text-slate-600 group-hover:text-[#8F141B] transition-colors" />
+                  <MapPin className="w-4 h-4 text-slate-400 group-hover:text-[#8F141B] transition-colors" />
                   Class Leaderboard
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-700 group-hover:text-slate-400 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-colors" />
               </Link>
             </div>
 
             {/* Storage note */}
             <div className="px-5 pb-6">
               <div className="flex items-start gap-2.5 px-4 py-3 bg-white/[0.03] rounded-xl border border-white/[0.05]">
-                <Shield className="w-3.5 h-3.5 text-slate-700 mt-0.5 shrink-0" />
-                <p className="text-[11px] text-slate-700 font-medium leading-relaxed">
+                <Shield className="w-3.5 h-3.5 text-slate-500 mt-0.5 shrink-0" />
+                <p className="text-[11px] text-slate-400 font-medium leading-relaxed">
                   Your profile is stored only in this browser.
                   No data is sent to any server.
                 </p>

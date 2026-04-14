@@ -148,12 +148,12 @@ export default function AboutPage() {
               &ldquo;University tooling shouldn&apos;t feel like navigating a
               bureaucracy.&rdquo;
             </blockquote>
-            <p className="text-[14px] md:text-[16px] text-slate-400 font-medium leading-relaxed max-w-[520px] mx-auto">
+            <p className="text-[14px] md:text-[16px] text-slate-200 font-medium leading-relaxed max-w-[520px] mx-auto">
               This portal exists because students deserve instant access to their
               own academic data — not a two-week wait and a blurry group chat screenshot.
               Built fast, designed precisely, maintained independently.
             </p>
-            <div className="mt-10 inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-slate-600">
+            <div className="mt-10 inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
               <span className="w-8 h-px bg-slate-700" />
               BSSE Batch 2025 &nbsp;·&nbsp; Department of Computer Science
               <span className="w-8 h-px bg-slate-700" />

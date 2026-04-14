@@ -60,7 +60,7 @@ export default function DeveloperPage() {
                 <h1 className="text-[22px] font-black text-white tracking-tight leading-tight mb-1">
                   Shaikh Mahad
                 </h1>
-                <p className="text-[12px] font-mono text-slate-500 mb-4">
+                <p className="text-[12px] font-mono text-slate-400 mb-4">
                   @codewithmahad
                 </p>
 
@@ -70,7 +70,7 @@ export default function DeveloperPage() {
                     "BSSE Batch 2025",
                     "University of Karachi",
                   ].map(line => (
-                    <p key={line} className="text-[12px] font-semibold text-slate-500">
+                    <p key={line} className="text-[12px] font-semibold text-slate-400">
                       {line}
                     </p>
                   ))}
@@ -111,10 +111,10 @@ export default function DeveloperPage() {
                     {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/[0.06] transition-colors"
                   >
-                    <span className="text-slate-600 group-hover:text-slate-400 transition-colors shrink-0">
+                    <span className="text-slate-400 group-hover:text-slate-200 transition-colors shrink-0">
                       {icon}
                     </span>
-                    <span className="text-[11px] font-mono text-slate-500 group-hover:text-slate-300 transition-colors truncate">
+                    <span className="text-[11px] font-mono text-slate-300 group-hover:text-white transition-colors truncate">
                       {label}
                     </span>
                   </a>

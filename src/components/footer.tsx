@@ -42,7 +42,7 @@ export function Footer() {
             </div>
 
             {/* Tagline */}
-            <p className="text-[13px] text-slate-400 font-medium leading-relaxed mb-6">
+            <p className="text-[13px] text-slate-300 font-medium leading-relaxed mb-6">
               Instant access to academic transcripts, cumulative GPA metrics,
               and class-wide standings for BSSE Batch 2025 — Department of Computer Science,
               University of Karachi.
@@ -57,7 +57,7 @@ export function Footer() {
             </div>
 
             {/* Disclaimer */}
-            <p className="text-[11px] text-slate-600 font-semibold leading-relaxed border-l-2 border-slate-700 pl-3">
+            <p className="text-[11px] text-slate-400 font-semibold leading-relaxed border-l-2 border-slate-700 pl-3">
               Independent student project. Not an official website of the
               University of Karachi or UBIT.
             </p>
@@ -65,7 +65,7 @@ export function Footer() {
 
           {/* ─ Explore column ───────────────────────────────── */}
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 mb-5">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-5">
               Explore
             </p>
             <ul className="space-y-3.5">
@@ -73,9 +73,9 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-400 hover:text-white transition-colors"
+                    className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-300 hover:text-white transition-colors"
                   >
-                    <Icon className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                    <Icon className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#8F141B] transition-colors shrink-0" />
                     {label}
                   </Link>
                 </li>
@@ -83,9 +83,9 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:codewithmahad@gmail.com?subject=UBIT%20Portal%20Bug%20Report"
-                  className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-400 hover:text-white transition-colors"
+                  className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-300 hover:text-white transition-colors"
                 >
-                  <Bug className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                  <Bug className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#8F141B] transition-colors shrink-0" />
                   Report a Bug
                 </a>
               </li>
@@ -94,7 +94,7 @@ export function Footer() {
 
           {/* ─ Legal column ─────────────────────────────────── */}
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 mb-5">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-5">
               Legal
             </p>
             <ul className="space-y-3.5">
@@ -102,9 +102,9 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-400 hover:text-white transition-colors"
+                    className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-300 hover:text-white transition-colors"
                   >
-                    <Icon className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                    <Icon className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#8F141B] transition-colors shrink-0" />
                     {label}
                   </Link>
                 </li>
@@ -112,9 +112,9 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:codewithmahad@gmail.com"
-                  className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-400 hover:text-white transition-colors"
+                  className="group flex items-center gap-2.5 text-[13px] font-semibold text-slate-300 hover:text-white transition-colors"
                 >
-                  <Mail className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#8F141B] transition-colors shrink-0" />
+                  <Mail className="w-3.5 h-3.5 text-slate-500 group-hover:text-[#8F141B] transition-colors shrink-0" />
                   Contact
                 </a>
               </li>
@@ -127,16 +127,16 @@ export function Footer() {
       {/* ── Bottom bar ───────────────────────────────────────── */}
       <div className="border-t border-white/[0.06]">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[11px] font-bold text-slate-700 uppercase tracking-widest text-center sm:text-left">
+          <p className="text-[11px] font-bold text-slate-500 uppercase tracking-widest text-center sm:text-left">
             &copy; {new Date().getFullYear()} BSSE &apos;25 Initiative &nbsp;·&nbsp; All rights reserved
           </p>
-          <p className="text-[11px] font-medium text-slate-700 text-center sm:text-right">
+          <p className="text-[11px] font-medium text-slate-500 text-center sm:text-right">
             Built by{" "}
             <a
               href="https://shaikhmahad.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-slate-500 hover:text-white transition-colors"
+              className="font-bold text-slate-300 hover:text-white transition-colors"
             >
               Shaikh Mahad
             </a>
