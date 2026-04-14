@@ -33,7 +33,7 @@ export function NavDesktopProfile({ show, onClose }: NavDesktopProfileProps) {
           </div>
           <div className="flex flex-col">
             <span className="text-[15px] font-bold text-gray-900 leading-tight">Guest Student</span>
-            <span className="text-[12px] text-gray-500 font-medium">BSSE 2025 Morning</span>
+            <span className="text-[12px] text-gray-500 font-medium">Department of Computer Science</span>
           </div>
         </div>
       </Link>

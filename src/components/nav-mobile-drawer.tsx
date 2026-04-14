@@ -60,7 +60,7 @@ export function NavMobileDrawer({ open, onClose }: NavMobileDrawerProps) {
               </div>
               <div className="flex flex-col">
                 <span className="text-[16px] font-bold text-gray-900 leading-tight">Guest Student</span>
-                <span className="text-[13px] text-gray-500 font-medium pt-0.5">BSSE 2025 Morning</span>
+                <span className="text-[13px] text-gray-500 font-medium pt-0.5">Department of Computer Science</span>
               </div>
             </div>
           </Link>

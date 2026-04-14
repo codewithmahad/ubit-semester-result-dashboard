@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 };
 
 const STATS = [
-  { value: "200+",   label: "Students tracked",      sub: "across active batches" },
-  { value: "2",      label: "Class sections",         sub: "Morning & Evening" },
-  { value: "4+",     label: "Subjects per semester",  sub: "parsed & computed" },
-  { value: "< 1s",   label: "Result lookup time",     sub: "instant, zero lag" },
+  { value: "200+", label: "Students tracked", sub: "across active batches" },
+  { value: "2", label: "Class sections", sub: "Morning & Evening" },
+  { value: "4+", label: "Subjects per semester", sub: "parsed & computed" },
+  { value: "< 1s", label: "Result lookup time", sub: "instant, zero lag" },
 ];
 
 export default function AboutPage() {
@@ -36,7 +36,7 @@ export default function AboutPage() {
 
           {/* Eyebrow */}
           <p className="text-[11px] font-black uppercase tracking-[0.25em] text-[#8F141B] mb-5">
-            BSSE 2025 &nbsp;·&nbsp; Student Initiative &nbsp;·&nbsp; University of Karachi
+            UBIT Students &nbsp;·&nbsp; Peer Initiative &nbsp;·&nbsp; University of Karachi
           </p>
 
           {/* Title */}
