@@ -34,7 +34,7 @@ function sgpaLabel(sgpa: number): { text: string; color: string } {
   if (sgpa >= 3.0) return { text: "Merit",           color: "text-[#60a5fa]" };
   if (sgpa >= 2.0) return { text: "Satisfactory",    color: "text-amber-400" };
   if (sgpa >  0)   return { text: "At Risk",         color: "text-rose-400" };
-  return           { text: "—",                      color: "text-slate-600" };
+  return           { text: "—",                      color: "text-slate-400" };
 }
 
 // ── Grading scale expanded toggle ────────────────────────────
@@ -44,7 +44,7 @@ function GradeReference() {
     <div className="border-t border-white/[0.06]">
       <button
         onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between px-6 py-4 text-[11px] font-black uppercase tracking-[0.18em] text-slate-600 hover:text-slate-400 transition-colors"
+        className="w-full flex items-center justify-between px-6 py-4 text-[11px] font-black uppercase tracking-[0.18em] text-slate-400 hover:text-slate-200 transition-colors"
       >
         UBIT Official Grading Scale
         {open
@@ -65,7 +65,7 @@ function GradeReference() {
                     <span className={`text-[12px] font-black w-7 shrink-0 ${gradeTextColor(g.grade)}`}>
                       {g.grade}
                     </span>
-                    <span className="text-[10px] text-slate-600 tabular-nums">{g.min}–{g.max}</span>
+                    <span className="text-[10px] text-slate-400 tabular-nums">{g.min}–{g.max}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-12 h-1 bg-white/[0.06] rounded-full overflow-hidden">
@@ -130,7 +130,7 @@ export function CalculatorClient() {
         {/* Header */}
         <div className="bg-[#0F172A] px-6 py-5 flex items-center justify-between">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 mb-1">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">
               Semester GPA Calculator
             </p>
             <p className="text-[13px] font-semibold text-slate-300">
@@ -377,7 +377,7 @@ export function CalculatorClient() {
             <p className={`text-[12px] font-black uppercase tracking-[0.2em] ${label.color} transition-colors mb-1`}>
               {label.text}
             </p>
-            <p className="text-[10px] text-slate-600 font-semibold uppercase tracking-widest">
+            <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-widest">
               Projected SGPA
             </p>
           </div>
@@ -388,7 +388,7 @@ export function CalculatorClient() {
               <p className="text-[22px] font-black text-white tabular-nums leading-none mb-1">
                 {totalCredits}
               </p>
-              <p className="text-[9px] font-black uppercase tracking-[0.18em] text-slate-600">
+              <p className="text-[9px] font-black uppercase tracking-[0.18em] text-slate-400">
                 Credit Hours
               </p>
             </div>
@@ -396,7 +396,7 @@ export function CalculatorClient() {
               <p className="text-[22px] font-black text-white tabular-nums leading-none mb-1">
                 {totalQP.toFixed(1)}
               </p>
-              <p className="text-[9px] font-black uppercase tracking-[0.18em] text-slate-600">
+              <p className="text-[9px] font-black uppercase tracking-[0.18em] text-slate-400">
                 Quality Points
               </p>
             </div>
