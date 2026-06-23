@@ -783,16 +783,6 @@ export const semester2: RawSemesterData = {
             }
         },
         {
-            roll: "B24110106078",
-            name: "TALHA ALI",
-            results: {
-                "SE-354": { marks: 60, grade: "C-", gradePoint: 1.8 },
-                "SE-356": { marks: 80, grade: "A-", gradePoint: 3.8 },
-                "SE-362": { marks: 73, grade: "B", gradePoint: 3.0 },
-                "SE-360": { marks: 50, grade: "D", gradePoint: 1.0 }
-            }
-        },
-        {
             roll: "B24110106079",
             name: "TANZEEL MAZHAR",
             results: {
