@@ -1,7 +1,7 @@
 import type { RawSemesterData } from "@/types";
 
 export const semester2: RawSemesterData = {
-  "name": "BSSE Semester II (Partial Result)",
+  "name": "BSSE Semester II",
   "batch": "2025 (Evening Program)",
   "university": "UBIT - University of Karachi",
   "courses": [
