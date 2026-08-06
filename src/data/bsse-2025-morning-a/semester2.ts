@@ -501,6 +501,7 @@ export const semester2: RawSemesterData = {
                 "SE-352": { marks: 81, grade: "A-", gradePoint: 3.8 },
                 "SE-354": { marks: 83, grade: "A-", gradePoint: 3.8 },
                 "SE-356": { marks: 86, grade: "A", gradePoint: 4.0 },
+                "SE-360": { marks: 79, grade: "B+", gradePoint: 3.4 },
                 "SE-362": { marks: 67, grade: "C+", gradePoint: 2.4 }
             }
         },
