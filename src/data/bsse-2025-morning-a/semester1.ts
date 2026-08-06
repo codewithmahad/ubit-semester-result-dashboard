@@ -34,7 +34,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 30, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 7, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 55, grade: "D+", gradePoint: 1.4 },
-                "SE-361": { marks: 70, grade: "B-", gradePoint: 2.7 }
+                "SE-361": { marks: 70, grade: "B-", gradePoint: 2.8 }
             }
         },
         {
@@ -42,9 +42,9 @@ export const semester1: RawSemesterData = {
             name: "ABDULLAH",
             results: {
                 "SE-351": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-353": { marks: 82, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 82, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 63, grade: "C", gradePoint: 2.0 },
-                "SE-357": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-357": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-359": { marks: 74, grade: "B", gradePoint: 3 },
                 "SE-361": { marks: 72, grade: "B", gradePoint: 3 }
             }
@@ -54,11 +54,11 @@ export const semester1: RawSemesterData = {
             name: "ABEERA FAIZ",
             results: {
                 "SE-351": { marks: 87, grade: "A", gradePoint: 4.0 },
-                "SE-353": { marks: 81, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 81, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 56, grade: "D+", gradePoint: 1.4 },
-                "SE-357": { marks: 83, grade: "A-", gradePoint: 3.7 },
+                "SE-357": { marks: 83, grade: "A-", gradePoint: 3.8 },
                 "SE-359": { marks: 73, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -68,30 +68,30 @@ export const semester1: RawSemesterData = {
                 "SE-351": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 56, grade: "D+", gradePoint: 1.4 },
-                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
             roll: "B24110106006",
             name: "AHMED MOHIUDDIN",
             results: {
-                "SE-351": { marks: 57, grade: "C-", gradePoint: 1.7 },
-                "SE-353": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-351": { marks: 57, grade: "C-", gradePoint: 1.8 },
+                "SE-353": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-359": { marks: 68, grade: "B-", gradePoint: 2.7 },
-                "SE-361": { marks: 70, grade: "B-", gradePoint: 2.7 }
+                "SE-359": { marks: 68, grade: "B-", gradePoint: 2.8 },
+                "SE-361": { marks: 70, grade: "B-", gradePoint: 2.8 }
             }
         },
         {
             roll: "B24110106007",
             name: "AHSAN ZAHEER SHAIKH",
             results: {
-                "SE-351": { marks: 83, grade: "A-", gradePoint: 3.7 },
+                "SE-351": { marks: 83, grade: "A-", gradePoint: 3.8 },
                 "SE-353": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-355": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-355": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-357": { marks: 91, grade: "A+", gradePoint: 4.0 },
                 "SE-359": { marks: 77, grade: "B+", gradePoint: 3.4 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -102,11 +102,11 @@ export const semester1: RawSemesterData = {
             name: "ALI YAQOOB KHAN",
             results: {
                 "SE-351": { marks: 56, grade: "D+", gradePoint: 1.4 },
-                "SE-353": { marks: 82, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 82, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 56, grade: "D+", gradePoint: 1.4 },
                 "SE-357": { marks: 64, grade: "C+", gradePoint: 2.4 },
                 "SE-359": { marks: 73, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -126,11 +126,11 @@ export const semester1: RawSemesterData = {
             name: "ANOUSHA FARHAN",
             results: {
                 "SE-351": { marks: 64, grade: "C+", gradePoint: 2.4 },
-                "SE-353": { marks: 83, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 83, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 56, grade: "D+", gradePoint: 1.4 },
-                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 79, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -138,11 +138,11 @@ export const semester1: RawSemesterData = {
             name: "ANUMTA NADEEM",
             results: {
                 "SE-351": { marks: 73, grade: "B", gradePoint: 3.0 },
-                "SE-353": { marks: 84, grade: "A-", gradePoint: 3.7 },
-                "SE-355": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-353": { marks: 84, grade: "A-", gradePoint: 3.8 },
+                "SE-355": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-359": { marks: 76, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -154,7 +154,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 40, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 21, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 62, grade: "C", gradePoint: 2 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -163,10 +163,10 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 87, grade: "A", gradePoint: 4.0 },
                 "SE-353": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-355": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-355": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-357": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-359": { marks: 74, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -175,10 +175,10 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-355": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-357": { marks: 78, grade: "B+", gradePoint: 3.4 },
                 "SE-359": { marks: 76, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -190,18 +190,18 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 73, grade: "B", gradePoint: 3.0 },
                 "SE-357": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-359": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
             roll: "B24110106016",
             name: "DUA ENAM",
             results: {
-                "SE-351": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-351": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 79, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 85, grade: "A", gradePoint: 4 }
             }
         },
@@ -214,7 +214,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 37, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-359": { marks: 72, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 83, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 83, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -235,10 +235,10 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-353": { marks: 91, grade: "A+", gradePoint: 4.0 },
-                "SE-355": { marks: 60, grade: "C-", gradePoint: 1.7 },
+                "SE-355": { marks: 60, grade: "C-", gradePoint: 1.8 },
                 "SE-357": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-359": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -261,7 +261,7 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 78, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 72, grade: "B", gradePoint: 3.0 },
-                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-361": { marks: 85, grade: "A", gradePoint: 4 }
             }
         },
@@ -269,9 +269,9 @@ export const semester1: RawSemesterData = {
             roll: "B24110106022",
             name: "HAFIZA WADIAH IQBAL",
             results: {
-                "SE-351": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-351": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 78, grade: "B+", gradePoint: 3.4 },
-                "SE-355": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-355": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-357": { marks: 72, grade: "B", gradePoint: 3.0 },
                 "SE-359": { marks: 79, grade: "B+", gradePoint: 3.4 },
                 "SE-361": { marks: 85, grade: "A", gradePoint: 4 }
@@ -310,7 +310,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 52, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-359": { marks: 79, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -322,7 +322,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 37, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 23, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 52, grade: "D", gradePoint: 1 },
-                "SE-361": { marks: 60, grade: "C-", gradePoint: 1.7 }
+                "SE-361": { marks: 60, grade: "C-", gradePoint: 1.8 }
             }
         },
         {
@@ -333,7 +333,7 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 91, grade: "A+", gradePoint: 4.0 },
                 "SE-355": { marks: 79, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-361": { marks: 88, grade: "A", gradePoint: 4 }
             }
         },
@@ -345,7 +345,7 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 56, grade: "D+", gradePoint: 1.4 },
                 "SE-355": { marks: 21, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 4, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 85, grade: "A", gradePoint: 4 }
             }
         },
@@ -353,9 +353,9 @@ export const semester1: RawSemesterData = {
             roll: "B24110106029",
             name: "MANAHIL NOOR",
             results: {
-                "SE-351": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-351": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 91, grade: "A+", gradePoint: 4.0 },
-                "SE-355": { marks: 57, grade: "C-", gradePoint: 1.7 },
+                "SE-355": { marks: 57, grade: "C-", gradePoint: 1.8 },
                 "SE-357": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-359": { marks: 76, grade: "B+", gradePoint: 3.4 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -368,7 +368,7 @@ export const semester1: RawSemesterData = {
                 "SE-351": { marks: 72, grade: "B", gradePoint: 3.0 },
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 51, grade: "D", gradePoint: 1.0 },
-                "SE-357": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-357": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-359": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-361": { marks: 88, grade: "A", gradePoint: 4 }
             }
@@ -381,8 +381,8 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 77, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 36, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 18, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 59, grade: "C-", gradePoint: 1.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 59, grade: "C-", gradePoint: 1.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -406,7 +406,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-359": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -415,10 +415,10 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 87, grade: "A", gradePoint: 4.0 },
                 "SE-353": { marks: 91, grade: "A+", gradePoint: 4.0 },
-                "SE-355": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-355": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-357": { marks: 76, grade: "B+", gradePoint: 3.4 },
                 "SE-359": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -429,7 +429,7 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 87, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 29, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-359": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-359": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
             }
         },
@@ -438,7 +438,7 @@ export const semester1: RawSemesterData = {
             name: "MUHAMMAD HAMZA SIDDIQUI",
             results: {
                 "SE-351": { marks: 45, grade: "F", gradePoint: 0.0 },
-                "SE-353": { marks: 69, grade: "B-", gradePoint: 2.7 },
+                "SE-353": { marks: 69, grade: "B-", gradePoint: 2.8 },
                 "SE-355": { marks: 36, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 29, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 63, grade: "C", gradePoint: 2 },
@@ -454,7 +454,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 51, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 64, grade: "C+", gradePoint: 2.4 },
                 "SE-359": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -462,11 +462,11 @@ export const semester1: RawSemesterData = {
             name: "MUHAMMAD HUNAIN AHMED",
             results: {
                 "SE-351": { marks: 35, grade: "F", gradePoint: 0.0 },
-                "SE-353": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 22, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-359": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -478,7 +478,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 54, grade: "D+", gradePoint: 1.4 },
                 "SE-357": { marks: 30, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 74, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -499,7 +499,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-353": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-355": { marks: 57, grade: "C-", gradePoint: 1.7 },
+                "SE-355": { marks: 57, grade: "C-", gradePoint: 1.8 },
                 "SE-357": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-359": { marks: 72, grade: "B", gradePoint: 3 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -525,8 +525,8 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 95, grade: "A+", gradePoint: 4.0 },
                 "SE-355": { marks: 62, grade: "C", gradePoint: 2.0 },
                 "SE-357": { marks: 71, grade: "B", gradePoint: 3.0 },
-                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -534,23 +534,23 @@ export const semester1: RawSemesterData = {
             name: "MUHAMMAD RAYYAN KHAN",
             results: {
                 "SE-351": { marks: 64, grade: "C+", gradePoint: 2.4 },
-                "SE-353": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 54, grade: "D+", gradePoint: 1.4 },
                 "SE-357": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-359": { marks: 66, grade: "C+", gradePoint: 2.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
             roll: "B24110106045",
             name: "MUHAMMAD SAAD PERVAIZ",
             results: {
-                "SE-351": { marks: 83, grade: "A-", gradePoint: 3.7 },
-                "SE-353": { marks: 83, grade: "A-", gradePoint: 3.7 },
+                "SE-351": { marks: 83, grade: "A-", gradePoint: 3.8 },
+                "SE-353": { marks: 83, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 79, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 72, grade: "B", gradePoint: 3.0 },
                 "SE-359": { marks: 71, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -561,17 +561,17 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 51, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
             roll: "B24110106047",
             name: "MUHAMMAD SHARJEEL",
             results: {
-                "SE-351": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-351": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-353": { marks: 92, grade: "A+", gradePoint: 4.0 },
-                "SE-355": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-355": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-357": { marks: 66, grade: "C+", gradePoint: 2.4 },
                 "SE-359": { marks: 73, grade: "B", gradePoint: 3 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -596,9 +596,9 @@ export const semester1: RawSemesterData = {
                 "SE-351": { marks: 73, grade: "B", gradePoint: 3.0 },
                 "SE-353": { marks: 92, grade: "A+", gradePoint: 4.0 },
                 "SE-355": { marks: 56, grade: "D+", gradePoint: 1.4 },
-                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 73, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -610,7 +610,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 64, grade: "C+", gradePoint: 2.4 },
                 "SE-357": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-359": { marks: 74, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -618,10 +618,10 @@ export const semester1: RawSemesterData = {
             name: "MUHAMMAD TAMJEED HUSSAIN",
             results: {
                 "SE-351": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-353": { marks: 80, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
             }
         },
@@ -630,10 +630,10 @@ export const semester1: RawSemesterData = {
             name: "MUHAMMAD UMER KHAN",
             results: {
                 "SE-351": { marks: 26, grade: "F", gradePoint: 0.0 },
-                "SE-353": { marks: 60, grade: "C-", gradePoint: 1.7 },
+                "SE-353": { marks: 60, grade: "C-", gradePoint: 1.8 },
                 "SE-355": { marks: 27, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 12, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 57, grade: "C-", gradePoint: 1.7 },
+                "SE-359": { marks: 57, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
@@ -641,11 +641,11 @@ export const semester1: RawSemesterData = {
             roll: "B24110106053",
             name: "MUHAMMAD USMAN ASIF",
             results: {
-                "SE-351": { marks: 57, grade: "C-", gradePoint: 1.7 },
+                "SE-351": { marks: 57, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 33, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
@@ -657,7 +657,7 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 78, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 23, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
@@ -665,12 +665,12 @@ export const semester1: RawSemesterData = {
             roll: "B24110106055",
             name: "MUHAMMAD ZAID BIN SHAHID",
             results: {
-                "SE-351": { marks: 57, grade: "C-", gradePoint: 1.7 },
-                "SE-353": { marks: 81, grade: "A-", gradePoint: 3.7 },
+                "SE-351": { marks: 57, grade: "C-", gradePoint: 1.8 },
+                "SE-353": { marks: 81, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 28, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 64, grade: "C+", gradePoint: 2.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -682,18 +682,18 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 33, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 24, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 64, grade: "C+", gradePoint: 2.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
             roll: "B24110106057",
             name: "MUJTABA ASIM",
             results: {
-                "SE-351": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-351": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-353": { marks: 53, grade: "D+", gradePoint: 1.4 },
                 "SE-355": { marks: 20, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 8, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-359": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
             }
         },
@@ -702,11 +702,11 @@ export const semester1: RawSemesterData = {
             name: "MUSTAFA MURTAZA",
             results: {
                 "SE-351": { marks: 71, grade: "B", gradePoint: 3.0 },
-                "SE-353": { marks: 57, grade: "C-", gradePoint: 1.7 },
+                "SE-353": { marks: 57, grade: "C-", gradePoint: 1.8 },
                 "SE-355": { marks: 39, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 23, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 66, grade: "C+", gradePoint: 2.4 },
-                "SE-361": { marks: 70, grade: "B-", gradePoint: 2.7 }
+                "SE-361": { marks: 70, grade: "B-", gradePoint: 2.8 }
             }
         },
         {
@@ -716,9 +716,9 @@ export const semester1: RawSemesterData = {
                 "SE-351": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-353": { marks: 87, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 72, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -728,9 +728,9 @@ export const semester1: RawSemesterData = {
                 "SE-351": { marks: 54, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 33, grade: "F", gradePoint: 0.0 },
-                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 79, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -740,9 +740,9 @@ export const semester1: RawSemesterData = {
                 "SE-351": { marks: 10, grade: "F", gradePoint: 0.0 },
                 "SE-353": { marks: 86, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.7 },
-                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
+                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -751,7 +751,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 76, grade: "B+", gradePoint: 3.4 },
                 "SE-353": { marks: 86, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-355": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-357": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-359": { marks: 73, grade: "B", gradePoint: 3 },
                 "SE-361": { marks: 85, grade: "A", gradePoint: 4 }
@@ -761,10 +761,10 @@ export const semester1: RawSemesterData = {
             roll: "B24110106063",
             name: "RIJA E ZEHRA",
             results: {
-                "SE-351": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-351": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 88, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 40, grade: "F", gradePoint: 0.0 },
-                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 66, grade: "C+", gradePoint: 2.4 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
@@ -777,8 +777,8 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-355": { marks: 51, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 80, grade: "A-", gradePoint: 3.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -786,10 +786,10 @@ export const semester1: RawSemesterData = {
             name: "SAIF UL LLAH",
             results: {
                 "SE-351": { marks: 64, grade: "C+", gradePoint: 2.4 },
-                "SE-353": { marks: 83, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 83, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 31, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 6, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-359": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
             }
         },
@@ -802,7 +802,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-357": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-359": { marks: 75, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -810,11 +810,11 @@ export const semester1: RawSemesterData = {
             name: "SAMI UDDIN",
             results: {
                 "SE-351": { marks: 38, grade: "F", gradePoint: 0.0 },
-                "SE-353": { marks: 58, grade: "C-", gradePoint: 1.7 },
+                "SE-353": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-355": { marks: 10, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 22, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 69, grade: "B-", gradePoint: 2.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 69, grade: "B-", gradePoint: 2.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -826,7 +826,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 62, grade: "C", gradePoint: 2.0 },
                 "SE-357": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-359": { marks: 86, grade: "A", gradePoint: 4 },
-                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -838,7 +838,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 53, grade: "D+", gradePoint: 1.4 },
                 "SE-359": { marks: 71, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -848,9 +848,9 @@ export const semester1: RawSemesterData = {
                 "SE-351": { marks: 87, grade: "A", gradePoint: 4.0 },
                 "SE-353": { marks: 88, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 71, grade: "B", gradePoint: 3.0 },
-                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.7 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -861,8 +861,8 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 62, grade: "C", gradePoint: 2.0 },
                 "SE-355": { marks: 30, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 24, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 60, grade: "C-", gradePoint: 1.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 60, grade: "C-", gradePoint: 1.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -870,7 +870,7 @@ export const semester1: RawSemesterData = {
             name: "SYED HAMZA",
             results: {
                 "SE-351": { marks: 72, grade: "B", gradePoint: 3.0 },
-                "SE-353": { marks: 84, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 84, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 62, grade: "C", gradePoint: 2.0 },
                 "SE-357": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-359": { marks: 73, grade: "B", gradePoint: 3 },
@@ -883,10 +883,10 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 73, grade: "B", gradePoint: 3.0 },
                 "SE-353": { marks: 87, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 68, grade: "B-", gradePoint: 2.7 },
+                "SE-355": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-357": { marks: 71, grade: "B", gradePoint: 3.0 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -894,11 +894,11 @@ export const semester1: RawSemesterData = {
             name: "SYED MOHTASHIM ALI",
             results: {
                 "SE-351": { marks: 62, grade: "C", gradePoint: 2.0 },
-                "SE-353": { marks: 82, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 82, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 26, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-359": { marks: 71, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -909,8 +909,8 @@ export const semester1: RawSemesterData = {
                 "SE-353": { marks: 63, grade: "C", gradePoint: 2.0 },
                 "SE-355": { marks: 32, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 25, grade: "F", gradePoint: 0.0 },
-                "SE-359": { marks: 69, grade: "B-", gradePoint: 2.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 69, grade: "B-", gradePoint: 2.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -919,10 +919,10 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 64, grade: "C+", gradePoint: 2.4 },
                 "SE-353": { marks: 90, grade: "A+", gradePoint: 4.0 },
-                "SE-355": { marks: 70, grade: "B-", gradePoint: 2.7 },
+                "SE-355": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-357": { marks: 65, grade: "C+", gradePoint: 2.4 },
                 "SE-359": { marks: 72, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -934,7 +934,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 27, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 27, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 66, grade: "C+", gradePoint: 2.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -946,7 +946,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 52, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 28, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 74, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -970,7 +970,7 @@ export const semester1: RawSemesterData = {
                 "SE-355": { marks: 79, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 91, grade: "A+", gradePoint: 4.0 },
                 "SE-359": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -978,11 +978,11 @@ export const semester1: RawSemesterData = {
             name: "WANIYA",
             results: {
                 "SE-351": { marks: 72, grade: "B", gradePoint: 3.0 },
-                "SE-353": { marks: 81, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 81, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 64, grade: "C+", gradePoint: 2.4 },
                 "SE-357": { marks: 55, grade: "D+", gradePoint: 1.4 },
-                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.7 },
-                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.7 }
+                "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
+                "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
         },
         {
@@ -990,11 +990,11 @@ export const semester1: RawSemesterData = {
             name: "YUSMA MAJID",
             results: {
                 "SE-351": { marks: 71, grade: "B", gradePoint: 3.0 },
-                "SE-353": { marks: 83, grade: "A-", gradePoint: 3.7 },
+                "SE-353": { marks: 83, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 73, grade: "B", gradePoint: 3.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-359": { marks: 73, grade: "B", gradePoint: 3 },
-                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.7 }
+                "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
             }
         }
     ]
