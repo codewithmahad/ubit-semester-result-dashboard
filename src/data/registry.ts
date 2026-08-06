@@ -45,4 +45,14 @@ export const CLASS_REGISTRY: ClassMetadata[] = [
     cr: "Syed Azfar Abbas",
     activeSemesters: ["semester1", "semester2"],
   },
+  {
+    id: "bsse-2025-evening-b",
+    program: "BSSE",
+    batch: "2025",
+    shift: "Evening",
+    section: "Section B",
+    degree: "Software Engineering",
+    cr: "TBD",
+    activeSemesters: ["semester1", "semester2", "semester3"],
+  },
 ];

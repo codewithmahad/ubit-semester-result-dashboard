@@ -1,0 +1,2228 @@
+import type { RawSemesterData } from "@/types";
+
+export const semester1: RawSemesterData = {
+  "name": "BSSE Semester I",
+  "batch": "2025 (Evening Program)",
+  "university": "UBIT - University of Karachi",
+  "courses": [
+    {
+      "code": "SE-351",
+      "name": "Programming Fundamentals",
+      "creditHours": 4
+    },
+    {
+      "code": "SE-353",
+      "name": "Introduction to Information & Communication Technologies",
+      "creditHours": 3
+    },
+    {
+      "code": "SE-355",
+      "name": "Calculus and Analytical Geometry",
+      "creditHours": 3
+    },
+    {
+      "code": "SE-357",
+      "name": "Discrete Structures",
+      "creditHours": 3
+    },
+    {
+      "code": "SE-359",
+      "name": "Functional English",
+      "creditHours": 3
+    },
+    {
+      "code": "SE-361",
+      "name": "Pak Studies",
+      "creditHours": 2
+    }
+  ],
+  "students": [
+    {
+      "name": "AABAN QAMAR",
+      "roll": "EB25210106001",
+      "results": {
+        "SE-351": {
+          "marks": 30,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-359": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-355": {
+          "marks": 15,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "ABDUL MAJID",
+      "roll": "EB25210106002",
+      "results": {
+        "SE-357": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        }
+      }
+    },
+    {
+      "name": "ABDUL RAFEY",
+      "roll": "EB25210106005",
+      "results": {
+        "SE-351": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-357": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-353": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-359": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-355": {
+          "marks": 77,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        }
+      }
+    },
+    {
+      "name": "ABDUL REHMAN",
+      "roll": "EB25210106006",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        }
+      }
+    },
+    {
+      "name": "ABDUL WASAY",
+      "roll": "EB25210106008",
+      "results": {
+        "SE-351": {
+          "marks": 42,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 12,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-353": {
+          "marks": 30,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-359": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-355": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "AMNA MASOOD",
+      "roll": "EB25210106015",
+      "results": {
+        "SE-351": {
+          "marks": 59,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-357": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-355": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        }
+      }
+    },
+    {
+      "name": "ANAS AHMED",
+      "roll": "EB25210106016",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-353": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-359": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 87,
+          "gradePoint": 4,
+          "grade": "A"
+        }
+      }
+    },
+    {
+      "name": "ATTA UR REHMAN",
+      "roll": "EB25210106022",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 54,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-353": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 60,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-355": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        }
+      }
+    },
+    {
+      "name": "FARDEEN IRSHAD",
+      "roll": "EB25210106027",
+      "results": {
+        "SE-351": {
+          "marks": 29,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 16,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "GUL E MAHEEN",
+      "roll": "EB25210106029",
+      "results": {
+        "SE-351": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-357": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 87,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "HAFIZ ABDULLAH",
+      "roll": "EB25210106030",
+      "results": {
+        "SE-351": {
+          "marks": 40,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 51,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-359": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        }
+      }
+    },
+    {
+      "name": "HANIA MIR",
+      "roll": "EB25210106031",
+      "results": {
+        "SE-351": {
+          "marks": 38,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-355": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        }
+      }
+    },
+    {
+      "name": "HANIA MIRZA",
+      "roll": "EB25210106032",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        }
+      }
+    },
+    {
+      "name": "HASSAN AHMED SIDDIQUI",
+      "roll": "EB25210106033",
+      "results": {
+        "SE-351": {
+          "marks": 39,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-353": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-359": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "HIBAH ZEHRA",
+      "roll": "EB25210106034",
+      "results": {
+        "SE-351": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-357": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-353": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-359": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 51,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "HOORIA SALMAN NAQVI",
+      "roll": "EB25210106035",
+      "results": {
+        "SE-351": {
+          "marks": 32,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-353": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-355": {
+          "marks": 63,
+          "gradePoint": 2,
+          "grade": "C"
+        }
+      }
+    },
+    {
+      "name": "HUSSAIN RAZA KUMAIL",
+      "roll": "EB25210106036",
+      "results": {
+        "SE-351": {
+          "marks": 42,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-359": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 28,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "HUZAIFA",
+      "roll": "EB25210106037",
+      "results": {
+        "SE-351": {
+          "marks": 38,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 81,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 60,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-355": {
+          "marks": 51,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "KINZA",
+      "roll": "EB25210106040",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 76,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 77,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        }
+      }
+    },
+    {
+      "name": "LAVEEZA KHAN NIAZI",
+      "roll": "EB25210106041",
+      "results": {
+        "SE-351": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-357": {
+          "marks": 76,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "MINAHIL ASIF",
+      "roll": "EB25210106048",
+      "results": {
+        "SE-351": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-357": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-353": {
+          "marks": 87,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 76,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-355": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        }
+      }
+    },
+    {
+      "name": "MOHAMMAD SHAHID RAZA",
+      "roll": "EB25210106050",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-359": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD ANAS",
+      "roll": "EB25210106057",
+      "results": {
+        "SE-351": {
+          "marks": 25,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-359": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 12,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD ANAS",
+      "roll": "EB25210106058",
+      "results": {
+        "SE-351": {
+          "marks": 35,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-359": {
+          "marks": 60,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-355": {
+          "marks": 28,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD ASIM KHAN",
+      "roll": "EB25210106059",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-353": {
+          "marks": 83,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 92,
+          "gradePoint": 4,
+          "grade": "A+"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD AZAN IBNE BASHIR",
+      "roll": "EB25210106060",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 60,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-355": {
+          "marks": 76,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD AZHAR ZAFAR",
+      "roll": "EB25210106061",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 45,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-359": {
+          "marks": 78,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-355": {
+          "marks": 84,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD BILAL KHAN",
+      "roll": "EB25210106062",
+      "results": {
+        "SE-351": {
+          "marks": 29,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-359": {
+          "marks": 68,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD DARBAN",
+      "roll": "EB25210106063",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-359": {
+          "marks": 68,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD FAIZAN UL HASSAN",
+      "roll": "EB25210106064",
+      "results": {
+        "SE-351": {
+          "marks": 38,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-353": {
+          "marks": 83,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-355": {
+          "marks": 24,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD FURQAN KHAN",
+      "roll": "EB25210106067",
+      "results": {
+        "SE-351": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-357": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-353": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD GHASHARIB TABREZ",
+      "roll": "EB25210106068",
+      "results": {
+        "SE-351": {
+          "marks": 23,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 83,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-355": {
+          "marks": 76,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD HASSAN SHAIKH",
+      "roll": "EB25210106069",
+      "results": {
+        "SE-351": {
+          "marks": 24,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 84,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD KASHAN",
+      "roll": "EB25210106070",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD MAHROSH ANWAR",
+      "roll": "EB25210106072",
+      "results": {
+        "SE-351": {
+          "marks": 42,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-353": {
+          "marks": 90,
+          "gradePoint": 4,
+          "grade": "A+"
+        },
+        "SE-359": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD MUSAB ANJUM",
+      "roll": "EB25210106073",
+      "results": {
+        "SE-351": {
+          "marks": 20,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 11,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-353": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-359": {
+          "marks": 54,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-355": {
+          "marks": 22,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD MUSTAFA JAVED",
+      "roll": "EB25210106074",
+      "results": {
+        "SE-351": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-353": {
+          "marks": 87,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 55,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-355": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD NOOR",
+      "roll": "EB25210106075",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-353": {
+          "marks": 84,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD RAMEEZ",
+      "roll": "EB25210106076",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-359": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD SAAD RAZA",
+      "roll": "EB25210106079",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-353": {
+          "marks": 84,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 60,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-355": {
+          "marks": 84,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD SAAD RAZA",
+      "roll": "EB25210106080",
+      "results": {
+        "SE-351": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 51,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD SABIH",
+      "roll": "EB25210106081",
+      "results": {
+        "SE-357": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-353": {
+          "marks": 54,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-359": {
+          "marks": 38,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD SHAHEER",
+      "roll": "EB25210106085",
+      "results": {
+        "SE-351": {
+          "marks": 90,
+          "gradePoint": 4,
+          "grade": "A+"
+        },
+        "SE-357": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 84,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD TAHA",
+      "roll": "EB25210106090",
+      "results": {
+        "SE-351": {
+          "marks": 25,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-353": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-359": {
+          "marks": 60,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-355": {
+          "marks": 27,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD UMER",
+      "roll": "EB25210106092",
+      "results": {
+        "SE-351": {
+          "marks": 20,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-359": {
+          "marks": 43,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-355": {
+          "marks": 22,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD UMER KHAN",
+      "roll": "EB25210106093",
+      "results": {
+        "SE-351": {
+          "marks": 25,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-359": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-355": {
+          "marks": 86,
+          "gradePoint": 4,
+          "grade": "A"
+        }
+      }
+    },
+    {
+      "name": "MUJAHID AKBAR",
+      "roll": "EB25210106099",
+      "results": {
+        "SE-351": {
+          "marks": 55,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-357": {
+          "marks": 68,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-353": {
+          "marks": 86,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        }
+      }
+    },
+    {
+      "name": "NAJM UL HAQ",
+      "roll": "EB25210106102",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 68,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-359": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        }
+      }
+    },
+    {
+      "name": "OWAIS AHMED SHAH",
+      "roll": "EB25210106103",
+      "results": {
+        "SE-351": {
+          "marks": 90,
+          "gradePoint": 4,
+          "grade": "A+"
+        },
+        "SE-357": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-353": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 68,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        }
+      }
+    },
+    {
+      "name": "SAAD GUL",
+      "roll": "EB25210106106",
+      "results": {
+        "SE-351": {
+          "marks": 35,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 40,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-359": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-355": {
+          "marks": 21,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "SAIF UR REHMAN",
+      "roll": "EB25210106107",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-353": {
+          "marks": 89,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-355": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        }
+      }
+    },
+    {
+      "name": "SAJAWAL ABBAS",
+      "roll": "EB25210106108",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 30,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-359": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "SHAHEER AHMED KHAN",
+      "roll": "EB25210106110",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-359": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        }
+      }
+    },
+    {
+      "name": "SHAHID AZIZ",
+      "roll": "EB25210106111",
+      "results": {
+        "SE-351": {
+          "marks": 42,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-359": {
+          "marks": 43,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-355": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        }
+      }
+    },
+    {
+      "name": "SHAHZAIN NOOR KHAN",
+      "roll": "EB25210106112",
+      "results": {
+        "SE-351": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-353": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-359": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 55,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        }
+      }
+    },
+    {
+      "name": "SHIZA JAMAL",
+      "roll": "EB25210106114",
+      "results": {
+        "SE-351": {
+          "marks": 22,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-359": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        }
+      }
+    },
+    {
+      "name": "SYED ASHER ALI",
+      "roll": "EB25210106116",
+      "results": {
+        "SE-351": {
+          "marks": 40,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        }
+      }
+    },
+    {
+      "name": "SYED DANIYAL ALI",
+      "roll": "EB25210106117",
+      "results": {
+        "SE-351": {
+          "marks": 18,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-353": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-359": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-355": {
+          "marks": 57,
+          "gradePoint": 1.8,
+          "grade": "C-"
+        }
+      }
+    },
+    {
+      "name": "SYED HAMZA ALI",
+      "roll": "EB25210106118",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-359": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        },
+        "SE-355": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        }
+      }
+    },
+    {
+      "name": "SYED HASHIR UL HAQUE",
+      "roll": "EB25210106120",
+      "results": {
+        "SE-351": {
+          "marks": 29,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-353": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-359": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-355": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        }
+      }
+    },
+    {
+      "name": "SYED KABEER ULLAH HUSSAINI",
+      "roll": "EB25210106121",
+      "results": {
+        "SE-351": {
+          "marks": 30,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 45,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-359": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        }
+      }
+    },
+    {
+      "name": "ZOHA ATHER",
+      "roll": "EB25210106140",
+      "results": {
+        "SE-351": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 86,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
+        }
+      }
+    },
+    {
+      "name": "ZUBAIR AHMED",
+      "roll": "EB25210106141",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-353": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-359": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
+        }
+      }
+    },
+    {
+      "name": "S. M. Misbah",
+      "roll": "EB25210106124",
+      "results": {
+        "SE-351": {
+          "marks": 25,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-353": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-359": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-355": {
+          "marks": 25,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "SYED SARIM AHMED",
+      "roll": "EB25210106128",
+      "results": {
+        "SE-351": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 40,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-359": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-355": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        }
+      }
+    },
+    {
+      "name": "TABSHARA NOOR",
+      "roll": "EB25210106130",
+      "results": {
+        "SE-351": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-357": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-353": {
+          "marks": 87,
+          "gradePoint": 4,
+          "grade": "A"
+        },
+        "SE-359": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 85,
+          "gradePoint": 4,
+          "grade": "A"
+        }
+      }
+    },
+    {
+      "name": "UMAR FAROOQ",
+      "roll": "EB25210106133",
+      "results": {
+        "SE-351": {
+          "marks": 29,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 63,
+          "gradePoint": 2,
+          "grade": "C"
+        }
+      }
+    },
+    {
+      "name": "WAJAHAT ZAHOOR",
+      "roll": "EB25210106135",
+      "results": {
+        "SE-351": {
+          "marks": 35,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 5,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 44,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-355": {
+          "marks": 21,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "ZAIN AHMED",
+      "roll": "EB25210106139",
+      "results": {
+        "SE-351": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-353": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-359": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 27,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    },
+    {
+      "name": "ABDUL QADIR",
+      "roll": "EB25210106003",
+      "results": {
+        "SE-351": {
+          "marks": 54,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        },
+        "SE-353": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-355": {
+          "marks": 83,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD ABDULLAH WADIWA",
+      "roll": "EB25210106053",
+      "results": {
+        "SE-351": {
+          "marks": 38,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-353": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
+        },
+        "SE-359": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-355": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
+        }
+      }
+    },
+    {
+      "name": "MUHAMMAD USMAN NOORAIN",
+      "roll": "EB25210106095",
+      "results": {
+        "SE-351": {
+          "marks": 12,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-353": {
+          "marks": 36,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-359": {
+          "marks": 17,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-355": {
+          "marks": 15,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
+    }
+  ]
+};
