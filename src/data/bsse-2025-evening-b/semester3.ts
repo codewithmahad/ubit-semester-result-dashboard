@@ -548,9 +548,9 @@ export const semester3: RawSemesterData = {
       "roll": "EB25210106099",
       "results": {
         "SE-453": {
-          "marks": 64,
-          "gradePoint": 2.4,
-          "grade": "C+"
+          "marks": 70,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
