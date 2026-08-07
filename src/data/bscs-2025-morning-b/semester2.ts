@@ -29,6 +29,11 @@ export const semester2: RawSemesterData = {
       "code": "PK-362",
       "name": "Ideology & constitution of Pakistan",
       "creditHours": 2
+    },
+    {
+      "code": "BSCS-354",
+      "name": "Digital Logic Design",
+      "creditHours": 3
     }
   ],
   "students": [
@@ -60,6 +65,11 @@ export const semester2: RawSemesterData = {
           "marks": 0,
           "grade": "F",
           "gradePoint": 0
+        },
+        "BSCS-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -91,6 +101,11 @@ export const semester2: RawSemesterData = {
           "marks": 0,
           "grade": "F",
           "gradePoint": 0
+        },
+        "BSCS-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -122,6 +137,11 @@ export const semester2: RawSemesterData = {
           "marks": 0,
           "grade": "F",
           "gradePoint": 0
+        },
+        "BSCS-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -153,6 +173,11 @@ export const semester2: RawSemesterData = {
           "marks": 0,
           "grade": "F",
           "gradePoint": 0
+        },
+        "BSCS-354": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -184,6 +209,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -215,6 +245,11 @@ export const semester2: RawSemesterData = {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -246,6 +281,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -277,6 +317,11 @@ export const semester2: RawSemesterData = {
           "marks": 72,
           "grade": "B",
           "gradePoint": 3
+        },
+        "BSCS-354": {
+          "marks": 35,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -308,6 +353,11 @@ export const semester2: RawSemesterData = {
           "marks": 70,
           "grade": "B-",
           "gradePoint": 2.8
+        },
+        "BSCS-354": {
+          "marks": 25,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -339,6 +389,11 @@ export const semester2: RawSemesterData = {
           "marks": 0,
           "grade": "F",
           "gradePoint": 0
+        },
+        "BSCS-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -370,6 +425,11 @@ export const semester2: RawSemesterData = {
           "marks": 76,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -401,6 +461,11 @@ export const semester2: RawSemesterData = {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -432,6 +497,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -463,6 +533,11 @@ export const semester2: RawSemesterData = {
           "marks": 85,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -494,6 +569,11 @@ export const semester2: RawSemesterData = {
           "marks": 0,
           "grade": "F",
           "gradePoint": 0
+        },
+        "BSCS-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -525,6 +605,11 @@ export const semester2: RawSemesterData = {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -556,6 +641,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -587,6 +677,11 @@ export const semester2: RawSemesterData = {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -618,6 +713,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -649,6 +749,11 @@ export const semester2: RawSemesterData = {
           "marks": 0,
           "grade": "F",
           "gradePoint": 0
+        },
+        "BSCS-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -680,6 +785,11 @@ export const semester2: RawSemesterData = {
           "marks": 85,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -711,6 +821,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -742,6 +857,11 @@ export const semester2: RawSemesterData = {
           "marks": 76,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -773,6 +893,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -804,6 +929,11 @@ export const semester2: RawSemesterData = {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -835,6 +965,11 @@ export const semester2: RawSemesterData = {
           "marks": 76,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -866,6 +1001,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -897,6 +1037,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 81,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -928,6 +1073,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 81,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -959,6 +1109,11 @@ export const semester2: RawSemesterData = {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -990,6 +1145,11 @@ export const semester2: RawSemesterData = {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -1021,6 +1181,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 76,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -1052,6 +1217,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -1083,6 +1253,11 @@ export const semester2: RawSemesterData = {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 51,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1114,6 +1289,11 @@ export const semester2: RawSemesterData = {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1145,6 +1325,11 @@ export const semester2: RawSemesterData = {
           "marks": 72,
           "grade": "B",
           "gradePoint": 3
+        },
+        "BSCS-354": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -1176,6 +1361,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 51,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1207,6 +1397,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1238,6 +1433,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 55,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -1269,6 +1469,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -1300,6 +1505,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -1331,6 +1541,11 @@ export const semester2: RawSemesterData = {
           "marks": 72,
           "grade": "B",
           "gradePoint": 3
+        },
+        "BSCS-354": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -1362,6 +1577,11 @@ export const semester2: RawSemesterData = {
           "marks": 76,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1393,6 +1613,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -1424,6 +1649,11 @@ export const semester2: RawSemesterData = {
           "marks": 0,
           "grade": "F",
           "gradePoint": 0
+        },
+        "BSCS-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1455,6 +1685,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1486,6 +1721,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1517,6 +1757,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -1548,6 +1793,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -1579,6 +1829,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -1610,6 +1865,11 @@ export const semester2: RawSemesterData = {
           "marks": 72,
           "grade": "B",
           "gradePoint": 3
+        },
+        "BSCS-354": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -1641,6 +1901,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -1672,6 +1937,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 59,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -1703,6 +1973,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -1734,6 +2009,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 60,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -1765,6 +2045,11 @@ export const semester2: RawSemesterData = {
           "marks": 75,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1796,6 +2081,11 @@ export const semester2: RawSemesterData = {
           "marks": 74,
           "grade": "B",
           "gradePoint": 3
+        },
+        "BSCS-354": {
+          "marks": 57,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -1827,6 +2117,11 @@ export const semester2: RawSemesterData = {
           "marks": 76,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -1858,6 +2153,11 @@ export const semester2: RawSemesterData = {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -1889,6 +2189,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 54,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -1920,6 +2225,11 @@ export const semester2: RawSemesterData = {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -1951,6 +2261,11 @@ export const semester2: RawSemesterData = {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 81,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -1982,6 +2297,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 36,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -2013,6 +2333,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2044,6 +2369,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -2075,6 +2405,11 @@ export const semester2: RawSemesterData = {
           "marks": 50,
           "grade": "D",
           "gradePoint": 1
+        },
+        "BSCS-354": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -2106,6 +2441,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2137,6 +2477,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2168,6 +2513,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 81,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -2199,6 +2549,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 57,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -2230,6 +2585,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2261,6 +2621,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -2292,6 +2657,11 @@ export const semester2: RawSemesterData = {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
+        },
+        "BSCS-354": {
+          "marks": 57,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -2323,6 +2693,11 @@ export const semester2: RawSemesterData = {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -2354,6 +2729,11 @@ export const semester2: RawSemesterData = {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -2385,6 +2765,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 78,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -2416,6 +2801,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -2447,6 +2837,11 @@ export const semester2: RawSemesterData = {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 82,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -2478,6 +2873,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -2509,6 +2909,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2540,6 +2945,11 @@ export const semester2: RawSemesterData = {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
+        },
+        "BSCS-354": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2571,6 +2981,11 @@ export const semester2: RawSemesterData = {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2602,6 +3017,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2633,6 +3053,11 @@ export const semester2: RawSemesterData = {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
+        },
+        "BSCS-354": {
+          "marks": 83,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     }
