@@ -12,6 +12,8 @@ export interface ClassMetadata {
   degree: string;
   cr: string;
   activeSemesters: string[];
+  isLocked?: boolean;
+  password?: string;
 }
 
 export const CLASS_REGISTRY: ClassMetadata[] = [
@@ -52,7 +54,9 @@ export const CLASS_REGISTRY: ClassMetadata[] = [
     shift: "Evening",
     section: "Section B",
     degree: "Software Engineering",
-    cr: "TBD",
+    cr: "ATTA UR REHMAN",
     activeSemesters: ["semester1", "semester2", "semester3"],
+    isLocked: true,
+    password: "5049",
   },
 ];

@@ -6,6 +6,8 @@ import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import { CLASS_REGISTRY } from "@/data/registry";
 import { getClassData, loadClassSemesters } from "@/lib/data";
+import { cookies } from "next/headers";
+import { ClassLockScreen } from "@/components/class-lock-screen";
 import type { Metadata } from "next";
 
 interface Props {
@@ -32,6 +34,23 @@ export default async function ClassLeaderboardPage({ params }: Props) {
   const semestersData = await loadClassSemesters(meta.id);
 
   if (!classData || semestersData.length === 0) notFound();
+
+  if (meta.isLocked) {
+    const cookieStore = await cookies();
+    const hasAccess = cookieStore.get(`unlock_${meta.id}`);
+    
+    if (!hasAccess) {
+      return (
+        <div className="min-h-screen bg-[#f5f7f8] flex flex-col">
+          <Nav />
+          <div className="flex-1">
+            <ClassLockScreen classId={meta.id} classNameTitle={`Batch ${p.batch} ${meta.section}`} />
+          </div>
+          <Footer />
+        </div>
+      );
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#f5f7f8] flex flex-col">
