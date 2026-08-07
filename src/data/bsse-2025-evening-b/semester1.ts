@@ -65,6 +65,11 @@ export const semester1: RawSemesterData = {
           "marks": 15,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 16,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -107,6 +112,11 @@ export const semester1: RawSemesterData = {
           "marks": 77,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "SE-361": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -136,6 +146,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "SE-361": {
+          "marks": 65,
           "gradePoint": 2.4,
           "grade": "C+"
         }
@@ -169,6 +184,11 @@ export const semester1: RawSemesterData = {
           "marks": 0,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 26,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -200,6 +220,11 @@ export const semester1: RawSemesterData = {
           "marks": 64,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "SE-361": {
+          "marks": 57,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -231,6 +256,11 @@ export const semester1: RawSemesterData = {
           "marks": 87,
           "gradePoint": 4,
           "grade": "A"
+        },
+        "SE-361": {
+          "marks": 41,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -262,6 +292,11 @@ export const semester1: RawSemesterData = {
           "marks": 85,
           "gradePoint": 4,
           "grade": "A"
+        },
+        "SE-361": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -293,6 +328,11 @@ export const semester1: RawSemesterData = {
           "marks": 16,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -324,6 +364,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -355,6 +400,11 @@ export const semester1: RawSemesterData = {
           "marks": 66,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "SE-361": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -386,6 +436,11 @@ export const semester1: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3,
           "grade": "B"
+        },
+        "SE-361": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -414,6 +469,11 @@ export const semester1: RawSemesterData = {
           "grade": "B"
         },
         "SE-355": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
+        },
+        "SE-361": {
           "marks": 74,
           "gradePoint": 3,
           "grade": "B"
@@ -448,6 +508,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -479,6 +544,11 @@ export const semester1: RawSemesterData = {
           "marks": 51,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -510,6 +580,11 @@ export const semester1: RawSemesterData = {
           "marks": 63,
           "gradePoint": 2,
           "grade": "C"
+        },
+        "SE-361": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -539,6 +614,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 28,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-361": {
+          "marks": 48,
           "gradePoint": 0,
           "grade": "F"
         }
@@ -572,6 +652,11 @@ export const semester1: RawSemesterData = {
           "marks": 51,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 39,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -603,6 +688,11 @@ export const semester1: RawSemesterData = {
           "marks": 77,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "SE-361": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -634,6 +724,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -665,6 +760,11 @@ export const semester1: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3,
           "grade": "B"
+        },
+        "SE-361": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -727,6 +827,11 @@ export const semester1: RawSemesterData = {
           "marks": 12,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -758,6 +863,11 @@ export const semester1: RawSemesterData = {
           "marks": 28,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 60,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -789,6 +899,11 @@ export const semester1: RawSemesterData = {
           "marks": 92,
           "gradePoint": 4,
           "grade": "A+"
+        },
+        "SE-361": {
+          "marks": 44,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -818,6 +933,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 76,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-361": {
+          "marks": 78,
           "gradePoint": 3.4,
           "grade": "B+"
         }
@@ -851,6 +971,11 @@ export const semester1: RawSemesterData = {
           "marks": 84,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "SE-361": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -882,6 +1007,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -913,6 +1043,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 43,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -944,6 +1079,11 @@ export const semester1: RawSemesterData = {
           "marks": 24,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 55,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -973,6 +1113,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-361": {
+          "marks": 62,
           "gradePoint": 2,
           "grade": "C"
         }
@@ -1006,6 +1151,11 @@ export const semester1: RawSemesterData = {
           "marks": 76,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "SE-361": {
+          "marks": 55,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -1037,6 +1187,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -1068,6 +1223,11 @@ export const semester1: RawSemesterData = {
           "marks": 66,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "SE-361": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -1099,6 +1259,11 @@ export const semester1: RawSemesterData = {
           "marks": 80,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "SE-361": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -1130,6 +1295,11 @@ export const semester1: RawSemesterData = {
           "marks": 22,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 57,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -1161,6 +1331,11 @@ export const semester1: RawSemesterData = {
           "marks": 73,
           "gradePoint": 3,
           "grade": "B"
+        },
+        "SE-361": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1190,6 +1365,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
+        },
+        "SE-361": {
+          "marks": 51,
           "gradePoint": 1,
           "grade": "D"
         }
@@ -1223,6 +1403,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 38,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1254,6 +1439,11 @@ export const semester1: RawSemesterData = {
           "marks": 84,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "SE-361": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -1285,6 +1475,11 @@ export const semester1: RawSemesterData = {
           "marks": 51,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -1311,6 +1506,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 38,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1342,6 +1542,11 @@ export const semester1: RawSemesterData = {
           "marks": 70,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "SE-361": {
+          "marks": 51,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1373,6 +1578,11 @@ export const semester1: RawSemesterData = {
           "marks": 27,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 63,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -1402,6 +1612,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 22,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-361": {
+          "marks": 41,
           "gradePoint": 0,
           "grade": "F"
         }
@@ -1435,6 +1650,11 @@ export const semester1: RawSemesterData = {
           "marks": 86,
           "gradePoint": 4,
           "grade": "A"
+        },
+        "SE-361": {
+          "marks": 7,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1464,6 +1684,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "SE-361": {
+          "marks": 78,
           "gradePoint": 3.4,
           "grade": "B+"
         }
@@ -1497,6 +1722,11 @@ export const semester1: RawSemesterData = {
           "marks": 66,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "SE-361": {
+          "marks": 63,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -1528,6 +1758,11 @@ export const semester1: RawSemesterData = {
           "marks": 82,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "SE-361": {
+          "marks": 51,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -1557,6 +1792,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 21,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-361": {
+          "marks": 35,
           "gradePoint": 0,
           "grade": "F"
         }
@@ -1590,6 +1830,11 @@ export const semester1: RawSemesterData = {
           "marks": 67,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "SE-361": {
+          "marks": 76,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -1621,6 +1866,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 6,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1652,6 +1902,11 @@ export const semester1: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2,
           "grade": "C"
+        },
+        "SE-361": {
+          "marks": 26,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1683,6 +1938,11 @@ export const semester1: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2,
           "grade": "C"
+        },
+        "SE-361": {
+          "marks": 27,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1714,6 +1974,11 @@ export const semester1: RawSemesterData = {
           "marks": 55,
           "gradePoint": 1.4,
           "grade": "D+"
+        },
+        "SE-361": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -1745,6 +2010,11 @@ export const semester1: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
+        },
+        "SE-361": {
+          "marks": 60,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -1776,6 +2046,11 @@ export const semester1: RawSemesterData = {
           "marks": 74,
           "gradePoint": 3,
           "grade": "B"
+        },
+        "SE-361": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -1807,6 +2082,11 @@ export const semester1: RawSemesterData = {
           "marks": 57,
           "gradePoint": 1.8,
           "grade": "C-"
+        },
+        "SE-361": {
+          "marks": 48,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1836,6 +2116,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
+        },
+        "SE-361": {
+          "marks": 61,
           "gradePoint": 2,
           "grade": "C"
         }
@@ -1869,6 +2154,11 @@ export const semester1: RawSemesterData = {
           "marks": 62,
           "gradePoint": 2,
           "grade": "C"
+        },
+        "SE-361": {
+          "marks": 43,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1900,6 +2190,11 @@ export const semester1: RawSemesterData = {
           "marks": 56,
           "gradePoint": 1.4,
           "grade": "D+"
+        },
+        "SE-361": {
+          "marks": 17,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1931,6 +2226,11 @@ export const semester1: RawSemesterData = {
           "marks": 73,
           "gradePoint": 3,
           "grade": "B"
+        },
+        "SE-361": {
+          "marks": 80,
+          "gradePoint": 3.8,
+          "grade": "A-"
         }
       }
     },
@@ -1957,6 +2257,11 @@ export const semester1: RawSemesterData = {
           "marks": 70,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "SE-361": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -1988,6 +2293,11 @@ export const semester1: RawSemesterData = {
           "marks": 25,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 55,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -2019,6 +2329,11 @@ export const semester1: RawSemesterData = {
           "marks": 56,
           "gradePoint": 1.4,
           "grade": "D+"
+        },
+        "SE-361": {
+          "marks": 27,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -2050,6 +2365,11 @@ export const semester1: RawSemesterData = {
           "marks": 85,
           "gradePoint": 4,
           "grade": "A"
+        },
+        "SE-361": {
+          "marks": 70,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -2081,6 +2401,11 @@ export const semester1: RawSemesterData = {
           "marks": 63,
           "gradePoint": 2,
           "grade": "C"
+        },
+        "SE-361": {
+          "marks": 55,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -2112,6 +2437,11 @@ export const semester1: RawSemesterData = {
           "marks": 21,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -2143,6 +2473,11 @@ export const semester1: RawSemesterData = {
           "marks": 27,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-361": {
+          "marks": 54,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -2169,6 +2504,11 @@ export const semester1: RawSemesterData = {
           "marks": 83,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "SE-361": {
+          "marks": 46,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -2219,6 +2559,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-355": {
           "marks": 15,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-361": {
+          "marks": 5,
           "gradePoint": 0,
           "grade": "F"
         }
