@@ -2602,27 +2602,27 @@ export const semester2: RawSemesterData = {
           "grade": "F",
           "gradePoint": 0
         },
-        "MATH-356": {
-          "marks": 58,
-          "grade": "C-",
-          "gradePoint": 1.8
-        },
         "CS-358": {
           "marks": 17,
           "grade": "F",
           "gradePoint": 0
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 58,
+          "grade": "C-",
+          "gradePoint": 1.8
+        },
+        "CS-360": {
           "marks": 56,
           "grade": "D+",
           "gradePoint": 1.4
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 50,
           "gradePoint": 1,
           "grade": "D"
@@ -2638,27 +2638,27 @@ export const semester2: RawSemesterData = {
           "grade": "F",
           "gradePoint": 0
         },
-        "MATH-356": {
-          "marks": 44,
-          "grade": "F",
-          "gradePoint": 0
-        },
         "CS-358": {
           "marks": 8,
           "grade": "F",
           "gradePoint": 0
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 44,
+          "grade": "F",
+          "gradePoint": 0
+        },
+        "CS-360": {
           "marks": 50,
           "grade": "D",
           "gradePoint": 1
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 57,
           "gradePoint": 1.8,
           "grade": "C-"
@@ -2674,27 +2674,27 @@ export const semester2: RawSemesterData = {
           "grade": "F",
           "gradePoint": 0
         },
-        "MATH-356": {
-          "marks": 62,
-          "grade": "C",
-          "gradePoint": 2
-        },
         "CS-358": {
           "marks": 19,
           "grade": "F",
           "gradePoint": 0
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 62,
+          "grade": "C",
+          "gradePoint": 2
+        },
+        "CS-360": {
           "marks": 79,
           "grade": "B+",
           "gradePoint": 3.4
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 73,
           "gradePoint": 3,
           "grade": "B"
@@ -2710,27 +2710,27 @@ export const semester2: RawSemesterData = {
           "grade": "A+",
           "gradePoint": 4
         },
-        "MATH-356": {
-          "marks": 82,
-          "grade": "A-",
-          "gradePoint": 3.8
-        },
         "CS-358": {
           "marks": 64,
           "grade": "C+",
           "gradePoint": 2.4
         },
-        "ENG-360": {
-          "marks": 76,
-          "grade": "B+",
-          "gradePoint": 3.4
-        },
-        "PK-362": {
+        "CS-356": {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-360": {
+          "marks": 76,
+          "grade": "B+",
+          "gradePoint": 3.4
+        },
+        "CS-362": {
+          "marks": 82,
+          "grade": "A-",
+          "gradePoint": 3.8
+        },
+        "CS-354": {
           "marks": 71,
           "gradePoint": 3,
           "grade": "B"
@@ -2746,27 +2746,27 @@ export const semester2: RawSemesterData = {
           "grade": "F",
           "gradePoint": 0
         },
-        "MATH-356": {
-          "marks": 50,
-          "grade": "D",
-          "gradePoint": 1
-        },
         "CS-358": {
           "marks": 20,
           "grade": "F",
           "gradePoint": 0
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 50,
+          "grade": "D",
+          "gradePoint": 1
+        },
+        "CS-360": {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 78,
           "gradePoint": 3.4,
           "grade": "B+"
@@ -2782,27 +2782,27 @@ export const semester2: RawSemesterData = {
           "grade": "C-",
           "gradePoint": 1.8
         },
-        "MATH-356": {
-          "marks": 54,
-          "grade": "D+",
-          "gradePoint": 1.4
-        },
         "CS-358": {
           "marks": 15,
           "grade": "F",
           "gradePoint": 0
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 54,
+          "grade": "D+",
+          "gradePoint": 1.4
+        },
+        "CS-360": {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
@@ -2818,27 +2818,27 @@ export const semester2: RawSemesterData = {
           "grade": "A",
           "gradePoint": 4
         },
-        "MATH-356": {
-          "marks": 80,
-          "grade": "A-",
-          "gradePoint": 3.8
-        },
         "CS-358": {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 80,
+          "grade": "A-",
+          "gradePoint": 3.8
+        },
+        "CS-360": {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 82,
           "gradePoint": 3.8,
           "grade": "A-"
@@ -2854,27 +2854,27 @@ export const semester2: RawSemesterData = {
           "grade": "F",
           "gradePoint": 0
         },
-        "MATH-356": {
-          "marks": 45,
-          "grade": "F",
-          "gradePoint": 0
-        },
         "CS-358": {
           "marks": 50,
           "grade": "D",
           "gradePoint": 1
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 45,
+          "grade": "F",
+          "gradePoint": 0
+        },
+        "CS-360": {
           "marks": 83,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 52,
           "gradePoint": 1,
           "grade": "D"
@@ -2890,27 +2890,27 @@ export const semester2: RawSemesterData = {
           "grade": "B",
           "gradePoint": 3
         },
-        "MATH-356": {
-          "marks": 57,
-          "grade": "C-",
-          "gradePoint": 1.8
-        },
         "CS-358": {
           "marks": 50,
           "grade": "D",
           "gradePoint": 1
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 57,
+          "grade": "C-",
+          "gradePoint": 1.8
+        },
+        "CS-360": {
           "marks": 87,
           "grade": "A",
           "gradePoint": 4
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 66,
           "gradePoint": 2.4,
           "grade": "C+"
@@ -2926,27 +2926,27 @@ export const semester2: RawSemesterData = {
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "MATH-356": {
-          "marks": 47,
-          "grade": "F",
-          "gradePoint": 0
-        },
         "CS-358": {
           "marks": 50,
           "grade": "D",
           "gradePoint": 1
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 47,
+          "grade": "F",
+          "gradePoint": 0
+        },
+        "CS-360": {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 86,
           "grade": "A",
           "gradePoint": 4
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 67,
           "gradePoint": 2.4,
           "grade": "C+"
@@ -2962,27 +2962,27 @@ export const semester2: RawSemesterData = {
           "grade": "F",
           "gradePoint": 0
         },
-        "MATH-356": {
-          "marks": 37,
-          "grade": "F",
-          "gradePoint": 0
-        },
         "CS-358": {
           "marks": 5,
           "grade": "F",
           "gradePoint": 0
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 37,
+          "grade": "F",
+          "gradePoint": 0
+        },
+        "CS-360": {
           "marks": 72,
           "grade": "B",
           "gradePoint": 3
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 82,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 64,
           "gradePoint": 2.4,
           "grade": "C+"
@@ -2998,27 +2998,27 @@ export const semester2: RawSemesterData = {
           "grade": "F",
           "gradePoint": 0
         },
-        "MATH-356": {
-          "marks": 53,
-          "grade": "D+",
-          "gradePoint": 1.4
-        },
         "CS-358": {
           "marks": 27,
           "grade": "F",
           "gradePoint": 0
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 53,
+          "grade": "D+",
+          "gradePoint": 1.4
+        },
+        "CS-360": {
           "marks": 80,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 65,
           "gradePoint": 2.4,
           "grade": "C+"
@@ -3034,27 +3034,27 @@ export const semester2: RawSemesterData = {
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "MATH-356": {
-          "marks": 77,
-          "grade": "B+",
-          "gradePoint": 3.4
-        },
         "CS-358": {
           "marks": 90,
           "grade": "A+",
           "gradePoint": 4
         },
-        "ENG-360": {
+        "CS-356": {
+          "marks": 77,
+          "grade": "B+",
+          "gradePoint": 3.4
+        },
+        "CS-360": {
           "marks": 78,
           "grade": "B+",
           "gradePoint": 3.4
         },
-        "PK-362": {
+        "CS-362": {
           "marks": 84,
           "grade": "A-",
           "gradePoint": 3.8
         },
-        "BSCS-354": {
+        "CS-354": {
           "marks": 83,
           "gradePoint": 3.8,
           "grade": "A-"
