@@ -1937,6 +1937,11 @@ export const semester2: RawSemesterData = {
           "marks": 55,
           "gradePoint": 1.4,
           "grade": "D+"
+        },
+        "SE-358": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -2375,17 +2380,110 @@ export const semester2: RawSemesterData = {
     {
       "name": "AMMAR ALI",
       "roll": "EB25210106014",
-      "results": {}
+      "results": {
+        "SE-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-356": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-360": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-352": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-358": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-362": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
     },
     {
       "name": "MUHAMMAD ALI MUNIR",
       "roll": "EB25210106055",
-      "results": {}
+      "results": {
+        "SE-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-356": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-360": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-352": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-358": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-362": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
     },
     {
       "name": "MUHAMMAD RAZA",
       "roll": "EB25210106077",
-      "results": {}
+      "results": {
+        "SE-354": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-356": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-360": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-352": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-358": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-362": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
     }
   ]
 };

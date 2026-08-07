@@ -125,6 +125,11 @@ export const semester3: RawSemesterData = {
           "marks": 0,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-453": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -440,6 +445,11 @@ export const semester3: RawSemesterData = {
           "marks": 0,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-453": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -465,6 +475,11 @@ export const semester3: RawSemesterData = {
       "results": {
         "SE-457": {
           "marks": 26,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-453": {
+          "marks": 0,
           "gradePoint": 0,
           "grade": "F"
         }
@@ -862,6 +877,11 @@ export const semester3: RawSemesterData = {
           "marks": 0,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-453": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1060,17 +1080,50 @@ export const semester3: RawSemesterData = {
     {
       "name": "AMMAR ALI",
       "roll": "EB25210106014",
-      "results": {}
+      "results": {
+        "SE-453": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-457": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
     },
     {
       "name": "MUHAMMAD ALI MUNIR",
       "roll": "EB25210106055",
-      "results": {}
+      "results": {
+        "SE-453": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-457": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
     },
     {
       "name": "MUHAMMAD RAZA",
       "roll": "EB25210106077",
-      "results": {}
+      "results": {
+        "SE-453": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-457": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        }
+      }
     }
   ]
 };

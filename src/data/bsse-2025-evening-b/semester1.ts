@@ -81,6 +81,31 @@ export const semester1: RawSemesterData = {
           "marks": 74,
           "gradePoint": 3,
           "grade": "B"
+        },
+        "SE-351": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-353": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-359": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-355": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-361": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -796,6 +821,11 @@ export const semester1: RawSemesterData = {
           "marks": 85,
           "gradePoint": 4,
           "grade": "A"
+        },
+        "SE-361": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -1509,6 +1539,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-361": {
           "marks": 38,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-351": {
+          "marks": 0,
           "gradePoint": 0,
           "grade": "F"
         }
@@ -2262,6 +2297,11 @@ export const semester1: RawSemesterData = {
           "marks": 66,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "SE-355": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -2509,6 +2549,11 @@ export const semester1: RawSemesterData = {
           "marks": 46,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "SE-357": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -2535,6 +2580,16 @@ export const semester1: RawSemesterData = {
           "marks": 53,
           "gradePoint": 1.4,
           "grade": "D+"
+        },
+        "SE-357": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-361": {
+          "marks": 0,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -2564,6 +2619,11 @@ export const semester1: RawSemesterData = {
         },
         "SE-361": {
           "marks": 5,
+          "gradePoint": 0,
+          "grade": "F"
+        },
+        "SE-357": {
+          "marks": 0,
           "gradePoint": 0,
           "grade": "F"
         }
