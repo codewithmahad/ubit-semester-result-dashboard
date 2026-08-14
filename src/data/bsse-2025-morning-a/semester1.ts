@@ -17,7 +17,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106001",
             name: "ABDUL REHMAN AHMED",
             results: {
-                "SE-351": { marks: 36, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 7, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-355": { marks: 30, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 17, grade: "F", gradePoint: 0.0 },
@@ -29,7 +29,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106002",
             name: "ABDUL WASAY KHAN",
             results: {
-                "SE-351": { marks: 32, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 34.5, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 34, grade: "F", gradePoint: 0.0 },
                 "SE-355": { marks: 30, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 7, grade: "F", gradePoint: 0.0 },
@@ -149,7 +149,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106012",
             name: "ANUMTA TARIQ",
             results: {
-                "SE-351": { marks: 41, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 53.5, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 40, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 21, grade: "F", gradePoint: 0.0 },
@@ -209,7 +209,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106017",
             name: "EMAN IQBAL",
             results: {
-                "SE-351": { marks: 46, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 60, grade: "C", gradePoint: 2 },
                 "SE-353": { marks: 77, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 37, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
@@ -293,7 +293,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106024",
             name: "HAMMAD TAHIR",
             results: {
-                "SE-351": { marks: 46, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 40.5, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 77, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
@@ -341,7 +341,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106028",
             name: "LAIBA SIDDIQUI",
             results: {
-                "SE-351": { marks: 28, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 46, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 56, grade: "D+", gradePoint: 1.4 },
                 "SE-355": { marks: 21, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 4, grade: "F", gradePoint: 0.0 },
@@ -377,7 +377,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106031",
             name: "MUHAMMAD ASIM KHAN",
             results: {
-                "SE-351": { marks: 37, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 51.5, grade: "D", gradePoint: 1 },
                 "SE-353": { marks: 77, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 36, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 18, grade: "F", gradePoint: 0.0 },
@@ -425,7 +425,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106035",
             name: "MUHAMMAD HAMZA",
             results: {
-                "SE-351": { marks: 78, grade: "B+", gradePoint: 3.4 },
+                "SE-351": { marks: 55, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 87, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 29, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
@@ -437,7 +437,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106036",
             name: "MUHAMMAD HAMZA SIDDIQUI",
             results: {
-                "SE-351": { marks: 45, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 55, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 69, grade: "B-", gradePoint: 2.8 },
                 "SE-355": { marks: 36, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 29, grade: "F", gradePoint: 0.0 },
@@ -461,7 +461,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106038",
             name: "MUHAMMAD HUNAIN AHMED",
             results: {
-                "SE-351": { marks: 35, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 42, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-355": { marks: 22, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
@@ -485,7 +485,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106040",
             name: "MUHAMMAD ISBAH ARFIN",
             results: {
-                "SE-351": { marks: 40, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 57.5, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 88, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
@@ -509,7 +509,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106042",
             name: "MUHAMMAD KAIF SIDDIQUI",
             results: {
-                "SE-351": { marks: 31, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 53.5, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 52, grade: "D", gradePoint: 1.0 },
                 "SE-355": { marks: 31, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 23, grade: "F", gradePoint: 0.0 },
@@ -629,7 +629,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106052",
             name: "MUHAMMAD UMER KHAN",
             results: {
-                "SE-351": { marks: 26, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 41, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 60, grade: "C-", gradePoint: 1.8 },
                 "SE-355": { marks: 27, grade: "F", gradePoint: 0.0 },
                 "SE-357": { marks: 12, grade: "F", gradePoint: 0.0 },
@@ -737,7 +737,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106061",
             name: "RABIA FATIMA",
             results: {
-                "SE-351": { marks: 10, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 60.5, grade: "C", gradePoint: 2 },
                 "SE-353": { marks: 86, grade: "A", gradePoint: 4.0 },
                 "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
@@ -941,7 +941,7 @@ export const semester1: RawSemesterData = {
             roll: "B24110106079",
             name: "TANZEEL MAZHAR",
             results: {
-                "SE-351": { marks: 34, grade: "F", gradePoint: 0.0 },
+                "SE-351": { marks: 52.5, grade: "D", gradePoint: 1 },
                 "SE-353": { marks: 92, grade: "A+", gradePoint: 4.0 },
                 "SE-355": { marks: 52, grade: "D", gradePoint: 1.0 },
                 "SE-357": { marks: 28, grade: "F", gradePoint: 0.0 },
