@@ -19,7 +19,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 7, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 61, grade: "C", gradePoint: 2.0 },
-                "SE-355": { marks: 30, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 93, grade: "A+", gradePoint: 4.0 },
                 "SE-357": { marks: 17, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 55, grade: "D+", gradePoint: 1.4 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -31,7 +31,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 34.5, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 34, grade: "F", gradePoint: 0.0 },
-                "SE-355": { marks: 30, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-357": { marks: 7, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 55, grade: "D+", gradePoint: 1.4 },
                 "SE-361": { marks: 70, grade: "B-", gradePoint: 2.8 }
@@ -115,7 +115,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 65, grade: "C+", gradePoint: 2.4 },
                 "SE-353": { marks: 86, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 41, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 30, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 72, grade: "B", gradePoint: 3 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -151,7 +151,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 53.5, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 75, grade: "B+", gradePoint: 3.4 },
-                "SE-355": { marks: 40, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 77, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 21, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 62, grade: "C", gradePoint: 2 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
@@ -211,7 +211,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 60, grade: "C", gradePoint: 2 },
                 "SE-353": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-355": { marks: 37, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 79, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-359": { marks: 72, grade: "B", gradePoint: 3 },
                 "SE-361": { marks: 83, grade: "A-", gradePoint: 3.8 }
@@ -247,7 +247,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 54, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 73, grade: "B", gradePoint: 3.0 },
-                "SE-355": { marks: 37, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 84, grade: "A-", gradePoint: 3.8 },
                 "SE-357": { marks: 24, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 71, grade: "B", gradePoint: 3 },
                 "SE-361": { marks: 85, grade: "A", gradePoint: 4 }
@@ -319,7 +319,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 45, grade: "F", gradePoint: 0.0 },
                 "SE-353": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-355": { marks: 37, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 76, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 23, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 52, grade: "D", gradePoint: 1 },
                 "SE-361": { marks: 60, grade: "C-", gradePoint: 1.8 }
@@ -343,7 +343,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 46, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 56, grade: "D+", gradePoint: 1.4 },
-                "SE-355": { marks: 21, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-357": { marks: 4, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 85, grade: "A", gradePoint: 4 }
@@ -379,7 +379,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 51.5, grade: "D", gradePoint: 1 },
                 "SE-353": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-355": { marks: 36, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 72, grade: "B", gradePoint: 3.0 },
                 "SE-357": { marks: 18, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 59, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
@@ -427,7 +427,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 55, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 87, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 29, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 78, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-359": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -439,7 +439,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 55, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 69, grade: "B-", gradePoint: 2.8 },
-                "SE-355": { marks: 36, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 72, grade: "B", gradePoint: 3.0 },
                 "SE-357": { marks: 29, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 63, grade: "C", gradePoint: 2 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -463,7 +463,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 42, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 80, grade: "A-", gradePoint: 3.8 },
-                "SE-355": { marks: 22, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 71, grade: "B", gradePoint: 3.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-359": { marks: 60, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 82, grade: "A-", gradePoint: 3.8 }
@@ -487,7 +487,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 57.5, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 88, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
+                "SE-355": { marks: 76, grade: "B+", gradePoint: 3.4 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-359": { marks: 67, grade: "C+", gradePoint: 2.4 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -511,7 +511,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 53.5, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 52, grade: "D", gradePoint: 1.0 },
-                "SE-355": { marks: 31, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 84, grade: "A-", gradePoint: 3.8 },
                 "SE-357": { marks: 23, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 66, grade: "C+", gradePoint: 2.4 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -583,7 +583,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 65, grade: "C+", gradePoint: 2.4 },
                 "SE-353": { marks: 78, grade: "B+", gradePoint: 3.4 },
-                "SE-355": { marks: 37, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 90, grade: "A+", gradePoint: 4.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-359": { marks: 66, grade: "C+", gradePoint: 2.4 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -619,7 +619,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-353": { marks: 80, grade: "A-", gradePoint: 3.8 },
-                "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
+                "SE-355": { marks: 92, grade: "A+", gradePoint: 4.0 },
                 "SE-357": { marks: 61, grade: "C", gradePoint: 2.0 },
                 "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -631,7 +631,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 41, grade: "F", gradePoint: 0 },
                 "SE-353": { marks: 60, grade: "C-", gradePoint: 1.8 },
-                "SE-355": { marks: 27, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 72, grade: "B", gradePoint: 3.0 },
                 "SE-357": { marks: 12, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 57, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -643,7 +643,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 57, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 33, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 87, grade: "A", gradePoint: 4.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -655,7 +655,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 65, grade: "C+", gradePoint: 2.4 },
                 "SE-353": { marks: 78, grade: "B+", gradePoint: 3.4 },
-                "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
+                "SE-355": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-357": { marks: 23, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -679,7 +679,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 54, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 33, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 87, grade: "A", gradePoint: 4.0 },
                 "SE-357": { marks: 24, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 64, grade: "C+", gradePoint: 2.4 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
@@ -691,7 +691,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-353": { marks: 53, grade: "D+", gradePoint: 1.4 },
-                "SE-355": { marks: 20, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-357": { marks: 8, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 78, grade: "B+", gradePoint: 3.4 }
@@ -727,7 +727,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 54, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 85, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 33, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 81, grade: "A-", gradePoint: 3.8 },
                 "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 79, grade: "B+", gradePoint: 3.4 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
@@ -739,7 +739,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 60.5, grade: "C", gradePoint: 2 },
                 "SE-353": { marks: 86, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 50, grade: "D", gradePoint: 1.0 },
+                "SE-355": { marks: 90, grade: "A+", gradePoint: 4.0 },
                 "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 80, grade: "A-", gradePoint: 3.8 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
@@ -763,7 +763,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-353": { marks: 88, grade: "A", gradePoint: 4.0 },
-                "SE-355": { marks: 40, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 70, grade: "B-", gradePoint: 2.8 },
                 "SE-357": { marks: 68, grade: "B-", gradePoint: 2.8 },
                 "SE-359": { marks: 66, grade: "C+", gradePoint: 2.4 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -787,7 +787,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 64, grade: "C+", gradePoint: 2.4 },
                 "SE-353": { marks: 83, grade: "A-", gradePoint: 3.8 },
-                "SE-355": { marks: 31, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 62, grade: "C", gradePoint: 2.0 },
                 "SE-357": { marks: 6, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 58, grade: "C-", gradePoint: 1.8 },
                 "SE-361": { marks: 75, grade: "B+", gradePoint: 3.4 }
@@ -895,7 +895,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 62, grade: "C", gradePoint: 2.0 },
                 "SE-353": { marks: 82, grade: "A-", gradePoint: 3.8 },
-                "SE-355": { marks: 26, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 85, grade: "A", gradePoint: 4.0 },
                 "SE-357": { marks: 50, grade: "D", gradePoint: 1.0 },
                 "SE-359": { marks: 71, grade: "B", gradePoint: 3 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
@@ -907,7 +907,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 54, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 63, grade: "C", gradePoint: 2.0 },
-                "SE-355": { marks: 32, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 64, grade: "C+", gradePoint: 2.4 },
                 "SE-357": { marks: 25, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 69, grade: "B-", gradePoint: 2.8 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
@@ -931,7 +931,7 @@ export const semester1: RawSemesterData = {
             results: {
                 "SE-351": { marks: 54, grade: "D+", gradePoint: 1.4 },
                 "SE-353": { marks: 50, grade: "D", gradePoint: 1.0 },
-                "SE-355": { marks: 27, grade: "F", gradePoint: 0.0 },
+                "SE-355": { marks: 92, grade: "A+", gradePoint: 4.0 },
                 "SE-357": { marks: 27, grade: "F", gradePoint: 0.0 },
                 "SE-359": { marks: 66, grade: "C+", gradePoint: 2.4 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
