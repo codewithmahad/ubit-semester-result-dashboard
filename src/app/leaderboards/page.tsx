@@ -14,7 +14,9 @@ import { getClassData } from "@/lib/data";
 
 export default async function LeaderboardsPage() {
   const sections: ClassSection[] = await Promise.all(
-    CLASS_REGISTRY.map(async (meta) => {
+    CLASS_REGISTRY
+      .filter((meta) => meta.id !== "bsse-2025-evening-b") // TEMP: hide BSSE Evening Sec B card — remove this line to restore
+      .map(async (meta) => {
       const data = await getClassData(meta.id);
       const studentCount = data ? data.students.length : 0;
       return {
