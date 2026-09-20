@@ -41,6 +41,11 @@ export const semester3: RawSemesterData = {
       name: "ABDUL RAFAY",
       roll: "EB25210106004",
       results: {
+        "SE-459": {
+          marks: 68,
+          gradePoint: 2.8,
+          grade: "B-",
+        },
         "SE-453": {
           marks: 65,
           gradePoint: 2.4,
@@ -62,6 +67,11 @@ export const semester3: RawSemesterData = {
       name: "ABDUL REHMAN ANWER",
       roll: "EB25210106007",
       results: {
+        "SE-459": {
+          marks: 81,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 66,
           gradePoint: 2.4,
@@ -83,6 +93,11 @@ export const semester3: RawSemesterData = {
       name: "ADEEL ALI",
       roll: "EB25210106009",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 69,
           gradePoint: 2.8,
@@ -104,6 +119,11 @@ export const semester3: RawSemesterData = {
       name: "AHMED HUSSAIN BUTT",
       roll: "EB25210106010",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 64,
           gradePoint: 2.4,
@@ -125,6 +145,11 @@ export const semester3: RawSemesterData = {
       name: "AHSAN ALI SHAIKH",
       roll: "EB25210106011",
       results: {
+        "SE-459": {
+          marks: 62,
+          gradePoint: 2,
+          grade: "C",
+        },
         "SE-453": {
           marks: 56,
           gradePoint: 1.4,
@@ -146,6 +171,11 @@ export const semester3: RawSemesterData = {
       name: "ALEEZA PERVEN",
       roll: "EB25210106012",
       results: {
+        "SE-459": {
+          marks: 25,
+          gradePoint: 0,
+          grade: "F",
+        },
         "SE-457": {
           marks: 0,
           gradePoint: 0,
@@ -167,6 +197,11 @@ export const semester3: RawSemesterData = {
       name: "ALI AHMED KHAN",
       roll: "EB25210106013",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 60,
           gradePoint: 1.8,
@@ -188,6 +223,11 @@ export const semester3: RawSemesterData = {
       name: "ANAS AHMED KHAN",
       roll: "EB25210106017",
       results: {
+        "SE-459": {
+          marks: 65,
+          gradePoint: 2.4,
+          grade: "C+",
+        },
         "SE-453": {
           marks: 61,
           gradePoint: 2,
@@ -209,6 +249,11 @@ export const semester3: RawSemesterData = {
       name: "ANUS",
       roll: "EB25210106018",
       results: {
+        "SE-459": {
+          marks: 70,
+          gradePoint: 2.8,
+          grade: "B-",
+        },
         "SE-453": {
           marks: 66,
           gradePoint: 2.4,
@@ -230,6 +275,11 @@ export const semester3: RawSemesterData = {
       name: "ASAD AFTAB AHMED",
       roll: "EB25210106019",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 64,
           gradePoint: 2.4,
@@ -251,6 +301,11 @@ export const semester3: RawSemesterData = {
       name: "ASAD NOOR",
       roll: "EB25210106020",
       results: {
+        "SE-459": {
+          marks: 75,
+          gradePoint: 3.4,
+          grade: "B+",
+        },
         "SE-453": {
           marks: 63,
           gradePoint: 2,
@@ -272,6 +327,11 @@ export const semester3: RawSemesterData = {
       name: "ASIF ASAD",
       roll: "EB25210106021",
       results: {
+        "SE-459": {
+          marks: 54,
+          gradePoint: 1.4,
+          grade: "D+",
+        },
         "SE-453": {
           marks: 62,
           gradePoint: 2,
@@ -293,6 +353,11 @@ export const semester3: RawSemesterData = {
       name: "AYESHA IZZAT",
       roll: "EB25210106023",
       results: {
+        "SE-459": {
+          marks: 90,
+          gradePoint: 4,
+          grade: "A+",
+        },
         "SE-453": {
           marks: 80,
           gradePoint: 3.8,
@@ -314,6 +379,11 @@ export const semester3: RawSemesterData = {
       name: "AYESHA MOIN",
       roll: "EB25210106024",
       results: {
+        "SE-459": {
+          marks: 71,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 75,
           gradePoint: 3.4,
@@ -335,6 +405,11 @@ export const semester3: RawSemesterData = {
       name: "BAZIL AHMED",
       roll: "EB25210106025",
       results: {
+        "SE-459": {
+          marks: 55,
+          gradePoint: 1.4,
+          grade: "D+",
+        },
         "SE-453": {
           marks: 64,
           gradePoint: 2.4,
@@ -356,6 +431,11 @@ export const semester3: RawSemesterData = {
       name: "FAHAD SHAIKH",
       roll: "EB25210106026",
       results: {
+        "SE-459": {
+          marks: 67,
+          gradePoint: 2.4,
+          grade: "C+",
+        },
         "SE-453": {
           marks: 53,
           gradePoint: 1.4,
@@ -377,6 +457,11 @@ export const semester3: RawSemesterData = {
       name: "FIRZA TAHIR",
       roll: "EB25210106028",
       results: {
+        "SE-459": {
+          marks: 77,
+          gradePoint: 3.4,
+          grade: "B+",
+        },
         "SE-453": {
           marks: 55,
           gradePoint: 1.4,
@@ -398,6 +483,11 @@ export const semester3: RawSemesterData = {
       name: "HUZAIFA BIN ANWAR",
       roll: "EB25210106038",
       results: {
+        "SE-459": {
+          marks: 82,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 60,
           gradePoint: 1.8,
@@ -419,6 +509,11 @@ export const semester3: RawSemesterData = {
       name: "KAZIM HUSSAIN",
       roll: "EB25210106039",
       results: {
+        "SE-459": {
+          marks: 73,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 71,
           gradePoint: 3,
@@ -440,6 +535,11 @@ export const semester3: RawSemesterData = {
       name: "LAVIZAH ZEESHAN",
       roll: "EB25210106042",
       results: {
+        "SE-459": {
+          marks: 85,
+          gradePoint: 4,
+          grade: "A",
+        },
         "SE-453": {
           marks: 57,
           gradePoint: 1.8,
@@ -461,6 +561,11 @@ export const semester3: RawSemesterData = {
       name: "MAAZ AHMED KHAN",
       roll: "EB25210106043",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 67,
           gradePoint: 2.4,
@@ -482,6 +587,11 @@ export const semester3: RawSemesterData = {
       name: "MAAZ BIN AAMIR",
       roll: "EB25210106044",
       results: {
+        "SE-459": {
+          marks: 73,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 62,
           gradePoint: 2,
@@ -503,6 +613,11 @@ export const semester3: RawSemesterData = {
       name: "MAHAM ATIF",
       roll: "EB25210106045",
       results: {
+        "SE-459": {
+          marks: 73,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 67,
           gradePoint: 2.4,
@@ -524,6 +639,11 @@ export const semester3: RawSemesterData = {
       name: "MALIK ABDUL MANNAN",
       roll: "EB25210106046",
       results: {
+        "SE-459": {
+          marks: 74,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 61,
           gradePoint: 2,
@@ -545,6 +665,11 @@ export const semester3: RawSemesterData = {
       name: "MASAB SUHAIB",
       roll: "EB25210106047",
       results: {
+        "SE-459": {
+          marks: 71,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 71,
           gradePoint: 3,
@@ -566,6 +691,11 @@ export const semester3: RawSemesterData = {
       name: "MIRZA MUZAMMIL ULLAH BAIG",
       roll: "EB25210106049",
       results: {
+        "SE-459": {
+          marks: 25,
+          gradePoint: 0,
+          grade: "F",
+        },
         "SE-457": {
           marks: 0,
           gradePoint: 0,
@@ -587,6 +717,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD AAYAN",
       roll: "EB25210106051",
       results: {
+        "SE-459": {
+          marks: 76,
+          gradePoint: 3.4,
+          grade: "B+",
+        },
         "SE-453": {
           marks: 62,
           gradePoint: 2,
@@ -608,6 +743,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD ABDULLAH BASHIR",
       roll: "EB25210106052",
       results: {
+        "SE-459": {
+          marks: 66,
+          gradePoint: 2.4,
+          grade: "C+",
+        },
         "SE-457": {
           marks: 26,
           gradePoint: 0,
@@ -629,6 +769,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD ALI",
       roll: "EB25210106054",
       results: {
+        "SE-459": {
+          marks: 64,
+          gradePoint: 2.4,
+          grade: "C+",
+        },
         "SE-453": {
           marks: 63,
           gradePoint: 2,
@@ -650,6 +795,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD ALI RAZA",
       roll: "EB25210106056",
       results: {
+        "SE-459": {
+          marks: 69,
+          gradePoint: 2.8,
+          grade: "B-",
+        },
         "SE-453": {
           marks: 59,
           gradePoint: 1.8,
@@ -671,6 +821,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD FAQIH UL HASNAIN",
       roll: "EB25210106065",
       results: {
+        "SE-459": {
+          marks: 76,
+          gradePoint: 3.4,
+          grade: "B+",
+        },
         "SE-453": {
           marks: 62,
           gradePoint: 2,
@@ -692,6 +847,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD FARJAD",
       roll: "EB25210106066",
       results: {
+        "SE-459": {
+          marks: 66,
+          gradePoint: 2.4,
+          grade: "C+",
+        },
         "SE-453": {
           marks: 60,
           gradePoint: 1.8,
@@ -713,6 +873,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD MAHAD",
       roll: "EB25210106071",
       results: {
+        "SE-459": {
+          marks: 71,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 64,
           gradePoint: 2.4,
@@ -734,6 +899,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD SAAD ANSARI",
       roll: "EB25210106078",
       results: {
+        "SE-459": {
+          marks: 76,
+          gradePoint: 3.4,
+          grade: "B+",
+        },
         "SE-453": {
           marks: 67,
           gradePoint: 2.4,
@@ -755,6 +925,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD SAEED",
       roll: "EB25210106082",
       results: {
+        "SE-459": {
+          marks: 55,
+          gradePoint: 1.4,
+          grade: "D+",
+        },
         "SE-453": {
           marks: 55,
           gradePoint: 1.4,
@@ -776,6 +951,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD SAFI ULLAH",
       roll: "EB25210106083",
       results: {
+        "SE-459": {
+          marks: 70,
+          gradePoint: 2.8,
+          grade: "B-",
+        },
         "SE-453": {
           marks: 56,
           gradePoint: 1.4,
@@ -797,6 +977,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD SAMEER UDDIN",
       roll: "EB25210106084",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 64,
           gradePoint: 2.4,
@@ -818,6 +1003,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD SHARIQ",
       roll: "EB25210106086",
       results: {
+        "SE-459": {
+          marks: 70,
+          gradePoint: 2.8,
+          grade: "B-",
+        },
         "SE-453": {
           marks: 71,
           gradePoint: 3,
@@ -839,6 +1029,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD SHAYAN",
       roll: "EB25210106087",
       results: {
+        "SE-459": {
+          marks: 65,
+          gradePoint: 2.4,
+          grade: "C+",
+        },
         "SE-453": {
           marks: 59,
           gradePoint: 1.8,
@@ -860,6 +1055,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD SOHAIB",
       roll: "EB25210106088",
       results: {
+        "SE-459": {
+          marks: 72,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 60,
           gradePoint: 1.8,
@@ -881,6 +1081,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD SUFYAN",
       roll: "EB25210106089",
       results: {
+        "SE-459": {
+          marks: 74,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 62,
           gradePoint: 2,
@@ -902,6 +1107,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD UMAR SHAFIQE",
       roll: "EB25210106091",
       results: {
+        "SE-459": {
+          marks: 71,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 59,
           gradePoint: 1.8,
@@ -923,6 +1133,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD USMAN ASAD",
       roll: "EB25210106094",
       results: {
+        "SE-459": {
+          marks: 77,
+          gradePoint: 3.4,
+          grade: "B+",
+        },
         "SE-453": {
           marks: 78,
           gradePoint: 3.4,
@@ -944,6 +1159,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD UZAIR",
       roll: "EB25210106096",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 75,
           gradePoint: 3.4,
@@ -965,6 +1185,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD WASIQ",
       roll: "EB25210106097",
       results: {
+        "SE-459": {
+          marks: 74,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 64,
           gradePoint: 2.4,
@@ -986,6 +1211,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD YASEEN ARIF",
       roll: "EB25210106098",
       results: {
+        "SE-459": {
+          marks: 76,
+          gradePoint: 3.4,
+          grade: "B+",
+        },
         "SE-453": {
           marks: 66,
           gradePoint: 2.4,
@@ -1007,6 +1237,11 @@ export const semester3: RawSemesterData = {
       name: "MUNAWER HUSSAIN",
       roll: "EB25210106100",
       results: {
+        "SE-459": {
+          marks: 78,
+          gradePoint: 3.4,
+          grade: "B+",
+        },
         "SE-453": {
           marks: 75,
           gradePoint: 3.4,
@@ -1028,6 +1263,11 @@ export const semester3: RawSemesterData = {
       name: "MUZAMMIL KALIM",
       roll: "EB25210106101",
       results: {
+        "SE-459": {
+          marks: 73,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 63,
           gradePoint: 2,
@@ -1049,6 +1289,11 @@ export const semester3: RawSemesterData = {
       name: "RAFIA ATHAR",
       roll: "EB25210106104",
       results: {
+        "SE-459": {
+          marks: 89,
+          gradePoint: 4,
+          grade: "A",
+        },
         "SE-453": {
           marks: 71,
           gradePoint: 3,
@@ -1070,6 +1315,11 @@ export const semester3: RawSemesterData = {
       name: "SAAD AHMED",
       roll: "EB25210106105",
       results: {
+        "SE-459": {
+          marks: 60,
+          gradePoint: 1.8,
+          grade: "C-",
+        },
         "SE-453": {
           marks: 60,
           gradePoint: 1.8,
@@ -1091,6 +1341,11 @@ export const semester3: RawSemesterData = {
       name: "SANILAH AHMED",
       roll: "EB25210106109",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 77,
           gradePoint: 3.4,
@@ -1112,6 +1367,11 @@ export const semester3: RawSemesterData = {
       name: "SHAIKH MAHAD UD DIN",
       roll: "EB25210106113",
       results: {
+        "SE-459": {
+          marks: 50,
+          gradePoint: 1,
+          grade: "D",
+        },
         "SE-453": {
           marks: 81,
           gradePoint: 3.8,
@@ -1133,6 +1393,11 @@ export const semester3: RawSemesterData = {
       name: "SYED ALI ZAIB BUKHARI",
       roll: "EB25210106115",
       results: {
+        "SE-459": {
+          marks: 25,
+          gradePoint: 0,
+          grade: "F",
+        },
         "SE-457": {
           marks: 0,
           gradePoint: 0,
@@ -1154,6 +1419,11 @@ export const semester3: RawSemesterData = {
       name: "SYED HASHIR IMAM",
       roll: "EB25210106119",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 58,
           gradePoint: 1.8,
@@ -1175,6 +1445,11 @@ export const semester3: RawSemesterData = {
       name: "SYED MEHDI HASSAN RIZVI",
       roll: "EB25210106122",
       results: {
+        "SE-459": {
+          marks: 86,
+          gradePoint: 4,
+          grade: "A",
+        },
         "SE-453": {
           marks: 58,
           gradePoint: 1.8,
@@ -1196,6 +1471,11 @@ export const semester3: RawSemesterData = {
       name: "SYED MUHAMMAD TAHA HASSAN SHAH",
       roll: "EB25210106125",
       results: {
+        "SE-459": {
+          marks: 70,
+          gradePoint: 2.8,
+          grade: "B-",
+        },
         "SE-453": {
           marks: 60,
           gradePoint: 1.8,
@@ -1217,6 +1497,11 @@ export const semester3: RawSemesterData = {
       name: "SYED MUHAMMAD USMAN GHANI",
       roll: "EB25210106126",
       results: {
+        "SE-459": {
+          marks: 50,
+          gradePoint: 1,
+          grade: "D",
+        },
         "SE-453": {
           marks: 59,
           gradePoint: 1.8,
@@ -1238,6 +1523,11 @@ export const semester3: RawSemesterData = {
       name: "SYED SAIM HUSSAIN",
       roll: "EB25210106127",
       results: {
+        "SE-459": {
+          marks: 74,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 66,
           gradePoint: 2.4,
@@ -1259,6 +1549,11 @@ export const semester3: RawSemesterData = {
       name: "SYEDA HOORIYA KASHIF",
       roll: "EB25210106129",
       results: {
+        "SE-459": {
+          marks: 65,
+          gradePoint: 2.4,
+          grade: "C+",
+        },
         "SE-453": {
           marks: 71,
           gradePoint: 3,
@@ -1280,6 +1575,11 @@ export const semester3: RawSemesterData = {
       name: "TAHA ALI",
       roll: "EB25210106131",
       results: {
+        "SE-459": {
+          marks: 70,
+          gradePoint: 2.8,
+          grade: "B-",
+        },
         "SE-453": {
           marks: 71,
           gradePoint: 3,
@@ -1301,6 +1601,11 @@ export const semester3: RawSemesterData = {
       name: "TAHREEM RANA",
       roll: "EB25210106132",
       results: {
+        "SE-459": {
+          marks: 74,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 80,
           gradePoint: 3.8,
@@ -1322,6 +1627,11 @@ export const semester3: RawSemesterData = {
       name: "UZAIR MUKHTAR",
       roll: "EB25210106134",
       results: {
+        "SE-459": {
+          marks: 61,
+          gradePoint: 2,
+          grade: "C",
+        },
         "SE-453": {
           marks: 63,
           gradePoint: 2,
@@ -1343,6 +1653,11 @@ export const semester3: RawSemesterData = {
       name: "WANIA",
       roll: "EB25210106136",
       results: {
+        "SE-459": {
+          marks: 81,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 72,
           gradePoint: 3,
@@ -1364,6 +1679,11 @@ export const semester3: RawSemesterData = {
       name: "WAREESHA BEGUM",
       roll: "EB25210106137",
       results: {
+        "SE-459": {
+          marks: 80,
+          gradePoint: 3.8,
+          grade: "A-",
+        },
         "SE-453": {
           marks: 81,
           gradePoint: 3.8,
@@ -1385,6 +1705,11 @@ export const semester3: RawSemesterData = {
       name: "WASIF KHAN",
       roll: "EB25210106138",
       results: {
+        "SE-459": {
+          marks: 74,
+          gradePoint: 3,
+          grade: "B",
+        },
         "SE-453": {
           marks: 72,
           gradePoint: 3,
@@ -1406,6 +1731,11 @@ export const semester3: RawSemesterData = {
       name: "AMMAR ALI",
       roll: "EB25210106014",
       results: {
+        "SE-459": {
+          marks: 25,
+          gradePoint: 0,
+          grade: "F",
+        },
         "SE-453": {
           marks: 0,
           gradePoint: 0,
@@ -1427,6 +1757,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD ALI MUNIR",
       roll: "EB25210106055",
       results: {
+        "SE-459": {
+          marks: 25,
+          gradePoint: 0,
+          grade: "F",
+        },
         "SE-453": {
           marks: 0,
           gradePoint: 0,
@@ -1448,6 +1783,11 @@ export const semester3: RawSemesterData = {
       name: "MUHAMMAD RAZA",
       roll: "EB25210106077",
       results: {
+        "SE-459": {
+          marks: 25,
+          gradePoint: 0,
+          grade: "F",
+        },
         "SE-453": {
           marks: 0,
           gradePoint: 0,
