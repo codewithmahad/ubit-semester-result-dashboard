@@ -35,7 +35,7 @@ export const CLASS_REGISTRY: ClassMetadata[] = [
     section: "Section A",
     degree: "Software Engineering",
     cr: "Kaaif Ahmed Khan",
-    activeSemesters: ["semester1", "semester2"],
+    activeSemesters: ["semester1", "semester2", "semester3"],
   },
   {
     id: "bscs-2025-morning-b",

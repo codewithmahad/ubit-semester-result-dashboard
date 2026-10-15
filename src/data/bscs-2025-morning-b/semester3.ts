@@ -149,9 +149,9 @@ export const semester3: RawSemesterData = {
       "name": "AREEBA",
       "results": {
         "CS-455": {
-          "marks": 0,
-          "gradePoint": 0.0,
-          "grade": "F"
+          "marks": 85,
+          "gradePoint": 4.0,
+          "grade": "A"
         }
       }
     },
