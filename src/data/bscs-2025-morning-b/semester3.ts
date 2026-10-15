@@ -9,6 +9,11 @@ export const semester3: RawSemesterData = {
       "code": "CS-455",
       "name": "Computer Organization & Assembly Language",
       "creditHours": 3
+    },
+    {
+      "code": "CS-461",
+      "name": "Urdu",
+      "creditHours": 2
     }
   ],
   "students": [
@@ -53,6 +58,11 @@ export const semester3: RawSemesterData = {
           "marks": 72,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -64,6 +74,11 @@ export const semester3: RawSemesterData = {
           "marks": 0,
           "gradePoint": 0,
           "grade": "F"
+        },
+        "CS-461": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -86,6 +101,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -97,6 +117,11 @@ export const semester3: RawSemesterData = {
           "marks": 68,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "CS-461": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -107,6 +132,11 @@ export const semester3: RawSemesterData = {
         "CS-455": {
           "marks": 2,
           "gradePoint": 0.0,
+          "grade": "F"
+        },
+        "CS-461": {
+          "marks": 16,
+          "gradePoint": 0,
           "grade": "F"
         }
       }
@@ -130,6 +160,11 @@ export const semester3: RawSemesterData = {
           "marks": 68,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "CS-461": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -141,6 +176,11 @@ export const semester3: RawSemesterData = {
           "marks": 68,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "CS-461": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -152,6 +192,11 @@ export const semester3: RawSemesterData = {
           "marks": 85,
           "gradePoint": 4.0,
           "grade": "A"
+        },
+        "CS-461": {
+          "marks": 77,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -163,6 +208,11 @@ export const semester3: RawSemesterData = {
           "marks": 64,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "CS-461": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -185,6 +235,11 @@ export const semester3: RawSemesterData = {
           "marks": 82,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "CS-461": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -196,6 +251,11 @@ export const semester3: RawSemesterData = {
           "marks": 85,
           "gradePoint": 4.0,
           "grade": "A"
+        },
+        "CS-461": {
+          "marks": 78,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -207,6 +267,11 @@ export const semester3: RawSemesterData = {
           "marks": 76,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -216,6 +281,11 @@ export const semester3: RawSemesterData = {
       "results": {
         "CS-455": {
           "marks": 61,
+          "gradePoint": 2.0,
+          "grade": "C"
+        },
+        "CS-461": {
+          "marks": 62,
           "gradePoint": 2.0,
           "grade": "C"
         }
@@ -240,6 +310,11 @@ export const semester3: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -251,6 +326,11 @@ export const semester3: RawSemesterData = {
           "marks": 80,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "CS-461": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -262,6 +342,11 @@ export const semester3: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1.0,
           "grade": "D"
+        },
+        "CS-461": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -273,6 +358,11 @@ export const semester3: RawSemesterData = {
           "marks": 68,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "CS-461": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -284,6 +374,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -295,6 +390,11 @@ export const semester3: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2.0,
           "grade": "C"
+        },
+        "CS-461": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -306,6 +406,11 @@ export const semester3: RawSemesterData = {
           "marks": 76,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -317,6 +422,11 @@ export const semester3: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 64,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -328,6 +438,11 @@ export const semester3: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 68,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -350,6 +465,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -359,6 +479,11 @@ export const semester3: RawSemesterData = {
       "results": {
         "CS-455": {
           "marks": 72,
+          "gradePoint": 3.0,
+          "grade": "B"
+        },
+        "CS-461": {
+          "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
         }
@@ -372,6 +497,11 @@ export const semester3: RawSemesterData = {
           "marks": 76,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -383,6 +513,11 @@ export const semester3: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -393,6 +528,11 @@ export const semester3: RawSemesterData = {
         "CS-455": {
           "marks": 61,
           "gradePoint": 2.0,
+          "grade": "C"
+        },
+        "CS-461": {
+          "marks": 62,
+          "gradePoint": 2,
           "grade": "C"
         }
       }
@@ -405,6 +545,11 @@ export const semester3: RawSemesterData = {
           "marks": 72,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -416,6 +561,11 @@ export const semester3: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2.0,
           "grade": "C"
+        },
+        "CS-461": {
+          "marks": 54,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -427,6 +577,11 @@ export const semester3: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1.0,
           "grade": "D"
+        },
+        "CS-461": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -438,6 +593,11 @@ export const semester3: RawSemesterData = {
           "marks": 72,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -449,6 +609,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -460,6 +625,11 @@ export const semester3: RawSemesterData = {
           "marks": 73,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -471,6 +641,11 @@ export const semester3: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -482,6 +657,11 @@ export const semester3: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -515,6 +695,11 @@ export const semester3: RawSemesterData = {
           "marks": 72,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 56,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -526,6 +711,11 @@ export const semester3: RawSemesterData = {
           "marks": 76,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 60,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -537,6 +727,11 @@ export const semester3: RawSemesterData = {
           "marks": 73,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -548,6 +743,11 @@ export const semester3: RawSemesterData = {
           "marks": 72,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -559,6 +759,11 @@ export const semester3: RawSemesterData = {
           "marks": 68,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "CS-461": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -570,6 +775,11 @@ export const semester3: RawSemesterData = {
           "marks": 65,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "CS-461": {
+          "marks": 61,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -581,6 +791,11 @@ export const semester3: RawSemesterData = {
           "marks": 73,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -591,6 +806,11 @@ export const semester3: RawSemesterData = {
         "CS-455": {
           "marks": 61,
           "gradePoint": 2.0,
+          "grade": "C"
+        },
+        "CS-461": {
+          "marks": 63,
+          "gradePoint": 2,
           "grade": "C"
         }
       }
@@ -603,6 +823,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 67,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -614,6 +839,11 @@ export const semester3: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 63,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -624,6 +854,11 @@ export const semester3: RawSemesterData = {
         "CS-455": {
           "marks": 25,
           "gradePoint": 0.0,
+          "grade": "F"
+        },
+        "CS-461": {
+          "marks": 10,
+          "gradePoint": 0,
           "grade": "F"
         }
       }
@@ -636,6 +871,11 @@ export const semester3: RawSemesterData = {
           "marks": 72,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -647,6 +887,11 @@ export const semester3: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1.0,
           "grade": "D"
+        },
+        "CS-461": {
+          "marks": 21,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -658,6 +903,11 @@ export const semester3: RawSemesterData = {
           "marks": 80,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "CS-461": {
+          "marks": 79,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -669,6 +919,11 @@ export const semester3: RawSemesterData = {
           "marks": 72,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 62,
+          "gradePoint": 2,
+          "grade": "C"
         }
       }
     },
@@ -680,6 +935,11 @@ export const semester3: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2.0,
           "grade": "C"
+        },
+        "CS-461": {
+          "marks": 29,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -691,6 +951,11 @@ export const semester3: RawSemesterData = {
           "marks": 76,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     },
@@ -702,6 +967,11 @@ export const semester3: RawSemesterData = {
           "marks": 50,
           "gradePoint": 1.0,
           "grade": "D"
+        },
+        "CS-461": {
+          "marks": 50,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -711,6 +981,11 @@ export const semester3: RawSemesterData = {
       "results": {
         "CS-455": {
           "marks": 77,
+          "gradePoint": 3.4,
+          "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
         }
@@ -724,6 +999,11 @@ export const semester3: RawSemesterData = {
           "marks": 71,
           "gradePoint": 3.0,
           "grade": "B"
+        },
+        "CS-461": {
+          "marks": 74,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -735,6 +1015,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 58,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -746,6 +1031,11 @@ export const semester3: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2.0,
           "grade": "C"
+        },
+        "CS-461": {
+          "marks": 50,
+          "gradePoint": 1.0,
+          "grade": "D"
         }
       }
     },
@@ -757,6 +1047,11 @@ export const semester3: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2.0,
           "grade": "C"
+        },
+        "CS-461": {
+          "marks": 54,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -768,6 +1063,11 @@ export const semester3: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2.0,
           "grade": "C"
+        },
+        "CS-461": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -778,6 +1078,11 @@ export const semester3: RawSemesterData = {
         "CS-455": {
           "marks": 71,
           "gradePoint": 3.0,
+          "grade": "B"
+        },
+        "CS-461": {
+          "marks": 74,
+          "gradePoint": 3,
           "grade": "B"
         }
       }
@@ -801,6 +1106,11 @@ export const semester3: RawSemesterData = {
           "marks": 0,
           "gradePoint": 0.0,
           "grade": "F"
+        },
+        "CS-461": {
+          "marks": 23,
+          "gradePoint": 0,
+          "grade": "F"
         }
       }
     },
@@ -812,6 +1122,11 @@ export const semester3: RawSemesterData = {
           "marks": 68,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "CS-461": {
+          "marks": 53,
+          "gradePoint": 1.4,
+          "grade": "D+"
         }
       }
     },
@@ -823,6 +1138,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 60,
+          "gradePoint": 1.8,
+          "grade": "C-"
         }
       }
     },
@@ -834,6 +1154,11 @@ export const semester3: RawSemesterData = {
           "marks": 65,
           "gradePoint": 2.4,
           "grade": "C+"
+        },
+        "CS-461": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -845,6 +1170,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 71,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -856,6 +1186,11 @@ export const semester3: RawSemesterData = {
           "marks": 80,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "CS-461": {
+          "marks": 73,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -867,6 +1202,11 @@ export const semester3: RawSemesterData = {
           "marks": 81,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "CS-461": {
+          "marks": 78,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -878,6 +1218,11 @@ export const semester3: RawSemesterData = {
           "marks": 61,
           "gradePoint": 2.0,
           "grade": "C"
+        },
+        "CS-461": {
+          "marks": 52,
+          "gradePoint": 1,
+          "grade": "D"
         }
       }
     },
@@ -889,6 +1234,11 @@ export const semester3: RawSemesterData = {
           "marks": 75,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 72,
+          "gradePoint": 3,
+          "grade": "B"
         }
       }
     },
@@ -900,6 +1250,11 @@ export const semester3: RawSemesterData = {
           "marks": 69,
           "gradePoint": 2.8,
           "grade": "B-"
+        },
+        "CS-461": {
+          "marks": 75,
+          "gradePoint": 3.4,
+          "grade": "B+"
         }
       }
     },
@@ -908,6 +1263,11 @@ export const semester3: RawSemesterData = {
       "name": "ZAID ALI",
       "results": {
         "CS-455": {
+          "marks": 65,
+          "gradePoint": 2.4,
+          "grade": "C+"
+        },
+        "CS-461": {
           "marks": 65,
           "gradePoint": 2.4,
           "grade": "C+"
@@ -922,6 +1282,11 @@ export const semester3: RawSemesterData = {
           "marks": 76,
           "gradePoint": 3.4,
           "grade": "B+"
+        },
+        "CS-461": {
+          "marks": 66,
+          "gradePoint": 2.4,
+          "grade": "C+"
         }
       }
     },
@@ -933,6 +1298,11 @@ export const semester3: RawSemesterData = {
           "marks": 80,
           "gradePoint": 3.8,
           "grade": "A-"
+        },
+        "CS-461": {
+          "marks": 69,
+          "gradePoint": 2.8,
+          "grade": "B-"
         }
       }
     }
