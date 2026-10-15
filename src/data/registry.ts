@@ -34,7 +34,7 @@ export const CLASS_REGISTRY: ClassMetadata[] = [
     shift: "Morning",
     section: "Section A",
     degree: "Software Engineering",
-    cr: "Kaaif Ahmed Khan",
+    cr: "Muhammad Tamjeed Hussain",
     activeSemesters: ["semester1", "semester2", "semester3"],
   },
   {

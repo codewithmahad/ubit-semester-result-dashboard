@@ -16,7 +16,7 @@ export default function AdminRolesPage() {
    const CURRENT_CRS = [
       { name: "Syed Azfar Abbas", email: "azfar.abbas@gmail.com", classAssigned: "BSCS 2024 (M) - Sec B", assignedBy: "Admin", date: "Jan 12, 2026" },
       { name: "Kazim Hussain", email: "kazim.hussain@gmail.com", classAssigned: "BSSE 2025 (E) - Sec A", assignedBy: "System", date: "Feb 05, 2026" },
-      { name: "Kaaif Ahmed Khan", email: "kaaif.khan@gmail.com", classAssigned: "BSSE 2025 (M) - Sec A", assignedBy: "System", date: "Feb 05, 2026" },
+      { name: "Muhammad Tamjeed Hussain", email: "Not provided", classAssigned: "BSSE 2025 (M) - Sec A", assignedBy: "System", date: "Oct 15, 2026" },
    ];
 
    return (
