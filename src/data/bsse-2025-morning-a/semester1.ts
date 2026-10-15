@@ -149,10 +149,10 @@ export const semester1: RawSemesterData = {
             roll: "B24110106012",
             name: "ANUMTA TARIQ",
             results: {
-                "SE-351": { marks: 53.5, grade: "D+", gradePoint: 1.4 },
+                "SE-351": { marks: 66.5, grade: "C+", gradePoint: 2.4 },
                 "SE-353": { marks: 75, grade: "B+", gradePoint: 3.4 },
                 "SE-355": { marks: 77, grade: "B+", gradePoint: 3.4 },
-                "SE-357": { marks: 21, grade: "F", gradePoint: 0.0 },
+                "SE-357": { marks: 60, grade: "C-", gradePoint: 1.8 },
                 "SE-359": { marks: 62, grade: "C", gradePoint: 2 },
                 "SE-361": { marks: 80, grade: "A-", gradePoint: 3.8 }
             }
